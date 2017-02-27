@@ -4,12 +4,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer", "LambdicSql.SqlServer\LambdicSql.SqlServer.csproj", "{335592C4-241D-4E16-94E0-B1A23FC279B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77EF028A-D7AF-45C8-90D6-19492EDC0CFB} = {77EF028A-D7AF-45C8-90D6-19492EDC0CFB}
+	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LambdicSql.SqlServer.Shared", "LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.shproj", "{028FE542-3C97-45FB-88A6-8EED82AF2D68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.PCL", "LambdicSql.SqlServer.PCL\LambdicSql.SqlServer.PCL.csproj", "{77EF028A-D7AF-45C8-90D6-19492EDC0CFB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test40", "Test40\Test40.csproj", "{C94F00C4-CFE2-4019-9614-0CC63E5ED916}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0E03C20B-7CA6-4820-93BD-5E3FD769264C}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\LambdicSql.SqlServer.nuspec = .nuget\LambdicSql.SqlServer.nuspec
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

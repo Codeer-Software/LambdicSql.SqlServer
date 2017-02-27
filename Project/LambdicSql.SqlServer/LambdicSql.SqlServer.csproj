@@ -28,6 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\LambdicSql.SqlServer.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LambdicSql, Version=0.33.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
@@ -46,6 +47,10 @@
   </ItemGroup>
   <Import Project="..\LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release "../../../.nuget/nuget" pack "../../../.nuget/LambdicSql.SqlServer.nuspec"
+</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
