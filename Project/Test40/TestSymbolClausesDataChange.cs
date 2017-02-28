@@ -3,9 +3,9 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LambdicSql;
 using LambdicSql.feat.Dapper;
-using static LambdicSql.Symbol;
-using static Test.Helper.DBProviderInfo;
+using static LambdicSql.SqlServer.Symbol;
 using Test.Helper;
+using LambdicSql.SqlServer;
 
 namespace Test
 {
@@ -504,6 +504,7 @@ FROM tbl_data", 10);
             }
             catch { }
         }
+
         void CleanUpCreateDropTestTable()
         {
             try

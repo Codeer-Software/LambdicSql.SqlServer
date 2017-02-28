@@ -3,9 +3,10 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LambdicSql;
 using LambdicSql.feat.Dapper;
-using static LambdicSql.Symbol;
+using static LambdicSql.SqlServer.Symbol;
 using static Test.Helper.DBProviderInfo;
 using Test.Helper;
+using LambdicSql.SqlServer;
 
 namespace Test
 {
