@@ -88,8 +88,6 @@ ORDER BY
         [TestMethod]
         public void Test_Top()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Top(1), Asterisk(db.tbl_staff)).
                 From(db.tbl_staff));
@@ -128,84 +126,10 @@ FROM tbl_remuneration");
 @"SELECT DISTINCT *
 FROM tbl_remuneration");
         }
-
-        [TestMethod]
-        public void Test_RowNum()
-        {
-            if (!_connection.IsTarget(TargetDB.Oracle)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                 Select(RowNum()).
-                 From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	ROWNUM
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_CurrentDate_1()
-        {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.MySQL)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(new
-                {
-                    Val = Current_Date()
-                }));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	CURRENT_DATE AS Val");
-        }
-
-        [TestMethod]
-        public void Test_CurrentDate_2()
-        {
-            if (!_connection.IsTarget(TargetDB.Oracle)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(new
-                {
-                    Val = Current_Date()
-                }).From(Dual));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	CURRENT_DATE AS Val
-FROM DUAL");
-        }
-
-        [TestMethod]
-        public void Test_CurrentTime_1()
-        {
-            if (!_connection.IsTarget(TargetDB.MySQL)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(new
-                {
-                    Val = Current_Time()
-                }));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	CURRENT_TIME AS Val");
-        }
         
         [TestMethod]
         public void Test_CurrentTimeStamp_1()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.MySQL)) return;
-
             var sql = Db<DB>.Sql(db =>
             Select(new
             {
@@ -217,45 +141,6 @@ FROM DUAL");
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
 	CURRENT_TIMESTAMP AS Val");
-        }
-
-        [TestMethod]
-        public void Test_CurrentTimeStamp_2()
-        {
-            if (!_connection.IsTarget(TargetDB.Oracle)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(new
-                {
-                    Val = Current_TimeStamp()
-                }).
-                From(Dual));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	CURRENT_TIMESTAMP AS Val
-FROM DUAL");
-        }
-
-        [TestMethod]
-        public void Test_Dual()
-        {
-            if (!_connection.IsTarget(TargetDB.Oracle)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(new
-                {
-                    Val = Current_Date()
-                }).From(Dual));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	CURRENT_DATE AS Val
-FROM DUAL");
         }
     }
 }

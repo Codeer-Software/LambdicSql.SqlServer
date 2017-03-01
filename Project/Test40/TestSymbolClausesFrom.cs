@@ -236,8 +236,6 @@ FROM tbl_remuneration
         [TestMethod]
         public void Test_RightJoin()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.Postgre, TargetDB.MySQL, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData
                 {
@@ -260,8 +258,6 @@ FROM tbl_remuneration
         [TestMethod]
         public void Test_RightJoin_Start()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.Postgre, TargetDB.MySQL, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData
                 {
@@ -284,8 +280,6 @@ FROM tbl_remuneration
         [TestMethod]
         public void Test_Full_Join()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.Postgre, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData
                 {
@@ -308,8 +302,6 @@ FROM tbl_remuneration
         [TestMethod]
         public void Test_Full_Join_Start()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.Postgre, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData
                 {
@@ -403,28 +395,7 @@ FROM
 	(SELECT *
 	FROM tbl_remuneration) sub");
         }
-
-        [TestMethod]
-        public void Test_From_SubQuery_2()
-        {
-            if (!_connection.IsTarget(TargetDB.SQLite, TargetDB.Oracle, TargetDB.DB2)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(Asterisk(db.tbl_remuneration)).
-                From(
-                    Select(Asterisk(db.tbl_remuneration)).
-                        From(db.tbl_remuneration)
-                    ));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT *
-FROM
-	(SELECT *
-	FROM tbl_remuneration)");
-        }
-
+        
         [TestMethod]
         public void Test_From_Aliase()
         {

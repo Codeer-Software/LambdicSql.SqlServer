@@ -77,8 +77,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_top_selected()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Top(1), new SelectData
                 {
@@ -99,8 +97,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_before_top_selected()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Empty().
                 Select(Top(1), new SelectData
@@ -180,8 +176,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_top_astrisk()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Top(2), Asterisk()).
                 From(db.tbl_remuneration));
@@ -196,8 +190,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_before_top_astrisk()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Empty().
                 Select(Top(2), Asterisk()).
@@ -213,8 +205,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_top_astriskT()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Top(2), Asterisk<Remuneration>()).
                 From(db.tbl_remuneration));
@@ -229,8 +219,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_before_top_astriskT()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Empty().
                 Select(Top(2), Asterisk<Remuneration>()).
@@ -287,8 +275,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_predicate_top_selected()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(All(), Top(1), 
                 new SelectData
@@ -310,8 +296,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_before_predicate_top_selected()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Empty().
                 Select(Distinct(), Top(1), 
@@ -392,8 +376,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_predicate_top_asterisk()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(All(), Top(1), Asterisk()).
                 From(db.tbl_remuneration));
@@ -408,8 +390,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_before_predicate_top_asterisk()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Empty().
                 Select(Distinct(), Top(1), Asterisk()).
@@ -425,8 +405,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_predicate_top_asteriskT()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(All(), Top(1), Asterisk<Remuneration>()).
                 From(db.tbl_remuneration));
@@ -441,8 +419,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_before_predicate_top_asteriskT()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Empty().
                 Select(Distinct(), Top(1), Asterisk<Remuneration>()).

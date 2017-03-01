@@ -87,30 +87,6 @@ GROUP BY tbl_staff.id, tbl_staff.name");
         }
 
         [TestMethod]
-        public void Test_Count_2()
-        {
-            if (!_connection.IsTarget(TargetDB.Oracle, TargetDB.MySQL)) return;
-
-            var sql = Db<DB>.Sql(db =>
-               Select(new SelectData
-               {
-                   Val1 = Count(All(), Asterisk())
-               }).
-               From(db.tbl_remuneration).
-                   Join(db.tbl_staff, db.tbl_remuneration.staff_id == db.tbl_staff.id).
-               GroupBy(db.tbl_staff.id, db.tbl_staff.name));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	COUNT(ALL *) AS Val1
-FROM tbl_remuneration
-	JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)
-GROUP BY tbl_staff.id, tbl_staff.name");
-        }
-
-        [TestMethod]
         public void Test_Avg_Min_Max()
         {
             var sql = Db<DB>.Sql(db =>
@@ -157,29 +133,8 @@ FROM tbl_staff", 1, 2, 3);
         }
 
         [TestMethod]
-        public void Test_Mod()
-        {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.Oracle, TargetDB.DB2)) return;
-            var sql = Db<DB>.Sql(db =>
-                Select(new SelectData
-                {
-                    Val1 = Mod(1, 2)
-                }).
-                From(db.tbl_staff));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	MOD(@p_0, @p_1) AS Val1
-FROM tbl_staff", 1, 2);
-        }
-
-        [TestMethod]
         public void Test_Concat()
         {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.SqlServer, TargetDB.MySQL)) return;
-
             var sql = Db<DB>.Sql(db =>
                Select(new
                {
@@ -194,32 +149,10 @@ FROM tbl_staff", 1, 2);
 	CONCAT(tbl_staff.name, @p_0, @p_1) AS Val
 FROM tbl_staff", "a", "b");
         }
-        
-        [TestMethod]
-        public void Test_Length()
-        {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.DB2)) return;
-
-            var sql = Db<DB>.Sql(db =>
-               Select(new
-               {
-                   Val = Length(db.tbl_staff.name)
-               }).
-               From(db.tbl_staff));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
- @"SELECT
-	LENGTH(tbl_staff.name) AS Val
-FROM tbl_staff");
-        }
 
         [TestMethod]
         public void Test_Len()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                Select(new
                {
@@ -293,8 +226,6 @@ FROM tbl_staff",
         [TestMethod]
         public void Test_Substring()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.MySQL, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                Select(new
                {
@@ -312,78 +243,8 @@ FROM tbl_staff",
         }
         
         [TestMethod]
-        public void Test_Extract_1()
-        {
-            if (!_connection.IsTarget(TargetDB.Postgre)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(new
-                {
-                    Val1 = Extract(DateTimeElement.Year, Current_TimeStamp()),
-                    Val2 = Extract(DateTimeElement.Month, Current_TimeStamp()),
-                    Val3 = Extract(DateTimeElement.Day, Current_TimeStamp()),
-                    Val4 = Extract(DateTimeElement.Hour, Current_TimeStamp()),
-                    Val5 = Extract(DateTimeElement.Minute, Current_TimeStamp()),
-                    Val6 = Extract(DateTimeElement.Second, Current_TimeStamp()),
-                    Val7 = Extract(DateTimeElement.Millisecond, Current_TimeStamp()),
-                    Val8 = Extract(DateTimeElement.Microsecond, Current_TimeStamp()),
-                    Val9 = Extract(DateTimeElement.Quarter, Current_TimeStamp()),
-                    Val10 = Extract(DateTimeElement.Week, Current_TimeStamp())
-                }));
-            
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	EXTRACT(YEAR FROM CURRENT_TIMESTAMP) AS Val1,
-	EXTRACT(MONTH FROM CURRENT_TIMESTAMP) AS Val2,
-	EXTRACT(DAY FROM CURRENT_TIMESTAMP) AS Val3,
-	EXTRACT(HOUR FROM CURRENT_TIMESTAMP) AS Val4,
-	EXTRACT(MINUTE FROM CURRENT_TIMESTAMP) AS Val5,
-	EXTRACT(SECOND FROM CURRENT_TIMESTAMP) AS Val6,
-	EXTRACT(MILLISECOND FROM CURRENT_TIMESTAMP) AS Val7,
-	EXTRACT(MICROSECOND FROM CURRENT_TIMESTAMP) AS Val8,
-	EXTRACT(QUARTER FROM CURRENT_TIMESTAMP) AS Val9,
-	EXTRACT(WEEK FROM CURRENT_TIMESTAMP) AS Val10");
-        }
-
-        [TestMethod]
-        public void Test_Extract_2()
-        {
-            if (!_connection.IsTarget(TargetDB.MySQL)) return;
-
-            var sql = Db<DB>.Sql(db =>
-            Select(new
-            {
-                Val1 = (long)Extract(DateTimeElement.Year, Current_TimeStamp()),
-                Val2 = (long)Extract(DateTimeElement.Month, Current_TimeStamp()),
-                Val3 = (long)Extract(DateTimeElement.Day, Current_TimeStamp()),
-                Val4 = (long)Extract(DateTimeElement.Hour, Current_TimeStamp()),
-                Val5 = (long)Extract(DateTimeElement.Minute, Current_TimeStamp()),
-                Val6 = (long)Extract(DateTimeElement.Second, Current_TimeStamp()),
-                Val7 = (long)Extract(DateTimeElement.Quarter, Current_TimeStamp()),
-                Val8 = (long)Extract(DateTimeElement.Week, Current_TimeStamp())
-            }));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	EXTRACT(YEAR FROM CURRENT_TIMESTAMP) AS Val1,
-	EXTRACT(MONTH FROM CURRENT_TIMESTAMP) AS Val2,
-	EXTRACT(DAY FROM CURRENT_TIMESTAMP) AS Val3,
-	EXTRACT(HOUR FROM CURRENT_TIMESTAMP) AS Val4,
-	EXTRACT(MINUTE FROM CURRENT_TIMESTAMP) AS Val5,
-	EXTRACT(SECOND FROM CURRENT_TIMESTAMP) AS Val6,
-	EXTRACT(QUARTER FROM CURRENT_TIMESTAMP) AS Val7,
-	EXTRACT(WEEK FROM CURRENT_TIMESTAMP) AS Val8");
-        }
-
-        [TestMethod]
         public void Test_DatePart()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new
                 {
@@ -426,8 +287,6 @@ FROM tbl_staff",
         [TestMethod]
         public void Test_Cast()
         {
-            if (!_connection.IsTarget(TargetDB.DB2, TargetDB.SqlServer, TargetDB.Postgre)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new
                 {
@@ -463,31 +322,8 @@ FROM tbl_staff",
         }
 
         [TestMethod]
-        public void Test_NVL()
-        {
-            if (!_connection.IsTarget(TargetDB.DB2, TargetDB.Oracle)) return;
-
-            var sql = Db<DB>.Sql(db =>
-               Select(new 
-               {
-                   id = NVL(db.tbl_staff.name, "a")
-               }).
-               From(db.tbl_staff));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	NVL(tbl_staff.name, @p_0) AS id
-FROM tbl_staff",
-"a");
-        }
-
-        [TestMethod]
         public void Test_First_Value()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData
                 {
@@ -515,8 +351,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Last_Value()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData
                 {
@@ -544,8 +378,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Rank()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -565,12 +397,9 @@ FROM tbl_remuneration");
 FROM tbl_remuneration");
         }
 
-
         [TestMethod]
         public void Test_Dense_Rank()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -593,8 +422,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Percent_Rank()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData
                 {
@@ -617,8 +444,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Cume_Dist()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -641,8 +466,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Ntile()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -661,37 +484,10 @@ FROM tbl_remuneration");
 			tbl_remuneration.money ASC) AS Val
 FROM tbl_remuneration", 2);
         }
-
-        [TestMethod]
-        public void TestNth_Value()
-        {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(new SelectData()
-                {
-                    Val = Nth_Value(db.tbl_remuneration.money, 2).
-                            Over(OrderBy(Asc(db.tbl_remuneration.money)),
-                                Rows(1, 5))
-                }).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	NTH_VALUE(tbl_remuneration.money, @p_0)
-	OVER(
-		ORDER BY
-			tbl_remuneration.money ASC
-		ROWS BETWEEN 1 PRECEDING AND 5 FOLLOWING) AS Val
-FROM tbl_remuneration", 2);
-        }
         
         [TestMethod]
         public void Test_Lag_1()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.Oracle)) return;
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -714,7 +510,6 @@ FROM tbl_remuneration", 3);
         [TestMethod]
         public void Test_Lag_2()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.Oracle)) return;
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -737,8 +532,6 @@ FROM tbl_remuneration", 2);
         [TestMethod]
         public void Test_RowNumber()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -761,8 +554,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Rows_1()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -786,8 +577,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Rows_2()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -811,8 +600,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_PartitionBy()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -838,8 +625,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Over_1()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {
@@ -867,8 +652,6 @@ FROM tbl_remuneration");
         [TestMethod]
         public void Test_Over_2()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.DB2, TargetDB.Oracle)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(new SelectData()
                 {

@@ -169,28 +169,7 @@ FROM tbl_data", 10);
 	val1 INT,
 	val2 CHAR(10))");
         }
-
-        [TestMethod]
-        public void Test_CreateTableIfNotExists()
-        {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.MySQL, TargetDB.SQLite)) return;
-            CleanUpCreateDropTestTable();
-
-            var sql = Db<DBForCreateTest>.Sql(db =>
-                 CreateTableIfNotExists(db.table1,
-                     new Column(db.table1.id, DataType.Int()),
-                     new Column(db.table1.val1, DataType.Int()),
-                     new Column(db.table1.val2, DataType.Char(10))
-                 ));
-
-            _connection.Execute(sql);
-            AssertEx.AreEqual(sql, _connection,
-@"CREATE TABLE IF NOT EXISTS table1(
-	id INT,
-	val1 INT,
-	val2 CHAR(10))");
-        }
-
+        
         [TestMethod]
         public void Test_Constraint()
         {
@@ -468,20 +447,8 @@ FROM tbl_data", 10);
         }
 
         [TestMethod]
-        public void Test_DropTableIfExists()
-        {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.MySQL, TargetDB.SQLite)) return;
-
-            var sql = Db<DBForCreateTest>.Sql(db => DropTableIfExists(db.table1));
-            _connection.Execute(sql);
-            AssertEx.AreEqual(sql, _connection,
-@"DROP TABLE IF EXISTS table1");
-        }
-
-        [TestMethod]
         public void Test_CreateAndDropDataBase()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
             CleanUpCreateDropTestDB();
 
             var create = Db<DBForCreateTest>.Sql(db => CreateDataBase("CreateDropTestDB"));

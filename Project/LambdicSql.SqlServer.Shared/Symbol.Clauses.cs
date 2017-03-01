@@ -559,26 +559,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [FuncStyleConverter(Name = "GROUP BY ROLLUP")]
         public static Clause<T> GroupByRollup<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupByRollup)); }
-
-        /// <summary>
-        /// GROUP BY columns WITH ROLLUP clause.
-        /// </summary>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        /// 
-        [MethodFormatConverter(Format = "GROUP BY |[<, >0] WITH ROLLUP")]
-        public static Clause<Non> GroupByWithRollup(params object[] columns) { throw new InvalitContextException(nameof(GroupByRollup)); }
-
-        /// <summary>
-        /// GROUP BY columns WITH ROLLUP clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "GROUP BY |[<, >1] WITH ROLLUP")]
-        public static Clause<T> GroupByWithRollup<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupByRollup)); }
-
+        
         /// <summary>
         /// GROUP BY CUBE clause.
         /// </summary>
@@ -650,62 +631,6 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "ORDER BY |[<, >1]", FormatDirection = FormatDirection.Vertical, VanishIfEmptyParams = true)]
         public static Clause<T> OrderBy<T>(this Clause<T> before, params OrderByElement[] elements) { throw new InvalitContextException(nameof(OrderBy)); }
-
-        /// <summary>
-        /// LIMIT clause.
-        /// </summary>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Limit(object count) { throw new InvalitContextException(nameof(Limit)); }
-
-        /// <summary>
-        /// LIMIT clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Limit<T>(this Clause<T> before, object count) { throw new InvalitContextException(nameof(Limit)); }
-
-        /// <summary>
-        /// LIMIT clause.
-        /// </summary>
-        /// <param name="offset">Start position.</param>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Limit(object offset, object count) { throw new InvalitContextException(nameof(Limit)); }
-
-        /// <summary>
-        /// LIMIT clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="offset">Start position.</param>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Limit<T>(this Clause<T> before, object offset, object count) { throw new InvalitContextException(nameof(Limit)); }
-
-        /// <summary>
-        /// OFFSET clause.
-        /// </summary>
-        /// <param name="offset">Start position.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Offset(object offset) { throw new InvalitContextException(nameof(Offset)); }
-
-        /// <summary>
-        /// OFFSET clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="offset">Start position.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Offset<T>(this Clause<T> before, object offset) { throw new InvalitContextException(nameof(Offset)); }
 
         /// <summary>
         /// OFFSET count ROWS clause.
@@ -999,6 +924,7 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "[0] IS NOT NULL|")]
         public static bool IsNotNull(object target) { throw new InvalitContextException(nameof(IsNull)); }
 
+        //TODO test.
         /// <summary>
         /// WITH clause.
         /// </summary>
@@ -1024,7 +950,7 @@ namespace LambdicSql.SqlServer
         /// <param name="args">Argument of recursive part.</param>
         /// <returns>Class representing argument of recursive part.</returns>
         [RecursiveConverter]
-        public static RecursiveArguments<T> Recursive<T>(T args) { throw new InvalitContextException(nameof(Select)); }
+        public static RecursiveArguments<T> Recursive<T>(T args) { throw new InvalitContextException(nameof(Recursive)); }
 
         /// <summary>
         /// CREATE TABLE clause.
@@ -1032,13 +958,6 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "CREATE TABLE [0](|[#$<,>1])", FormatDirection = FormatDirection.Vertical)]
         public static Clause<Non> CreateTable(object table, params TableDefinitionElement[] designer) { throw new InvalitContextException(nameof(CreateTable)); }
-
-        /// <summary>
-        /// CREATE TABLE clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "CREATE TABLE IF NOT EXISTS [0](|[#$<,>1])", FormatDirection = FormatDirection.Vertical)]
-        public static Clause<Non> CreateTableIfNotExists(object table, params TableDefinitionElement[] designer) { throw new InvalitContextException(nameof(CreateTable)); }
 
         /// <summary>
         /// CONSTRAINT clause.
@@ -1143,7 +1062,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">value</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<ConstraintElement> Default(object value) { throw new InvalitContextException(nameof(NotNull)); }
+        public static Clause<ConstraintElement> Default(object value) { throw new InvalitContextException(nameof(Default)); }
 
         /// <summary>
         /// REFERENCES clause.
@@ -1162,15 +1081,6 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "DROP TABLE")]
         public static Clause<Non> DropTable(params object[] tables) { throw new InvalitContextException(nameof(DropTable)); }
-
-        /// <summary>
-        /// DROP TABLE IF EXISTS clause.
-        /// </summary>
-        /// <param name="tables">Tables.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Name = "DROP TABLE IF EXISTS")]
-        public static Clause<Non> DropTableIfExists(params object[] tables) { throw new InvalitContextException(nameof(DropTableIfExists)); }
-
 
         /// <summary>
         /// DROP DATABASE clause.

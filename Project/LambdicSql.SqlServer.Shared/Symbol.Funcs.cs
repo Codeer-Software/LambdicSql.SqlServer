@@ -100,17 +100,6 @@ namespace LambdicSql.SqlServer
         public static T Abs<T>(T column) { throw new InvalitContextException(nameof(Abs)); }
 
         /// <summary>
-        /// MOD function.
-        /// </summary>
-        /// <typeparam name="T1">Type represented by target</typeparam>
-        /// <typeparam name="T2">Type represented by div</typeparam>
-        /// <param name="target">Numeric expression to divide.</param>
-        /// <param name="div">A numeric expression that divides the dividend.</param>
-        /// <returns>Surplus.</returns>
-        [FuncStyleConverter]
-        public static T1 Mod<T1, T2>(T1 target, T2 div) { throw new InvalitContextException(nameof(Mod)); }
-
-        /// <summary>
         /// ROUND function.
         /// </summary>
         /// <typeparam name="T1">Type represented by target.</typeparam>
@@ -128,14 +117,6 @@ namespace LambdicSql.SqlServer
         /// <returns>concatenated result.</returns>
         [FuncStyleConverter]
         public static string Concat(params string[] targets) { throw new InvalitContextException(nameof(Concat)); }
-
-        /// <summary>
-        /// LENGTH function.
-        /// </summary>
-        /// <param name="target">target.</param>
-        /// <returns>String length.</returns>
-        [FuncStyleConverter]
-        public static int Length(object target) { throw new InvalitContextException(nameof(Length)); }
 
         /// <summary>
         /// LEN function.
@@ -182,22 +163,13 @@ namespace LambdicSql.SqlServer
         public static string Substring(object target, object startIndex, object length) { throw new InvalitContextException(nameof(Substring)); }
 
         /// <summary>
-        /// EXTRACT function.
-        /// </summary>
-        /// <param name="element">Part type.</param>
-        /// <param name="src">The date data.</param>
-        /// <returns>A part from the date data.</returns>
-        [MethodFormatConverter(Format = "EXTRACT(|[0] FROM [1])")]
-        public static double Extract(DateTimeElement element, DateTime src) { throw new InvalitContextException(nameof(Extract)); }
-
-        /// <summary>
         /// DATEPART function.
         /// </summary>
         /// <param name="element">Part type.</param>
         /// <param name="src">The date data.</param>
         /// <returns>A part from the date data.</returns>
         [FuncStyleConverter]
-        public static int DatePart(DateTimeElement element, DateTime src) { throw new InvalitContextException(nameof(Extract)); }
+        public static int DatePart(DateTimeElement element, DateTime src) { throw new InvalitContextException(nameof(DatePart)); }
 
         /// <summary>
         /// CAST function.
@@ -217,16 +189,6 @@ namespace LambdicSql.SqlServer
         /// <returns>The first non-null value in the parameter.</returns>
         [MethodFormatConverter(Format = "COALESCE(|[<, >0])")]
         public static T Coalesce<T>(params T[] parameter) { throw new InvalitContextException(nameof(Coalesce)); }
-
-        /// <summary>
-        /// NVL function.
-        /// </summary>
-        /// <typeparam name="T">Type represented by expression.</typeparam>
-        /// <param name="expression1">expression.</param>
-        /// <param name="expression2">expression.</param>
-        /// <returns>expression1 or expression2.</returns>
-        [FuncStyleConverter]
-        public static T NVL<T>(T expression1, T expression2) { throw new InvalitContextException(nameof(NVL)); }
 
         /// <summary>
         /// FIRST_VALUE function.
@@ -281,15 +243,6 @@ namespace LambdicSql.SqlServer
         /// <returns>For each row, NTILE returns the number of the group to which the row belongs.</returns>
         [FuncStyleConverter]
         public static int Ntile(object groupCount) { throw new InvalitContextException(nameof(Ntile)); }
-
-        /// <summary>
-        /// NTH_VALUE function.
-        /// </summary>
-        /// <param name="column">The column or expression that is function target.</param>
-        /// <param name="offset">Specify the number of lines associated with the first line of the window that returns the expression.</param>
-        /// <returns>Returns the value of the expression in the specified row of the window frame associated with the first line of the window.</returns>
-        [FuncStyleConverter]
-        public static int Nth_Value(object column, object offset) { throw new InvalitContextException(nameof(Nth_Value)); }
 
         /// <summary>
         /// LAG function.

@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Etc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SymbolSub.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DateTimeElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TopElement.cs" />
   </ItemGroup>
 </Project>
