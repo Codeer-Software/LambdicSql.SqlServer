@@ -78,7 +78,7 @@ namespace LambdicSql.SqlServer
         /// CURRENT_TIMESTAMP Keyword.
         /// </summary>
         /// <returns>Date and time of executing SQL.</returns>
-        [CurrentDateTimeConverter(Name = "TIMESTAMP")]
+        [ClauseStyleConverter(Name = "CURRENT_TIMESTAMP")]
         public static DateTime Current_TimeStamp() { throw new InvalitContextException(nameof(Current_TimeStamp)); }
     }
 }
