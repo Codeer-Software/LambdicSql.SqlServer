@@ -10,10 +10,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Cryptographic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Etc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Aggregate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Analytic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Collation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Configuration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DateTimeElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Cursor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.DataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.DateAndTimeDataTypesAnd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.JSON.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Logical.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Mathematical.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Metadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.ODBCScalar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Ranking.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Replication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Rowset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Security.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.String.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.SystemStatistical.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.System.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.TextAndImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Conversion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Trigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TopElement.cs" />
   </ItemGroup>
 </Project>
