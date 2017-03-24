@@ -48,7 +48,5 @@ namespace LambdicSql.SqlServer
         /// <returns>Rounded result.</returns>
         [FuncStyleConverter]
         public static T1 Round<T1, T2>(T1 target, T2 digit) { throw new InvalitContextException(nameof(Round)); }
-
-
     }
 }

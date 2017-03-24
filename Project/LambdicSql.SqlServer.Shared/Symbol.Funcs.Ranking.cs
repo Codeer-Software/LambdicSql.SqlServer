@@ -10,7 +10,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>Ranked value.</returns>
         [FuncStyleConverter]
-        public static int Dense_Rank() { throw new InvalitContextException(nameof(Dense_Rank)); }
+        public static long Dense_Rank() { throw new InvalitContextException(nameof(Dense_Rank)); }
 
         /// <summary>
         /// NTILE function.
@@ -18,21 +18,20 @@ namespace LambdicSql.SqlServer
         /// <param name="groupCount">The number of ranking groups.</param>
         /// <returns>For each row, NTILE returns the number of the group to which the row belongs.</returns>
         [FuncStyleConverter]
-        public static int Ntile(object groupCount) { throw new InvalitContextException(nameof(Ntile)); }
-
+        public static long Ntile(object groupCount) { throw new InvalitContextException(nameof(Ntile)); }
 
         /// <summary>
         /// RANK function.
         /// </summary>
         /// <returns>Ranked value.</returns>
         [FuncStyleConverter]
-        public static int Rank() { throw new InvalitContextException(nameof(Rank)); }
+        public static long Rank() { throw new InvalitContextException(nameof(Rank)); }
 
         /// <summary>
         /// ROW_NUMBER function.
         /// </summary>
         /// <returns>Row number.</returns>
         [FuncStyleConverter]
-        public static int Row_Number() { throw new InvalitContextException(nameof(Row_Number)); }
+        public static long Row_Number() { throw new InvalitContextException(nameof(Row_Number)); }
     }
 }

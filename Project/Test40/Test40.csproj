@@ -72,6 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDataType.cs" />
     <Compile Include="TestSymbolClausesCase.cs" />
+    <Compile Include="TestSymbolClausesCoalesce.cs" />
     <Compile Include="TestSymbolClausesCondition.cs" />
     <Compile Include="TestSymbolClausesDataChange.cs" />
     <Compile Include="TestSymbolClausesFrom.cs" />
@@ -81,7 +82,30 @@
     <Compile Include="TestSymbolClausesWhereGroupByHavingOrderBy.cs" />
     <Compile Include="TestSymbolClausesWithRecursive.cs" />
     <Compile Include="TestSymbolEtc.cs" />
-    <Compile Include="TestSymbolFuncs.cs" />
+    <Compile Include="TestSymbolClausesWindow.cs" />
+    <Compile Include="TestSymbolFuncsAggregate.cs" />
+    <Compile Include="TestSymbolFuncsAnalytic.cs" />
+    <Compile Include="TestSymbolFuncsCollation.cs" />
+    <Compile Include="TestSymbolFuncsConfiguration.cs" />
+    <Compile Include="TestSymbolFuncsConversion.cs" />
+    <Compile Include="TestSymbolFuncsCryptographic.cs" />
+    <Compile Include="TestSymbolFuncsCursor.cs" />
+    <Compile Include="TestSymbolFuncsDataType.cs" />
+    <Compile Include="TestSymbolFuncsDateAndTimeDataTypesAnd.cs" />
+    <Compile Include="TestSymbolFuncsJSON.cs" />
+    <Compile Include="TestSymbolFuncsLogical.cs" />
+    <Compile Include="TestSymbolFuncsMathematical.cs" />
+    <Compile Include="TestSymbolFuncsMetadata.cs" />
+    <Compile Include="TestSymbolFuncsODBCScalar.cs" />
+    <Compile Include="TestSymbolFuncsRanking.cs" />
+    <Compile Include="TestSymbolFuncsReplication.cs" />
+    <Compile Include="TestSymbolFuncsRowset.cs" />
+    <Compile Include="TestSymbolFuncsSecurity.cs" />
+    <Compile Include="TestSymbolFuncsString.cs" />
+    <Compile Include="TestSymbolFuncsSystem.cs" />
+    <Compile Include="TestSymbolFuncsSystemStatistical.cs" />
+    <Compile Include="TestSymbolFuncsTextAndImage.cs" />
+    <Compile Include="TestSymbolFuncsTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LambdicSql.SqlServer\LambdicSql.SqlServer.csproj">

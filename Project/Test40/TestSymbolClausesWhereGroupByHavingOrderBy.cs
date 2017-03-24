@@ -25,17 +25,6 @@ namespace Test
         [TestCleanup]
         public void TestCleanup() => _connection.Dispose();
 
-        public class SelectData1
-        {
-            public string Name { get; set; }
-            public decimal Count { get; set; }
-        }
-
-        public class SelectedData2
-        {
-            public int Id { get; set; }
-        }
-
         [TestMethod]
         public void Test_Where()
         {
@@ -96,7 +85,7 @@ WHERE (tbl_remuneration.id) = (@p_0)",
         public void Test_GroupBy()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -118,7 +107,7 @@ GROUP BY tbl_remuneration.id, tbl_remuneration.staff_id");
         {
             var col = new Sql();
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -140,7 +129,7 @@ GROUP BY tbl_remuneration.staff_id");
         {
             var col = new Sql();
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -163,7 +152,7 @@ GROUP BY tbl_remuneration.staff_id");
             var col1 = new Sql();
             var col2 = new Sql();
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -184,7 +173,7 @@ GROUP BY tbl_remuneration.staff_id");
         public void Test_GroupBy_Start()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -205,7 +194,7 @@ GROUP BY tbl_remuneration.id, tbl_remuneration.staff_id");
         public void Test_GroupByRollup()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -225,7 +214,7 @@ GROUP BY ROLLUP(tbl_remuneration.id, tbl_remuneration.staff_id)");
         public void Test_GroupByRollup_Start()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -245,7 +234,7 @@ GROUP BY ROLLUP(tbl_remuneration.id, tbl_remuneration.staff_id)");
         public void Test_GroupByCube()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -265,7 +254,7 @@ GROUP BY CUBE(tbl_remuneration.id, tbl_remuneration.staff_id)");
         public void Test_GroupByCube_Start()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -285,7 +274,7 @@ GROUP BY CUBE(tbl_remuneration.id, tbl_remuneration.staff_id)");
         public void Test_GroupByGroupingSets()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -305,7 +294,7 @@ GROUP BY GROUPING SETS(tbl_remuneration.id, tbl_remuneration.staff_id)");
         public void Test_GroupByGroupingSets_Start()
         {
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectData1
+               Select(new
                {
                    Count = Count(db.tbl_remuneration.money)
                }).
@@ -325,7 +314,7 @@ GROUP BY GROUPING SETS(tbl_remuneration.id, tbl_remuneration.staff_id)");
         public void Test_Having()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).
@@ -348,7 +337,7 @@ HAVING (@p_0) < (SUM(tbl_remuneration.money))",
         public void Test_Having_Start()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).
@@ -371,7 +360,7 @@ HAVING (@p_0) < (SUM(tbl_remuneration.money))",
         public void Test_OrderBy()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).
@@ -393,7 +382,7 @@ ORDER BY
         public void Test_OrderBy_Start()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).
@@ -416,7 +405,7 @@ ORDER BY
         {
             var desc = new Sql<OrderByElement>();
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).
@@ -438,7 +427,7 @@ ORDER BY
         {
             var asc = new Sql<OrderByElement>();
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).
@@ -461,7 +450,7 @@ ORDER BY
             var asc1 = new Sql<OrderByElement>();
             var asc2 = new Sql<OrderByElement>();
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).
@@ -486,7 +475,7 @@ ORDER BY
             var asc = new Sql<OrderByElement>();
             var desc = new Sql<OrderByElement>();
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectedData2
+               Select(new
                {
                    Id = db.tbl_remuneration.staff_id
                }).
@@ -507,7 +496,7 @@ FROM tbl_remuneration");
             var asc = new Sql<OrderByElement>();
             var desc = new Sql<OrderByElement>();
             var sql = Db<DB>.Sql(db =>
-               Select(new SelectedData2
+               Select(new
                {
                    Id = db.tbl_remuneration.staff_id
                }).
@@ -546,7 +535,7 @@ FROM tbl_remuneration");
             var empty = new Sql<bool>();
 
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectedData2
+                Select(new
                 {
                     Id = db.tbl_remuneration.staff_id
                 }).

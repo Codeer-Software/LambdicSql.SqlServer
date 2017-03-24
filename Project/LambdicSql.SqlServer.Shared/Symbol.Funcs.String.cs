@@ -44,7 +44,6 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static string Concat(params string[] targets) { throw new InvalitContextException(nameof(Concat)); }
 
-
         /// <summary>
         /// LEN function.
         /// </summary>

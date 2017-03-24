@@ -31,7 +31,6 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static T Last_Value<T>(T column) { throw new InvalitContextException(nameof(Last_Value)); }
 
-
         /// <summary>
         /// LAG function.
         /// </summary>
@@ -51,6 +50,7 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static T Lag<T>(T column, object offset) { throw new InvalitContextException(nameof(Lag)); }
 
+        //TODO test.
         /// <summary>
         /// LAG function.
         /// </summary>

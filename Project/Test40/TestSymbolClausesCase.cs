@@ -24,17 +24,12 @@ namespace Test
 
         [TestCleanup]
         public void TestCleanup() => _connection.Dispose();
-
-        public class SelectData
-        {
-            public string Type { get; set; }
-        }
-
+        
         [TestMethod]
         public void Test_Case_When_Then_Else_1()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectData()
+                Select(new
                 {
                     Type = Case().
                                 When(db.tbl_staff.id == 3).Then("x").
@@ -63,7 +58,7 @@ FROM tbl_staff",
         public void Test_Case_When_Then_Else_2()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectData()
+                Select(new
                 {
                     Type = Case(db.tbl_staff.id).
                                 When(3).Then("x").
@@ -92,7 +87,7 @@ FROM tbl_staff",
         public void Test_Case_When_Then_1()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectData()
+                Select(new
                 {
                     Type = Case().
                                 When(db.tbl_staff.id == 3).Then("x").
@@ -118,7 +113,7 @@ FROM tbl_staff",
         public void Test_Case_When_Then_2()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectData()
+                Select(new
                 {
                     Type = Case(db.tbl_staff.id).
                                 When(3).Then("x").
@@ -147,13 +142,13 @@ FROM tbl_staff",
         public void Test_Case_When_Then_Else_1_Separate()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectData()
+                Select(new
                 {
-                    Type = Case<string>() + 
+                    Type = (string)(Case<string>() + 
                                 When(db.tbl_staff.id == 3) + Then("x") +
                                 When(db.tbl_staff.id == 4) + Then("y") +
                                 Else("z") +
-                            End()
+                            End())
                 }).
                 From(db.tbl_staff));
             
@@ -176,15 +171,17 @@ FROM tbl_staff",
         public void Test_Case_When_Then_Else_2_Separate()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(new SelectData()
+                Select(new
                 {
-                    Type = Case<string>(db.tbl_staff.id) + 
+                    Type = (string)(Case<string>(db.tbl_staff.id) + 
                                 When(3) + Then("x") + 
                                 When(4) + Then("y") + 
                                 Else("z") +
-                            End()
+                            End())
                 }).
                 From(db.tbl_staff));
+
+            sql.Gen(_connection);
 
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
