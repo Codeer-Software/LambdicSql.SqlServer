@@ -6,6 +6,15 @@ namespace LambdicSql.SqlServer
 {
     public static partial class Symbol
     {
+        /// <summary>
+        /// DATEPART function.
+        /// </summary>
+        /// <param name="element">Part type.</param>
+        /// <param name="src">The date data.</param>
+        /// <returns>A part from the date data.</returns>
+        [FuncStyleConverter]
+        public static int DatePart(DateTimeElement element, DateTime src) { throw new InvalitContextException(nameof(DatePart)); }
+
         /*
         CURRENT_TIMESTAMP
         DATEADD
@@ -13,7 +22,6 @@ namespace LambdicSql.SqlServer
         DATEDIFF_BIG
         DATEFROMPARTS
         DATENAME
-        DATEPART
         DATETIME2FROMPARTS
         DATETIMEFROMPARTS
         DATETIMEOFFSETFROMPARTS

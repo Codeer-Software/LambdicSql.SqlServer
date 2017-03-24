@@ -7,7 +7,6 @@ namespace LambdicSql.SqlServer
     public static partial class Symbol
     {
         /*
-         
 PUBLISHINGSERVERNAME
 */
     }

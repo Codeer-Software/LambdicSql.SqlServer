@@ -3,6 +3,8 @@ using LambdicSql.ConverterServices.SymbolConverters;
 
 namespace LambdicSql.SqlServer
 {
+    //https://msdn.microsoft.com/en-us/library/ms187752.aspx
+
     /// <summary>
     /// Data type.
     /// It can only be used within methods of the LambdicSql.Db class.
