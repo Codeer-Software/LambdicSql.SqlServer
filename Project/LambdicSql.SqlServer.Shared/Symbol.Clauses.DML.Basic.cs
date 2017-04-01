@@ -953,152 +953,6 @@ namespace LambdicSql.SqlServer
         public static RecursiveArguments<T> Recursive<T>(T args) { throw new InvalitContextException(nameof(Recursive)); }
 
         /// <summary>
-        /// CREATE TABLE clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "CREATE TABLE [0](|[#$<,>1])", FormatDirection = FormatDirection.Vertical)]
-        public static Clause<Non> CreateTable(object table, params TableDefinitionElement[] designer) { throw new InvalitContextException(nameof(CreateTable)); }
-
-        /// <summary>
-        /// CONSTRAINT clause.
-        /// </summary>
-        /// <param name="name">Constraint name.</param>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "CONSTRAINT [!0]")]
-        public static Clause<ConstraintElement> Constraint(string name) { throw new InvalitContextException(nameof(Constraint)); }
-
-        /// <summary>
-        /// PRIMARY KEY clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Name = "PRIMARY KEY")]
-        public static Clause<ConstraintElement> PrimaryKey() { throw new InvalitContextException(nameof(PrimaryKey)); }
-
-        /// <summary>
-        /// PRIMARY KEY clause.
-        /// </summary>
-        /// <param name="columns">Columns.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "PRIMARY KEY")]
-        public static Clause<ConstraintElement> PrimaryKey(params object[] columns) { throw new InvalitContextException(nameof(PrimaryKey)); }
-
-        /// <summary>
-        /// PRIMARY KEY clause.
-        /// </summary>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="columns">Columns.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "PRIMARY KEY", Indent = 1)]
-        public static Clause<ConstraintElement> PrimaryKey(this Clause<ConstraintElement> before, params object[] columns) { throw new InvalitContextException(nameof(PrimaryKey)); }
-
-        /// <summary>
-        /// CHECK clause.
-        /// </summary>
-        /// <param name="condition">Condition.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter]
-        public static Clause<ConstraintElement> Check(bool condition) { throw new InvalitContextException(nameof(Check)); }
-
-        /// <summary>
-        /// CHECK clause.
-        /// </summary>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="condition">Condition.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Indent = 1)]
-        public static Clause<ConstraintElement> Check(this Clause<ConstraintElement> before, bool condition) { throw new InvalitContextException(nameof(Check)); }
-
-        /// <summary>
-        /// UNIQUE clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<ConstraintElement> Unique() { throw new InvalitContextException(nameof(Unique)); }
-
-        /// <summary>
-        /// UNIQUE clause.
-        /// </summary>
-        /// <param name="columns">Columns.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter]
-        public static Clause<ConstraintElement> Unique(params object[] columns) { throw new InvalitContextException(nameof(Unique)); }
-
-        /// <summary>
-        /// UNIQUE clause.
-        /// </summary>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="columns">Columns.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Indent = 1)]
-        public static Clause<ConstraintElement> Unique(this Clause<ConstraintElement> before, params object[] columns) { throw new InvalitContextException(nameof(Unique)); }
-
-        /// <summary>
-        /// FOREIGN KEY clause.
-        /// </summary>
-        /// <param name="columns">Columns.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "FOREIGN KEY")]
-        public static Clause<ConstraintElement> ForeignKey(params object[] columns) { throw new InvalitContextException(nameof(ForeignKey)); }
-
-        /// <summary>
-        /// FOREIGN KEY clause.
-        /// </summary>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="columns">Columns.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "FOREIGN KEY", Indent = 1)]
-        public static Clause<ConstraintElement> ForeignKey(this Clause<ConstraintElement> before, params object[] columns) { throw new InvalitContextException(nameof(ForeignKey)); }
-
-        /// <summary>
-        /// NOT NULL
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Name = "NOT NULL")]
-        public static Clause<ConstraintElement> NotNull() { throw new InvalitContextException(nameof(NotNull)); }
-
-        /// <summary>
-        /// DEFAULT
-        /// </summary>
-        /// <param name="value">value</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<ConstraintElement> Default(object value) { throw new InvalitContextException(nameof(Default)); }
-
-        /// <summary>
-        /// REFERENCES clause.
-        /// </summary>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="table">Table.</param>
-        /// <param name="columns">Columns.</param>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "REFERENCES [1](|[<, >2])", Indent = 1)]
-        public static Clause<ConstraintElement> References(this Clause<ConstraintElement> before, object table, params object[] columns) { throw new InvalitContextException(nameof(References)); }
-
-        /// <summary>
-        /// DROP TABLE clause.
-        /// </summary>
-        /// <param name="tables">Tables.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Name = "DROP TABLE")]
-        public static Clause<Non> DropTable(params object[] tables) { throw new InvalitContextException(nameof(DropTable)); }
-
-        /// <summary>
-        /// DROP DATABASE clause.
-        /// </summary>
-        /// <param name="name">DataBase name.</param>
-        /// <returns>Clause chain. You can write SQL statements in succession, of course you can end it.</returns>
-        [MethodFormatConverter(Format = "CREATE DATABASE [!0]")]
-        public static Clause<Non> CreateDataBase(string name) { throw new InvalitContextException(nameof(CreateDataBase)); }
-
-        /// <summary>
-        /// DROP DATABASE clause.
-        /// </summary>
-        /// <param name="name">DataBase name.</param>
-        /// <returns>Clause chain. You can write SQL statements in succession, of course you can end it.</returns>
-        [MethodFormatConverter(Format = "DROP DATABASE [!0]")]
-        public static Clause<Non> DropDataBase(string name) { throw new InvalitContextException(nameof(DropDataBase)); }
-
-        /// <summary>
         /// ROWS.
         /// </summary>
         /// <param name="preceding">Preceding row count.</param>
@@ -1138,95 +992,6 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "OVER(|[< >0])", FormatDirection = FormatDirection.Vertical)]
         public static OverReturnValue Over(params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
 
-        /*
-         * https://msdn.microsoft.com/en-au/library/ms184391.aspx
-            COLLATE
-         */
-
-        /*
-         * https://msdn.microsoft.com/en-au/library/ff848768.aspx
-        BACKUP
-        BACKUP CERTIFICATE
-        BACKUP MASTER KEY
-        BACKUP SERVICE MASTER KEY
-        RESTORE Statements for Restoring, Recovering, and Managing Backups
-        RESTORE MASTER KEY
-        RESTORE SERVICE MASTER KEY
-         */
-
-        /*
-        https://msdn.microsoft.com/en-us/library/ms174290.aspx
-        BEGIN...END
-        BREAK
-        CONTINUE
-        ELSE (IF...ELSE)
-        END (BEGIN...END)
-        GOTO
-        IF...ELSE
-        RETURN
-        THROW
-        TRY...CATCH
-        WAITFOR
-        WHILE*/
-
-        /*
-        https://msdn.microsoft.com/en-us/library/ms181441.aspx
-        CLOSE
-        DEALLOCATE
-        DECLARE CURSOR
-        FETCH
-        OPEN
-
-        */
-
-        /*
-         https://msdn.microsoft.com/en-us/library/ff848799.aspx
-        ALTER Statements
-        BACKUP DATABASE (Parallel Data Warehouse)
-        CREATE Statements
-        DISABLE TRIGGER
-        DROP Statements
-        ENABLE TRIGGER
-        RENAME
-        RESTORE DATABASE (Parallel Data Warehouse)
-        TRUNCATE TABLE
-        UPDATE STATISTICS*/
-
-        /*
-         * https://msdn.microsoft.com/en-us/library/ff848766.aspx
-        Aliasing (Azure SQL Data Warehouse, Parallel Data Warehouse)
-        BULK INSERT
-        DELETE
-        EXPLAIN
-        FROM
-        Hints
-        INSERT
-        MERGE
-        OPTION Clause
-        OUTPUT Clause
-        READTEXT
-        Search Condition
-        SELECT
-        Subqueries (Azure SQL Data Warehouse, Parallel Data Warehouse)
-        Table Value Constructor
-        TOP
-        UPDATE
-        UPDATETEXT
-        WHERE
-        WITH common_table_expression
-        WRITETEXT
-        */
-
-
-
-        //https://msdn.microsoft.com/en-us/library/ms188332.aspx
-        //Execute
-
-        //https://msdn.microsoft.com/en-us/library/ms190286.aspx
-        /*
-        AT TIME ZONE
-        CASE
-        NULLIF*/
         /// <summary>
         /// COALESCE function.
         /// </summary>
@@ -1237,242 +1002,69 @@ namespace LambdicSql.SqlServer
         public static T Coalesce<T>(params T[] parameter) { throw new InvalitContextException(nameof(Coalesce)); }
 
 
-        /*https://msdn.microsoft.com/en-us/library/ff848807.aspx
-        Language Elements
-        -- (Comment)
-        Slash Star Comment
-        CREATE DIAGNOSTICS SESSION
-        NULL and UNKNOWN
-        Transactions
-        USE
-         */
-
-        //https://msdn.microsoft.com/en-us/library/ff848727.aspx
         /*
-        Management Commands
-        DBCC SHOW_STATISTICS
-        CHECKPOINT
-        DBCC
-        KILL
-        KILL QUERY NOTIFICATION SUBSCRIPTION
-        KILL STATS JOB
-        RECONFIGURE
-        SHUTDOWN*/
-
-        //https://msdn.microsoft.com/en-us/library/ms174986.aspx
-        /*
-        Operators
-        Arithmetic Operators
-        Assignment Operator
-        Bitwise Operators
-        Comparison Operators
-        Compound Operators
-        Logical Operators
-        Scope Resolution Operator
-        Set Operators
-        String Operators
-        Unary Operators
-        Operator Precedence*/
-
-        //https://msdn.microsoft.com/en-us/library/ms189523.aspx
-        /*
-        Predicates
-        CONTAINS
-        FREETEXT
-        IS NULL*/
-
-        //https://msdn.microsoft.com/en-us/library/ms176047.aspx
-        //PRINT
-
-        //https://msdn.microsoft.com/en-us/library/ms178592.aspx
-        //RAISERROR
-
-        //https://msdn.microsoft.com/en-us/library/5a3b7424-408e-4cb0-8957-667ebf4596fc
-        /*Security Statements
-        ADD SIGNATURE
-        CLOSE MASTER KEY
-        CLOSE SYMMETRIC KEY
-        DENY
-        EXECUTE AS
-        EXECUTE AS Clause
-        GRANT
-        OPEN MASTER KEY
-        OPEN SYMMETRIC KEY
-        REVERT
-        REVOKE
-        SETUSER
-        Azure SQL Data Warehouse and Parallel Data Warehouse Security Statements*/
-
-        //https://msdn.microsoft.com/en-us/library/ff848765.aspx
-        /*Service Broker Statements
-        BEGIN CONVERSATION TIMER
-        BEGIN DIALOG CONVERSATION
-        END CONVERSATION
-        GET CONVERSATION GROUP
-        GET_TRANSMISSION_STATUS
-        MOVE CONVERSATION
-        RECEIVE
-        SEND*/
-
-        //https://msdn.microsoft.com/en-us/library/ms190356.aspx
-        /*
-        SET Statements
-        SET ANSI_DEFAULTS
-        SET ANSI_NULL_DFLT_OFF
-        SET ANSI_NULL_DFLT_ON
-        SET ANSI_NULLS
-        SET ANSI_PADDING
-        SET ANSI_WARNINGS
-        SET ARITHABORT
-        SET ARITHIGNORE
-        SET CONCAT_NULL_YIELDS_NULL
-        SET CONTEXT_INFO
-        SET CURSOR_CLOSE_ON_COMMIT
-        SET DATEFIRST
-        SET DATEFORMAT
-        SET DEADLOCK_PRIORITY
-        SET FIPS_FLAGGER
-        SET FMTONLY
-        SET FORCEPLAN
-        SET IDENTITY_INSERT
-        SET IMPLICIT_TRANSACTIONS
-        SET LANGUAGE
-        SET LOCK_TIMEOUT
-        SET NOCOUNT
-        SET NOEXEC
-        SET NUMERIC_ROUNDABORT
-        SET OFFSETS
-        SET PARSEONLY
-        SET QUERY_GOVERNOR_COST_LIMIT
-        SET QUOTED_IDENTIFIER
-        SET REMOTE_PROC_TRANSACTIONS
-        SET ROWCOUNT
-        SET SHOWPLAN_ALL
-        SET SHOWPLAN_TEXT
-        SET SHOWPLAN_XML
-        SET STATISTICS IO
-        SET STATISTICS PROFILE
-        SET STATISTICS TIME
-        SET STATISTICS XML
-        SET TEXTSIZE
-        SET TRANSACTION ISOLATION LEVEL
-        SET XACT_ABORT*/
-
-        //https://msdn.microsoft.com/en-us/library/b2ca6791-3a07-4209-ba8e-2248a92dd738
-        /*
-        SQL Server Utilities Statements
-        (Backslash)
-        GO
+         * https://msdn.microsoft.com/en-us/library/ff848766.aspx
+        Aliasing (Azure SQL Data Warehouse, Parallel Data Warehouse)
+        BULK INSERT
+        EXPLAIN
+        Hints
+        MERGE
+        OPTION Clause
+        OUTPUT Clause
+        READTEXT
+        Search Condition
+        Subqueries (Azure SQL Data Warehouse, Parallel Data Warehouse)
+        Table Value Constructor
+        UPDATETEXT
+        WRITETEXT
         */
 
-
-        //https://msdn.microsoft.com/en-us/library/b2ca6791-3a07-4209-ba8e-2248a92dd738
-        /*SQL Server Utilities Statements
-        (Backslash)
-        GO
-         */
-
-        //https://msdn.microsoft.com/en-us/library/ff848780.aspx
-        /*
-         * System Stored Functions
-        Always On Availability Groups Functions
-        Change Data Capture Functions
-        Change Tracking Functions
-        Data Collector Functions
-        Filestream and FileTable Functions
-        Managed Backup Functions
-        sys.fn_get_sql
-        sys.fn_MSxe_read_event_stream
-        sys.fn_stmt_sql_handle_from_sql_stmt
-        sys.fn_validate_plan_guide
-        sys.fn_xe_file_target_read_file
-        sys.fn_db_backup_file_snapshots
-        Full-Text Search and Semantic Search Functions
-        System Metadata Functions
-        System Security Functions
-        System Trace Functions*/
-
-        //https://msdn.microsoft.com/en-us/library/ms187961.aspx
-        /*
-         System Stored Procedures
-        Temporal Table - sys.sp_cleanup_temporal_history
-        PolyBase stored procedures - sp_polybase_leave_group
-        Active Geo-Replication Stored Procedures
-        Catalog Stored Procedures
-        Change Data Capture Stored Procedures
-        Cursor Stored Procedures
-        Data Collector Stored Procedures
-        Database Engine Stored Procedures
-        Database Mail Stored Procedures
-        Database Maintenance Plan Stored Procedures
-        Distributed Queries Stored Procedures
-        Filestream and FileTable Stored Procedures
-        Firewall Rules Stored Procedures (Azure SQL Database)
-        Full-Text Search and Semantic Search Stored Procedures
-        General Extended Stored Procedures
-        Log Shipping Stored Procedures
-        Managed Backup Stored Procedures
-        Management Data Warehouse Stored Procedures
-        OLE Automation Stored Procedures
-        Policy-Based Management Stored Procedures
-        PolyBase stored procedures
-        Query Store Stored Procedures
-        Security Stored Procedures
-        Snapshot Backup Stored Procedures
-        Spatial Index Stored Procedures
-        SQL Data Warehouse Stored Procedures
-        SQL Server Agent Stored Procedures
-        SQL Server Profiler Stored Procedures
-        Stretch Database Extended Stored Procedures
-        Temporal Table Stored Procedures
-        XML Stored Procedures*/
-
-
-        //https://msdn.microsoft.com/en-us/library/ms179932.aspx
-        /*System Tables
-        Mapping System Tables to System Views
-        System Base Tables
-        Backup and Restore Tables
-        Change Data Capture Tables
-        Database Maintenance Plan Tables
-        Data-tier Application Tables
-        Extended Events Tables
-        Integration Services Tables
-        Log Shipping Tables
-        SQL Server Agent Tables*/
-
-        //https://msdn.microsoft.com/en-us/library/dbba47d7-e08e-4435-b876-35dced1f325d
-        /*
-         * System Views
-        Catalog Views
-        Compatibility Views
-        Data-tier Application Views
-        Dynamic Management Views and Functions
-        Information Schema Views
-        Querying the SQL Server System Catalog FAQ
-        Metadata Access, Isolation Levels, and Lock Hints*/
-
-        //https://msdn.microsoft.com/en-us/library/ms174377.aspx
-        /*Transaction Statements
-        BEGIN DISTRIBUTED TRANSACTION
-        BEGIN TRANSACTION
-        COMMIT TRANSACTION
-        COMMIT WORK
-        ROLLBACK TRANSACTION
-        ROLLBACK WORK
-        SAVE TRANSACTION*/
-
-        //https://msdn.microsoft.com/en-us/library/ff848809.aspx
-        /*Variables
-        SET @local_variable
-        SELECT @local_variable
-        DECLARE @local_variable*/
-
-        //https://msdn.microsoft.com/en-us/library/dbba47d7-e08e-4435-b876-35dced1f325d
-        /*
-         XML Statements
-        WITH XMLNAMESPACES
-        xml_schema_namespace
-        */
+        //https://msdn.microsoft.com/en-us/library/ms188332.aspx
+        //Execute
     }
 }
+
+
+//--------------Confirmation------------------
+//https://msdn.microsoft.com/en-us/library/ms189523.aspx
+/*
+Predicates
+CONTAINS
+FREETEXT
+IS NULL*/
+
+/*https://msdn.microsoft.com/en-us/library/ff848807.aspx
+    Language Elements
+    -- (Comment)
+    Slash Star Comment
+    CREATE DIAGNOSTICS SESSION
+    NULL and UNKNOWN
+    Transactions
+    USE
+     */
+
+//https://msdn.microsoft.com/en-us/library/ms174986.aspx
+/*
+Operators
+Arithmetic Operators
+Assignment Operator
+Bitwise Operators
+Comparison Operators
+Compound Operators
+Logical Operators
+Scope Resolution Operator
+Set Operators
+String Operators
+Unary Operators
+Operator Precedence*/
+
+//https://msdn.microsoft.com/en-us/library/dbba47d7-e08e-4435-b876-35dced1f325d
+/*
+ * System Views
+Catalog Views
+Compatibility Views
+Data-tier Application Views
+Dynamic Management Views and Functions
+Information Schema Views
+Querying the SQL Server System Catalog FAQ
+Metadata Access, Isolation Levels, and Lock Hints*/

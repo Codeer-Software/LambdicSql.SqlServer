@@ -10,9 +10,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clause.ServiceBrokerStatements.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.BackupRestore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.ControlOfFlow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.Cursors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.DCL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.DDL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SetStatements.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SystemStoredFunctions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SystemStoredProcedures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SystemTables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.TransactionStatements.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Cryptographic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Etc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.DML.Basic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clause.Etc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Aggregate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Analytic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Collation.cs" />

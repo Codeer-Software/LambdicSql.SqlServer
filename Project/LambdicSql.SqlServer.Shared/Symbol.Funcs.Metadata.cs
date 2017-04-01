@@ -33,7 +33,7 @@ namespace LambdicSql.SqlServer
         INDEXPROPERTY
         NEXT VALUE FOR
         OBJECT_DEFINITION
-        OBJECT_ID
+        OBJECT_ID Å® special version.
         OBJECT_NAME
         OBJECT_SCHEMA_NAME
         OBJECTPROPERTY

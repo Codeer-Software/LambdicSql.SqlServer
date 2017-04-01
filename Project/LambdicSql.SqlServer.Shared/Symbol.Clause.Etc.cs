@@ -80,5 +80,35 @@ namespace LambdicSql.SqlServer
         /// <returns>Date and time of executing SQL.</returns>
         [ClauseStyleConverter(Name = "CURRENT_TIMESTAMP")]
         public static DateTime Current_TimeStamp() { throw new InvalitContextException(nameof(Current_TimeStamp)); }
+        
+        /*
+         * https://msdn.microsoft.com/en-au/library/ms184391.aspx
+            COLLATE
+         */
+
+        //https://msdn.microsoft.com/en-us/library/b2ca6791-3a07-4209-ba8e-2248a92dd738
+        /*
+        SQL Server Utilities Statements
+        (Backslash)
+        GO
+        */
+
+        //https://msdn.microsoft.com/en-us/library/ff848809.aspx
+        /*Variables
+        SET @local_variable
+        SELECT @local_variable
+        DECLARE @local_variable*/
+
+        //https://msdn.microsoft.com/en-us/library/dbba47d7-e08e-4435-b876-35dced1f325d
+        /*
+         XML Statements
+        WITH XMLNAMESPACES
+        xml_schema_namespace
+        */
+        //https://msdn.microsoft.com/en-us/library/ms176047.aspx
+        //PRINT
+
+        //https://msdn.microsoft.com/en-us/library/ms178592.aspx
+        //RAISERROR
     }
 }
