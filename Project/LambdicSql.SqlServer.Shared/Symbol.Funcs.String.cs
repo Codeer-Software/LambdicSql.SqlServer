@@ -15,6 +15,7 @@ namespace LambdicSql.SqlServer
         DIFFERENCE
         FORMAT
         LEFT
+        LOWER
         LTRIM
         NCHAR
         PATINDEX
@@ -24,6 +25,8 @@ namespace LambdicSql.SqlServer
         RIGHT
         RTRIM
         SOUNDEX
+        SPACE
+        STRING
         STRING_AGG
         STRING_ESCAPE
         STRING_SPLIT
@@ -48,7 +51,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">target.</param>
         /// <returns>String length.</returns>
         [FuncStyleConverter]
-        public static int Len(object target) { throw new InvalitContextException(nameof(Len)); }
+        public static int Len(string target) { throw new InvalitContextException(nameof(Len)); }
 
         /// <summary>
         /// LOWER function.
@@ -56,7 +59,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">target.</param>
         /// <returns>Changed string.</returns>
         [FuncStyleConverter]
-        public static string Lower(object target) { throw new InvalitContextException(nameof(Lower)); }
+        public static string Lower(string target) { throw new InvalitContextException(nameof(Lower)); }
 
         /// <summary>
         /// REPLACE function.
@@ -66,7 +69,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dst">destination.</param>
         /// <returns>Changed string.</returns>
         [FuncStyleConverter]
-        public static string Replace(object target, object src, object dst) { throw new InvalitContextException(nameof(Replace)); }
+        public static string Replace(string target, string src, string dst) { throw new InvalitContextException(nameof(Replace)); }
 
         /// <summary>
         /// SUBSTRING function.
@@ -76,7 +79,7 @@ namespace LambdicSql.SqlServer
         /// <param name="length">Specify the length of the string to be retrieved.</param>
         /// <returns>Part of a text.</returns>
         [FuncStyleConverter]
-        public static string Substring(object target, object startIndex, object length) { throw new InvalitContextException(nameof(Substring)); }
+        public static string Substring(string target, int startIndex, int length) { throw new InvalitContextException(nameof(Substring)); }
 
 
         /// <summary>
@@ -85,7 +88,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">target.</param>
         /// <returns>Changed string.</returns>
         [FuncStyleConverter]
-        public static string Upper(object target) { throw new InvalitContextException(nameof(Upper)); }
+        public static string Upper(string target) { throw new InvalitContextException(nameof(Upper)); }
 
         /// <summary>
         /// SPACE Function
@@ -114,6 +117,6 @@ namespace LambdicSql.SqlServer
         /// <param name="value">ASCII charactor</param>
         /// <returns></returns>
         [FuncStyleConverter]
-        public static string Ascii(Object value) { throw new InvalitContextException(nameof(Ascii)); }
+        public static int Ascii(char value) { throw new InvalitContextException(nameof(Ascii)); }
     }
 }
