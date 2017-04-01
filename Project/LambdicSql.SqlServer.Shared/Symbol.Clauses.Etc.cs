@@ -80,7 +80,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Date and time of executing SQL.</returns>
         [ClauseStyleConverter(Name = "CURRENT_TIMESTAMP")]
         public static DateTime Current_TimeStamp() { throw new InvalitContextException(nameof(Current_TimeStamp)); }
-        
+
         /*
          * https://msdn.microsoft.com/en-au/library/ms184391.aspx
             COLLATE
@@ -109,6 +109,11 @@ namespace LambdicSql.SqlServer
         //PRINT
 
         //https://msdn.microsoft.com/en-us/library/ms178592.aspx
-        //RAISERROR
+        //RAISERROR     
+
+        //https://msdn.microsoft.com/en-us/library/ms190286.aspx
+        /*
+        AT TIME ZONE
+        NULLIF*/
     }
 }

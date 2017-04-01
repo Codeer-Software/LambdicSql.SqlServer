@@ -24,11 +24,6 @@ namespace LambdicSql.SqlServer
         THROW
         TRY...CATCH
         WAITFOR
-        WHILE*/        
-        
-        //https://msdn.microsoft.com/en-us/library/ms190286.aspx
-        /*
-        AT TIME ZONE
-        NULLIF*/
+        WHILE*/   
     }
 }
