@@ -135,5 +135,56 @@ FROM tbl_staff",
 FROM tbl_staff",
 0, 1);
         }
+
+        [TestMethod]
+        public void Test_Space()
+        {
+            var sql = Db<DB>.Sql(db =>
+            Select(new
+            {
+                Val = Space(5)
+            }).From(db.tbl_staff));
+            var data = _connection.Query(sql).ToList();
+            Assert.IsTrue(data.Count > 0);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	SPACE(@p_0) AS Val
+FROM tbl_staff",
+            5);
+        }
+
+        [TestMethod]
+        public void Test_Str()
+        {
+            var sql = Db<DB>.Sql(db =>
+            Select(new
+            {
+                Val = Str(123.45, 6, 1)
+            }).From(db.tbl_staff));
+            var data = _connection.Query(sql).ToList();
+            Assert.IsTrue(data.Count > 0);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	STR(@p_0, @p_1, @p_2) AS Val
+FROM tbl_staff",
+            123.45, 6, 1);
+        }
+
+        [TestMethod]
+        public void Test_Ascii()
+        {
+            var sql = Db<DB>.Sql(db =>
+            Select(new
+            {
+                Val = Ascii('A')
+            }).From(db.tbl_staff));
+            var data = _connection.Query(sql).ToList();
+            Assert.IsTrue(data.Count > 0);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	ASCII(@p_0) AS Val
+FROM tbl_staff",
+            'A');
+        }
     }
 }

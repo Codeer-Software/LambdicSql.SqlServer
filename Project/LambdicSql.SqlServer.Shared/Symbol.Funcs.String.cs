@@ -24,8 +24,6 @@ namespace LambdicSql.SqlServer
         RIGHT
         RTRIM
         SOUNDEX
-        SPACE
-        STR
         STRING_AGG
         STRING_ESCAPE
         STRING_SPLIT
@@ -89,5 +87,33 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static string Upper(object target) { throw new InvalitContextException(nameof(Upper)); }
 
+        /// <summary>
+        /// SPACE Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/space-transact-sql
+        /// </summary>
+        /// <param name="target">number of spaces</param>
+        /// <returns>same as SPACE(n) result</returns>
+        [FuncStyleConverter]
+        public static string Space(int target) { throw new InvalitContextException(nameof(Space)); }
+
+        /// <summary>
+        /// STR Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/str-transact-sql
+        /// </summary>
+        /// <param name="target">number of spaces</param>
+        /// <param name="number">before value at point</param>
+        /// <param name="point">after value at point</param>
+        /// <returns>same as STR(value, int, int) result</returns>
+        [FuncStyleConverter]
+        public static string Str(double target, int number, int point) { throw new InvalitContextException(nameof(Str)); }
+
+        /// <summary>
+        /// ASCII Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/ascii-transact-sql
+        /// </summary>
+        /// <param name="value">ASCII charactor</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Ascii(Object value) { throw new InvalitContextException(nameof(Ascii)); }
     }
 }
