@@ -12,7 +12,7 @@ using static Test.TestSymbol;
 namespace Test
 {
     [TestClass]
-    public class TestSymbolClausesSelect
+    public class TestSymbolClausesDMLBasicSelect
     {
         public TestContext TestContext { get; set; }
         public IDbConnection _connection;

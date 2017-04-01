@@ -11,7 +11,7 @@ using Test.Helper;
 namespace Test
 {
     [TestClass]
-    public class TestSymbolClausesFrom
+    public class TestSymbolClausesDMLBasicFrom
     {
         public TestContext TestContext { get; set; }
         public IDbConnection _connection;

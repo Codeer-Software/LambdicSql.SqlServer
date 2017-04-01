@@ -10,7 +10,7 @@ using Test.Helper;
 namespace Test
 {
     [TestClass]
-    public class TestSymbolClausesWithRecursive
+    public class TestSymbolClausesDMLBasicWithRecursive
     {
         public TestContext TestContext { get; set; }
         public IDbConnection _connection;

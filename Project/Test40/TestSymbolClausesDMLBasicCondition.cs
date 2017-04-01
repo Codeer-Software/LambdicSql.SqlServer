@@ -10,7 +10,7 @@ using Test.Helper;
 namespace Test
 {
     [TestClass]
-    public class TestSymbolClausesCondition
+    public class TestSymbolClausesDMLBasicCondition
     {
         public TestContext TestContext { get; set; }
         public IDbConnection _connection;

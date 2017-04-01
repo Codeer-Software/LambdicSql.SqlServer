@@ -10,7 +10,7 @@ using LambdicSql.SqlServer;
 namespace Test
 {
     [TestClass]
-    public class TestSymbolClausesCoalesce
+    public class TestSymbolClausesDMLBasicCoalesce
     {
         public TestContext TestContext { get; set; }
         public IDbConnection _connection;

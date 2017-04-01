@@ -10,7 +10,7 @@ using LambdicSql.SqlServer;
 namespace Test
 {
     [TestClass]
-    public class TestSymbolClausesWindow
+    public class TestSymbolClausesDMLBasicWindow
     {
         public TestContext TestContext { get; set; }
         public IDbConnection _connection;
