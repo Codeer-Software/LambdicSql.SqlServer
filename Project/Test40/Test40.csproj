@@ -71,6 +71,10 @@
     <Compile Include="Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDataType.cs" />
+    <Compile Include="TestSymbolClausesBackupRestore.cs" />
+    <Compile Include="TestSymbolClausesControlOfFlow.cs" />
+    <Compile Include="TestSymbolClausesCursors.cs" />
+    <Compile Include="TestSymbolClausesDCL.cs" />
     <Compile Include="TestSymbolClausesDDL.cs" />
     <Compile Include="TestSymbolClausesDMLBasicCase.cs" />
     <Compile Include="TestSymbolClausesDMLBasicCoalesce.cs" />
@@ -84,6 +88,12 @@
     <Compile Include="TestSymbolClausesDMLBasicWithRecursive.cs" />
     <Compile Include="TestSymbolClausesEtc.cs" />
     <Compile Include="TestSymbolClausesDMLBasicWindow.cs" />
+    <Compile Include="TestSymbolClausesServiceBrokerStatements.cs" />
+    <Compile Include="TestSymbolClausesSetStatements.cs" />
+    <Compile Include="TestSymbolClausesSystemStoredFunctions.cs" />
+    <Compile Include="TestSymbolClausesSystemStoredProcedures.cs" />
+    <Compile Include="TestSymbolClausesSystemTables.cs" />
+    <Compile Include="TestSymbolClausesTransactionStatements.cs" />
     <Compile Include="TestSymbolFuncsAggregate.cs" />
     <Compile Include="TestSymbolFuncsAnalytic.cs" />
     <Compile Include="TestSymbolFuncsCollation.cs" />
