@@ -11,19 +11,32 @@ namespace LambdicSql.SqlServer
     /// </summary>
     public static partial class Symbol
     {
+        /// <summary>
+        /// IF clause.
+        /// </summary>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> If(bool condition) { throw new InvalitContextException(nameof(If)); }
+
+        /// <summary>
+        /// Else clause.
+        /// </summary>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> Else<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Else)); }
+
         /*
         https://msdn.microsoft.com/en-us/library/ms174290.aspx
         BEGIN...END
         BREAK
         CONTINUE
-        ELSE (IF...ELSE)
         END (BEGIN...END)
         GOTO
-        IF...ELSE
         RETURN
         THROW
         TRY...CATCH
         WAITFOR
-        WHILE*/   
+        WHILE*/
     }
 }

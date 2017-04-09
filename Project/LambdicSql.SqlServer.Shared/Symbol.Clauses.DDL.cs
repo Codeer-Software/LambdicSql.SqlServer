@@ -14,9 +14,22 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// CREATE TABLE clause.
         /// </summary>
+        /// <param name="table">table names.</param>
+        /// <param name="designer">table design info.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "CREATE TABLE [0](|[#$<,>1])", FormatDirection = FormatDirection.Vertical)]
         public static Clause<Non> CreateTable(object table, params TableDefinitionElement[] designer) { throw new InvalitContextException(nameof(CreateTable)); }
+
+        /// <summary>
+        /// CREATE TABLE clause.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">table names.</param>
+        /// <param name="designer">table design info.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "CREATE TABLE [1](|[#$<,>2])", FormatDirection = FormatDirection.Vertical)]
+        public static Clause<T> CreateTable<T>(this Clause<T> before, object table, params TableDefinitionElement[] designer) { throw new InvalitContextException(nameof(CreateTable)); }
 
         /// <summary>
         /// CONSTRAINT clause.

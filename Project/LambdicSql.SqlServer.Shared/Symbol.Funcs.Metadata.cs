@@ -6,6 +6,14 @@ namespace LambdicSql.SqlServer
 {
     public static partial class Symbol
     {
+        /// <summary>
+        /// Find object id.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/object-id-transact-sql
+        /// </summary>
+        /// <param name="obj">db object.</param>
+        /// <returns>object id.</returns>
+        [MethodFormatConverter(Format = "OBJECT_ID('[0]')")]
+        public static int? Object_Id(object obj) { throw new InvalitContextException(nameof(Constraint)); }
         /*
         @@PROCID
         APP_NAME

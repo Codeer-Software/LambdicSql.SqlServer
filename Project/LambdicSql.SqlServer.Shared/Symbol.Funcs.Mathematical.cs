@@ -141,8 +141,6 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static double Power(double float_expression, int y) { throw new InvalitContextException(nameof(Log)); }
 
-
-        /// <
         /// <summary>
         /// RADIANS function.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/radians-transact-sql
