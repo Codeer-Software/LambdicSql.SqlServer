@@ -100,13 +100,232 @@ namespace Test
         [TestMethod]
         public void Test_Col_Name()
         {
-            var sql = Db<DB>.Sql(db => Select(Col_Name((int)Object_Id(db.tbl_staff), 1)));
-            
+            var sql = Db<DB>.Sql(db => Select(Col_Name(Object_Id(db.tbl_staff), 1)));
+
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             Assert.AreEqual(sql.Build(_connection.GetType()).Text,
  @"SELECT
 	COL_NAME(OBJECT_ID(@p_0), @p_1)");
         }
+
+        [TestMethod]
+        public void Test_ColumnProperty()
+        {
+            var sql = Db<DB>.Sql(db => Select(ColumnProperty(Object_Id(db.tbl_staff), db.tbl_staff.id, "PRECISION")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	COLUMNPROPERTY(OBJECT_ID(@p_0), @p_1, @p_2)", "tbl_staff", "id", "PRECISION");
+        }
+
+        [TestMethod]
+        public void Test_DataBase_Principal_Id_1()
+        {
+            var sql = Db<DB>.Sql(db => Select(DataBase_Principal_Id()));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	DATABASE_PRINCIPAL_ID()");
+        }
+
+        [TestMethod]
+        public void Test_DataBase_Principal_Id_2()
+        {
+            var sql = Db<DB>.Sql(db => Select(DataBase_Principal_Id("db_owner")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	DATABASE_PRINCIPAL_ID(@p_0)", "db_owner");
+        }
+
+        [TestMethod]
+        public void Test_DataBasePropertyEx()
+        {
+            var sql = Db<DB>.Sql(db => Select(DataBasePropertyEx("LambdicSqlTest", "IsAutoShrink")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	DATABASEPROPERTYEX(@p_0, @p_1)", "LambdicSqlTest", "IsAutoShrink");
+        }
+
+        [TestMethod]
+        public void Test_Db_Id()
+        {
+            var sql = Db<DB>.Sql(db => Select(Db_Id("LambdicSqlTest")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	DB_ID(@p_0)", "LambdicSqlTest");
+        }
+
+        [TestMethod]
+        public void Test_Db_Name()
+        {
+            var sql = Db<DB>.Sql(db => Select(Db_Name(Db_Id("LambdicSqlTest"))));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	DB_NAME(DB_ID(@p_0))", "LambdicSqlTest");
+        }
+
+        [TestMethod]
+        public void Test_File_Id()
+        {
+            var sql = Db<DB>.Sql(db => Select(File_Id("LambdicSqlTest")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FILE_ID(@p_0)", "LambdicSqlTest");
+        }
+
+        [TestMethod]
+        public void Test_File_Index()
+        {
+            var sql = Db<DB>.Sql(db => Select(File_Idex("LambdicSqlTest")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FILE_IDEX(@p_0)", "LambdicSqlTest");
+        }
+
+        [TestMethod]
+        public void Test_File_Name()
+        {
+            var sql = Db<DB>.Sql(db => Select(File_Name(File_Id("LambdicSqlTest"))));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FILE_NAME(FILE_ID(@p_0))", "LambdicSqlTest");
+        }
+
+        [TestMethod]
+        public void Test_FileGroup_Id()
+        {
+            var sql = Db<DB>.Sql(db => Select(FileGroup_Id("PRIMARY")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FILEGROUP_ID(@p_0)", "PRIMARY");
+        }
+
+        [TestMethod]
+        public void Test_FileGroup_Name()
+        {
+            var sql = Db<DB>.Sql(db => Select(FileGroup_Name(FileGroup_Id("PRIMARY"))));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FILEGROUP_NAME(FILEGROUP_ID(@p_0))", "PRIMARY");
+        }
+
+        [TestMethod]
+        public void Test_FileGroupProperty()
+        {
+            var sql = Db<DB>.Sql(db => Select(FileGroupProperty("PRIMARY", "IsReadOnly")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FILEGROUPPROPERTY(@p_0, @p_1)", "PRIMARY", "IsReadOnly");
+        }
+
+        [TestMethod]
+        public void Test_FileProperty()
+        {
+            var sql = Db<DB>.Sql(db => Select(FileProperty("LambdicSqlTest", "IsReadOnly")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FILEPROPERTY(@p_0, @p_1)", "LambdicSqlTest", "IsReadOnly");
+        }
+
+        [TestMethod]
+        public void Test_FullTextCatalogProperty()
+        {
+            var sql = Db<DB>.Sql(db => Select(FullTextCatalogProperty("LambdicSqlTest", "IsReadOnly")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FULLTEXTCATALOGPROPERTY(@p_0, @p_1)", "LambdicSqlTest", "IsReadOnly");
+        }
+
+        [TestMethod]
+        public void Test_FullTextServiceProperty()
+        {
+            var sql = Db<DB>.Sql(db => Select(FullTextServiceProperty("VerifySignature")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	FULLTEXTSERVICEPROPERTY(@p_0)", "VerifySignature");
+        }
+
+        [TestMethod]
+        public void Test_Index_Col()
+        {
+            var sql = Db<DB>.Sql(db => Select(Index_Col(db.tbl_staff, 1, 1)));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	INDEX_COL(@p_0, @p_1, @p_2)", "tbl_staff", 1, 1);
+        }
+
+        [TestMethod]
+        public void Test_IndexKey_Property()
+        {
+            var sql = Db<DB>.Sql(db => Select(IndexKey_Property(Object_Id(db.tbl_staff), 1, 1, "ColumnId")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	INDEXKEY_PROPERTY(OBJECT_ID(@p_0), @p_1, @p_2, @p_3)", "tbl_staff", 1, 1, "ColumnId");
+        }
+
+        [TestMethod]
+        public void Test_IndexProperty()
+        {
+            var sql = Db<DB>.Sql(db => Select(IndexProperty(Object_Id(db.tbl_staff), "id", "IsClustered")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	INDEXPROPERTY(OBJECT_ID(@p_0), @p_1, @p_2)", "tbl_staff", "id", "IsClustered");
+        }
+        
+
     }
 }
