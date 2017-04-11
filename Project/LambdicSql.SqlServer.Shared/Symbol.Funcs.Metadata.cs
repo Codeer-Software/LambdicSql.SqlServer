@@ -134,6 +134,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FILE_ID.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/file-id-transact-sql
         /// </summary>
         /// <param name="file_name">file_name.</param>
         /// <returns>file id.</returns>
@@ -142,6 +143,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FILE_IDEX.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/file-idex-transact-sql
         /// </summary>
         /// <param name="file_name">file_name.</param>
         /// <returns>file index.</returns>
@@ -150,6 +152,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FILE_NAME.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/file-name-transact-sql
         /// </summary>
         /// <param name="file_id">file_id.</param>
         /// <returns>file name.</returns>
@@ -158,6 +161,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FILEGROUP_ID.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/filegroup-id-transact-sql
         /// </summary>
         /// <param name="filegroup_name">filegroup_name.</param>
         /// <returns>file group id.</returns>
@@ -166,6 +170,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FILEGROUP_NAME.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/filegroup-name-transact-sql
         /// </summary>
         /// <param name="file_id">file_id.</param>
         /// <returns>file group name.</returns>
@@ -174,6 +179,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FILEGROUPPROPERTY.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/filegroupproperty-transact-sql
         /// </summary>
         /// <param name="filegroup_name">filegroup_name.</param>
         /// <param name="property">property.</param>
@@ -183,6 +189,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FILEPROPERTY.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/fileproperty-transact-sql
         /// </summary>
         /// <param name="file_name">file_name.</param>
         /// <param name="property">property.</param>
@@ -192,6 +199,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FULLTEXTCATALOGPROPERTY
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/fulltextcatalogproperty-transact-sql
         /// </summary>
         /// <param name="catalog_name"></param>
         /// <param name="property"></param>
@@ -201,6 +209,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FULLTEXTSERVICEPROPERTY
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/fulltextserviceproperty-transact-sql
         /// </summary>
         /// <param name="property"></param>
         /// <returns></returns>
@@ -209,6 +218,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// INDEX_COL
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/index-col-transact-sql
         /// </summary>
         /// <param name="table_or_view_name"></param>
         /// <param name="index_id"></param>
@@ -219,6 +229,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// INDEXKEY_PROPERTY
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/indexkey-property-transact-sql
         /// </summary>
         /// <param name="object_id"></param>
         /// <param name="index_id"></param>
@@ -230,6 +241,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// INDEXPROPERTY
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/indexproperty-transact-sql
         /// </summary>
         /// <param name="object_id"></param>
         /// <param name="index_or_statistics_name"></param>
@@ -241,6 +253,7 @@ namespace LambdicSql.SqlServer
         //TODO test.
         /// <summary>
         /// NEXT VALUE FOR
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/next-value-for-transact-sql
         /// </summary>
         /// <param name="sequence_name"></param>
         /// <returns></returns>
