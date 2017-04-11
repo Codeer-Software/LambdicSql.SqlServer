@@ -31,8 +31,8 @@
     <DocumentationFile>bin\Release\LambdicSql.SqlServer.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LambdicSql, Version=0.37.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.37.0\lib\net35\LambdicSql.dll</HintPath>
+    <Reference Include="LambdicSql, Version=0.38.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.38.0\lib\net35\LambdicSql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

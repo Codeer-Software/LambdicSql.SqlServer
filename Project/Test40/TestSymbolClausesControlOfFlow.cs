@@ -34,29 +34,6 @@ namespace Test
         }
 
         [TestMethod]
-        public void Test_If_Object_Id()
-        {
-            var sql = Db<DB>.Sql(db => 
-                If(Object_Id(db.tbl_remuneration) == null).
-                CreateTable(
-                 db.tbl_remuneration,
-                 new Column(db.tbl_remuneration.id, DataType.Int(), NotNull(), PrimaryKey()),
-                 new Column(db.tbl_remuneration.staff_id, DataType.Int(), NotNull()),
-                 new Column(db.tbl_remuneration.payment_date, DataType.VarChar(50), NotNull()),
-                 new Column(db.tbl_remuneration.money, DataType.Decimal(), NotNull())
-                 ));
-            
-            _connection.Execute(sql);
-            AssertEx.AreEqual(sql, _connection,
-@"IF (OBJECT_ID('tbl_remuneration')) IS NULL
-CREATE TABLE tbl_remuneration(
-	id INT NOT NULL PRIMARY KEY,
-	staff_id INT NOT NULL,
-	payment_date VARCHAR(50) NOT NULL,
-	money DECIMAL NOT NULL)");
-        }
-
-        [TestMethod]
         public void Test_If_Else()
         {
             var sql = Db<DB>.Sql(db =>
@@ -77,7 +54,7 @@ CREATE TABLE tbl_remuneration(
 
             var datas = _connection.Query(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
- @"IF (OBJECT_ID('tbl_remuneration')) IS NOT NULL
+ @"IF (OBJECT_ID(@p_0)) IS NOT NULL
 SELECT
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
@@ -85,7 +62,7 @@ FROM tbl_remuneration
 ELSE
 SELECT
 	tbl_staff.name AS Name
-FROM tbl_staff");
+FROM tbl_staff", "tbl_remuneration");
         }
     }
 }

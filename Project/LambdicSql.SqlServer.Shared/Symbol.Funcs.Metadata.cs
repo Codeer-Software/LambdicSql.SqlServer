@@ -12,7 +12,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="obj">db object.</param>
         /// <returns>object id.</returns>
-        [MethodFormatConverter(Format = "OBJECT_ID('[0]')")]
+        [MethodFormatConverter(Format = "OBJECT_ID([%0])")]
         public static int? Object_Id(object obj) { throw new InvalitContextException(nameof(Constraint)); }
         //TODO type.
         //Ç‚Ç¡ÇœÇËÅAstringÇ©Ç»Å[

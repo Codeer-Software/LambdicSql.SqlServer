@@ -5,7 +5,6 @@ using LambdicSql;
 using LambdicSql.feat.Dapper;
 using static LambdicSql.SqlServer.Symbol;
 using Test.Helper;
-using LambdicSql.SqlServer;
 
 namespace Test
 {
@@ -24,5 +23,29 @@ namespace Test
 
         [TestCleanup]
         public void TestCleanup() => _connection.Dispose();
+
+        [TestMethod]
+        public void Test_ObjectToParameter_1()
+        {
+            var sql = Db<DB>.Sql(db => Select(Object_Id(db.tbl_staff)));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	OBJECT_ID(@p_0)", "tbl_staff");
+        }
+
+        [TestMethod]
+        public void Test_ObjectToParameter_2()
+        {
+            var sql = Db<DB>.Sql(db => Select(Object_Id("tbl_staff")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	OBJECT_ID(@p_0)", "tbl_staff");
+        }
     }
 }
