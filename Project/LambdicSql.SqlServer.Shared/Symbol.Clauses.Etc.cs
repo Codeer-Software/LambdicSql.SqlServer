@@ -81,6 +81,22 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter(Name = "CURRENT_TIMESTAMP")]
         public static DateTime Current_TimeStamp() { throw new InvalitContextException(nameof(Current_TimeStamp)); }
 
+        //@@@
+        /// <summary>
+        /// ;
+        /// </summary>
+        /// <returns>;</returns>
+        [ClauseStyleConverter(Name = ";")]
+        public static Clause<Non> Semicolon() { throw new InvalitContextException(nameof(Semicolon)); }
+
+        /// <summary>
+        /// ;
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <returns>;</returns>
+        [ClauseStyleConverter(Name = ";")]
+        public static Clause<T> Semicolon<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Semicolon)); }
         /*
          * https://msdn.microsoft.com/en-au/library/ms184391.aspx
             COLLATE
