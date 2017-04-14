@@ -291,150 +291,150 @@ namespace LambdicSql.SqlServer
         public static int? Object_Id(object obj, string object_type) => throw new InvalitContextException(nameof(Object_Id));
 
         /// <summary>
-        /// OBJECT_NAME
+        /// OBJECT_NAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/object-name-transact-sql
         /// </summary>
-        /// <param name="object_id"></param>
-        /// <returns></returns>
+        /// <param name="object_id">object_id.</param>
+        /// <returns>object name.</returns>
         [FuncStyleConverter]
         public static string Object_Name(int? object_id) => throw new InvalitContextException(nameof(Object_Name));
 
         /// <summary>
-        /// OBJECT_NAME
+        /// OBJECT_NAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/object-name-transact-sql
         /// </summary>
-        /// <param name="object_id"></param>
-        /// <param name="database_id"></param>
-        /// <returns></returns>
+        /// <param name="object_id">object_id.</param>
+        /// <param name="database_id">database_id.</param>
+        /// <returns>object name.</returns>
         [FuncStyleConverter]
         public static string Object_Name(int? object_id, int? database_id) => throw new InvalitContextException(nameof(Object_Name));
 
         /// <summary>
-        /// OBJECT_SCHEMA_NAME
+        /// OBJECT_SCHEMA_NAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/object-schema-name-transact-sql
         /// </summary>
-        /// <param name="object_id"></param>
-        /// <returns></returns>
+        /// <param name="object_id">object_id.</param>
+        /// <returns>object schema name.</returns>
         [FuncStyleConverter]
         public static string Object_Schema_Name(int? object_id) => throw new InvalitContextException(nameof(Object_Schema_Name));
-
+        
         /// <summary>
-        /// OBJECTPROPERTY
+        /// OBJECTPROPERTY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/objectproperty-transact-sql
         /// </summary>
-        /// <param name="object_id"></param>
-        /// <param name="property"></param>
-        /// <returns></returns>
+        /// <param name="object_id">object_id.</param>
+        /// <param name="property">property.</param>
+        /// <returns>object property.</returns>
         [FuncStyleConverter]
         public static object ObjectProperty(int? object_id, string property) => throw new InvalitContextException(nameof(ObjectProperty));
-
+        
         /// <summary>
-        /// OBJECTPROPERTYEX
+        /// OBJECTPROPERTYEX.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/objectpropertyex-transact-sql
         /// </summary>
-        /// <param name="object_id"></param>
-        /// <param name="property"></param>
-        /// <returns></returns>
+        /// <param name="object_id">object_id.</param>
+        /// <param name="property">property.</param>
+        /// <returns>object propertyex.</returns>
         [FuncStyleConverter]
         public static object ObjectPropertyEx(int? object_id, string property) => throw new InvalitContextException(nameof(ObjectPropertyEx));
 
         /// <summary>
-        /// ORIGINAL_DB_NAME
+        /// ORIGINAL_DB_NAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/original-db-name-transact-sql
         /// </summary>
-        /// <returns></returns>
+        /// <returns>original db name.</returns>
         [FuncStyleConverter]
         public static string Original_Db_Name() => throw new InvalitContextException(nameof(Original_Db_Name));
 
         /// <summary>
-        /// PARSENAME
+        /// PARSENAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/parsename-transact-sql
         /// </summary>
-        /// <param name="object_name"></param>
-        /// <param name="object_piece"></param>
-        /// <returns></returns>
+        /// <param name="object_name">object_name.</param>
+        /// <param name="object_piece">object_piece.</param>
+        /// <returns>parsed name.</returns>
         [FuncStyleConverter]
         public static string ParseName(string object_name, int object_piece) => throw new InvalitContextException(nameof(ParseName));
 
         /// <summary>
-        /// SCHEMA_ID
+        /// SCHEMA_ID.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/schema-id-transact-sql
         /// </summary>
-        /// <param name="schema"></param>
-        /// <returns></returns>
+        /// <param name="schema">schema.</param>
+        /// <returns>schema id.</returns>
         [MethodFormatConverter(Format = "SCHEMA_ID([%0])")]
         public static int? Schema_Id(object schema) => throw new InvalitContextException(nameof(Schema_Id));
 
         /// <summary>
-        /// SCHEMA_NAME
+        /// SCHEMA_NAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/schema-name-transact-sql
         /// </summary>
-        /// <param name="schema_id"></param>
-        /// <returns></returns>
+        /// <param name="schema_id">schema_id.</param>
+        /// <returns>schema name.</returns>
         [FuncStyleConverter]
         public static string Schema_Name(int? schema_id) => throw new InvalitContextException(nameof(Schema_Name));
 
         /// <summary>
-        /// SCOPE_IDENTITY
+        /// SCOPE_IDENTITY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/scope-identity-transact-sql
         /// </summary>
-        /// <returns></returns>
+        /// <returns>scope identity.</returns>
         [FuncStyleConverter]
         public static decimal? Scope_Identity() => throw new InvalitContextException(nameof(Scope_Identity));
 
         /// <summary>
-        /// SERVERPROPERTY
+        /// SERVERPROPERTY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/serverproperty-transact-sql
         /// </summary>
-        /// <param name="propertyname"></param>
-        /// <returns></returns>
+        /// <param name="propertyname">propertyname.</param>
+        /// <returns>server property.</returns>
         [FuncStyleConverter]
         public static object ServerProperty(string propertyname) => throw new InvalitContextException(nameof(Scope_Identity));
 
         /// <summary>
-        /// STATS_DATE
+        /// STATS_DATE.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/stats-date-transact-sql
         /// </summary>
-        /// <param name="object_id"></param>
-        /// <param name="stats_id"></param>
-        /// <returns></returns>
+        /// <param name="object_id">object_id.</param>
+        /// <param name="stats_id">stats_id.</param>
+        /// <returns>stats date.</returns>
         [FuncStyleConverter]
         public static DateTime Stats_Date(int? object_id, int stats_id) => throw new InvalitContextException(nameof(Stats_Date));
 
         /// <summary>
-        /// TYPE_ID
+        /// TYPE_ID.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/type-id-transact-sql
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">name.</param>
+        /// <returns>type id.</returns>
         [FuncStyleConverter]
         public static int? Type_Id(string name) => throw new InvalitContextException(nameof(Type_Id));
 
         /// <summary>
-        /// TYPE_NAME
+        /// TYPE_NAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/type-name-transact-sql
         /// </summary>
-        /// <param name="type_id"></param>
-        /// <returns></returns>
+        /// <param name="type_id">type_id.</param>
+        /// <returns>type name.</returns>
         [FuncStyleConverter]
         public static string Type_Name(int? type_id) => throw new InvalitContextException(nameof(Type_Name));
 
         /// <summary>
-        /// TYPEPROPERTY
+        /// TYPEPROPERTY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/typeproperty-transact-sql
         /// </summary>
-        /// <param name="type_id"></param>
-        /// <param name="property"></param>
-        /// <returns></returns>
+        /// <param name="type_id">type_id.</param>
+        /// <param name="property">property.</param>
+        /// <returns>type property.</returns>
         [FuncStyleConverter]
         public static int? TypeProperty(int? type_id, string property) => throw new InvalitContextException(nameof(TypeProperty));
 
         //TODO can't use.
         /// <summary>
-        /// VERSION
+        /// VERSION.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/version-transact-sql-metadata-functions
         /// </summary>
-        /// <returns></returns>
+        /// <returns>version.</returns>
         [FuncStyleConverter]
         public static int Version() => throw new InvalitContextException(nameof(Version));
     }
