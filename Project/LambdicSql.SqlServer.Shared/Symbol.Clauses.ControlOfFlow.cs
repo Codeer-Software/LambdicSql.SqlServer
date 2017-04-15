@@ -1,6 +1,5 @@
 ﻿using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
-using LambdicSql.Specialized.SymbolConverters;
 
 namespace LambdicSql.SqlServer
 {
@@ -167,7 +166,9 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// IF clause.
         /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
         /// <param name="condition">condition.</param>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> If<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(If)); }
@@ -183,6 +184,8 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// Else clause.
         /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Else<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Else)); }
@@ -194,94 +197,241 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> Begin() { throw new InvalitContextException(nameof(Begin)); }
-        
+
         /// <summary>
         /// BEGIN.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/begin-end-transact-sql
         /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Begin<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Begin)); }
 
-
+        /// <summary>
+        /// WHILE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql
+        /// </summary>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> While(bool condition) { throw new InvalitContextException(nameof(While)); }
 
         //@@@
+        /// <summary>
+        /// WHILE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> While<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(While)); }
 
-
         //@@@
+        /// <summary>
+        /// BREAK.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/break-transact-sql
+        /// </summary>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> Break() { throw new InvalitContextException(nameof(Break)); }
 
+        /// <summary>
+        /// BREAK.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/break-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Break<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Break)); }
 
-
         //@@@
+        /// <summary>
+        /// CONTINUE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/continue-transact-sql
+        /// </summary>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> Continue() { throw new InvalitContextException(nameof(Continue)); }
 
+        /// <summary>
+        /// CONTINUE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/continue-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Continue<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Continue)); }
 
+        /// <summary>
+        /// :
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/goto-transact-sql
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "[!0]:")]
         public static Clause<Non> Label(string name) { throw new InvalitContextException(nameof(Label)); }
 
+        /// <summary>
+        /// :
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/goto-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <param name="name">name.</param>
+        /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "[!1]:")]
         public static Clause<T> Label<T>(this Clause<T> before, string name) { throw new InvalitContextException(nameof(Label)); }
 
         //@@@
+        /// <summary>
+        /// GOTO.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/goto-transact-sql
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "GOTO [!0]")]
         public static Clause<Non> GoTo(string name) { throw new InvalitContextException(nameof(GoTo)); }
-        
+
+        /// <summary>
+        /// GOTO.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/goto-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <param name="name">name.</param>
+        /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "GOTO [!1]")]
         public static Clause<T> GoTo<T>(this Clause<T> before, string name) { throw new InvalitContextException(nameof(GoTo)); }
 
-
         //@@@
+        /// <summary>
+        /// RETURN.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/return-transact-sql
+        /// </summary>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> Return() { throw new InvalitContextException(nameof(Return)); }
 
+        /// <summary>
+        /// RETURN.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/return-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Return<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Return)); }
 
         //@@@
+        /// <summary>
+        /// TRY.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/try-catch-transact-sql
+        /// </summary>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> Try() { throw new InvalitContextException(nameof(Try)); }
 
+        /// <summary>
+        /// TRY.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/try-catch-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Try<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Try)); }
 
         //@@@
+        /// <summary>
+        /// CATCH.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/try-catch-transact-sql
+        /// </summary>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> Catch() { throw new InvalitContextException(nameof(Catch)); }
 
+        /// <summary>
+        /// CATCH.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/try-catch-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Catch<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Catch)); }
 
         //@@@
+        /// <summary>
+        /// THROW.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/throw-transact-sql
+        /// </summary>
+        /// <param name="number">number.</param>
+        /// <param name="message">message.</param>
+        /// <param name="state">state.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> Throw(int number, string message, byte state) { throw new InvalitContextException(nameof(Throw)); }
 
+        /// <summary>
+        /// THROW.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/throw-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <param name="number">number.</param>
+        /// <param name="message">message.</param>
+        /// <param name="state">state.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Throw<T>(this Clause<T> before, int number, string message, byte state) { throw new InvalitContextException(nameof(Throw)); }
 
-
         //@@@
+        /// <summary>
+        /// WAITFOR DELAY.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/waitfor-transact-sql
+        /// </summary>
+        /// <param name="time">time.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "WAITFOR DELAY")]
         public static Clause<Non> WaitForDelay(string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
 
+        /// <summary>
+        /// WAITFOR DELAY.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/waitfor-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <param name="time">time.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "WAITFOR DELAY")]
         public static Clause<T> WaitForDelay<T>(this Clause<T> before, string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
 
         //@@@
+        /// <summary>
+        /// WAITFOR TIME.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/waitfor-transact-sql
+        /// </summary>
+        /// <param name="time">time.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "WAITFOR TIME")]
         public static Clause<Non> WaitForTime(string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
 
+        /// <summary>
+        /// WAITFOR TIME.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/waitfor-transact-sql
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <param name="time">time.</param>
+        /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "WAITFOR TIME")]
         public static Clause<T> WaitForTime<T>(this Clause<T> before, string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
+
+        //TODO GO
     }
 }
