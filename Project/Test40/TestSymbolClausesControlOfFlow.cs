@@ -116,7 +116,7 @@ END", (double)2000);
                     Return().Semicolon().
                 End());
 
-            _connection.Query(sql).ToList();
+            _connection.Query<object>(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
 @"WHILE
 	((SELECT
@@ -162,20 +162,15 @@ SELECT
 	@p_2", "Jumping To Branch One.", "Jumping To Branch Two.", "Jumping To Branch Three.");
         }
 
-
         [TestMethod]
         public void Test_Try_Catch_throw()
         {
-            //EndClauseとかにするかな・・・、それか変な引数か。
-            //それかBeginに仕掛けをつくるかなー
-            //もしくはBegin-Endってメソッドにするか・・・→いやそれやったらあかんな。だってSelectがカッコで囲まれるし。
-            //しかも、そんなことを頑張るとかばかげている
             var sql = Db<DB>.Sql(db =>
                 Begin().Try().
-                    Throw(1, "a", 1)
-                 + End().Try().
-                 Begin().Catch()
-                 + End().Catch()
+                    Throw(1, "a", 1).
+                 End().Try().
+                 Begin().Catch().
+                 End().Catch()
             );
 
             _connection.Query<object>(sql).ToList();
@@ -207,5 +202,24 @@ CATCH", 1, "a", (byte)1);
 WAITFOR DELAY @p_0
 END", "00:00:01");
         }
+
+        //I have succeeded in testing.
+        //It is difficult to test every time.
+        /*
+        [TestMethod]
+        public void Test_WaitForTime()
+        {
+            var sql = Db<DB>.Sql(db =>
+                Begin().
+                   WaitForTime("11:44").
+                End()
+            );
+
+            _connection.Query<object>(sql).ToList();
+            AssertEx.AreEqual(sql, _connection,
+@"BEGIN
+WAITFOR TIME @p_0
+END", "11:44");
+        }*/
     }
 }
