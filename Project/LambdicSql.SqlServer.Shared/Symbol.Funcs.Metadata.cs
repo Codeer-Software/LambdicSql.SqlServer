@@ -261,7 +261,6 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "NEXT VALUE FOR [!0]")]
         public static int? NextValueFor(object sequence_name) => throw new InvalitContextException(nameof(NextValueFor));
 
-        //-----------------------------------@@@-------------
         /// <summary>
         /// OBJECT_DEFINITION.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/object-definition-transact-sql
@@ -317,7 +316,7 @@ namespace LambdicSql.SqlServer
         /// <returns>object schema name.</returns>
         [FuncStyleConverter]
         public static string Object_Schema_Name(int? object_id) => throw new InvalitContextException(nameof(Object_Schema_Name));
-        
+
         /// <summary>
         /// OBJECTPROPERTY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/objectproperty-transact-sql
@@ -353,8 +352,8 @@ namespace LambdicSql.SqlServer
         /// <param name="object_name">object_name.</param>
         /// <param name="object_piece">object_piece.</param>
         /// <returns>parsed name.</returns>
-        [FuncStyleConverter]
-        public static string ParseName(string object_name, int object_piece) => throw new InvalitContextException(nameof(ParseName));
+        [MethodFormatConverter(Format = "PARSENAME([%0], [1])")]
+        public static string ParseName(object object_name, int object_piece) => throw new InvalitContextException(nameof(ParseName));
 
         /// <summary>
         /// SCHEMA_ID.
@@ -399,8 +398,8 @@ namespace LambdicSql.SqlServer
         /// <param name="stats_id">stats_id.</param>
         /// <returns>stats date.</returns>
         [FuncStyleConverter]
-        public static DateTime Stats_Date(int? object_id, int stats_id) => throw new InvalitContextException(nameof(Stats_Date));
-
+        public static DateTime? Stats_Date(int? object_id, int stats_id) => throw new InvalitContextException(nameof(Stats_Date));
+      
         /// <summary>
         /// TYPE_ID.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/type-id-transact-sql
@@ -410,6 +409,18 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static int? Type_Id(string name) => throw new InvalitContextException(nameof(Type_Id));
 
+        //TODO Ç±ÇÍÇ‡%Ç≈âåàÇ≈Ç´ÇΩÇÁÇ¢Ç¢ÇÊÇ»Å[
+        /*
+        /// <summary>
+        /// TYPE_ID.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/type-id-transact-sql
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <returns>type id.</returns>
+        [FuncStyleConverter]
+        public static int? Type_Id(DataTypeElement name) => throw new InvalitContextException(nameof(Type_Id));
+        */
+
         /// <summary>
         /// TYPE_NAME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/type-name-transact-sql
@@ -418,7 +429,7 @@ namespace LambdicSql.SqlServer
         /// <returns>type name.</returns>
         [FuncStyleConverter]
         public static string Type_Name(int? type_id) => throw new InvalitContextException(nameof(Type_Name));
-
+        
         /// <summary>
         /// TYPEPROPERTY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/typeproperty-transact-sql
