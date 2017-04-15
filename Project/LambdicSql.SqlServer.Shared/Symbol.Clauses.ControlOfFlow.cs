@@ -162,7 +162,6 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter]
         public static Clause<Non> If(bool condition) { throw new InvalitContextException(nameof(If)); }
 
-        //@@@
         /// <summary>
         /// IF clause.
         /// </summary>
@@ -172,8 +171,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> If<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(If)); }
-
-        //@@@
+        
         /// <summary>
         /// Else clause.
         /// </summary>
@@ -216,8 +214,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> While(bool condition) { throw new InvalitContextException(nameof(While)); }
-
-        //@@@
+        
         /// <summary>
         /// WHILE.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql
@@ -228,8 +225,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> While<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(While)); }
-
-        //@@@
+        
         /// <summary>
         /// BREAK.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/break-transact-sql
@@ -247,8 +243,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Break<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Break)); }
-
-        //@@@
+        
         /// <summary>
         /// CONTINUE.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/continue-transact-sql
@@ -286,8 +281,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "[!1]:")]
         public static Clause<T> Label<T>(this Clause<T> before, string name) { throw new InvalitContextException(nameof(Label)); }
-
-        //@@@
+        
         /// <summary>
         /// GOTO.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/goto-transact-sql
@@ -307,8 +301,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "GOTO [!1]")]
         public static Clause<T> GoTo<T>(this Clause<T> before, string name) { throw new InvalitContextException(nameof(GoTo)); }
-
-        //@@@
+        
         /// <summary>
         /// RETURN.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/return-transact-sql
@@ -326,8 +319,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Return<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Return)); }
-
-        //@@@
+        
         /// <summary>
         /// TRY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/try-catch-transact-sql
@@ -345,8 +337,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Try<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Try)); }
-
-        //@@@
+        
         /// <summary>
         /// CATCH.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/try-catch-transact-sql
@@ -364,8 +355,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Catch<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Catch)); }
-
-        //@@@
+        
         /// <summary>
         /// THROW.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/throw-transact-sql
@@ -389,8 +379,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Throw<T>(this Clause<T> before, int number, string message, byte state) { throw new InvalitContextException(nameof(Throw)); }
-
-        //@@@
+        
         /// <summary>
         /// WAITFOR DELAY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/waitfor-transact-sql
@@ -410,8 +399,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "WAITFOR DELAY")]
         public static Clause<T> WaitForDelay<T>(this Clause<T> before, string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
-
-        //@@@
+        
         /// <summary>
         /// WAITFOR TIME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/waitfor-transact-sql
@@ -431,7 +419,5 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "WAITFOR TIME")]
         public static Clause<T> WaitForTime<T>(this Clause<T> before, string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
-
-        //TODO GO
     }
 }
