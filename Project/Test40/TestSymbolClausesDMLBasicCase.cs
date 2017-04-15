@@ -39,6 +39,8 @@ namespace Test
                 }).
                 From(db.tbl_staff));
 
+            sql.Gen(_connection);
+
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
@@ -120,6 +122,7 @@ FROM tbl_staff",
                                 When(4).Then("y").
                             End()
                 }).
+
                 From(db.tbl_staff));
 
             sql.Gen(_connection);

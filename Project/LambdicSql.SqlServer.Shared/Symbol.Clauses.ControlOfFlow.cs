@@ -42,7 +42,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Case<T>(object target) { throw new InvalitContextException(nameof(Case)); }
-
+        
         /// <summary>
         /// WHEN clause.
         /// </summary>
@@ -69,6 +69,8 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Indent = 1)]
         public static Clause<T> When<T>(this Clause<T> before, object expression) { throw new InvalitContextException(nameof(When)); }
+        
+        public interface IThenValue<T> { }
 
         /// <summary>
         /// THEN clause.
@@ -78,7 +80,7 @@ namespace LambdicSql.SqlServer
         /// <param name="result">It is an item to return to when the THEN clause is valid.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Then<T>(this Clause<Non> before, T result) { throw new InvalitContextException(nameof(Then)); }
+        public static Clause<IThenValue<T>> Then<T>(this Clause<Non> before, T result) { throw new InvalitContextException(nameof(Then)); }
 
         /// <summary>
         /// THEN clause.
@@ -87,7 +89,7 @@ namespace LambdicSql.SqlServer
         /// <param name="result">It is an item to return to when the THEN clause is valid.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Then<T>(T result) { throw new InvalitContextException(nameof(Then)); }
+        public static Clause<IThenValue<T>> Then<T>(T result) { throw new InvalitContextException(nameof(Then)); }
 
         /// <summary>
         /// THEN clause.
@@ -97,7 +99,17 @@ namespace LambdicSql.SqlServer
         /// <param name="result">It is an item to return to when the THEN clause is valid.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Then<T>(this Clause<T> before, T result) { throw new InvalitContextException(nameof(Then)); }
+        public static Clause<IThenValue<T>> Then<T>(this Clause<T> before, T result) { throw new InvalitContextException(nameof(Then)); }
+
+        /// <summary>
+        /// THEN clause.
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <param name="result">It is an item to return to when the THEN clause is valid.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter(Indent = 1)]
+        public static Clause<IThenValue<T>> Then<T>(this Clause<IThenValue<T>> before, T result) { throw new InvalitContextException(nameof(Then)); }
 
         /// <summary>
         /// ELSE clause.
@@ -107,7 +119,7 @@ namespace LambdicSql.SqlServer
         /// <param name="result">It is an item to return to when the ELSE clause is valid.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Else<T>(this Clause<T> before, T result) { throw new InvalitContextException(nameof(Then)); }
+        public static Clause<IThenValue<T>> Else<T>(this Clause<IThenValue<T>> before, T result) { throw new InvalitContextException(nameof(Then)); }
 
         /// <summary>
         /// ELSE clause.
@@ -118,9 +130,6 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter(Indent = 1)]
         public static Clause<T> Else<T>(T result) { throw new InvalitContextException(nameof(Then)); }
 
-        //TOOD あーーーー　これはきつい！ そもそも、Endに関してはイマイチ感があるのでCase式の方を工夫するかなー
-        //いやいやいや、Case式の利便性を下げるとかありえない。
-        //Begin-Endは普通は使わないから、そっちを無理やりにすべき
         /// <summary>
         /// END clause.
         /// </summary>
@@ -128,7 +137,16 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is an before expression in the CASE clause.</param>
         /// <returns>It is the result of CASE expression.</returns>
         [ClauseStyleConverter]
-        public static T End<T>(this Clause<T> before) { throw new InvalitContextException(nameof(End)); }
+        public static T End<T>(this Clause<IThenValue<T>> before) { throw new InvalitContextException(nameof(End)); }
+
+        /// <summary>
+        /// END clause.
+        /// </summary>
+        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
+        /// <param name="before">It is an before expression in the CASE clause.</param>
+        /// <returns>It is the result of CASE expression.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> End<T>(this Clause<T> before) { throw new InvalitContextException(nameof(End)); }
 
         /// <summary>
         /// END clause.
@@ -259,10 +277,11 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter(Name = "WAITFOR DELAY")]
         public static Clause<T> WaitForDelay<T>(this Clause<T> before, string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
 
-        /*
-        https://msdn.microsoft.com/en-us/library/ms174290.aspx
- 
-        WAITFOR
-        */
+        //@@@
+        [ClauseStyleConverter(Name = "WAITFOR TIME")]
+        public static Clause<Non> WaitForTime(string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
+
+        [ClauseStyleConverter(Name = "WAITFOR TIME")]
+        public static Clause<T> WaitForTime<T>(this Clause<T> before, string time) { throw new InvalitContextException(nameof(WaitForDelay)); }
     }
 }
