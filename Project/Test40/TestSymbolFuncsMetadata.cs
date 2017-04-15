@@ -450,8 +450,7 @@ namespace Test
         [TestMethod]
         public void Test_Schema_Id()
         {
-            //TODO あー、ばぐってる・・・ スキーマを拾うことができない・・・
-            var sql = Db<DBSchema>.Sql(db => Select(Schema_Id("dbo")));
+            var sql = Db<DBSchema>.Sql(db => Select(Schema_Id(db.dbo)));
 
             sql.Gen(_connection);
 
