@@ -140,7 +140,7 @@ namespace LambdicSql.SqlServer
         /// <param name="file_name">file_name.</param>
         /// <returns>file id.</returns>
         [FuncStyleConverter]
-        public static ushort? File_Id(string file_name) => throw new InvalitContextException(nameof(File_Id));
+        public static short? File_Id(string file_name) => throw new InvalitContextException(nameof(File_Id));
 
         /// <summary>
         /// FILE_IDEX.
@@ -158,7 +158,7 @@ namespace LambdicSql.SqlServer
         /// <param name="file_id">file_id.</param>
         /// <returns>file name.</returns>
         [FuncStyleConverter]
-        public static string File_Name(ushort? file_id) => throw new InvalitContextException(nameof(File_Name));
+        public static string File_Name(short? file_id) => throw new InvalitContextException(nameof(File_Name));
 
         /// <summary>
         /// FILEGROUP_ID.

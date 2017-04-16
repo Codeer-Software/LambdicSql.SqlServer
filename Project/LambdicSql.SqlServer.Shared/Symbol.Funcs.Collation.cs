@@ -1,4 +1,5 @@
 using LambdicSql.ConverterServices;
+using LambdicSql.ConverterServices.SymbolConverters;
 
 namespace LambdicSql.SqlServer
 {
@@ -12,6 +13,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collation_name">collation_name.</param>
         /// <param name="property">property.</param>
         /// <returns>Collation property.</returns>
+        [FuncStyleConverter]
         public static object CollationProperty(string collation_name , string property ) => throw new InvalitContextException(nameof(CollationProperty));
 
         /// <summary>
@@ -20,6 +22,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="non_Unicode_character_string_expression">non_Unicode_character_string_expression.</param>
         /// <returns>Tertiary weights.</returns>
-        public static object Tertiary_Weights(string non_Unicode_character_string_expression) => throw new InvalitContextException(nameof(Tertiary_Weights));
+        [FuncStyleConverter]
+        public static string Tertiary_Weights(string non_Unicode_character_string_expression) => throw new InvalitContextException(nameof(Tertiary_Weights));
     }
 }
