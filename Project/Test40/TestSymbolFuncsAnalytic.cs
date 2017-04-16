@@ -142,7 +142,7 @@ FROM tbl_remuneration", 3);
 	OVER(
 		ORDER BY
 			tbl_remuneration.money ASC) AS Val
-FROM tbl_remuneration", 2);
+FROM tbl_remuneration", (long)2);
         }
 
         [TestMethod]

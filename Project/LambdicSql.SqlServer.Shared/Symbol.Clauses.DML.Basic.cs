@@ -878,6 +878,23 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "COALESCE(|[<, >0])")]
         public static T Coalesce<T>(params T[] parameter) { throw new InvalitContextException(nameof(Coalesce)); }
 
+        /// <summary>
+        ///  WITHIN GROUP
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITHIN GROUP(|[< >1])", FormatDirection = FormatDirection.Vertical)]
+        public static T WithinGroup<T>(this T before, params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
+
+        /// <summary>
+        ///  WITHIN GROUP
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITHIN GROUP(|[< >0])", FormatDirection = FormatDirection.Vertical)]
+        public static OverReturnValue WithinGroup(params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
 
         /*
          * https://msdn.microsoft.com/en-us/library/ff848766.aspx

@@ -61,7 +61,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Indicates whether a specified column expression in a GROUP BY list is aggregated or not.</returns>
         [FuncStyleConverter]
-        public static int Grouping(object expression) { throw new InvalitContextException(nameof(Grouping)); }
+        public static short Grouping(object expression) { throw new InvalitContextException(nameof(Grouping)); }
 
         /// <summary>
         /// GROUPING_ID function.
@@ -79,7 +79,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical standard deviation of all values in the specified expression.</returns>
         [FuncStyleConverter]
-        public static int Stdev(object expression) { throw new InvalitContextException(nameof(Stdev)); }
+        public static double Stdev(object expression) { throw new InvalitContextException(nameof(Stdev)); }
 
         /// <summary>
         /// STDEV function.
@@ -89,7 +89,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical standard deviation of all values in the specified expression.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static int Stdev(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Stdev)); }
+        public static double Stdev(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Stdev)); }
 
         /// <summary>
         /// STDEVP function.
@@ -98,7 +98,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical standard deviation for the population for all values in the specified expression.</returns>
         [FuncStyleConverter]
-        public static int StdevP(object expression) { throw new InvalitContextException(nameof(StdevP)); }
+        public static double StdevP(object expression) { throw new InvalitContextException(nameof(StdevP)); }
 
         /// <summary>
         /// STDEVP function.
@@ -108,7 +108,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical standard deviation for the population for all values in the specified expression.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static int StdevP(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(StdevP)); }
+        public static double StdevP(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(StdevP)); }
 
         /// <summary>
         /// VAR function.
@@ -117,7 +117,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical variance of all values in the specified expression. May be followed by the OVER clause.</returns>
         [FuncStyleConverter]
-        public static int Var(object expression) { throw new InvalitContextException(nameof(Var)); }
+        public static double Var(object expression) { throw new InvalitContextException(nameof(Var)); }
 
         /// <summary>
         /// VAR function.
@@ -127,7 +127,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical variance of all values in the specified expression. May be followed by the OVER clause.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static int Var(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Var)); }
+        public static double Var(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Var)); }
 
         /// <summary>
         /// VARP function.
@@ -136,7 +136,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical variance for the population for all values in the specified expression.</returns>
         [FuncStyleConverter]
-        public static int VarP(object expression) { throw new InvalitContextException(nameof(VarP)); }
+        public static double VarP(object expression) { throw new InvalitContextException(nameof(VarP)); }
 
         /// <summary>
         /// VARP function.
@@ -146,7 +146,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical variance for the population for all values in the specified expression.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static int VarP(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(VarP)); }
+        public static double VarP(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(VarP)); }
 
         //-----------
 
