@@ -68,7 +68,11 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Indent = 1)]
         public static Clause<T> When<T>(this Clause<T> before, object expression) { throw new InvalitContextException(nameof(When)); }
-        
+
+        /// <summary>
+        /// THEN clause's value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public interface IThenValue<T> { }
 
         /// <summary>
