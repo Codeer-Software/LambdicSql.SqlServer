@@ -36,7 +36,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Logical.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Mathematical.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Metadata.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.ODBCScalar.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Ranking.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Replication.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Rowset.cs" />

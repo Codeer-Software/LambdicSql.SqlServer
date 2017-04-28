@@ -24,5 +24,20 @@ namespace Test
 
         [TestCleanup]
         public void TestCleanup() => _connection.Dispose();
+
+        //@@@あー戻り値配列にたえれないー
+        [TestMethod]
+        public void Test_AtAtDbts()
+        {
+            var sql = Db<DB>.Sql(db =>
+                Select(AtAtDbts()));
+
+            var datas = _connection.Query<byte[]>(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	@@DBTS");
+        }
     }
 }

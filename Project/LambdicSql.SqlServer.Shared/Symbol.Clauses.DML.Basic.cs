@@ -268,129 +268,6 @@ namespace LambdicSql.SqlServer
         public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
-        /// CASE clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Case() { throw new InvalitContextException(nameof(Case)); }
-
-        /// <summary>
-        /// CASE clause.
-        /// </summary>
-        /// <param name="target">It's target of CASE branch.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Case(object target) { throw new InvalitContextException(nameof(Case)); }
-
-        /// <summary>
-        /// CASE clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Case<T>() { throw new InvalitContextException(nameof(Case)); }
-
-        /// <summary>
-        /// CASE clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="target">It's target of CASE branch.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Case<T>(object target) { throw new InvalitContextException(nameof(Case)); }
-
-        /// <summary>
-        /// WHEN clause.
-        /// </summary>
-        /// <param name="before">It is an before expression in the CASE clause.</param>
-        /// <param name="expression">It is a conditional expression of the WHEN clause.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<Non> When(this Clause<Non> before, object expression) { throw new InvalitContextException(nameof(When)); }
-
-        /// <summary>
-        /// WHEN clause.
-        /// </summary>
-        /// <param name="expression">It is a conditional expression of the WHEN clause.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<Non> When(object expression) { throw new InvalitContextException(nameof(When)); }
-
-        /// <summary>
-        /// WHEN clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="before">It is an before expression in the CASE clause.</param>
-        /// <param name="expression">It is a conditional expression of the WHEN clause.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> When<T>(this Clause<T> before, object expression) { throw new InvalitContextException(nameof(When)); }
-
-        /// <summary>
-        /// THEN clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="before">It is an before expression in the CASE clause.</param>
-        /// <param name="result">It is an item to return to when the THEN clause is valid.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Then<T>(this Clause<Non> before, T result) { throw new InvalitContextException(nameof(Then)); }
-
-        /// <summary>
-        /// THEN clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="result">It is an item to return to when the THEN clause is valid.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Then<T>(T result) { throw new InvalitContextException(nameof(Then)); }
-
-        /// <summary>
-        /// THEN clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="before">It is an before expression in the CASE clause.</param>
-        /// <param name="result">It is an item to return to when the THEN clause is valid.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Then<T>(this Clause<T> before, T result) { throw new InvalitContextException(nameof(Then)); }
-
-        /// <summary>
-        /// ELSE clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="before">It is an before expression in the CASE clause.</param>
-        /// <param name="result">It is an item to return to when the ELSE clause is valid.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Else<T>(this Clause<T> before, T result) { throw new InvalitContextException(nameof(Then)); }
-
-        /// <summary>
-        /// ELSE clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="result">It is an item to return to when the ELSE clause is valid.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Indent = 1)]
-        public static Clause<T> Else<T>(T result) { throw new InvalitContextException(nameof(Then)); }
-
-        /// <summary>
-        /// END clause.
-        /// </summary>
-        /// <typeparam name="T">Type represented by CASE expression.</typeparam>
-        /// <param name="before">It is an before expression in the CASE clause.</param>
-        /// <returns>It is the result of CASE expression.</returns>
-        [ClauseStyleConverter]
-        public static T End<T>(this Clause<T> before) { throw new InvalitContextException(nameof(End)); }
-
-        /// <summary>
-        /// END clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> End() { throw new InvalitContextException(nameof(End)); }
-
-        /// <summary>
         /// FROM clause.
         /// </summary>
         /// <param name="expressions">Table or subquery.</param>
@@ -1001,6 +878,23 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "COALESCE(|[<, >0])")]
         public static T Coalesce<T>(params T[] parameter) { throw new InvalitContextException(nameof(Coalesce)); }
 
+        /// <summary>
+        ///  WITHIN GROUP
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITHIN GROUP(|[< >1])", FormatDirection = FormatDirection.Vertical)]
+        public static T WithinGroup<T>(this T before, params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
+
+        /// <summary>
+        ///  WITHIN GROUP
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITHIN GROUP(|[< >0])", FormatDirection = FormatDirection.Vertical)]
+        public static OverReturnValue WithinGroup(params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
 
         /*
          * https://msdn.microsoft.com/en-us/library/ff848766.aspx

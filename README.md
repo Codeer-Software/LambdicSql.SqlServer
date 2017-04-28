@@ -31,7 +31,7 @@ DapperAdapter.Assembly = typeof(Dapper.SqlMapper).Assembly;
 
 //.net standard
 DapperAdapter.Assembly = typeof(Dapper.SqlMapper).GetTypeInfo().Assembly;
-
+```
 ## Quick Start.
 Standard code.
 ```csharp
