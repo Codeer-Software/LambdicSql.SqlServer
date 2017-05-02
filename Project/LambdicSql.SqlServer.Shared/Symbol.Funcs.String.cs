@@ -39,6 +39,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// CONCAT function.
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/concat-transact-sql
         /// </summary>
         /// <param name="targets">A string value to concatenate to the other values.</param>
         /// <returns>concatenated result.</returns>
@@ -46,7 +47,17 @@ namespace LambdicSql.SqlServer
         public static string Concat(params string[] targets) { throw new InvalitContextException(nameof(Concat)); }
 
         /// <summary>
+        /// CONCAT_WS function.
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/concat-ws-transact-sql
+        /// </summary>
+        /// <param name="targets">A string value to concatenate to the other values.</param>
+        /// <returns>concatenat-ws-ed result.</returns>
+        [FuncStyleConverter]
+        public static string Concat_WS(params string[] targets) { throw new InvalitContextException(nameof(Concat_WS)); }
+
+        /// <summary>
         /// LEN function.
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/len-transact-sql
         /// </summary>
         /// <param name="target">target.</param>
         /// <returns>String length.</returns>
@@ -55,6 +66,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// LOWER function.
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/lower-transact-sql
         /// </summary>
         /// <param name="target">target.</param>
         /// <returns>Changed string.</returns>
@@ -63,6 +75,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// REPLACE function.
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/replace-transact-sql
         /// </summary>
         /// <param name="target">target.</param>
         /// <param name="src">source.</param>
@@ -73,6 +86,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// SUBSTRING function.
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/substring-transact-sql
         /// </summary>
         /// <param name="target">target.</param>
         /// <param name="startIndex">Specify the starting position of the character string to be acquired.</param>
@@ -84,6 +98,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// UPPER function.
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/upper-transact-sql
         /// </summary>
         /// <param name="target">target.</param>
         /// <returns>Changed string.</returns>

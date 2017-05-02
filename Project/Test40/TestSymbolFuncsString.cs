@@ -43,6 +43,23 @@ namespace Test
 FROM tbl_staff", "a", "b");
         }
 
+        [TestMethod]
+        public void Test_Concat_WS()
+        {
+            var sql = Db<DB>.Sql(db =>
+               Select(new
+               {
+                   Val = Concat_WS(db.tbl_staff.name, "a", "b")
+               }).
+               From(db.tbl_staff));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	CONCAT_WS(tbl_staff.name, @p_0, @p_1) AS Val
+FROM tbl_staff", "a", "b");
+        }
 
         [TestMethod]
         public void Test_Len()
