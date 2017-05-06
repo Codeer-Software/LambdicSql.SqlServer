@@ -46,6 +46,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Returns the count (signed integer) of the specified datepart boundaries crossed between the specified startdate and enddate. </returns>
         [FuncStyleConverter]
         public static int DateDiff(DateDiffElement datepart, DateTime startdate, DateTime enddate) { throw new InvalitContextException(nameof(DateDiff)); }
+
         /// <summary>
         /// DATEDIFF function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql</para>
@@ -56,6 +57,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Returns the count (signed integer) of the specified datepart boundaries crossed between the specified startdate and enddate. </returns>
         [FuncStyleConverter]
         public static int DateDiff(DateDiffElement datepart, DateTime startdate, DateTimeOffset enddate) { throw new InvalitContextException(nameof(DateDiff)); }
+        
         /// <summary>
         /// DATEDIFF function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql</para>
@@ -66,6 +68,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Returns the count (signed integer) of the specified datepart boundaries crossed between the specified startdate and enddate. </returns>
         [FuncStyleConverter]
         public static int DateDiff(DateDiffElement datepart, DateTimeOffset startdate, DateTime enddate) { throw new InvalitContextException(nameof(DateDiff)); }
+        
         /// <summary>
         /// DATEDIFF function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql</para>
@@ -87,6 +90,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Returns count (signed bigint) of the specified datepart boundaries crossed between the specified startdate and enddate.</returns>
         [FuncStyleConverter]
         public static long DateDiff_Big(DateDiffElement datepart, DateTime startdate, DateTime enddate) { throw new InvalitContextException(nameof(DateDiff)); }
+        
         /// <summary>
         /// DATEDIFF_BIG function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-big-transact-sql</para>
@@ -97,6 +101,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Returns count (signed bigint) of the specified datepart boundaries crossed between the specified startdate and enddate.</returns>
         [FuncStyleConverter]
         public static long DateDiff_Big(DateDiffElement datepart, DateTime startdate, DateTimeOffset enddate) { throw new InvalitContextException(nameof(DateDiff)); }
+        
         /// <summary>
         /// DATEDIFF_BIG function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-big-transact-sql</para>
@@ -107,6 +112,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Returns count (signed bigint) of the specified datepart boundaries crossed between the specified startdate and enddate.</returns>
         [FuncStyleConverter]
         public static long DateDiff_Big(DateDiffElement datepart, DateTimeOffset startdate, DateTime enddate) { throw new InvalitContextException(nameof(DateDiff)); }
+        
         /// <summary>
         /// DATEDIFF_BIG function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-big-transact-sql</para>
@@ -157,6 +163,7 @@ namespace LambdicSql.SqlServer
         /// <returns>A part from the date data.</returns>
         [FuncStyleConverter]
         public static int DatePart(DatePartElement element, DateTime src) { throw new InvalitContextException(nameof(DatePart)); }
+
         /// <summary>
         /// DATEPART function.
         /// </summary>
@@ -223,6 +230,7 @@ namespace LambdicSql.SqlServer
         /// <returns>an integer representing the day (day of the month) of the specified date.</returns>
         [FuncStyleConverter]
         public static int Day(DateTime src) { throw new InvalitContextException(nameof(Day)); }
+
         /// <summary>
         /// DAY function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/day-transact-sql</para>
@@ -240,6 +248,7 @@ namespace LambdicSql.SqlServer
         /// <returns>the last day of the month that contains the specified date, with an optional offset.</returns>
         [FuncStyleConverter]
         public static DateTime EOMonth(DateTime start_date) { throw new InvalitContextException(nameof(EOMonth)); }
+
         /// <summary>
         /// EOMONTH function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/eomonth-transact-sql</para>
@@ -249,6 +258,7 @@ namespace LambdicSql.SqlServer
         /// <returns>the last day of the month that contains the specified date, with an optional offset.</returns>
         [FuncStyleConverter]
         public static DateTime EOMonth(DateTime start_date, int month_to_add) { throw new InvalitContextException(nameof(EOMonth)); }
+
         /// <summary>
         /// EOMONTH function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/eomonth-transact-sql</para>
@@ -257,6 +267,7 @@ namespace LambdicSql.SqlServer
         /// <returns>the last day of the month that contains the specified date, with an optional offset.</returns>
         [FuncStyleConverter]
         public static DateTime EOMonth(DateTimeOffset start_date) { throw new InvalitContextException(nameof(EOMonth)); }
+
         /// <summary>
         /// EOMONTH function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/eomonth-transact-sql</para>
@@ -274,6 +285,7 @@ namespace LambdicSql.SqlServer
         /// <returns>the current database system timestamp as a datetime value without the database time zone offset. This value is derived from the operating system of the computer on which the instance of SQL Server is running.</returns>
         [FuncStyleConverter]
         public static DateTime GetDate() { throw new InvalitContextException(nameof(GetDate)); }
+        
         /// <summary>
         /// GETUTCDATE function.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/getutcdate-transact-sql
@@ -299,6 +311,7 @@ namespace LambdicSql.SqlServer
         /// <returns>an integer representing the month of the specified date.</returns>
         [FuncStyleConverter]
         public static int Month(DateTime src) { throw new InvalitContextException(nameof(Month)); }
+        
         /// <summary>
         /// MONTH function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/month-transact-sql</para>
@@ -386,6 +399,7 @@ namespace LambdicSql.SqlServer
         /// <returns>an integer representing the year of the specified date.</returns>
         [FuncStyleConverter]
         public static int Year(DateTime src) { throw new InvalitContextException(nameof(Year)); }
+        
         /// <summary>
         /// YEAR function.
         /// <para>https://docs.microsoft.com/en-us/sql/t-sql/functions/year-transact-sql</para>
