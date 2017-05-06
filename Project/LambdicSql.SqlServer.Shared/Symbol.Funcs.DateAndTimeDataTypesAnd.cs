@@ -156,7 +156,7 @@ namespace LambdicSql.SqlServer
         /// <param name="src">The date data.</param>
         /// <returns>A part from the date data.</returns>
         [FuncStyleConverter]
-        public static int DatePart(DateTimeElement element, DateTime src) { throw new InvalitContextException(nameof(DatePart)); }
+        public static int DatePart(DatePartElement element, DateTime src) { throw new InvalitContextException(nameof(DatePart)); }
         /// <summary>
         /// DATEPART function.
         /// </summary>
@@ -164,7 +164,7 @@ namespace LambdicSql.SqlServer
         /// <param name="src">The date data.</param>
         /// <returns>A part from the date data.</returns>
         [FuncStyleConverter]
-        public static int DatePart(DateTimeElement element, DateTimeOffset src) { throw new InvalitContextException(nameof(DatePart)); }
+        public static int DatePart(DatePartElement element, DateTimeOffset src) { throw new InvalitContextException(nameof(DatePart)); }
 
         /// <summary>
         /// DATETIME2FROMPARTS functions.

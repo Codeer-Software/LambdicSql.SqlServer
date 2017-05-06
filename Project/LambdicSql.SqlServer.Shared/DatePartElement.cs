@@ -3,10 +3,10 @@
 namespace LambdicSql.SqlServer
 {
     /// <summary>
-    /// Element of DateTime.
+    /// Element of DATEPART arguments.
     /// </summary>
     [EnumToStringConverter]
-    public enum DateTimeElement
+    public enum DatePartElement
     {
         /// <summary>
         /// Year.

@@ -31,7 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Analytic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Collation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Configuration.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DateTimeElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DatePartElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Cursor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.DataType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.DateAndTimeDataTypesAnd.cs" />

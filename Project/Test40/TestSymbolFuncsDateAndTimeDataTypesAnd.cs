@@ -224,20 +224,20 @@ namespace Test
             var sql = Db<DB>.Sql(db =>
                 Select(new
                 {
-                    Val1 = DatePart(DateTimeElement.Year, Current_TimeStamp()),
-                    Val2 = DatePart(DateTimeElement.Quarter, Current_TimeStamp()),
-                    Val3 = DatePart(DateTimeElement.Month, Current_TimeStamp()),
-                    Val4 = DatePart(DateTimeElement.Dayofyear, Current_TimeStamp()),
-                    Val5 = DatePart(DateTimeElement.Day, Current_TimeStamp()),
-                    Val6 = DatePart(DateTimeElement.Week, Current_TimeStamp()),
-                    Val7 = DatePart(DateTimeElement.Weekday, Current_TimeStamp()),
-                    Val8 = DatePart(DateTimeElement.Hour, Current_TimeStamp()),
-                    Val9 = DatePart(DateTimeElement.Minute, Current_TimeStamp()),
-                    Val10 = DatePart(DateTimeElement.Second, Current_TimeStamp()),
-                    Val11 = DatePart(DateTimeElement.Millisecond, SysDateTimeOffset()),
-                    Val12 = DatePart(DateTimeElement.Microsecond, SysDateTimeOffset()),
-                    Val13 = DatePart(DateTimeElement.Nanosecond, SysDateTimeOffset()),
-                    Val14 = DatePart(DateTimeElement.ISO_WEEK, Current_TimeStamp())
+                    Val1 = DatePart(DatePartElement.Year, Current_TimeStamp()),
+                    Val2 = DatePart(DatePartElement.Quarter, Current_TimeStamp()),
+                    Val3 = DatePart(DatePartElement.Month, Current_TimeStamp()),
+                    Val4 = DatePart(DatePartElement.Dayofyear, Current_TimeStamp()),
+                    Val5 = DatePart(DatePartElement.Day, Current_TimeStamp()),
+                    Val6 = DatePart(DatePartElement.Week, Current_TimeStamp()),
+                    Val7 = DatePart(DatePartElement.Weekday, Current_TimeStamp()),
+                    Val8 = DatePart(DatePartElement.Hour, Current_TimeStamp()),
+                    Val9 = DatePart(DatePartElement.Minute, Current_TimeStamp()),
+                    Val10 = DatePart(DatePartElement.Second, Current_TimeStamp()),
+                    Val11 = DatePart(DatePartElement.Millisecond, SysDateTimeOffset()),
+                    Val12 = DatePart(DatePartElement.Microsecond, SysDateTimeOffset()),
+                    Val13 = DatePart(DatePartElement.Nanosecond, SysDateTimeOffset()),
+                    Val14 = DatePart(DatePartElement.ISO_WEEK, Current_TimeStamp())
                 }));
 
             var datas = _connection.Query(sql).ToList();
