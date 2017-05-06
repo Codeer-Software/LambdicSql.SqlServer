@@ -10,6 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DateDiffElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DateAddElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DateNameElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.ServiceBrokerStatements.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.BackupRestore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.ControlOfFlow.cs" />

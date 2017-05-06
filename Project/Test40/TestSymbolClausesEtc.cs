@@ -126,21 +126,5 @@ FROM tbl_remuneration");
 @"SELECT DISTINCT *
 FROM tbl_remuneration");
         }
-        
-        [TestMethod]
-        public void Test_CurrentTimeStamp_1()
-        {
-            var sql = Db<DB>.Sql(db =>
-            Select(new
-            {
-                Val = Current_TimeStamp()
-            }));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT
-	CURRENT_TIMESTAMP AS Val");
-        }
     }
 }
