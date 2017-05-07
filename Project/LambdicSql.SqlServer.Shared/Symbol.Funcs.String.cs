@@ -11,7 +11,7 @@ namespace LambdicSql.SqlServer
         CHAR
         CHARINDEX
         CONCAT
-        CONCAT_WS
+        CONCAT_WS // later than SQL Server 2017
         DIFFERENCE
         FORMAT
         LEFT
@@ -27,12 +27,12 @@ namespace LambdicSql.SqlServer
         SOUNDEX
         SPACE
         STRING
-        STRING_AGG
-        STRING_ESCAPE
-        STRING_SPLIT
+        STRING_AGG // later than SQL Server 2017
+        STRING_ESCAPE // later than SQL Server 2016
+        STRING_SPLIT // later than SQL Server 2016
         STUFF
         TRANSLATE
-        TRIM
+        TRIM   // later than SQL Server 2017
         UNICODE
         UPPER
         */
@@ -48,6 +48,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// CONCAT_WS function.
+        /// support start with SQL Server 2017
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/concat-ws-transact-sql
         /// </summary>
         /// <param name="targets">A string value to concatenate to the other values.</param>
@@ -133,5 +134,232 @@ namespace LambdicSql.SqlServer
         /// <returns></returns>
         [FuncStyleConverter]
         public static int Ascii(char value) { throw new InvalitContextException(nameof(Ascii)); }
+
+        /// <summary>
+        /// CHAR Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/char-transact-sql
+        /// </summary>
+        /// <param name="value">CHAR charactor</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static char Char(int value) { throw new InvalitContextException(nameof(Char)); }
+
+        /// <summary>
+        /// CHARINDEX Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/charindex-transact-sql
+        /// </summary>
+        /// <param name="searchTarget">Search string</param>
+        /// <param name="searchString">Search Source String</param>
+        /// <param name="startLocation">search index position(required)</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static int CharIndex(string searchTarget, string searchString, int startLocation = 0) { throw new InvalitContextException(nameof(CharIndex)); }
+
+        /// <summary>
+        /// DIFFERENCE Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/difference-transact-sql
+        /// </summary>
+        /// <param name="target1">difference string</param>
+        /// <param name="target2">difference string</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static int Difference(string target1, string target2) { throw new InvalitContextException(nameof(Difference)); }
+
+        /// <summary>
+        /// FORMAT Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/difference-transact-sql
+        /// </summary>
+        /// <param name="formatStrings">1st is target value, 2nd is format string</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Format(int value, params string[] formatStrings) { throw new InvalitContextException(nameof(Symbol.Format)); }
+
+        /// <summary>
+        /// LEFT Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/left-transact-sql
+        /// </summary>
+        /// <param name="searchTarget">Search string</param>
+        /// <param name="startLocation">start index</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Left(string searchTarget, int startLocation) { throw new InvalitContextException(nameof(Left)); }
+
+        /// <summary>
+        /// LTRIM Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/ltrim-transact-sql
+        /// </summary>
+        /// <param name="searchTarget">Trim position</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Ltrim(string searchTarget) { throw new InvalitContextException(nameof(Ltrim)); }
+
+        /// <summary>
+        /// NCHAR Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/nchar-transact-sql
+        /// </summary>
+        /// <param name="codepoint">unicode codepoint</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static char NChar(int codepoint) { throw new InvalitContextException(nameof(NChar)); }
+
+        /// <summary>
+        /// PATINDEX Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/patindex-transact-sql
+        /// </summary>
+        /// <param name="searchString">search pattern</param>
+        /// <param name="targetString">search target</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static int PatIndex(string searchString, string targetString) { throw new InvalitContextException(nameof(PatIndex)); }
+
+        /// <summary>
+        /// QUOTENAME Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/quotename-transact-sql
+        /// </summary>
+        /// <param name="value">Quotering string</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string QuoteName(string value) { throw new InvalitContextException(nameof(QuoteName)); }
+
+        /// <summary>
+        /// REPLICATE Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/replicate-transact-sql
+        /// </summary>
+        /// <param name="value">repeate value</param>
+        /// <param name="replicateCounter">repete count</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Replicate(string value, int replicateCounter) { throw new InvalitContextException(nameof(Replicate)); }
+
+        /// <summary>
+        /// REPLICATE Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/reverse-transact-sql
+        /// </summary>
+        /// <param name="value">reverse string</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Reverse(string value) { throw new InvalitContextException(nameof(Reverse)); }
+
+        /// <summary>
+        /// RIGHT Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/right-transact-sql
+        /// </summary>
+        /// <param name="searchTarget">Search string</param>
+        /// <param name="startLocation">start index</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Right(string searchTarget, int startLocation) { throw new InvalitContextException(nameof(Right)); }
+
+        /// <summary>
+        /// RTRIM Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/rtrim-transact-sql
+        /// </summary>
+        /// <param name="searchTarget">Trim position</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Rtrim(string searchTarget) { throw new InvalitContextException(nameof(Rtrim)); }
+
+        /// <summary>
+        /// SOUNDEX Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/soundex-transact-sql
+        /// </summary>
+        /// <param name="value">sound text</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string SoundEx(string value) { throw new InvalitContextException(nameof(SoundEx)); }
+
+        /// <summary>
+        /// STRING_AGG Function
+        /// Supports with start SQL Server 2017
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/string-agg-transact-sql
+        /// </summary>
+        /// <param name="value">Aggrigate string</param>
+        /// <param name="separator">separator charactor</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string String_Agg(string value, string separator) { throw new InvalitContextException(nameof(String_Agg)); }
+
+        /// <summary>
+        /// STRING_AGG Function
+        /// Supports with start SQL Server 2017
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/string-agg-transact-sql
+        /// </summary>
+        /// <param name="value">Aggrigate string</param>
+        /// <param name="separator">separator charactor</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string String_Agg(string value, char separator) { throw new InvalitContextException(nameof(String_Agg)); }
+
+        /// <summary>
+        /// STRING_ESCAPE Function
+        /// Supports with start SQL Server 2016
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/string-escape-transact-sql
+        /// </summary>
+        /// <param name="value">escape string</param>
+        /// <param name="escapeType"> supports only 'JSON'</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string String_Escape(string value, string escapeType) { throw new InvalitContextException(nameof(String_Escape)); }
+
+        /// <summary>
+        /// STRING_SPLIT Function
+        /// Supports with start SQL Server 2016
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/string-agg-transact-sql
+        /// </summary>
+        /// <param name="value">Aggrigate string</param>
+        /// <param name="separator">separator charactor</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string String_Split(string value, string separator) { throw new InvalitContextException(nameof(String_Split)); }
+
+        /// <summary>
+        /// STRING_SPLIT Function
+        /// Supports with start SQL Server 2016
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/string-agg-transact-sql
+        /// </summary>
+        /// <param name="value">Aggrigate string</param>
+        /// <param name="separator">separator charactor</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string String_Split(string value, char separator) { throw new InvalitContextException(nameof(String_Split)); }
+
+        /// <summary>
+        /// STUFF Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/stuff-transact-sql
+        /// </summary>
+        /// <param name="value">sound text</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Stuff(string value, int start, int length, string replaceString) { throw new InvalitContextException(nameof(Stuff)); }
+
+        /// <summary>
+        /// TRANSLATE Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/translate-transact-sql
+        /// </summary>
+        /// <param name="value">translate text</param>
+        /// <param name="targetString">replace target</param>
+        /// <param name="replaceString">replace string</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Translate(string value, string targetString, string replaceString) { throw new InvalitContextException(nameof(Translate)); }
+
+        /// <summary>
+        /// TRIM Function
+        /// TRIM supports start with SQL Server 2017
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/trim-transact-sql
+        /// </summary>
+        /// <param name="trimString">Trim String</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static string Trim(string trimString) { throw new InvalitContextException(nameof(Rtrim)); }
+
+        /// <summary>
+        /// UNICODE Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/unicode-transact-sql
+        /// </summary>
+        /// <param name="value">Unicode String</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static int Unicode(string UnicodeString) { throw new InvalitContextException(nameof(Unicode)); }
     }
 }
