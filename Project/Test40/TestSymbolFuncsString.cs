@@ -637,7 +637,11 @@ FROM tbl_staff",
             Assert.IsTrue(data.Count > 0);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
-	UNICODE(@p_0) AS Val", "𠮟");
+	UNICODE(@p_0) AS Val",
+            new DbParams
+            {
+                { "@p_0", new DbParam { Value = "𠮟", DbType = DbType.String } }
+            });
         }
     }
 }
