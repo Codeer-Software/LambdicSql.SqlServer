@@ -253,6 +253,24 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        public void Test_CharIndex_2()
+        {
+            var sql = Db<DB>.Sql(db =>
+            Select(new
+            {
+                Val = CharIndex(db.tbl_staff.name, "c")
+            }).From(db.tbl_staff));
+            var data = _connection.Query(sql).ToList();
+            Assert.IsTrue(data.Count > 0);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	CHARINDEX(tbl_staff.name, @p_0) AS Val
+FROM tbl_staff",
+            "c");
+        }
+
+        [TestMethod]
+        [TestCategory("String")]
         public void Test_Difference()
         {
             var sql = Db<DB>.Sql(db =>
@@ -565,7 +583,7 @@ FROM tbl_staff",
             var sql = Db<DB>.Sql(db =>
             Select(new
             {
-                Val = Stuff(db.tbl_staff.name, 1, 2, "ddddd")
+                Val = Stuff(db.tbl_staff.name, 1L, 2L, "ddddd")
             }).From(db.tbl_staff));
             var data = _connection.Query(sql).ToList();
             Assert.IsTrue(data.Count > 0);
@@ -573,7 +591,7 @@ FROM tbl_staff",
 @"SELECT
 	STUFF(tbl_staff.name, @p_0, @p_1, @p_2) AS Val
 FROM tbl_staff",
-            1, 2, "ddddd");
+            1L, 2L, "ddddd");
         }
 
         //TRANSLATE is support with SQL Server 2017
@@ -613,7 +631,7 @@ FROM tbl_staff",
             var sql = Db<DB>.Sql(db =>
             Select(new
             {
-                Val = Unicode("𠮟")
+                Val = Unicode(new DbParam<string>{ Value = "𠮟", DbType = DbType.String })
             }));
             var data = _connection.Query(sql).ToList();
             Assert.IsTrue(data.Count > 0);

@@ -110,21 +110,21 @@ namespace LambdicSql.SqlServer
         /// SPACE Function
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/space-transact-sql
         /// </summary>
-        /// <param name="target">number of spaces</param>
+        /// <param name="expression">number of spaces</param>
         /// <returns>same as SPACE(n) result</returns>
         [FuncStyleConverter]
-        public static string Space(int target) { throw new InvalitContextException(nameof(Space)); }
+        public static string Space(int expression) { throw new InvalitContextException(nameof(Space)); }
 
         /// <summary>
         /// STR Function
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/str-transact-sql
         /// </summary>
-        /// <param name="target">number of spaces</param>
-        /// <param name="number">before value at point</param>
-        /// <param name="point">after value at point</param>
+        /// <param name="expression">float expression</param>
+        /// <param name="length">total length</param>
+        /// <param name="decimalFormat">Decimal format</param>
         /// <returns>same as STR(value, int, int) result</returns>
         [FuncStyleConverter]
-        public static string Str(double target, int number, int point) { throw new InvalitContextException(nameof(Str)); }
+        public static string Str(double expression, int length, int decimalFormat) { throw new InvalitContextException(nameof(Str)); }
 
         /// <summary>
         /// ASCII Function
@@ -147,13 +147,24 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// CHARINDEX Function
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/charindex-transact-sql
+        /// Lambda expression does not support default value.
         /// </summary>
         /// <param name="searchTarget">Search string</param>
         /// <param name="searchString">Search Source String</param>
-        /// <param name="startLocation">search index position(required)</param>
+        /// <param name="startLocation">search index position</param>
         /// <returns></returns>
         [FuncStyleConverter]
-        public static int CharIndex(string searchTarget, string searchString, int startLocation = 0) { throw new InvalitContextException(nameof(CharIndex)); }
+        public static int CharIndex(string searchTarget, string searchString, int startLocation) { throw new InvalitContextException(nameof(CharIndex)); }
+
+        /// <summary>
+        /// CHARINDEX Function
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/charindex-transact-sql
+        /// </summary>
+        /// <param name="searchTarget">Search string</param>
+        /// <param name="searchString">Search Source String</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static int CharIndex(string searchTarget, string searchString) { throw new InvalitContextException(nameof(CharIndex)); }
 
         /// <summary>
         /// DIFFERENCE Function
@@ -167,12 +178,12 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FORMAT Function
-        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/difference-transact-sql
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/format-transact-sql
         /// </summary>
         /// <param name="formatStrings">1st is target value, 2nd is format string</param>
         /// <returns></returns>
         [FuncStyleConverter]
-        public static string Format(int value, params string[] formatStrings) { throw new InvalitContextException(nameof(Symbol.Format)); }
+        public static string Format(object value, params string[] formatStrings) { throw new InvalitContextException(nameof(Symbol.Format)); }
 
         /// <summary>
         /// LEFT Function
@@ -304,7 +315,7 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// STRING_SPLIT Function
         /// Supports with start SQL Server 2016
-        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/string-agg-transact-sql
+        /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/string-split-transact-sql
         /// </summary>
         /// <param name="value">Aggrigate string</param>
         /// <param name="separator">separator charactor</param>
@@ -330,7 +341,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">sound text</param>
         /// <returns></returns>
         [FuncStyleConverter]
-        public static string Stuff(string value, int start, int length, string replaceString) { throw new InvalitContextException(nameof(Stuff)); }
+        public static string Stuff(string value, long start, long length, string replaceString) { throw new InvalitContextException(nameof(Stuff)); }
 
         /// <summary>
         /// TRANSLATE Function
@@ -361,5 +372,6 @@ namespace LambdicSql.SqlServer
         /// <returns></returns>
         [FuncStyleConverter]
         public static int Unicode(string UnicodeString) { throw new InvalitContextException(nameof(Unicode)); }
+
     }
 }
