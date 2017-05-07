@@ -1,42 +1,10 @@
 using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
-using System;
 
 namespace LambdicSql.SqlServer
 {
     public static partial class Symbol
     {
-        /*
-        ASCII
-        CHAR
-        CHARINDEX
-        CONCAT
-        CONCAT_WS // later than SQL Server 2017
-        DIFFERENCE
-        FORMAT
-        LEFT
-        LOWER
-        LTRIM
-        NCHAR
-        PATINDEX
-        QUOTENAME
-        REPLICATE
-        REVERSE
-        RIGHT
-        RTRIM
-        SOUNDEX
-        SPACE
-        STRING
-        STRING_AGG // later than SQL Server 2017
-        STRING_ESCAPE // later than SQL Server 2016
-        STRING_SPLIT // later than SQL Server 2016
-        STUFF
-        TRANSLATE
-        TRIM   // later than SQL Server 2017
-        UNICODE
-        UPPER
-        */
-
         /// <summary>
         /// CONCAT function.
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/concat-transact-sql
@@ -180,6 +148,7 @@ namespace LambdicSql.SqlServer
         /// FORMAT Function
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/format-transact-sql
         /// </summary>
+        /// <param name="value">1st is target value, 2nd is format string</param>
         /// <param name="formatStrings">1st is target value, 2nd is format string</param>
         /// <returns></returns>
         [FuncStyleConverter]
@@ -372,6 +341,5 @@ namespace LambdicSql.SqlServer
         /// <returns></returns>
         [FuncStyleConverter]
         public static int Unicode(string UnicodeString) { throw new InvalitContextException(nameof(Unicode)); }
-
     }
 }
