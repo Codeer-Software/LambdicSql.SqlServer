@@ -31,6 +31,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Like()
         {
             var sql = Db<DB>.Sql(db =>
@@ -52,6 +53,7 @@ WHERE tbl_staff.name LIKE @p_0",
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_Between()
         {
             var sql = Db<DB>.Sql(db =>
@@ -73,6 +75,7 @@ WHERE tbl_staff.id BETWEEN @p_0 AND @p_1",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_In()
         {
             var sql = Db<DB>.Sql(db =>
@@ -97,6 +100,7 @@ WHERE tbl_staff.id IN(@p_0, @p_1, @p_2, @p_3, @p_4)",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_In_Array()
         {
             var vals = new int[] { 1, 2 };
@@ -121,6 +125,7 @@ WHERE tbl_staff.id IN(@p_0, @p_1)",
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_In_SubQuery()
         {
             var sub = Db<DB>.Sql(db =>
@@ -155,6 +160,7 @@ WHERE
 (decimal)1000);
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Exists_1()
         {
@@ -192,6 +198,7 @@ WHERE
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Exists_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -225,6 +232,7 @@ WHERE
 (decimal)1000);
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_IsNull_1()
         {
@@ -246,6 +254,7 @@ WHERE NOT (tbl_staff.name IS NULL)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IsNull_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -266,6 +275,7 @@ WHERE NOT ((tbl_staff.name) IS NULL)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IsNull_3()
         {
             string val = "";
@@ -287,6 +297,7 @@ WHERE NOT ((@val) IS NULL)", new Params() { { "@val", ""} });
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IsNotNull_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -307,6 +318,7 @@ WHERE tbl_staff.name IS NOT NULL");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IsNotNull_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -327,6 +339,7 @@ WHERE (tbl_staff.name) IS NOT NULL");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IsNotNull_3()
         {
             string val = "";
@@ -348,6 +361,7 @@ WHERE (@val) IS NOT NULL", new Params() { { "@val", "" } });
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_All_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -373,6 +387,7 @@ WHERE
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_All_2()
         {
             var sub = Db<DB>.Sql(db => 

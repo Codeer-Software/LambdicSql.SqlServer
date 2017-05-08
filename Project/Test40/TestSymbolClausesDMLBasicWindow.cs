@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Rows_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -49,6 +50,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Rows_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -72,6 +74,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_PartitionBy()
         {
             var sql = Db<DB>.Sql(db =>
@@ -97,6 +100,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Over_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -124,6 +128,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Over_2()
         {
             var sql = Db<DB>.Sql(db =>

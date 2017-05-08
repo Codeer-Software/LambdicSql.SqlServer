@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
         
         [TestMethod]
+        [Priority(1)]
         public void Test_CreateTable()
         {
             CleanUpCreateDropTestTable();
@@ -46,6 +47,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Constraint()
         {
             CleanUpCreateDropTestTable();
@@ -65,6 +67,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_PrimaryKey_1()
         {
             CleanUpCreateDropTestTable();
@@ -81,6 +84,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_PrimaryKey_2()
         {
             CleanUpCreateDropTestTable();
@@ -99,6 +103,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_PrimaryKey_3()
         {
             CleanUpCreateDropTestTable();
@@ -118,6 +123,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Check_1()
         {
             CleanUpCreateDropTestTable();
@@ -134,6 +140,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Check_2()
         {
             CleanUpCreateDropTestTable();
@@ -152,6 +159,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Check_3()
         {
             CleanUpCreateDropTestTable();
@@ -171,6 +179,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Unique_1()
         {
             CleanUpCreateDropTestTable();
@@ -187,6 +196,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Unique_2()
         {
             CleanUpCreateDropTestTable();
@@ -206,6 +216,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Unique_3()
         {
             CleanUpCreateDropTestTable();
@@ -224,6 +235,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ForeignKey_References_1()
         {
             CleanUpCreateDropTestTable();
@@ -248,6 +260,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ForeignKey_References_2()
         {
             CleanUpCreateDropTestTable();
@@ -273,6 +286,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_NotNull()
         {
             CleanUpCreateDropTestTable();
@@ -289,6 +303,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Default()
         {
             CleanUpCreateDropTestTable();
@@ -305,6 +320,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DropTable()
         {
             CleanUpCreateDropTestTable();
@@ -322,6 +338,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(2)]
         public void Test_CreateAndDropDataBase()
         {
             CleanUpCreateDropTestDB();

@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ObjectToParameter_1()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Id(db.tbl_staff)));
@@ -38,6 +39,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ObjectToParameter_2()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Id("tbl_staff")));
@@ -50,6 +52,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_AtAtProcId()
         {
             var sql = Db<DB>.Sql(db => Select(AtAtProcId()));
@@ -62,6 +65,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_AppName()
         {
             var sql = Db<DB>.Sql(db => Select(App_Name()));
@@ -74,6 +78,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_AssemblyProperty()
         {
             var sql = Db<DB>.Sql(db => Select(AssemblyProperty("HelloWorld", "PublicKey")));
@@ -87,6 +92,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Col_Length()
         {
             var sql = Db<DB>.Sql(db => Select(Col_Length(db.tbl_staff, db.tbl_staff.id)));
@@ -99,6 +105,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Col_Name()
         {
             var sql = Db<DB>.Sql(db => Select(Col_Name(Object_Id(db.tbl_staff), 1)));
@@ -111,6 +118,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ColumnProperty()
         {
             var sql = Db<DB>.Sql(db => Select(ColumnProperty(Object_Id(db.tbl_staff), db.tbl_staff.id, "PRECISION")));
@@ -124,6 +132,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DataBase_Principal_Id_1()
         {
             var sql = Db<DB>.Sql(db => Select(DataBase_Principal_Id()));
@@ -136,6 +145,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DataBase_Principal_Id_2()
         {
             var sql = Db<DB>.Sql(db => Select(DataBase_Principal_Id("db_owner")));
@@ -148,6 +158,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DataBasePropertyEx()
         {
             var sql = Db<DB>.Sql(db => Select(DataBasePropertyEx("LambdicSqlTest", "IsAutoShrink")));
@@ -160,6 +171,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Db_Id()
         {
             var sql = Db<DB>.Sql(db => Select(Db_Id("LambdicSqlTest")));
@@ -172,6 +184,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Db_Name()
         {
             var sql = Db<DB>.Sql(db => Select(Db_Name(Db_Id("LambdicSqlTest"))));
@@ -184,6 +197,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_File_Id()
         {
             var sql = Db<DB>.Sql(db => Select(File_Id("LambdicSqlTest")));
@@ -196,6 +210,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_File_Index()
         {
             var sql = Db<DB>.Sql(db => Select(File_Idex("LambdicSqlTest")));
@@ -208,6 +223,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_File_Name()
         {
             var sql = Db<DB>.Sql(db => Select(File_Name(File_Id("LambdicSqlTest"))));
@@ -220,6 +236,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_FileGroup_Id()
         {
             var sql = Db<DB>.Sql(db => Select(FileGroup_Id("PRIMARY")));
@@ -232,6 +249,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_FileGroup_Name()
         {
             var sql = Db<DB>.Sql(db => Select(FileGroup_Name(FileGroup_Id("PRIMARY"))));
@@ -244,6 +262,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_FileGroupProperty()
         {
             var sql = Db<DB>.Sql(db => Select(FileGroupProperty("PRIMARY", "IsReadOnly")));
@@ -256,6 +275,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_FileProperty()
         {
             var sql = Db<DB>.Sql(db => Select(FileProperty("LambdicSqlTest", "IsReadOnly")));
@@ -268,6 +288,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_FullTextCatalogProperty()
         {
             var sql = Db<DB>.Sql(db => Select(FullTextCatalogProperty("LambdicSqlTest", "IsReadOnly")));
@@ -280,6 +301,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_FullTextServiceProperty()
         {
             var sql = Db<DB>.Sql(db => Select(FullTextServiceProperty("VerifySignature")));
@@ -292,6 +314,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Index_Col()
         {
             var sql = Db<DB>.Sql(db => Select(Index_Col(db.tbl_staff, 1, 1)));
@@ -304,6 +327,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IndexKey_Property()
         {
             var sql = Db<DB>.Sql(db => Select(IndexKey_Property(Object_Id(db.tbl_staff), 1, 1, "ColumnId")));
@@ -316,6 +340,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IndexProperty()
         {
             var sql = Db<DB>.Sql(db => Select(IndexProperty(Object_Id(db.tbl_staff), "id", "IsClustered")));
@@ -328,6 +353,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Object_Id_1()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Id(db.tbl_staff)));
@@ -340,6 +366,7 @@ namespace Test
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_Object_Id_2()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Id(db.tbl_staff, "U")));
@@ -352,6 +379,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Object_Definition()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Definition(Object_Id(db.tbl_staff))));
@@ -364,6 +392,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Object_Name_1()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Name(Object_Id(db.tbl_staff))));
@@ -376,6 +405,7 @@ namespace Test
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_Object_Name_2()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Name(Object_Id(db.tbl_staff), 1)));
@@ -388,6 +418,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Object_Schema_Name()
         {
             var sql = Db<DB>.Sql(db => Select(Object_Schema_Name(Object_Id(db.tbl_staff))));
@@ -400,6 +431,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ObjectProperty()
         {
             var sql = Db<DB>.Sql(db => Select(ObjectProperty(Object_Id(db.tbl_staff), "CnstIsClustKey")));
@@ -412,6 +444,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ObjectPropertyEx()
         {
             var sql = Db<DB>.Sql(db => Select(ObjectPropertyEx(Object_Id(db.tbl_staff), "CnstIsClustKey")));
@@ -424,6 +457,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Original_Db_Name()
         {
             var sql = Db<DB>.Sql(db => Select(Original_Db_Name()));
@@ -436,6 +470,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ParseName()
         {
             var sql = Db<DB>.Sql(db => Select(ParseName(db.tbl_staff.id, 1)));
@@ -448,6 +483,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Schema_Id()
         {
             var sql = Db<DBSchema>.Sql(db => Select(Schema_Id(db.dbo)));
@@ -461,6 +497,7 @@ namespace Test
 	SCHEMA_ID(@p_0)", "dbo");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Schema_Name()
         {
@@ -475,6 +512,7 @@ namespace Test
 	SCHEMA_NAME(SCHEMA_ID(@p_0))", "dbo");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Scope_Identity()
         {
@@ -488,6 +526,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ServerProperty()
         {
             var sql = Db<DB>.Sql(db => Select(ServerProperty("BuildClrVersion")));
@@ -500,6 +539,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Stats_Date()
         {
             var sql = Db<DB>.Sql(db => Select(Stats_Date(0, 0)));
@@ -512,6 +552,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Type_Id_Name()
         {
             var sql = Db<DB>.Sql(db => Select(Type_Name(Type_Id("int"))));
@@ -524,6 +565,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_TypeProperty()
         {
             var sql = Db<DB>.Sql(db => Select(TypeProperty(Type_Id("int"), "OwnerId")));

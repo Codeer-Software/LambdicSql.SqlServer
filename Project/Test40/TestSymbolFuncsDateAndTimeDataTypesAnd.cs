@@ -27,6 +27,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_CurrentTimeStamp()
         {
             var sql = Db<DB>.Sql(db =>
@@ -43,6 +44,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateAdd()
         {
             var sql = Db<DB>.Sql(db =>
@@ -83,6 +85,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateDiff()
         {
             var sql = Db<DB>.Sql(db =>
@@ -121,6 +124,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateDiff_Big()
         {
             var sql = Db<DB>.Sql(db =>
@@ -159,6 +163,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateFromParts()
         {
             var sql = Db<DB>.Sql(db =>
@@ -175,6 +180,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateName()
         {
             var sql = Db<DB>.Sql(db =>
@@ -219,6 +225,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DatePart()
         {
             var sql = Db<DB>.Sql(db =>
@@ -261,6 +268,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateTime2FromParts()
         {
             var sql = Db<DB>.Sql(db =>
@@ -277,6 +285,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateTimeFromParts()
         {
             var sql = Db<DB>.Sql(db =>
@@ -293,6 +302,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_DateTimeOffsetFromParts()
         {
             var sql = Db<DB>.Sql(db =>
@@ -309,6 +319,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Day()
         {
             var sql = Db<DB>.Sql(db =>
@@ -327,6 +338,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_EOMonth()
         {
             var sql = Db<DB>.Sql(db =>
@@ -349,6 +361,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GetDate()
         {
             var sql = Db<DB>.Sql(db =>
@@ -365,6 +378,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GetUtcDate()
         {
             var sql = Db<DB>.Sql(db =>
@@ -381,6 +395,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_IsDate()
         {
             var sql = Db<DB>.Sql(db =>
@@ -405,6 +420,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Month()
         {
             var sql = Db<DB>.Sql(db =>
@@ -423,6 +439,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SmallDateTimeFromParts()
         {
             var sql = Db<DB>.Sql(db =>
@@ -439,6 +456,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SwitchOffset()
         {
             var sql = Db<DB>.Sql(db =>
@@ -455,6 +473,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SysDateTime()
         {
             var sql = Db<DB>.Sql(db =>
@@ -471,6 +490,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SysDateTimeOffset()
         {
             var sql = Db<DB>.Sql(db =>
@@ -487,6 +507,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SysUtcDateTime()
         {
             var sql = Db<DB>.Sql(db =>
@@ -503,6 +524,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_TimeFromParts()
         {
             var sql = Db<DB>.Sql(db =>
@@ -519,6 +541,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_ToDateTimeOffset()
         {
             var sql = Db<DB>.Sql(db =>
@@ -535,6 +558,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Year()
         {
             var sql = Db<DB>.Sql(db =>

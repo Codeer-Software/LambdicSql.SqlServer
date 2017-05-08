@@ -34,6 +34,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_From()
         {
             var sql = Db<DB>.Sql(db =>
@@ -55,6 +56,7 @@ namespace Test
 FROM tbl_remuneration");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_From_Start()
         {
@@ -77,6 +79,7 @@ FROM tbl_remuneration");
 FROM tbl_remuneration");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_From_Multi()
         {
@@ -102,6 +105,7 @@ WHERE (tbl_remuneration.staff_id) = (tbl_staff.id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Join()
         {
             var sql = Db<DB>.Sql(db =>
@@ -124,6 +128,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Join_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -146,6 +151,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Join_Vanish()
         {
             var tbl_staff = new Sql<Staff>();
@@ -168,6 +174,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Join_Vanish_Start()
         {
             var tbl_staff = new Sql<Staff>();
@@ -190,6 +197,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_LeftJoin()
         {
             var sql = Db<DB>.Sql(db =>
@@ -212,6 +220,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_LeftJoin_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -234,6 +243,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_RightJoin()
         {
             var sql = Db<DB>.Sql(db =>
@@ -255,6 +265,7 @@ FROM tbl_remuneration
 	RIGHT JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_RightJoin_Start()
         {
@@ -277,6 +288,7 @@ FROM tbl_remuneration
 	RIGHT JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Full_Join()
         {
@@ -300,6 +312,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Full_Join_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -322,6 +335,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_CrossJoin()
         {
             if (_connection.GetType().Name == "SQLiteConnection") return;
@@ -346,6 +360,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_CrossJoin_Start()
         {
             if (_connection.GetType().Name == "SQLiteConnection") return;
@@ -369,6 +384,7 @@ FROM tbl_remuneration
 	CROSS JOIN tbl_staff");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_From_SubQuery_1()
         {
@@ -395,7 +411,8 @@ FROM
 	(SELECT *
 	FROM tbl_remuneration) sub");
         }
-        
+
+        [Priority(1)]
         [TestMethod]
         public void Test_From_Aliase()
         {
@@ -423,6 +440,7 @@ WHERE (expRemuneration.staff_id) = (expStaff.id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Join_Aliase()
         {
             var expStaff = Db<DB>.Sql(db => db.tbl_staff);
@@ -449,6 +467,7 @@ FROM tbl_remuneration
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Join_SubQuery()
         {
             var sub = Db<DB>.Sql(db =>

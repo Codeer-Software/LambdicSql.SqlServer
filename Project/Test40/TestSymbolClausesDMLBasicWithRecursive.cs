@@ -31,6 +31,7 @@ namespace Test
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_Recursive_1()
         {
             var rec = Db<DB>.Sql(db => Recursive(new { val = 0 }));

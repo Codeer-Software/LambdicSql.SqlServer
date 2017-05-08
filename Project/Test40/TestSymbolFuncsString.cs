@@ -27,6 +27,7 @@ namespace Test
         
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Concat()
         {
             var sql = Db<DB>.Sql(db =>
@@ -48,6 +49,7 @@ FROM tbl_staff", "a", "b");
         // Ths test does not execute query.
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Concat_WS()
         {
             var sql = Db<DB>.Sql(db =>
@@ -66,6 +68,7 @@ FROM tbl_staff", "a", "b");
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Len()
         {
             var sql = Db<DB>.Sql(db =>
@@ -85,6 +88,7 @@ FROM tbl_staff");
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Lower()
         {
             var sql = Db<DB>.Sql(db =>
@@ -104,6 +108,7 @@ FROM tbl_staff");
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Upper()
         {
             var sql = Db<DB>.Sql(db =>
@@ -123,6 +128,7 @@ FROM tbl_staff");
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Replace()
         {
             var sql = Db<DB>.Sql(db =>
@@ -143,6 +149,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Substring()
         {
             var sql = Db<DB>.Sql(db =>
@@ -163,6 +170,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Space()
         {
             var sql = Db<DB>.Sql(db =>
@@ -181,6 +189,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Str()
         {
             var sql = Db<DB>.Sql(db =>
@@ -199,6 +208,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Ascii()
         {
             var sql = Db<DB>.Sql(db =>
@@ -217,6 +227,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Char()
         {
             var sql = Db<DB>.Sql(db =>
@@ -235,6 +246,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_CharIndex()
         {
             var sql = Db<DB>.Sql(db =>
@@ -253,6 +265,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_CharIndex_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -271,6 +284,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Difference()
         {
             var sql = Db<DB>.Sql(db =>
@@ -289,6 +303,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Format()
         {
             var sql = Db<DB>.Sql(db =>
@@ -307,6 +322,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Left()
         {
             var sql = Db<DB>.Sql(db =>
@@ -325,6 +341,7 @@ FROM tbl_staff"
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Ltrim()
         {
             var sql = Db<DB>.Sql(db =>
@@ -342,6 +359,7 @@ FROM tbl_staff");
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_NChar()
         {
             var sql = Db<DB>.Sql(db =>
@@ -359,6 +377,7 @@ FROM tbl_staff");
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_PatIndex()
         {
             var sql = Db<DB>.Sql(db =>
@@ -376,6 +395,7 @@ FROM tbl_staff",
         }
 
         [TestMethod]
+        [Priority(1)]
         [TestCategory("String")]
         public void Test_QuoteName()
         {
@@ -394,6 +414,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Replicate()
         {
             var sql = Db<DB>.Sql(db =>
@@ -411,6 +432,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Reverse()
         {
             var sql = Db<DB>.Sql(db =>
@@ -428,6 +450,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Right()
         {
             var sql = Db<DB>.Sql(db =>
@@ -445,6 +468,7 @@ FROM tbl_staff"
         }
 
         [TestMethod]
+        [Priority(1)]
         [TestCategory("String")]
         public void Test_Rtrim()
         {
@@ -463,6 +487,7 @@ FROM tbl_staff");
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_SoundEx()
         {
             var sql = Db<DB>.Sql(db =>
@@ -484,6 +509,7 @@ FROM tbl_staff");
         /// </summary>
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_String_Agg_Char()
         {
             var sql = Db<DB>.Sql(db =>
@@ -504,6 +530,7 @@ FROM tbl_staff",
         /// </summary>
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_String_Agg_String()
         {
             var sql = Db<DB>.Sql(db =>
@@ -524,6 +551,7 @@ FROM tbl_staff",
         /// </summary>
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_String_Escape()
         {
             var sql = Db<DB>.Sql(db =>
@@ -543,6 +571,7 @@ FROM tbl_staff",
         /// </summary>
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_String_Split_Char()
         {
             var sql = Db<DB>.Sql(db =>
@@ -562,6 +591,7 @@ FROM tbl_staff", 13);
         /// </summary>
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_String_Split_String()
         {
             var sql = Db<DB>.Sql(db =>
@@ -578,6 +608,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Stuff()
         {
             var sql = Db<DB>.Sql(db =>
@@ -597,6 +628,7 @@ FROM tbl_staff",
         //TRANSLATE is support with SQL Server 2017
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Translate()
         {
             var sql = Db<DB>.Sql(db =>
@@ -612,6 +644,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Trim()
         {
             var sql = Db<DB>.Sql(db =>
@@ -626,6 +659,7 @@ FROM tbl_staff",
 
         [TestMethod]
         [TestCategory("String")]
+        [Priority(1)]
         public void Test_Unicode()
         {
             var sql = Db<DB>.Sql(db =>
