@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Sum()
         {
             var sql = Db<DB>.Sql(db =>
@@ -50,6 +51,7 @@ GROUP BY tbl_staff.id, tbl_staff.name");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Count_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -76,6 +78,7 @@ GROUP BY tbl_staff.id, tbl_staff.name");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Avg_Min_Max()
         {
             var sql = Db<DB>.Sql(db =>

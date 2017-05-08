@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Update_Set()
         {
             Test_InsertInto_Values();
@@ -45,6 +46,7 @@ WHERE (tbl_data.id) = (@p_2)",
 100, "200", 1);
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Update_Set_Start()
         {
@@ -66,6 +68,7 @@ WHERE (tbl_data.id) = (@p_2)",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Delete()
         {
             var sql = Db<DB>.Sql(db =>
@@ -81,6 +84,7 @@ WHERE (tbl_data.id) = (@p_0)",
 3);
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Delete_All()
         {
@@ -94,6 +98,7 @@ WHERE (tbl_data.id) = (@p_0)",
 FROM tbl_data");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_InsertInto_Values()
         {
@@ -111,6 +116,7 @@ FROM tbl_data");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_InsertInto_Values_Start()
         {
             Test_Delete_All();
@@ -127,6 +133,7 @@ FROM tbl_data");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_InsertInto_Values_Select()
         {
             Test_InsertInto_Values();

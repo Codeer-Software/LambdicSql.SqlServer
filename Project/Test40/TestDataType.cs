@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_CreateTable_SqlServer()
         {
             CleanUpCreateDropTestTable();

@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Where()
         {
             var sql = Db<DB>.Sql(db =>
@@ -43,6 +44,7 @@ WHERE (tbl_remuneration.id) = (@p_0)",
 1);
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Where_Start()
         {
@@ -62,6 +64,7 @@ WHERE (tbl_remuneration.id) = (@p_0)",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Where_Exp()
         {
             var exp = Db<DB>.Sql(db => db.tbl_remuneration.id == 1);
@@ -82,6 +85,7 @@ WHERE (tbl_remuneration.id) = (@p_0)",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupBy()
         {
             var sql = Db<DB>.Sql(db =>
@@ -103,6 +107,7 @@ GROUP BY tbl_remuneration.id, tbl_remuneration.staff_id");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupBy_Element_Valnish_1()
         {
             var col = new Sql();
@@ -125,6 +130,7 @@ GROUP BY tbl_remuneration.staff_id");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupBy_Element_Valnish_2()
         {
             var col = new Sql();
@@ -147,6 +153,7 @@ GROUP BY tbl_remuneration.staff_id");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupBy_Element_Valnish_3()
         {
             var col1 = new Sql();
@@ -170,6 +177,7 @@ GROUP BY tbl_remuneration.staff_id");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupBy_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -191,6 +199,7 @@ GROUP BY tbl_remuneration.id, tbl_remuneration.staff_id");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupByRollup()
         {
             var sql = Db<DB>.Sql(db =>
@@ -211,6 +220,7 @@ GROUP BY ROLLUP(tbl_remuneration.id, tbl_remuneration.staff_id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupByRollup_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -231,6 +241,7 @@ GROUP BY ROLLUP(tbl_remuneration.id, tbl_remuneration.staff_id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupByCube()
         {
             var sql = Db<DB>.Sql(db =>
@@ -251,6 +262,7 @@ GROUP BY CUBE(tbl_remuneration.id, tbl_remuneration.staff_id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupByCube_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -271,6 +283,7 @@ GROUP BY CUBE(tbl_remuneration.id, tbl_remuneration.staff_id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupByGroupingSets()
         {
             var sql = Db<DB>.Sql(db =>
@@ -291,6 +304,7 @@ GROUP BY GROUPING SETS(tbl_remuneration.id, tbl_remuneration.staff_id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GroupByGroupingSets_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -311,6 +325,7 @@ GROUP BY GROUPING SETS(tbl_remuneration.id, tbl_remuneration.staff_id)");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Having()
         {
             var sql = Db<DB>.Sql(db =>
@@ -334,6 +349,7 @@ HAVING (@p_0) < (SUM(tbl_remuneration.money))",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Having_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -357,6 +373,7 @@ HAVING (@p_0) < (SUM(tbl_remuneration.money))",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OrderBy()
         {
             var sql = Db<DB>.Sql(db =>
@@ -379,6 +396,7 @@ ORDER BY
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OrderBy_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -401,6 +419,7 @@ ORDER BY
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OrderBy_Element_Vanish_1()
         {
             var desc = new Sql<OrderByElement>();
@@ -423,6 +442,7 @@ ORDER BY
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OrderBy_Element_Vanish_2()
         {
             var asc = new Sql<OrderByElement>();
@@ -445,6 +465,7 @@ ORDER BY
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OrderBy_Element_Vanish_3()
         {
             var asc1 = new Sql<OrderByElement>();
@@ -470,6 +491,7 @@ ORDER BY
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OrderBy_Vanish()
         {
             var asc = new Sql<OrderByElement>();
@@ -491,6 +513,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OrderBy_Vanish_Start()
         {
             var asc = new Sql<OrderByElement>();
@@ -512,6 +535,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Where_Vanish()
         {
             var empty = new Sql<bool>();
@@ -530,6 +554,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Having_Vanish()
         {
             var empty = new Sql<bool>();

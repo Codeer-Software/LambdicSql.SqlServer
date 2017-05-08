@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_OffsetRows_FetchNext()
         {
             var sql = Db<DB>.Sql(db =>
@@ -49,6 +50,7 @@ FETCH NEXT @p_1 ROWS ONLY",
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_OffsetRows_FetchNext_Start()
         {
             var sql = Db<DB>.Sql(db =>

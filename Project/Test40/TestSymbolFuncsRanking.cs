@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Dense_Rank()
         {
             var sql = Db<DB>.Sql(db =>
@@ -48,6 +49,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Ntile()
         {
             var sql = Db<DB>.Sql(db =>
@@ -70,6 +72,7 @@ FROM tbl_remuneration", 2);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Rank()
         {
             var sql = Db<DB>.Sql(db =>
@@ -92,6 +95,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_RowNumber()
         {
             var sql = Db<DB>.Sql(db =>

@@ -35,6 +35,7 @@ namespace Test
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_If_Else_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -67,6 +68,7 @@ FROM tbl_staff", "tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_If_Else_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -100,6 +102,7 @@ FROM tbl_staff", "tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Begin_End()
         {
             var sql = Db<DB>.Sql(db =>
@@ -116,6 +119,7 @@ END");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_While_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -140,6 +144,7 @@ END", (double)2000);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_While_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -165,6 +170,7 @@ END", (double)2000);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Break_Continue_Return_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -194,6 +200,7 @@ END", (double)2000);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Break_Continue_Return_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -223,6 +230,7 @@ END", (double)2000);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GoTo_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -251,6 +259,7 @@ SELECT
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_GoTo_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -279,6 +288,7 @@ SELECT
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Try_Catch_throw_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -304,6 +314,7 @@ CATCH", 1, "a", (byte)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Try_Catch_throw_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -329,6 +340,7 @@ CATCH", 1, "a", (byte)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_WaitForDelay_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -345,6 +357,7 @@ END", "00:00:01");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_WaitForDelay_2()
         {
             var sql = Db<DB>.Sql(db =>

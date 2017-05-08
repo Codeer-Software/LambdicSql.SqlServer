@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Abs()
         {
             var sql = Db<DB>.Sql(db =>
@@ -44,6 +45,7 @@ FROM tbl_staff", (decimal)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Acos()
         {
             var sql = Db<DB>.Sql(db =>
@@ -62,6 +64,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Asin()
         {
             var sql = Db<DB>.Sql(db =>
@@ -80,6 +83,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Atan()
         {
             var sql = Db<DB>.Sql(db =>
@@ -98,6 +102,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Atn2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -116,6 +121,7 @@ FROM tbl_staff", (double)1, (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Ceiling()
         {
             var sql = Db<DB>.Sql(db =>
@@ -134,6 +140,7 @@ FROM tbl_staff", (decimal)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Cos()
         {
             var sql = Db<DB>.Sql(db =>
@@ -152,6 +159,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Cot()
         {
             var sql = Db<DB>.Sql(db =>
@@ -170,6 +178,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Degrees()
         {
             var sql = Db<DB>.Sql(db =>
@@ -188,6 +197,7 @@ FROM tbl_staff", (decimal)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Exp()
         {
             var sql = Db<DB>.Sql(db =>
@@ -206,6 +216,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Floor()
         {
             var sql = Db<DB>.Sql(db =>
@@ -224,6 +235,7 @@ FROM tbl_staff", (decimal)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Log()
         {
             var sql = Db<DB>.Sql(db =>
@@ -242,6 +254,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Log10()
         {
             var sql = Db<DB>.Sql(db =>
@@ -260,6 +273,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_PI()
         {
             var sql = Db<DB>.Sql(db =>
@@ -278,6 +292,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Power()
         {
             var sql = Db<DB>.Sql(db =>
@@ -296,6 +311,7 @@ FROM tbl_staff", (double)1, 2);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Radians()
         {
             var sql = Db<DB>.Sql(db =>
@@ -314,6 +330,7 @@ FROM tbl_staff", (decimal)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Rand()
         {
             var sql = Db<DB>.Sql(db =>
@@ -332,6 +349,7 @@ FROM tbl_staff", 1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Round()
         {
             var sql = Db<DB>.Sql(db =>
@@ -356,6 +374,7 @@ FROM tbl_staff", (long)2, 3, 2, 3, (decimal)2, 3, (double)2, 3);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Sign()
         {
             var sql = Db<DB>.Sql(db =>
@@ -380,6 +399,7 @@ FROM tbl_staff", (long)1, 1, (decimal)1, (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Sin()
         {
             var sql = Db<DB>.Sql(db =>
@@ -398,6 +418,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Sqrt()
         {
             var sql = Db<DB>.Sql(db =>
@@ -416,6 +437,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Square()
         {
             var sql = Db<DB>.Sql(db =>
@@ -434,6 +456,7 @@ FROM tbl_staff", (double)1);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Tan()
         {
             var sql = Db<DB>.Sql(db =>

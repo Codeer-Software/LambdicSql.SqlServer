@@ -307,7 +307,10 @@ namespace LambdicSql.SqlServer
         /// STUFF Function
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/stuff-transact-sql
         /// </summary>
-        /// <param name="value">sound text</param>
+        /// <param name="value">stuff text</param>
+        /// <param name="start">stuff start position</param>
+        /// <param name="length">stuff length</param>
+        /// <param name="replaceString">replacement string</param>
         /// <returns></returns>
         [FuncStyleConverter]
         public static string Stuff(string value, long start, long length, string replaceString) { throw new InvalitContextException(nameof(Stuff)); }
@@ -337,7 +340,7 @@ namespace LambdicSql.SqlServer
         /// UNICODE Function
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/unicode-transact-sql
         /// </summary>
-        /// <param name="value">Unicode String</param>
+        /// <param name="UnicodeString">Unicode String</param>
         /// <returns></returns>
         [FuncStyleConverter]
         public static int Unicode(string UnicodeString) { throw new InvalitContextException(nameof(Unicode)); }

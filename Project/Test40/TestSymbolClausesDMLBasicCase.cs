@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
         
         [TestMethod]
+        [Priority(1)]
         public void Test_Case_When_Then_Else_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -57,6 +58,7 @@ FROM tbl_staff",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Case_When_Then_Else_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -86,6 +88,7 @@ FROM tbl_staff",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Case_When_Then_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -112,6 +115,7 @@ FROM tbl_staff",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Case_When_Then_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -142,6 +146,7 @@ FROM tbl_staff",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Case_When_Then_Else_1_Separate()
         {
             var sql = Db<DB>.Sql(db =>
@@ -171,6 +176,7 @@ FROM tbl_staff",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Case_When_Then_Else_2_Separate()
         {
             var sql = Db<DB>.Sql(db =>

@@ -33,6 +33,7 @@ namespace Test
             public decimal Money { get; set; }
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_selected()
         {
@@ -54,6 +55,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -75,6 +77,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_top_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -95,6 +98,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_top_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -116,6 +120,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_asterisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -130,6 +135,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_asterisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -145,6 +151,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_asteriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -159,6 +166,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_asteriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -174,6 +182,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_top_astrisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -188,6 +197,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_top_astrisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -203,6 +213,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_top_astriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -217,6 +228,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_top_astriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -232,6 +244,7 @@ FROM tbl_remuneration");
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_predicate_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -252,6 +265,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_predicate_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -273,6 +287,7 @@ FROM tbl_remuneration");
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_predicate_top_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -294,6 +309,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_predicate_top_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -315,6 +331,7 @@ FROM tbl_remuneration");
 FROM tbl_remuneration");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_predicate_astrisk()
         {
@@ -330,6 +347,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_predicate_astrisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -345,6 +363,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_predicate_astriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -359,6 +378,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_predicate_astriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -374,6 +394,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_predicate_top_asterisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -388,6 +409,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_predicate_top_asterisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -403,6 +425,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_predicate_top_asteriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -417,6 +440,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_before_predicate_top_asteriskT()
         {
             var sql = Db<DB>.Sql(db =>
@@ -432,6 +456,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SubQuery_1()
         {
             var sub = Db<DB>.Sql(db =>
@@ -456,6 +481,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SubQuery_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -477,6 +503,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_SubQuery_Empty()
         {
             var sub = new Sql<decimal>();
@@ -497,6 +524,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Single_1()
         {
             var sql = Db<DB>.Sql(db => Select(db.tbl_staff.id).From(db.tbl_staff));
@@ -510,6 +538,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Single_2()
         {
             var sql = Db<DB>.Sql(db => Select(Count(Asterisk())).From(db.tbl_staff));

@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Cume_Dist()
         {
             var sql = Db<DB>.Sql(db =>
@@ -48,6 +49,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_First_Value()
         {
             var sql = Db<DB>.Sql(db =>
@@ -75,6 +77,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Last_Value()
         {
             var sql = Db<DB>.Sql(db =>
@@ -101,6 +104,7 @@ FROM tbl_remuneration");
 FROM tbl_remuneration");
         }
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Lag_1()
         {
@@ -124,6 +128,7 @@ FROM tbl_remuneration", 3);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Lag_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -146,6 +151,7 @@ FROM tbl_remuneration", (long)2);
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Percent_Rank()
         {
             var sql = Db<DB>.Sql(db =>

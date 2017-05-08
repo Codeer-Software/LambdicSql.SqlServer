@@ -26,6 +26,7 @@ namespace Test
         public void TestCleanup() => _connection.Dispose();
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Asterisk_1()
         {
             var sql = Db<DB>.Sql(db =>
@@ -40,6 +41,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Asterisk_2()
         {
             var sql = Db<DB>.Sql(db =>
@@ -54,6 +56,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Asterisk_3()
         {
             var sql = Db<DB>.Sql(db =>
@@ -68,6 +71,7 @@ FROM tbl_staff");
         }
         
         [TestMethod]
+        [Priority(1)]
         public void Test_Asc_Desc()
         {
             var sql = Db<DB>.Sql(db =>
@@ -86,6 +90,7 @@ ORDER BY
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Top()
         {
             var sql = Db<DB>.Sql(db =>
@@ -100,9 +105,10 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_All()
         {
-            var sql = Db<DB>.Sql(db =>
+        var sql = Db<DB>.Sql(db =>
                 Select(All(), Asterisk()).
                 From(db.tbl_remuneration));
 
@@ -114,6 +120,7 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Distinct()
         {
             var sql = Db<DB>.Sql(db =>

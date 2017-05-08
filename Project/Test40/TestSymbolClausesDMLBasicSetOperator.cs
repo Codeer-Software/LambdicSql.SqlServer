@@ -25,6 +25,7 @@ namespace Test
         [TestCleanup]
         public void TestCleanup() => _connection.Dispose();
 
+        [Priority(1)]
         [TestMethod]
         public void Test_Union()
         {
@@ -44,6 +45,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Union_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -62,6 +64,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Union_All()
         {
             var sql = Db<DB>.Sql(db =>
@@ -80,6 +83,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Union_All_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -98,6 +102,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Intersect()
         {
             var sql = Db<DB>.Sql(db =>
@@ -116,6 +121,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Intersect_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -134,6 +140,7 @@ FROM tbl_staff");
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Except()
         {
             var sql = Db<DB>.Sql(db =>
@@ -154,6 +161,7 @@ WHERE (tbl_staff.id) = (@p_0)",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Except_Start()
         {
             var sql = Db<DB>.Sql(db =>
@@ -174,6 +182,7 @@ WHERE (tbl_staff.id) = (@p_0)",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Minus()
         {
             var sql = Db<DB>.Sql(db =>
@@ -194,6 +203,7 @@ WHERE (tbl_staff.id) = (@p_0)",
         }
 
         [TestMethod]
+        [Priority(1)]
         public void Test_Minus_Start()
         {
             var sql = Db<DB>.Sql(db =>

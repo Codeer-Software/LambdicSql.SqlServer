@@ -27,6 +27,7 @@ namespace Test
 
         //@@@あー戻り値配列にたえれないー
         [TestMethod]
+        [Priority(1)]
         public void Test_AtAtDbts()
         {
             var sql = Db<DB>.Sql(db =>
