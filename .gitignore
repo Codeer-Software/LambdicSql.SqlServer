@@ -252,3 +252,4 @@ paket-files/
 *.sln.iml
 
 Project/db.txt
+/Project/memo.txt
