@@ -108,6 +108,11 @@ namespace LambdicSql.SqlServer
         SELECT @local_variable
         DECLARE @local_variable*/
 
+
+        [MethodFormatConverter(Format = "DECLARE [0] [1]")]
+        public static object Declare(out object aaa, DataTypeElement data_type) { throw new InvalitContextException(nameof(Declare)); }
+
+
         //https://msdn.microsoft.com/en-us/library/dbba47d7-e08e-4435-b876-35dced1f325d
         /*
          XML Statements

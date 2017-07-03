@@ -6,6 +6,7 @@ using LambdicSql.feat.Dapper;
 using static LambdicSql.SqlServer.Symbol;
 using static Test.Helper.DBProviderInfo;
 using Test.Helper;
+using LambdicSql.SqlServer;
 
 namespace Test
 {
@@ -133,5 +134,30 @@ FROM tbl_remuneration");
 @"SELECT DISTINCT *
 FROM tbl_remuneration");
         }
+
+        [TestMethod]
+        [Priority(1)]
+        public void Test_Declare()
+        {
+
+            //SqlCmd.Parameters.Clear();
+
+            object bbb = null;
+
+            var sql = Db<DB>.Sql(db => Declare(out bbb, DataType.NVarChar()));
+
+
+            //var co = _connection.CreateCommand();
+            //co.Parameters.Clear();
+
+
+
+
+            var datas = _connection.Query<Remuneration>(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection, @"DECLARE @find varchar()");
+        }
+
+
     }
 }
