@@ -11,7 +11,7 @@ namespace LambdicSql.SqlServer
         /// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/cast-and-convert-transact-sql
         /// </summary>
         /// <typeparam name="TDst">Type of destination.</typeparam>
-        /// <param name="target"></param>
+        /// <param name="target">The string to test.</param>
         /// <param name="destinationType">Type of destination.</param>
         /// <returns>Converted data.</returns>
         [MethodFormatConverter(Format = "CAST(|[0] AS [1])")]

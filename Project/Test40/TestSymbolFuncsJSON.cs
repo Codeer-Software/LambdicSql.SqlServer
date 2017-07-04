@@ -76,7 +76,7 @@ WHERE (ISJSON(tbl_staff.name)) = (@p_0)", 0);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
 	tbl_staff.id AS id,
-	JSON_VALUE(@p_0,'$.info.address[0].town') AS name
+	JSON_VALUE(@p_0, '$.info.address[0].town') AS name
 FROM tbl_staff", jsonInfo);
         }
 
@@ -118,7 +118,7 @@ FROM tbl_staff", jsonInfo);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
 	tbl_staff.id AS id,
-	JSON_QUERY(@p_0,'$.info.address[0].town') AS name
+	JSON_QUERY(@p_0, '$.info.address[0].town') AS name
 FROM tbl_staff", jsonInfo);
         }
 
@@ -139,7 +139,7 @@ FROM tbl_staff", jsonInfo);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
 	tbl_staff.id AS id,
-	JSON_MODIFY(@p_0,'$.info.address[0].town',@p_1) AS name
+	JSON_MODIFY(@p_0, '$.info.address[0].town', @p_1) AS name
 FROM tbl_staff", jsonInfo, "Bristol");
         }
     }
