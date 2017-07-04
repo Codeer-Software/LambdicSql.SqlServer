@@ -170,6 +170,24 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "DROP DATABASE [!0]")]
         public static Clause<Non> DropDataBase(string name) { throw new InvalitContextException(nameof(DropDataBase)); }
 
+        /// <summary>
+        /// IDENTITY
+        /// </summary>
+        /// <param name="seed">Seed.</param>
+        /// <param name="increment">Increment.</param>
+        /// <returns>Clause.</returns>
+        [FuncStyleConverter]
+        internal static Clause<ConstraintElement> Identity(int seed, int increment) => null;
+
+        /// <summary>
+        /// INDEX
+        /// </summary>
+        /// <param name="name">Index name.</param>
+        /// <param name="column">Column.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "INDEX [!0]([1])")]
+        public static Clause<ConstraintElement> Index(string name, object column) => null;
+        
         /*
          https://msdn.microsoft.com/en-us/library/ff848799.aspx
         ALTER Statements
