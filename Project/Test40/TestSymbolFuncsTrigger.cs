@@ -92,23 +92,26 @@ WHERE (TRIGGER_NESTLEVEL()) = (@p_0)", 0);
         [Priority(1)]
         public void Test_Trigger_Nestlevel_2()
         {
-            var sql = Db<DB>.Sql(db =>
-               Select(new
-               {
-                   id = db.tbl_staff.id,
-               }).
-               From(db.tbl_staff).
-               Where(Trigger_Nestlevel(Object_Id("db.tbl_staff.id")) == 0));
+            var sql = Db<DB>.Sql(db => Select(Trigger_Nestlevel(Object_Id(db.tbl_staff))));
 
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
-	tbl_staff.id AS id
-FROM tbl_staff
-WHERE (TRIGGER_NESTLEVEL(OBJECT_ID(@p_0))) IS NULL", "XYZ");
-
+	TRIGGER_NESTLEVEL(OBJECT_ID(@p_0))", "tbl_staff");
         }
 
+        [TestMethod]
+        [Priority(1)]
+        public void Test_Trigger_Nestlevel_3()
+        {
+            var sql = Db<DB>.Sql(db => Select(Trigger_Nestlevel(Object_Id(db.tbl_staff), "AFTER", "DML")));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	TRIGGER_NESTLEVEL(OBJECT_ID(@p_0), 'AFTER', 'DML')", "tbl_staff");
+        }
     }
 }
