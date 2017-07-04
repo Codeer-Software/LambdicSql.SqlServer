@@ -51,6 +51,7 @@ namespace LambdicSql.SqlServer
         public static int? Trigger_Nestlevel(object object_id, string trigger_type, string trigger_event_category) => throw new InvalitContextException(nameof(Eventdata));
 
         //TODO:Clauses.DML.Basic Same Name
+        //Change:  public static Clause<bool> Update(object table) { throw new InvalitContextException(nameof(Update)); }
         ///// <summary>
         ///// Update function.
         ///// https://docs.microsoft.com/ja-jp/sql/t-sql/functions/update-trigger-functions-transact-sql
