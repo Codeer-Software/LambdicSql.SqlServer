@@ -13,6 +13,13 @@ namespace LambdicSql.SqlServer
     public static partial class Symbol
     {
         /// <summary>
+        /// MAX
+        /// </summary>
+        /// <returns>MAX</returns>
+        [ClauseStyleConverter]
+        public static int Max() => throw new InvalitContextException(nameof(Max));
+
+        /// <summary>
         /// It's *.
         /// </summary>
         /// <typeparam name="TSelected">Type of selected.</typeparam>
