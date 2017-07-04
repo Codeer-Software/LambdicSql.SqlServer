@@ -314,13 +314,6 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>BIGINT</returns>
         [ClauseStyleConverter]
-        static DataTypeElement BigInt() => throw new InvalitContextException(nameof(BigInt));
-
-        /// <summary>
-        /// MAX
-        /// </summary>
-        /// <returns>MAX</returns>
-        [ClauseStyleConverter]
-        public static int Max() => throw new InvalitContextException(nameof(Max));
+        public static DataTypeElement BigInt() => throw new InvalitContextException(nameof(BigInt));
     }
 }

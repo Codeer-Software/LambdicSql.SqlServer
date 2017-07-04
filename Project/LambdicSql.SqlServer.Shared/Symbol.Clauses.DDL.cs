@@ -177,7 +177,7 @@ namespace LambdicSql.SqlServer
         /// <param name="increment">Increment.</param>
         /// <returns>Clause.</returns>
         [FuncStyleConverter]
-        internal static Clause<ConstraintElement> Identity(int seed, int increment) => null;
+        public static Clause<ConstraintElement> Identity(int seed, int increment) => null;
 
         /// <summary>
         /// INDEX
