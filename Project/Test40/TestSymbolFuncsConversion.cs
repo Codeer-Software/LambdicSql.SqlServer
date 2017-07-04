@@ -60,7 +60,7 @@ FROM tbl_remuneration");
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
-	CONVERT(INT,tbl_remuneration.money) AS id
+	CONVERT(INT, tbl_remuneration.money) AS id
 FROM tbl_remuneration");
         }
 
@@ -136,7 +136,7 @@ FROM tbl_remuneration");
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
-	TRY_CONVERT(INT,tbl_remuneration.money) AS id
+	TRY_CONVERT(INT, tbl_remuneration.money) AS id
 FROM tbl_remuneration");
         }
 

@@ -25,7 +25,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target"></param>
         /// <param name="destinationType">Type of destination.</param>
         /// <returns>Converted data.</returns>
-        [MethodFormatConverter(Format = "CONVERT([0],[1])")]
+        [FuncStyleConverter]
         public static TDst Convert<TDst>(DataTypeElement type, object expression) { throw new InvalitContextException(nameof(Convert)); }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value"></param>
         /// <param name="type">Type of destination.</param>
         /// <returns>Converted data.</returns>
-        [MethodFormatConverter(Format = "TRY_CONVERT([0],[1])")]
+        [FuncStyleConverter]
         public static TDst Try_Convert<TDst>(DataTypeElement type, object expression) { throw new InvalitContextException(nameof(Try_Convert)); }
 
         /// <summary>
