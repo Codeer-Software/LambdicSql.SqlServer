@@ -55,7 +55,7 @@ namespace LambdicSql.SqlServer
         /// <returns>CHAR</returns>
         [FuncStyleConverter]
         public static DataTypeElement Char(int n) { throw new InvalitContextException(nameof(Char)); }
-        
+
         /// <summary>
         /// DATE
         /// </summary>
@@ -153,7 +153,7 @@ namespace LambdicSql.SqlServer
         /// <returns>INT</returns>
         [ClauseStyleConverter]
         public static DataTypeElement Int() { throw new InvalitContextException(nameof(Int)); }
-        
+
         /// <summary>
         /// MONEY
         /// </summary>
@@ -308,5 +308,12 @@ namespace LambdicSql.SqlServer
         /// <returns>VARCHAR</returns>
         [FuncStyleConverter]
         public static DataTypeElement VarChar(int n) { throw new InvalitContextException(nameof(VarChar)); }
+
+        /// <summary>
+        /// BIGINT
+        /// </summary>
+        /// <returns>BIGINT</returns>
+        [ClauseStyleConverter]
+        public static DataTypeElement BigInt() => throw new InvalitContextException(nameof(BigInt));
     }
 }
