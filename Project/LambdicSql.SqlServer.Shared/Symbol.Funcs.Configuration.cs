@@ -1,12 +1,11 @@
 using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
-using System;
 
 namespace LambdicSql.SqlServer
 {
+    //@@@
     public static partial class Symbol
     {
-        //----------------@@@-------------------
         /// <summary>
         /// @@DBTS
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/dbts-transact-sql

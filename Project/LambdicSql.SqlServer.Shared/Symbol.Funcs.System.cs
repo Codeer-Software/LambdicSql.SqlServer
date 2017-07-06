@@ -4,15 +4,53 @@ using System;
 
 namespace LambdicSql.SqlServer
 {
+    //@@@
     public static partial class Symbol
     {
+        /// <summary>
+        /// @@TOTAL_WRITE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/error-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "@@ERROR")]
+        public static int AtAtError() => throw new InvalitContextException(nameof(AtAtError));
+
+        /// <summary>
+        /// @@IDENTITY
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/identity-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "@@IDENTITY")]
+        public static decimal AtAtIdentity() => throw new InvalitContextException(nameof(AtAtError));
+
+        /// <summary>
+        /// @@PACK_RECEIVED
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/pack-received-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "@@PACK_RECEIVED")]
+        public static int AtAtPackReceived() => throw new InvalitContextException(nameof(AtAtError));
+
+        /// <summary>
+        /// @@ROWCOUNT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/rowcount-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "@@ROWCOUNT")]
+        public static int AtAtRowCount() => throw new InvalitContextException(nameof(AtAtError));
+
+        /// <summary>
+        /// @@TRANCOUNT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/trancount-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "@@TRANCOUNT")]
+        public static int AtAt() => throw new InvalitContextException(nameof(AtAtError));
+
         /*
-        $PARTITION
-        @@ERROR
-        @@IDENTITY
-        @@PACK_RECEIVED
-        @@ROWCOUNT
-        @@TRANCOUNT
+        $PARTITION -> ????
+
+
         BINARY_CHECKSUM
         CHECKSUM
         COMPRESS
