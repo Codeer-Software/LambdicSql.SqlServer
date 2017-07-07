@@ -409,7 +409,7 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static int? Type_Id(string name) => throw new InvalitContextException(nameof(Type_Id));
 
-        //TODO ‚±‚ê‚à%‚Å‰ğŒˆ‚Å‚«‚½‚ç‚¢‚¢‚æ‚È[
+        //TODO resolve using %. need lambdicsql updating.
         /*
         /// <summary>
         /// TYPE_ID.

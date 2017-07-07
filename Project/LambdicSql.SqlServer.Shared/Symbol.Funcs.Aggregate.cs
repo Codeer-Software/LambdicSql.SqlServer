@@ -147,9 +147,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Returns the statistical variance for the population for all values in the specified expression.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
         public static double VarP(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(VarP)); }
-
-        //-----------
-
+        
         /// <summary>
         /// AVG function.
         /// </summary>

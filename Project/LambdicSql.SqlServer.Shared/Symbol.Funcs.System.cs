@@ -225,19 +225,67 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static int IsNumeric(object expression) => throw new InvalitContextException(nameof(IsNumeric));
 
+        /// <summary>
+        /// MIN_ACTIVE_ROWVERSION
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/min-active-rowversion-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static object Min_Active_Rowversion() => throw new InvalitContextException(nameof(Min_Active_Rowversion));
+
+        /// <summary>
+        /// NEWID
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/newid-transact-sql
+        /// </summary>
+        /// <returns>new id.</returns>
+        [FuncStyleConverter]
+        public static object NewId() => throw new InvalitContextException(nameof(NewId));
+
+        /// <summary>
+        /// NEWSEQUENTIALID
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/newsequentialid-transact-sql
+        /// </summary>
+        /// <returns>new sequential id.</returns>
+        [FuncStyleConverter]
+        public static object NewSequentialdId() => throw new InvalitContextException(nameof(NewSequentialdId));
+
+        /// <summary>
+        /// ROWCOUNT_BIG
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/rowcount-big-transact-sql
+        /// </summary>
+        /// <returns>row count.</returns>
+        [FuncStyleConverter]
+        public static long RowCount_Big() => throw new InvalitContextException(nameof(RowCount_Big));
+
+        /// <summary>
+        /// SESSION_CONTEXT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/session-context-transact-sql
+        /// </summary>
+        /// <param name="key">key.</param>
+        /// <returns>session context.</returns>
+        [FuncStyleConverter]
+        public static object Session_Context(string key) => throw new InvalitContextException(nameof(Session_Context));
+
+        /// <summary>
+        /// SESSION_ID
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/session-id-transact-sql
+        /// </summary>
+        /// <returns>sesson id.</returns>
+        [FuncStyleConverter]
+        public static string Session_Id() => throw new InvalitContextException(nameof(Session_Id));
+
+        /// <summary>
+        /// XACT_STATE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/xact-state-transact-sql
+        /// </summary>
+        /// <returns>transaction state of a current running request. </returns>
+        [FuncStyleConverter]
+        public static short Xact_State() => throw new InvalitContextException(nameof(Xact_State));
+
+
         //TODO ????
         /*
         $PARTITION
         */
-
-        /*
-        MIN_ACTIVE_ROWVERSION
-        NEWID
-        NEWSEQUENTIALID
-        ROWCOUNT_BIG
-        SESSION_CONTEXT
-        SESSION_ID
-        XACT_STATE
-         */
     }
 }
