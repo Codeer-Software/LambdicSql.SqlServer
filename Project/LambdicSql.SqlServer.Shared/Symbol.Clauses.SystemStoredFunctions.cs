@@ -11,6 +11,10 @@ namespace LambdicSql.SqlServer
     /// </summary>
     public static partial class Symbol
     {
+        /// <summary>
+        /// sys
+        /// </summary>
+        public static SysSymbols Sys => throw new InvalitContextException(nameof(Sys));
         //https://msdn.microsoft.com/en-us/library/ff848780.aspx
         /*
          * 
