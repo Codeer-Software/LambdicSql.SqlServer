@@ -4,6 +4,7 @@ using LambdicSql.Specialized.SymbolConverters;
 
 namespace LambdicSql.SqlServer
 {
+    //@@@
     public class SysSymbols
     {
         /// <summary>
