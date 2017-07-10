@@ -12,7 +12,6 @@ namespace LambdicSql.SqlServer
         /// sys.fn_cdc_get_all_changes_capture_instance
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/cdc-fn-cdc-get-all-changes-capture-instance-transact-sql
         /// </summary>
-        /// <typeparam name="TDst">Type of destination.</typeparam>
         /// <param name="capture_instance_name">capture instance name</param>
         /// <param name="from_lsn">The LSN value that represents the low endpoint of the LSN range to include in the result set. from_lsn is binary(10).</param>
         /// <param name="to_lsn">The LSN value that represents the high endpoint of the LSN range to include in the result set. to_lsn is binary(10).</param>
@@ -25,7 +24,6 @@ namespace LambdicSql.SqlServer
         /// sys.fn_cdc_get_net_changes_capture_instance
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/cdc-fn-cdc-get-net-changes-capture-instance-transact-sql
         /// </summary>
-        /// <typeparam name="TDst">Type of destination.</typeparam>
         /// <param name="capture_instance_name">capture instance name</param>
         /// <param name="from_lsn">The LSN that represents the low endpoint of the LSN range to include in the result set. from_lsn is binary(10).</param>
         /// <param name="to_lsn">The LSN that represents the high endpoint of the LSN range to include in the result set. to_lsn is binary(10).</param>
