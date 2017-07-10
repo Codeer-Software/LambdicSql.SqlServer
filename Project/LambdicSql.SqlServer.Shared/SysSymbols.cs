@@ -522,13 +522,28 @@ namespace LambdicSql.SqlServer
         public object fn_trace_getinfo(object trace_id) => throw new InvalitContextException(nameof(fn_trace_getinfo));
 
         /// <summary>
-        /// sys.fn_trace_getinfo  
-        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/sys-fn-trace-getfilterinfo-transact-sql
+        /// sys.fn_trace_gettable  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/sys-fn-trace-gettable-transact-sql
         /// </summary>
         /// <param name="filename">Specifies the initial trace file to be read.</param>
         /// <param name="number_files">Specifies the number of rollover files to be read.</param>
         /// <returns>Table Returned</returns>
-        [FuncStyleConverter(Name = "sys.fn_trace_getinfo")]
-        public object fn_trace_gettable(string filename, int? number_files) => throw new InvalitContextException(nameof(fn_trace_getinfo));
+        [FuncStyleConverter(Name = "sys.fn_trace_gettable")]
+        public object fn_trace_gettable(string filename, int? number_files) => throw new InvalitContextException(nameof(fn_trace_gettable));
+
+        //--------------------------
+        //Temporal Table
+        //--------------------------
+        /// <summary>
+        /// sys.sp_cleanup_temporal_history  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/sys-fn-trace-getfilterinfo-transact-sql
+        /// </summary>
+        /// <param name="schema_name">The name of the schema which current temporal table belongs to.</param>
+        /// <param name="table_name">The name of the temporal table for which retention cleanup is invoked.</param>
+        /// <param name="row_count_var">The output parameter that returns number of deleted rows.</param>
+        [FuncStyleConverter(Name = "sys.sp_cleanup_temporal_history")]
+        public void sp_cleanup_temporal_history(string schema_name, string table_name, int row_count_var) => throw new InvalitContextException(nameof(sp_cleanup_temporal_history));
+
+
     }
 }
