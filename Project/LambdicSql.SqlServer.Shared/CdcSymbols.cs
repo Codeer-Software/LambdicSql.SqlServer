@@ -4,7 +4,7 @@ using LambdicSql.ConverterServices.SymbolConverters;
 namespace LambdicSql.SqlServer
 {
     /// <summary>
-    /// 
+    /// Change data capture records insert, update, and delete activity applied to SQL Server tables, supplying the details of the changes in an easily consumed relational format
     /// </summary>
     public class CdcSymbols
     {

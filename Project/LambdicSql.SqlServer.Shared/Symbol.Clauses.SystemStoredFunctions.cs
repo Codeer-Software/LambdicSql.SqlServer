@@ -31,57 +31,43 @@ namespace LambdicSql.SqlServer
         /// CHANGETABLE 
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/changetable-transact-sql
         /// </summary>
-        /// <param name="CHANGES_table">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
+        /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
         /// <returns>Table.</returns>
-        [FuncStyleConverter]
-        public static object Changetable(object CHANGES_table) => throw new InvalitContextException(nameof(Changetable));
+        [MethodFormatConverter(Format = "CHANGETABLE() AS [0]")]
+        public static object Changetable(params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
 
         /// <summary>
         /// CHANGETABLE 
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/changetable-transact-sql
         /// </summary>
         /// <param name="CHANGES_table">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
-        /// <param name="last_sync_version">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
+        /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
         /// <returns>Table.</returns>
-        [FuncStyleConverter]
-        public static object Changetable(object CHANGES_table, object last_sync_version) => throw new InvalitContextException(nameof(Changetable));
+        [MethodFormatConverter(Format = "CHANGETABLE([0]) AS [1]")]
+        public static object Changetable(object CHANGES_table, params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
 
         /// <summary>
         /// CHANGETABLE 
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/changetable-transact-sql
         /// </summary>
         /// <param name="CHANGES_table">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
-        /// <param name="last_sync_version">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
+        /// <param name="version">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
+        /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
+        /// <returns>Table.</returns>
+        [MethodFormatConverter(Format = "CHANGETABLE([0], [1]) AS [2]")]
+        public static object Changetable(object CHANGES_table, object version, params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
+
+        /// <summary>
+        /// CHANGETABLE 
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/changetable-transact-sql
+        /// </summary>
+        /// <param name="CHANGES_table">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
+        /// <param name="version">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
         /// <param name="primary_key_values">Is the user-defined table on which to obtain change tracking information. Change tracking must be enabled on the table. A one-, two-, three-, or four-part table name can be used. The table name can be a synonym to the table.</param>
+        /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
         /// <returns>Table.</returns>
-        [FuncStyleConverter]
-        public static object Changetable(object CHANGES_table, object last_sync_version, string primary_key_values) => throw new InvalitContextException(nameof(Changetable));
-
-        //TODO:
-        ///// <summary>
-        ///// CHANGETABLE 
-        ///// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/changetable-transact-sql
-        ///// </summary>
-        ///// <param name="CHANGES_table">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
-        ///// <param name="last_sync_version">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
-        ///// <param name="primary_key_values">Is the user-defined table on which to obtain change tracking information. Change tracking must be enabled on the table. A one-, two-, three-, or four-part table name can be used. The table name can be a synonym to the table.</param>
-        ///// <param name="table_alias">Is the alias name of the table that is returned by CHANGETABLE. table_alias is required and must be a valid identifier.</param>
-        ///// <returns>Table.</returns>
-        //[MethodFormatConverter(Format = "CHANGETABLE([1], [2], [3]) as [4]")]
-        //public static TDst Changetable<TDst>(TDst CHANGES_table, TDst last_sync_version, string primary_key_values, params TableDefinitionElement[] table_alias) => throw new InvalitContextException(nameof(Changetable));
-
-        ///// <summary>
-        ///// CHANGETABLE 
-        ///// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/changetable-transact-sql
-        ///// </summary>
-        ///// <param name="CHANGES_table">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
-        ///// <param name="last_sync_version">Returns tracking information for all changes to a table that have occurred since the version that is specified by last_sync_version.</param>
-        ///// <param name="primary_key_values">Is the user-defined table on which to obtain change tracking information. Change tracking must be enabled on the table. A one-, two-, three-, or four-part table name can be used. The table name can be a synonym to the table.</param>
-        ///// <param name="table_alias">Is the alias name of the table that is returned by CHANGETABLE. table_alias is required and must be a valid identifier.</param>
-        ///// <param name="column_alias">Is an optional column alias or list of column aliases for the columns that are returned by CHANGETABLE. This enables column names to be customized in case there are duplicate names in the results.</param>
-        ///// <returns>Table.</returns>
-        //[MethodFormatConverter(Format = "CHANGETABLE([1], [2], [3]) as [4] [5]")]
-        //public static TDst Changetable<TDst>(TDst CHANGES_table, TDst last_sync_version, string primary_key_values, object table_alias, params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
+        [MethodFormatConverter(Format = "CHANGETABLE([0], [1], [2]) AS [3]")]
+        public static object Changetable(object CHANGES_table, object version, object primary_key_values, params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
 
         /// <summary>
         /// CHANGE_TRACKING_MIN_VALID_VERSION  
@@ -240,39 +226,118 @@ namespace LambdicSql.SqlServer
         /// </summary>
         public static Managed_BackupSymbols Managed_Backup => throw new InvalitContextException(nameof(Managed_Backup));
 
-
         //--------------------------
         //Full-Text Search and Semantic Search Functions
         //--------------------------
-        //TODO:
-        ///// <summary>
-        ///// CONTAINSTABLE      
-        ///// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
-        ///// </summary>
-        ///// <param name="table">Is the name of a table that has been full-text indexed.</param>
-        ///// <returns>nvarchar(max)</returns>
-        //[FuncStyleConverter]
-        //public static object Containstable(string table) => throw new InvalitContextException(nameof(Containstable));
+        /// <summary>
+        /// CONTAINSTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Containstable(string table) => throw new InvalitContextException(nameof(Containstable));
 
-        ///// <summary>
-        ///// CONTAINSTABLE      
-        ///// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
-        ///// </summary>
-        ///// <param name="table">Is the name of a table that has been full-text indexed.</param>
-        ///// <param name="column">column_name | ( column_list ) | * .</param>
-        ///// <returns>nvarchar(max)</returns>
-        //[FuncStyleConverter]
-        //public static object Containstable(string table, object column) => throw new InvalitContextException(nameof(Containstable));
+        /// <summary>
+        /// CONTAINSTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Containstable(string table, object column) => throw new InvalitContextException(nameof(Containstable));
 
-        ///// <summary>
-        ///// CONTAINSTABLE      
-        ///// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
-        ///// </summary>
-        ///// <param name="table">Is the name of a table that has been full-text indexed.</param>
-        ///// <param name="column">column_name | ( column_list ) | * .</param>
-        ///// <returns>nvarchar(max)</returns>
-        //[FuncStyleConverter]
-        //public static object Containstable(string table, object column, string language_term) => throw new InvalitContextException(nameof(Containstable));
+        /// <summary>
+        /// CONTAINSTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <param name="contains_search_condition"></param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Containstable(string table, object column, object contains_search_condition) => throw new InvalitContextException(nameof(Containstable));
+
+        /// <summary>
+        /// CONTAINSTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <param name="contains_search_condition"></param>
+        /// <param name="language_term">Is the language whose resources will be used for word breaking, stemming, and thesaurus and noise-word (or stopword) removal as part of the query</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Containstable(string table, object column, object contains_search_condition, object language_term) => throw new InvalitContextException(nameof(Containstable));
+
+        /// <summary>
+        /// CONTAINSTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <param name="contains_search_condition"></param>
+        /// <param name="language_term">Is the language whose resources will be used for word breaking, stemming, and thesaurus and noise-word (or stopword) removal as part of the query</param>
+        /// <param name="top_n_by_rank">Specifies that only the n highest ranked matches, in descending order, are returned</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Containstable(string table, object column, object contains_search_condition, object language_term, int top_n_by_rank) => throw new InvalitContextException(nameof(Containstable));
+
+        /// <summary>
+        /// FREETEXTTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Freetexttable(string table) => throw new InvalitContextException(nameof(Containstable));
+
+        /// <summary>
+        /// FREETEXTTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Freetexttable(string table, object column) => throw new InvalitContextException(nameof(Containstable));
+
+        /// <summary>
+        /// FREETEXTTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <param name="freetext_string">Is text to search for in the column_name</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Freetexttable(string table, object column, string freetext_string) => throw new InvalitContextException(nameof(Containstable));
+
+        /// <summary>
+        /// FREETEXTTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <param name="freetext_string">Is text to search for in the column_name</param>
+        /// <param name="language_term">Is the language whose resources will be used for word breaking, stemming, and thesaurus and noise-word (or stopword) removal as part of the query</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Freetexttable(string table, object column, string freetext_string, object language_term) => throw new InvalitContextException(nameof(Containstable));
+
+        /// <summary>
+        /// FREETEXTTABLE      
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/containstable-transact-sql
+        /// </summary>
+        /// <param name="table">Is the name of a table that has been full-text indexed.</param>
+        /// <param name="column">column_name | ( column_list ) | * .</param>
+        /// <param name="freetext_string">Is text to search for in the column_name</param>
+        /// <param name="language_term">Is the language whose resources will be used for word breaking, stemming, and thesaurus and noise-word (or stopword) removal as part of the query</param>
+        /// <param name="top_n_by_rank">Specifies that only the n highest ranked matches, in descending order, are returned</param>
+        /// <returns>table</returns>
+        [FuncStyleConverter]
+        public static object Freetexttable(string table, object column, string freetext_string, object language_term, int top_n_by_rank) => throw new InvalitContextException(nameof(Containstable));
 
         /// <summary>
         /// SEMANTICKEYPHRASETABLE      

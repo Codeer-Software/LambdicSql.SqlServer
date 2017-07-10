@@ -5,7 +5,7 @@ using System;
 namespace LambdicSql.SqlServer
 {
     /// <summary>
-    /// 
+    /// SQL Server provides the following groups of system functions.
     /// </summary>
     public class SysSymbols
     {

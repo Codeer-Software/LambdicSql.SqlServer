@@ -5,7 +5,7 @@ using System;
 namespace LambdicSql.SqlServer
 {
     /// <summary>
-    /// 
+    /// SQL Server provides the following functions for SQL Server Managed Backup to Microsoft Azure.
     /// </summary>
     public class Managed_BackupSymbols
     {
