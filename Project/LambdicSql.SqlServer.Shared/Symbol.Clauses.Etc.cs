@@ -12,6 +12,7 @@ namespace LambdicSql.SqlServer
     /// </summary>
     public static partial class Symbol
     {
+        //TODO test, and return special type.
         /// <summary>
         /// MAX
         /// </summary>
