@@ -1,5 +1,7 @@
+using LambdicSql.BuilderServices.CodeParts;
 using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
+using System.Linq.Expressions;
 
 namespace LambdicSql.SqlServer
 {
@@ -22,22 +24,20 @@ namespace LambdicSql.SqlServer
         /// OPENJSON
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
         /// </summary>
-        /// <typeparam name="T">json value type.</typeparam>
         /// <param name="jsonExpression">jsonExpression.</param>
         /// <returns>json value.</returns>
         [FuncStyleConverter]
-        public static T OpenJson<T>(string jsonExpression) => throw new InvalitContextException(nameof(OpenJson));
+        public static Clause<Non> OpenJson(string jsonExpression) => throw new InvalitContextException(nameof(OpenJson));
 
         /// <summary>
         /// OPENJSON
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
         /// </summary>
-        /// <typeparam name="T">json value type.</typeparam>
         /// <param name="jsonExpression">jsonExpression.</param>
         /// <param name="path">path.</param>
         /// <returns>json value.</returns>
         [FuncStyleConverter]
-        public static T OpenJson<T>(string jsonExpression, string path) => throw new InvalitContextException(nameof(OpenJson));
+        public static Clause<Non> OpenJson(string jsonExpression, string path) => throw new InvalitContextException(nameof(OpenJson));
 
         /// <summary>
         /// OPENQUERY
@@ -66,25 +66,83 @@ namespace LambdicSql.SqlServer
         /// OPENXML
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openxml-transact-sql
         /// </summary>
-        /// <typeparam name="T">xml value type.</typeparam>
         /// <param name="idoc">idoc.</param>
         /// <param name="path">path.</param>
         /// <returns>xml value.</returns>
         [FuncStyleConverter]
-        public static T OpenXml<T>(string idoc, string path) => throw new InvalitContextException(nameof(OpenXml));
+        public static Clause<Non> OpenXml(string idoc, string path) => throw new InvalitContextException(nameof(OpenXml));
 
         /// <summary>
         /// OPENXML
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openxml-transact-sql
         /// </summary>
-        /// <typeparam name="T">xml value type.</typeparam>
         /// <param name="idoc">idoc.</param>
         /// <param name="path">path.</param>
         /// <param name="flags">flags.</param>
         /// <returns>xml value.</returns>
         [FuncStyleConverter]
-        public static T OpenXml<T>(string idoc, string path, byte flags) => throw new InvalitContextException(nameof(OpenXml));
+        public static Clause<Non> OpenXml(string idoc, string path, byte flags) => throw new InvalitContextException(nameof(OpenXml));
 
-        //TODO WITH
+        /// <summary>
+        /// WITH clause.
+        /// </summary>
+        /// <param name="defines">defines.</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static T With<T>(this Clause src, params IOpenWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
+    }
+
+    /// <summary>
+    /// Open function with element.
+    /// </summary>
+    public interface IOpenWithElement { }
+
+    /// <summary>
+    /// Open function with element.
+    /// </summary>
+    public class OpenWithElement : IOpenWithElement
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="column">Column.</param>
+        /// <param name="type">Type.</param>
+        /// <param name="path">Path.</param>
+        [NewFormatConverter(Format = "[0] [1] [1]")]
+        public OpenWithElement(object column, DataTypeElement type, string path) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
+    }
+
+    /// <summary>
+    /// Open function with element.
+    /// column type as json.
+    /// </summary>
+    public class OpenWithElementTypeJson : IOpenWithElement
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="column">Column.</param>
+        /// <param name="type">Type.</param>
+        /// <param name="path">Path.</param>
+        [OpenWithElementTypeJson]
+        public OpenWithElementTypeJson(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
+    }
+
+    /// <summary>
+    /// SQL symbol converter attribute for OPEN WITH.
+    /// </summary>
+    public class OpenWithElementTypeJsonAttribute : NewConverterAttribute
+    {
+        /// <summary>
+        /// Convert expression to code.
+        /// </summary>
+        /// <param name="expression">Expression.</param>
+        /// <param name="converter">Expression converter.</param>
+        /// <returns>Parts.</returns>
+        public override ICode Convert(NewExpression expression, ExpressionConverter converter)
+        {
+            var arg0 = new HCode(new SingleTextCode("["), converter.ConvertToCode(expression.Arguments[0]), new SingleTextCode("]")) { Separator = string.Empty };
+            return new HCode(arg0, converter.ConvertToCode(expression.Arguments[1]), new SingleTextCode("AS JSON")) { Separator = " " };
+        }
     }
 }
