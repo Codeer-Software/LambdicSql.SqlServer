@@ -914,7 +914,42 @@ namespace LambdicSql.SqlServer
         */
 
         //https://msdn.microsoft.com/en-us/library/ms188332.aspx
-        //Execute
+
+        /// <summary>
+        /// EXEC
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Exec<T>(T expression) => throw new InvalitContextException(nameof(Exec));
+
+        /// <summary>
+        /// EXEC
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Exec<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Exec));
+
+        /// <summary>
+        /// EXECUTE
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Execute<T>(T expression) => throw new InvalitContextException(nameof(Execute));
+
+        /// <summary>
+        /// EXECUTE
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Execute<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Execute));
     }
 }
 
