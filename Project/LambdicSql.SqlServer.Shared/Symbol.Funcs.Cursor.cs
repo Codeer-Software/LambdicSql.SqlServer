@@ -20,15 +20,16 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>the status of the last cursor FETCH statement issued against any cursor currently opened by the connection.</returns>
         [ClauseStyleConverter(Name = "@@FETCH_STATUS")]
-        public static int AtAtFetch_Status() => throw new InvalitContextException(nameof(AtAtCursor_Rows));
+        public static int AtAtFetch_Status() => throw new InvalitContextException(nameof(AtAtFetch_Status));
 
         /// <summary>
         /// CURSOR_STATUS.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/cursor-status-transact-sql
         /// </summary>
         /// <param name="type">local or global or variable.</param>
         /// <param name="value">cursor_name or cursor_variable.</param>
         /// <returns></returns>
         [FuncStyleConverter]
-        public static ushort Cursor_Status(string type, string value) => throw new InvalitContextException(nameof(IsJson));
+        public static ushort Cursor_Status(string type, string value) => throw new InvalitContextException(nameof(Cursor_Status));
     }
 }
