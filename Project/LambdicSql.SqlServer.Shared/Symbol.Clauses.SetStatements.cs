@@ -3,6 +3,7 @@ using LambdicSql.ConverterServices.SymbolConverters;
 
 namespace LambdicSql.SqlServer
 {
+    //@@@
     public static partial class Symbol
     {
         /// <summary>
