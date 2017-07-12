@@ -368,9 +368,9 @@ namespace LambdicSql.SqlServer
         /// SET IDENTITY_INSERT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-identity-insert-transact-sql
         /// </summary>
-        /// <param name="SET IDENTITY_INSERT">.</param>
+        /// <param name="bin">bin.</param>
         /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Name = "")]
+        [ClauseStyleConverter(Name = "SET IDENTITY_INSERT")]
         public static Clause<Non> Set_Identity_Insert(object bin) => throw new InvalitContextException(nameof(Set_Identity_Insert));
 
         /// <summary>
@@ -379,9 +379,9 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="SET IDENTITY_INSERT">.</param>
+        /// <param name="bin">bin.</param>
         /// <returns>Clause.</returns>
-        [ClauseStyleConverter(Name = "")]
+        [ClauseStyleConverter(Name = "SET IDENTITY_INSERT")]
         public static Clause<T> Set_Identity_Insert<T>(this Clause<T> before, object bin) => throw new InvalitContextException(nameof(Set_Identity_Insert));
 
         /// <summary>

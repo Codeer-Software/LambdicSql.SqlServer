@@ -12,6 +12,7 @@ namespace LambdicSql.SqlServer
     public static partial class Symbol
     {
         //https://msdn.microsoft.com/en-us/library/ms179932.aspx
+
         /*
         Mapping System Tables to System Views
         System Base Tables

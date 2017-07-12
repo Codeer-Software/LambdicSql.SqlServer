@@ -2874,12 +2874,12 @@ namespace LambdicSql.SqlServer
         public static void sp_getbindtoken(string out_token) => throw new InvalitContextException(nameof(sp_getbindtoken));
 
         /// <summary>
-        /// sp_getapplock         
+        /// sp_getapplock    
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql
         /// </summary>
         /// <param name="Resource">Is a string specifying a name that identifies the lock resource</param>
         /// <param name="LockMode">External language script specified as a literal or variable input</param>
-        /// <returns>>= 0 (success), or < 0 (failure)</returns>
+        /// <returns>>= 0 (success), or &lt; 0 (failure)</returns>
         [ClauseStyleConverter]
         public static int sp_getapplock(string Resource, string LockMode) => throw new InvalitContextException(nameof(sp_getapplock));
 
@@ -2890,7 +2890,7 @@ namespace LambdicSql.SqlServer
         /// <param name="Resource">Is a string specifying a name that identifies the lock resource</param>
         /// <param name="LockMode">External language script specified as a literal or variable input</param>
         /// <param name="LockOwner">Specifies the name of the variable used to represent the query defined by @input_data_1</param>
-        /// <returns>>= 0 (success), or < 0 (failure)</returns>
+        /// <returns>>= 0 (success), or &lt; 0 (failure)</returns>
         [ClauseStyleConverter]
         public static int sp_getapplock(string Resource, string LockMode, string LockOwner) => throw new InvalitContextException(nameof(sp_getapplock));
 
@@ -2902,7 +2902,7 @@ namespace LambdicSql.SqlServer
         /// <param name="LockMode">External language script specified as a literal or variable input</param>
         /// <param name="LockOwner">Specifies the name of the variable used to represent the query defined by @input_data_1</param>
         /// <param name="LockTimeout">Specifies the input data used by the external script in the form of a Transact-SQL query</param>
-        /// <returns>>= 0 (success), or < 0 (failure)</returns>
+        /// <returns>>= 0 (success), or &lt; 0 (failure)</returns>
         [ClauseStyleConverter]
         public static int sp_getapplock(string Resource, string LockMode, string LockOwner, int LockTimeout) => throw new InvalitContextException(nameof(sp_getapplock));
 
@@ -2915,7 +2915,7 @@ namespace LambdicSql.SqlServer
         /// <param name="LockOwner">Specifies the name of the variable used to represent the query defined by @input_data_1</param>
         /// <param name="LockTimeout">Specifies the input data used by the external script in the form of a Transact-SQL query</param>
         /// <param name="DbPrincipal">Specifies the name of the variable in the external script that will contain the data to be returned to SQL Server upon completion of the stored procedure call.</param>
-        /// <returns>>= 0 (success), or < 0 (failure)</returns>
+        /// <returns>>= 0 (success), or &lt; 0 (failure)</returns>
         [ClauseStyleConverter]
         public static int sp_getapplock(string Resource, string LockMode, string LockOwner, int LockTimeout, string DbPrincipal) => throw new InvalitContextException(nameof(sp_getapplock));
 

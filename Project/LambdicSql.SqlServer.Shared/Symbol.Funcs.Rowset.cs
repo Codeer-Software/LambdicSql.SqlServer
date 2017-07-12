@@ -86,6 +86,7 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// WITH clause.
         /// </summary>
+        /// <param name="src">src.</param>
         /// <param name="defines">defines.</param>
         /// <returns></returns>
         [FuncStyleConverter]
@@ -123,7 +124,6 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="column">Column.</param>
         /// <param name="type">Type.</param>
-        /// <param name="path">Path.</param>
         [OpenWithElementTypeJson]
         public OpenWithElementTypeJson(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
     }

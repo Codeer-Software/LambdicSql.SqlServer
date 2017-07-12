@@ -15,7 +15,7 @@ namespace LambdicSql.SqlServer
         /// Always On Availability Groups Functions
         /// Change Data Capture Functions
         /// </summary>
-        public static SysSymbols Sys => throw new InvalitContextException(nameof(Sys));
+        public static SysSymbol Sys => throw new InvalitContextException(nameof(Sys));
 
         /// <summary>
         /// sys

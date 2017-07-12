@@ -25,6 +25,6 @@ namespace LambdicSql.SqlServer
         /// <param name="false_Value">false_Value.</param>
         /// <returns>choose value.</returns>
         [FuncStyleConverter]
-        public static object Iif(bool expression, object true_Value, object false_Value) => throw new InvalitContextException(nameof(Iif));
+        public static object Iif(bool bool_expression, object true_Value, object false_Value) => throw new InvalitContextException(nameof(Iif));
     }
 }
