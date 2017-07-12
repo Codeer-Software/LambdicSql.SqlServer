@@ -52,7 +52,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.TextAndImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Conversion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Trigger.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemStoredFunctions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemStoredProcedures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemTables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TopElement.cs" />
   </ItemGroup>
 </Project>

@@ -12,6 +12,19 @@ namespace LambdicSql.SqlServer
     /// </summary>
     public static partial class Symbol
     {
+        /// <summary>
+        /// sys
+        /// Always On Availability Groups Functions
+        /// Change Data Capture Functions
+        /// </summary>
+        public static SysSymbol Sys => throw new InvalitContextException(nameof(Sys));
+
+        /// <summary>
+        /// sys
+        /// Change Data Capture Functions
+        /// </summary>
+        public static CdcSymbols Cdc => throw new InvalitContextException(nameof(Cdc));
+
         //TODO test, and return special type.
         /// <summary>
         /// MAX
