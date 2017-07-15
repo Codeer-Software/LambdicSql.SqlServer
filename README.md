@@ -1,4 +1,4 @@
-﻿LambdicSql for SqlServer_β 0.1.0
+﻿LambdicSql for SqlServer_β 0.15.0
 ======================
 
 ![master build status](https://clueup.visualstudio.com/_apis/public/build/definitions/d5ee4abe-e932-4239-a0a1-d304dbdb41fa/103/badge)
@@ -426,6 +426,57 @@ SELECT
 FROM tbl_remuneration
 	JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)
 WHERE ((@p_0) < (tbl_remuneration.money)) AND ((tbl_remuneration.money) < (@p_1))
+```
+## String interpolation.
+```csharp
+public void TestFormatText()
+{
+    var city = "London";
+    var contactTitle = "Sales Representative";
+
+    var sql = Db<DB>.InterpolateSql<Customers>(db =>
+$@"SELECT *
+FROM Customers
+WHERE City = {city}
+AND ContactTitle = {contactTitle}"
+        );
+
+    //to string and params.
+    var info = sql.Build(cnn.GetType());
+
+    //execute query by dapper or sql-net-pcl.
+    var datas = cnn.Query(sql).ToList();
+}
+```
+```sql
+SELECT *
+FROM Customers
+WHERE City = @city
+    AND ContactTitle = @contactTitle
+```
+```csharp
+public void TestFormatText()
+{
+    var city = "London";
+    var contactTitle = "Sales Representative";
+
+    var sql = Db<DB>.InterpolateSql<Customers>(db =>
+$@"SELECT *
+FROM Customers
+WHERE {(db.Customers.City == city && db.Customers.ContactTitle == contactTitle)}"
+        );
+
+    //to string and params.
+    var info = sql.Build(cnn.GetType());
+
+    //execute query by dapper or sql-net-pcl.
+    var datas = cnn.Query(sql).ToList();
+}
+```
+```sql
+SELECT *
+FROM Customers
+WHERE ((Customers.City) = (@city)) AND ((Customers.ContactTitle) = (@contactTitle))
 ```
 ## 2 way sql.
 Do you know 2 way sql?
