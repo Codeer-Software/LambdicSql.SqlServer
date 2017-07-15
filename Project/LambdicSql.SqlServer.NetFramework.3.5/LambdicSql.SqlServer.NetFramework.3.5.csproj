@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LambdicSql.SqlServer</RootNamespace>
-    <AssemblyName>LambdicSql.SqlServer</AssemblyName>
+    <AssemblyName>LambdicSql.SqlServer.NetFramework.3.5</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,11 +28,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\LambdicSql.SqlServer.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\LambdicSql.SqlServer.NetFramework.3.5.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LambdicSql, Version=0.46.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.46.0\lib\net35\LambdicSql.dll</HintPath>
+    <Reference Include="LambdicSql.NetFramework.3.5, Version=0.47.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.47.0\lib\net35\LambdicSql.NetFramework.3.5.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

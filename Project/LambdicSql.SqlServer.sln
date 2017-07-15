@@ -1,13 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer", "LambdicSql.SqlServer\LambdicSql.SqlServer.csproj", "{335592C4-241D-4E16-94E0-B1A23FC279B9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{77EF028A-D7AF-45C8-90D6-19492EDC0CFB} = {77EF028A-D7AF-45C8-90D6-19492EDC0CFB}
-	EndProjectSection
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LambdicSql.SqlServer.Shared", "LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.shproj", "{028FE542-3C97-45FB-88A6-8EED82AF2D68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.PCL", "LambdicSql.SqlServer.PCL\LambdicSql.SqlServer.PCL.csproj", "{77EF028A-D7AF-45C8-90D6-19492EDC0CFB}"
@@ -20,9 +15,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0E03C2
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.NetFramework.3.5", "LambdicSql.SqlServer.NetFramework.3.5\LambdicSql.SqlServer.NetFramework.3.5.csproj", "{335592C4-241D-4E16-94E0-B1A23FC279B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.NetFramework.4.6", "LambdicSql.SqlServer.NetFramework.4.6\LambdicSql.SqlServer.NetFramework.4.6.csproj", "{314076CB-DAFB-46F4-876D-B8D0B5C0217C}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{028fe542-3c97-45fb-88a6-8eed82af2d68}*SharedItemsImports = 13
+		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{314076cb-dafb-46f4-876d-b8d0b5c0217c}*SharedItemsImports = 4
 		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{335592c4-241d-4e16-94e0-b1a23fc279b9}*SharedItemsImports = 4
 		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{77ef028a-d7af-45c8-90d6-19492edc0cfb}*SharedItemsImports = 4
 	EndGlobalSection
@@ -31,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77EF028A-D7AF-45C8-90D6-19492EDC0CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77EF028A-D7AF-45C8-90D6-19492EDC0CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77EF028A-D7AF-45C8-90D6-19492EDC0CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +39,14 @@ Global
 		{C94F00C4-CFE2-4019-9614-0CC63E5ED916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C94F00C4-CFE2-4019-9614-0CC63E5ED916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C94F00C4-CFE2-4019-9614-0CC63E5ED916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
