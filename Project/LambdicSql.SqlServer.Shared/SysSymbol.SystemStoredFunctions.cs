@@ -99,7 +99,7 @@ namespace LambdicSql.SqlServer
         /// <param name="update_mask">Is the mask identifying updated columns in any associated change row. update_mask is varbinary(128).</param>
         /// <returns>bit(An integer data type that can take a value of 1, 0, or NULL.)</returns>
         [FuncStyleConverter(Name = "sys.fn_cdc_has_column_changed")]
-        public bool? fn_cdc_has_column_changed(string capture_instance, string column_name, byte[] update_mask) => throw new InvalitContextException(nameof(fn_cdc_has_column_changed));
+        public int? fn_cdc_has_column_changed(string capture_instance, string column_name, byte[] update_mask) => throw new InvalitContextException(nameof(fn_cdc_has_column_changed));
 
         /// <summary>
         /// sys.fn_cdc_increment_lsn 
@@ -118,7 +118,7 @@ namespace LambdicSql.SqlServer
         /// <param name="update_mask">Is the mask identifying updated columns. update_mask is varbinary(128).</param>
         /// <returns>bit</returns>
         [FuncStyleConverter(Name = "sys.fn_cdc_is_bit_set")]
-        public bool? fn_cdc_is_bit_set(int position, byte[] update_mask) => throw new InvalitContextException(nameof(fn_cdc_is_bit_set));
+        public int? fn_cdc_is_bit_set(int position, byte[] update_mask) => throw new InvalitContextException(nameof(fn_cdc_is_bit_set));
 
         /// <summary>
         /// sys.fn_cdc_map_lsn_to_time  
@@ -530,5 +530,120 @@ namespace LambdicSql.SqlServer
         /// <returns>Table Returned</returns>
         [FuncStyleConverter(Name = "sys.fn_trace_gettable")]
         public object fn_trace_gettable(string filename, int? number_files) => throw new InvalitContextException(nameof(fn_trace_gettable));
+
+        //--------------------------
+        //Database Engine Stored Procedures
+        //--------------------------
+        /// <summary>
+        /// sys.sp_flush_log  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-flush-log-transact-sql
+        /// </summary>
+        /// <returns>A return code of 1 indicates success. Any other value indicates failure</returns>
+        [FuncStyleConverter(Name = "sys.sp_flush_log")]
+        public int sp_flush_log() => throw new InvalitContextException(nameof(sp_flush_log));
+
+        /// <summary>
+        /// sys.sp_xtp_bind_db_resource_pool  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-bind-db-resource-pool-transact-sql
+        /// </summary>
+        /// <param name="database_name">The name of an existing In-Memory OLTP enabled database.</param>
+        /// <param name="resource_pool_name">The name of an existing resource pool.</param>
+        [FuncStyleConverter(Name = "sys.sp_xtp_bind_db_resource_pool")]
+        public void sp_xtp_bind_db_resource_pool(string database_name, string resource_pool_name) => throw new InvalitContextException(nameof(sp_xtp_bind_db_resource_pool));
+
+        /// <summary>
+        /// sys.sp_xtp_checkpoint_force_garbage_collection  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-checkpoint-force-garbage-collection-transact-sql
+        /// </summary>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_checkpoint_force_garbage_collection")]
+        public int sp_xtp_checkpoint_force_garbage_collection() => throw new InvalitContextException(nameof(sp_xtp_checkpoint_force_garbage_collection));
+
+        /// <summary>
+        /// sys.sp_xtp_checkpoint_force_garbage_collection  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-checkpoint-force-garbage-collection-transact-sql
+        /// </summary>
+        /// <param name="database_name">The database to run garbage collection on. The default is the current database.</param>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_checkpoint_force_garbage_collection")]
+        public int sp_xtp_checkpoint_force_garbage_collection(string database_name) => throw new InvalitContextException(nameof(sp_xtp_checkpoint_force_garbage_collection));
+
+        /// <summary>
+        /// sys.sp_xtp_control_proc_exec_stats  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-control-proc-exec-stats-transact-sql
+        /// </summary>
+        /// <param name="new_collection_value">Determines whether procedure-level statistics collection is on (1) or off (0).</param>
+        /// <param name="old_collection_value">Returns the current status.</param>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_control_proc_exec_stats")]
+        public int sp_xtp_control_proc_exec_stats(int new_collection_value, string old_collection_value) => throw new InvalitContextException(nameof(sp_xtp_control_proc_exec_stats));
+
+        /// <summary>
+        /// sys.sp_xtp_control_query_exec_stats  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-control-query-exec-stats-transact-sql
+        /// </summary>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_control_query_exec_stats")]
+        public int sp_xtp_control_query_exec_stats() => throw new InvalitContextException(nameof(sp_xtp_control_query_exec_stats));
+
+        /// <summary>
+        /// sys.sp_xtp_control_query_exec_stats  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-control-query-exec-stats-transact-sql
+        /// </summary>
+        /// <param name="new_collection_value">Determines whether procedure-level statistics collection is on (1) or off (0).</param>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_control_query_exec_stats")]
+        public int sp_xtp_control_query_exec_stats(int new_collection_value) => throw new InvalitContextException(nameof(sp_xtp_control_query_exec_stats));
+
+        /// <summary>
+        /// sys.sp_xtp_control_query_exec_stats  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-control-query-exec-stats-transact-sql
+        /// </summary>
+        /// <param name="new_collection_value">Determines whether procedure-level statistics collection is on (1) or off (0).</param>
+        /// <param name="database_id">The database ID and object ID for the natively compiled stored procedure.</param>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_control_query_exec_stats")]
+        public int sp_xtp_control_query_exec_stats(int new_collection_value, int database_id) => throw new InvalitContextException(nameof(sp_xtp_control_query_exec_stats));
+
+        /// <summary>
+        /// sys.sp_xtp_control_query_exec_stats  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-control-query-exec-stats-transact-sql
+        /// </summary>
+        /// <param name="new_collection_value">Determines whether procedure-level statistics collection is on (1) or off (0).</param>
+        /// <param name="database_id">The database ID and object ID for the natively compiled stored procedure.</param>
+        /// <param name="xtp_object_id">The database ID and object ID for the natively compiled stored procedure.</param>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_control_query_exec_stats")]
+        public int sp_xtp_control_query_exec_stats(int new_collection_value, int database_id, int xtp_object_id) => throw new InvalitContextException(nameof(sp_xtp_control_query_exec_stats));
+
+        /// <summary>
+        /// sys.sp_xtp_control_query_exec_stats  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-control-query-exec-stats-transact-sql
+        /// </summary>
+        /// <param name="new_collection_value">Determines whether procedure-level statistics collection is on (1) or off (0).</param>
+        /// <param name="database_id">The database ID and object ID for the natively compiled stored procedure.</param>
+        /// <param name="xtp_object_id">The database ID and object ID for the natively compiled stored procedure.</param>
+        /// <param name="old_collection_value">Returns the current status.</param>
+        /// <returns>0 for success. Nonzero for failure.</returns>
+        [FuncStyleConverter(Name = "sys.sp_xtp_control_query_exec_stats")]
+        public int sp_xtp_control_query_exec_stats(int new_collection_value, int database_id, int xtp_object_id, string old_collection_value) => throw new InvalitContextException(nameof(sp_xtp_control_query_exec_stats));
+
+        /// <summary>
+        /// sys.sp_xtp_merge_checkpoint_files  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-merge-checkpoint-files-transact-sql
+        /// </summary>
+        /// <param name="database_name">The name of the database on which to invoke the merge. </param>
+        /// <param name="lower_bound_Tid">The (bigint) lower bound of transactions for a data file as shown in sys.dm_db_xtp_checkpoint_files (Transact-SQL) corresponding to the start checkpoint file of the merge.</param>
+        /// <param name="upper_bound_Tid">The (bigint) upper bound of transactions for a data file as shown in sys.dm_db_xtp_checkpoint_files (Transact-SQL). An error is generated for invalid transactonId value.</param>
+        [FuncStyleConverter(Name = "sys.sp_xtp_merge_checkpoint_files")]
+        public void sp_xtp_merge_checkpoint_files(string database_name, int lower_bound_Tid, int upper_bound_Tid) => throw new InvalitContextException(nameof(sp_xtp_merge_checkpoint_files));
+
+        /// <summary>
+        /// sys.sp_xtp_unbind_db_resource_pool  
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sys-sp-xtp-unbind-db-resource-pool-transact-sql
+        /// </summary>
+        /// <param name="database_name">The name of an existing In-Memory OLTP enabled database. </param>
+        [FuncStyleConverter(Name = "sys.sp_xtp_unbind_db_resource_pool")]
+        public void sp_xtp_unbind_db_resource_pool(string database_name) => throw new InvalitContextException(nameof(sp_xtp_unbind_db_resource_pool));
     }
 }

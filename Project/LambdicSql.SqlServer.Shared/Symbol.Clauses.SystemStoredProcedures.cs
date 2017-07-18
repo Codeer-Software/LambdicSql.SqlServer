@@ -817,7 +817,7 @@ namespace LambdicSql.SqlServer
         /// <param name="ODBCVer">Is the version of ODBC being used.</param>
         /// <param name="fUsePattern">Determines whether the underscore (_), percent (%), and bracket ([ ]) characters are interpreted as wildcard characters.</param>
         [ClauseStyleConverter]
-        public static void sp_sproc_columns(string procedure_name, string procedure_owner, string procedure_qualifier, string column_name, int ODBCVer, bool? fUsePattern) => throw new InvalitContextException(nameof(sp_sproc_columns));
+        public static void sp_sproc_columns(string procedure_name, string procedure_owner, string procedure_qualifier, string column_name, int?ODBCVer, int? fUsePattern) => throw new InvalitContextException(nameof(sp_sproc_columns));
 
         /// <summary>
         /// sp_statistics   
@@ -918,7 +918,7 @@ namespace LambdicSql.SqlServer
         /// <param name="qualifier">Is the name of the procedure qualifier.</param>
         /// <param name="fUsePattern">Determines whether the underscore (_), percent (%), or brackets [ ]) are interpreted as wildcard characters.</param>
         [ClauseStyleConverter]
-        public static void sp_stored_procedures(string sp_name, string sp_owner, string qualifier, bool? fUsePattern) => throw new InvalitContextException(nameof(sp_stored_procedures));
+        public static void sp_stored_procedures(string sp_name, string sp_owner, string qualifier, int? fUsePattern) => throw new InvalitContextException(nameof(sp_stored_procedures));
 
         /// <summary>
         /// sp_table_privileges   
@@ -956,7 +956,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table_qualifier">Is the name of the table qualifier.</param>
         /// <param name="fUsePattern">Determines whether the underscore (_), percent (%), and bracket ([ or ]) characters are interpreted as wildcard characters.</param>
         [ClauseStyleConverter]
-        public static void sp_table_privileges(string table_name, string table_owner, string table_qualifier, bool? fUsePattern) => throw new InvalitContextException(nameof(sp_table_privileges));
+        public static void sp_table_privileges(string table_name, string table_owner, string table_qualifier, int? fUsePattern) => throw new InvalitContextException(nameof(sp_table_privileges));
 
         /// <summary>
         /// sp_tables   
@@ -1006,7 +1006,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table_type">Is a list of values, separated by commas, that gives information about all tables of the table types that are specified.</param>
         /// <param name="fUsePattern">Determines whether the underscore ( _ ), percent ( % ), and bracket ( [ or ] ) characters are interpreted as wildcard characters.</param>
         [ClauseStyleConverter]
-        public static void sp_tables(string table_name, string table_owner, string table_qualifier, string table_type, bool? fUsePattern) => throw new InvalitContextException(nameof(sp_tables));
+        public static void sp_tables(string table_name, string table_owner, string table_qualifier, string table_type, int? fUsePattern) => throw new InvalitContextException(nameof(sp_tables));
 
         //--------------------------
         //Cursor Stored Procedures
@@ -1022,7 +1022,7 @@ namespace LambdicSql.SqlServer
         ///// <param name="table_type">Is a list of values, separated by commas, that gives information about all tables of the table types that are specified.</param>
         ///// <param name="fUsePattern">Determines whether the underscore ( _ ), percent ( % ), and bracket ( [ or ] ) characters are interpreted as wildcard characters.</param>
         //[ClauseStyleConverter]
-        //public static void sp_cursor_list(string cursor_return, string table_owner, string table_qualifier, string table_type, bool? fUsePattern) => throw new InvalitContextException(nameof(sp_tables));
+        //public static void sp_cursor_list(string cursor_return, string table_owner, string table_qualifier, string table_type, int?fUsePattern) => throw new InvalitContextException(nameof(sp_tables));
 
         //--------------------------
         //Data Collector Stored Procedures
@@ -1039,7 +1039,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_item_id">Is the unique identifer that identifies the collection set item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_item(int collection_set_id, string collector_type_uid, string name, int frequency, string parameters, int collection_item_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_item));
+        public static int sp_syscollector_create_collection_item(int collection_set_id, string collector_type_uid, string name, int frequency, string parameters, int collection_item_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_item));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1048,7 +1048,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1058,7 +1058,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">Reserved for future use.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1069,7 +1069,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_mode">Specifies the manner in which the data is collected and stored.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1081,7 +1081,7 @@ namespace LambdicSql.SqlServer
         /// <param name="days_until_expiration">Is the number of days that the collected data is saved in the management data warehouse.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1094,7 +1094,7 @@ namespace LambdicSql.SqlServer
         /// <param name="proxy_id">Is the unique identifier for a SQL Server Agent proxy account.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1108,7 +1108,7 @@ namespace LambdicSql.SqlServer
         /// <param name="proxy_name">Is the name of the proxy account.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1123,7 +1123,7 @@ namespace LambdicSql.SqlServer
         /// <param name="schedule_uid">Is the GUID that points to a schedule.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1139,7 +1139,7 @@ namespace LambdicSql.SqlServer
         /// <param name="schedule_name">Is the name of the schedule.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1156,7 +1156,7 @@ namespace LambdicSql.SqlServer
         /// <param name="logging_level">Is the logging level.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1174,7 +1174,7 @@ namespace LambdicSql.SqlServer
         /// <param name="description">Is the description of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level, string description) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level, string description) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1193,7 +1193,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_id">Is the unique local identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level, string description, int collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level, string description, int collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collection_set   
@@ -1213,7 +1213,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_uid">Is the GUID for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level, string description, int collection_set_id, string collection_set_uid) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
+        public static int sp_syscollector_create_collection_set(string name, string target, short collection_mode, short days_until_expiration, int? proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level, string description, int collection_set_id, string collection_set_uid) => throw new InvalitContextException(nameof(sp_syscollector_create_collection_set));
 
         /// <summary>
         /// sp_syscollector_create_collector_type   
@@ -1222,7 +1222,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collector_type_uid">Is the GUID for the collector type.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collector_type(string collector_type_uid) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
+        public static int sp_syscollector_create_collector_type(string collector_type_uid) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
 
         /// <summary>
         /// sp_syscollector_create_collector_type   
@@ -1232,7 +1232,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collector type.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collector_type(string collector_type_uid, string name) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
+        public static int sp_syscollector_create_collector_type(string collector_type_uid, string name) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
 
         /// <summary>
         /// sp_syscollector_create_collector_type   
@@ -1243,7 +1243,7 @@ namespace LambdicSql.SqlServer
         /// <param name="parameter_schema">Is the XML schema for this collector type.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
+        public static int sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
 
         /// <summary>
         /// sp_syscollector_create_collector_type   
@@ -1255,7 +1255,7 @@ namespace LambdicSql.SqlServer
         /// <param name="parameter_formatter">Is the template to use to transform the XML for use in the collection set property page.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema, string parameter_formatter) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
+        public static int sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema, string parameter_formatter) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
 
         /// <summary>
         /// sp_syscollector_create_collector_type   
@@ -1268,7 +1268,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_package_id">Is a local unique identifier that points to the SSIS collection package used by the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema, string parameter_formatter, string collection_package_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
+        public static int sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema, string parameter_formatter, string collection_package_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
 
         /// <summary>
         /// sp_syscollector_create_collector_type   
@@ -1282,7 +1282,7 @@ namespace LambdicSql.SqlServer
         /// <param name="upload_package_id">Is a local unique identifier that points to the SSIS upload package used by the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema, string parameter_formatter, string collection_package_id, string upload_package_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
+        public static int sp_syscollector_create_collector_type(string collector_type_uid, string name, string parameter_schema, string parameter_formatter, string collection_package_id, string upload_package_id) => throw new InvalitContextException(nameof(sp_syscollector_create_collector_type));
 
         /// <summary>
         /// sp_syscollector_delete_collection_item   
@@ -1290,7 +1290,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collection_item() => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_item));
+        public static int sp_syscollector_delete_collection_item() => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_item));
 
         /// <summary>
         /// sp_syscollector_delete_collection_item   
@@ -1299,7 +1299,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_item_id">Is the unique identifier for the collection item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collection_item(int? collection_item_id) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_item));
+        public static int sp_syscollector_delete_collection_item(int? collection_item_id) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_item));
 
         /// <summary>
         /// sp_syscollector_delete_collection_item   
@@ -1309,7 +1309,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collection_item(int? collection_item_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_item));
+        public static int sp_syscollector_delete_collection_item(int? collection_item_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_item));
 
         /// <summary>
         /// sp_syscollector_delete_collection_set    
@@ -1317,7 +1317,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_set));
+        public static int sp_syscollector_delete_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_set));
 
         /// <summary>
         /// sp_syscollector_delete_collection_set    
@@ -1326,7 +1326,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_id">Is the unique identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_set));
+        public static int sp_syscollector_delete_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_set));
 
         /// <summary>
         /// sp_syscollector_delete_collection_set    
@@ -1336,7 +1336,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_set));
+        public static int sp_syscollector_delete_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_delete_collection_set));
 
         /// <summary>
         /// sp_syscollector_delete_collector_type    
@@ -1344,7 +1344,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collector_type() => throw new InvalitContextException(nameof(sp_syscollector_delete_collector_type));
+        public static int sp_syscollector_delete_collector_type() => throw new InvalitContextException(nameof(sp_syscollector_delete_collector_type));
 
         /// <summary>
         /// sp_syscollector_delete_collector_type    
@@ -1353,7 +1353,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collector_type_uid">Is the GUID for the collector type.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collector_type(string collector_type_uid) => throw new InvalitContextException(nameof(sp_syscollector_delete_collector_type));
+        public static int sp_syscollector_delete_collector_type(string collector_type_uid) => throw new InvalitContextException(nameof(sp_syscollector_delete_collector_type));
 
         /// <summary>
         /// sp_syscollector_delete_collector_type    
@@ -1363,7 +1363,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collector type.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_collector_type(string collector_type_uid, string name) => throw new InvalitContextException(nameof(sp_syscollector_delete_collector_type));
+        public static int sp_syscollector_delete_collector_type(string collector_type_uid, string name) => throw new InvalitContextException(nameof(sp_syscollector_delete_collector_type));
 
         /// <summary>
         /// sp_syscollector_delete_execution_log_tree    
@@ -1373,7 +1373,7 @@ namespace LambdicSql.SqlServer
         /// <param name="from_collection_set">Is the identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_delete_execution_log_tree(int log_id, bool? from_collection_set) => throw new InvalitContextException(nameof(sp_syscollector_delete_execution_log_tree));
+        public static int sp_syscollector_delete_execution_log_tree(int log_id, int? from_collection_set) => throw new InvalitContextException(nameof(sp_syscollector_delete_execution_log_tree));
 
         /// <summary>
         /// sp_syscollector_disable_collector    
@@ -1381,7 +1381,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_disable_collector() => throw new InvalitContextException(nameof(sp_syscollector_disable_collector));
+        public static int sp_syscollector_disable_collector() => throw new InvalitContextException(nameof(sp_syscollector_disable_collector));
 
         /// <summary>
         /// sp_syscollector_enable_collector    
@@ -1389,7 +1389,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_enable_collector() => throw new InvalitContextException(nameof(sp_syscollector_enable_collector));
+        public static int sp_syscollector_enable_collector() => throw new InvalitContextException(nameof(sp_syscollector_enable_collector));
 
         /// <summary>
         /// sp_syscollector_set_cache_directory    
@@ -1398,7 +1398,7 @@ namespace LambdicSql.SqlServer
         /// <param name="cache_directory">The directory in the file system where collected data is stored temporarily.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_set_cache_directory(string cache_directory) => throw new InvalitContextException(nameof(sp_syscollector_set_cache_directory));
+        public static int sp_syscollector_set_cache_directory(string cache_directory) => throw new InvalitContextException(nameof(sp_syscollector_set_cache_directory));
 
         /// <summary>
         /// sp_syscollector_set_cache_window    
@@ -1407,7 +1407,7 @@ namespace LambdicSql.SqlServer
         /// <param name="cache_window">Is the number of times a failed data upload to the management data warehouse is retried without losing data.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_set_cache_window(int cache_window) => throw new InvalitContextException(nameof(sp_syscollector_set_cache_window));
+        public static int sp_syscollector_set_cache_window(int cache_window) => throw new InvalitContextException(nameof(sp_syscollector_set_cache_window));
 
         /// <summary>
         /// sp_syscollector_set_warehouse_database_name    
@@ -1416,7 +1416,7 @@ namespace LambdicSql.SqlServer
         /// <param name="database_name">Is the name of the management data warehouse.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_set_warehouse_database_name(string database_name) => throw new InvalitContextException(nameof(sp_syscollector_set_warehouse_database_name));
+        public static int sp_syscollector_set_warehouse_database_name(string database_name) => throw new InvalitContextException(nameof(sp_syscollector_set_warehouse_database_name));
 
         /// <summary>
         /// sp_syscollector_set_warehouse_instance_name    
@@ -1425,7 +1425,7 @@ namespace LambdicSql.SqlServer
         /// <param name="instance_name">Is the instance name.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_set_warehouse_instance_name(string instance_name) => throw new InvalitContextException(nameof(sp_syscollector_set_warehouse_instance_name));
+        public static int sp_syscollector_set_warehouse_instance_name(string instance_name) => throw new InvalitContextException(nameof(sp_syscollector_set_warehouse_instance_name));
 
         /// <summary>
         /// sp_syscollector_start_collection_set    
@@ -1433,7 +1433,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_start_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_start_collection_set));
+        public static int sp_syscollector_start_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_start_collection_set));
 
         /// <summary>
         /// sp_syscollector_start_collection_set    
@@ -1442,7 +1442,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_id">Is the unique local identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_start_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_start_collection_set));
+        public static int sp_syscollector_start_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_start_collection_set));
 
         /// <summary>
         /// sp_syscollector_start_collection_set    
@@ -1452,7 +1452,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_start_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_start_collection_set));
+        public static int sp_syscollector_start_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_start_collection_set));
 
         /// <summary>
         /// sp_syscollector_stop_collection_set    
@@ -1460,7 +1460,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_stop_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
+        public static int sp_syscollector_stop_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
 
         /// <summary>
         /// sp_syscollector_stop_collection_set    
@@ -1469,7 +1469,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_id">Is the unique local identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_stop_collection_set(int? collection_set_id ) => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
+        public static int sp_syscollector_stop_collection_set(int? collection_set_id ) => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
 
         /// <summary>
         /// sp_syscollector_stop_collection_set    
@@ -1479,7 +1479,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_stop_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
+        public static int sp_syscollector_stop_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
 
         /// <summary>
         /// sp_syscollector_stop_collection_set    
@@ -1490,7 +1490,7 @@ namespace LambdicSql.SqlServer
         /// <param name="stop_collection_job">Specifies that the collection job for the collection set be stopped if it is running.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_stop_collection_set(int? collection_set_id, string name, bool? stop_collection_job) => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
+        public static int sp_syscollector_stop_collection_set(int? collection_set_id, string name, int? stop_collection_job) => throw new InvalitContextException(nameof(sp_syscollector_stop_collection_set));
 
         /// <summary>
         /// sp_syscollector_run_collection_set    
@@ -1498,7 +1498,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_run_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_run_collection_set));
+        public static int sp_syscollector_run_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_run_collection_set));
 
         /// <summary>
         /// sp_syscollector_run_collection_set    
@@ -1507,7 +1507,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_id">Is the unique local identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_run_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_run_collection_set));
+        public static int sp_syscollector_run_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_run_collection_set));
 
         /// <summary>
         /// sp_syscollector_run_collection_set    
@@ -1517,7 +1517,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_run_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_run_collection_set));
+        public static int sp_syscollector_run_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_run_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_item    
@@ -1525,7 +1525,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_item() => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
+        public static int sp_syscollector_update_collection_item() => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
 
         /// <summary>
         /// sp_syscollector_update_collection_item    
@@ -1534,7 +1534,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_item_id">Is the unique identifer that identifies the collection item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_item(int? collection_item_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
+        public static int sp_syscollector_update_collection_item(int? collection_item_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
 
         /// <summary>
         /// sp_syscollector_update_collection_item    
@@ -1544,7 +1544,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_item(int? collection_item_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
+        public static int sp_syscollector_update_collection_item(int? collection_item_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
 
         /// <summary>
         /// sp_syscollector_update_collection_item    
@@ -1555,7 +1555,7 @@ namespace LambdicSql.SqlServer
         /// <param name="new_name">Is the new name for the collection item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_item(int? collection_item_id, string name, string new_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
+        public static int sp_syscollector_update_collection_item(int? collection_item_id, string name, string new_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
 
         /// <summary>
         /// sp_syscollector_update_collection_item    
@@ -1567,7 +1567,7 @@ namespace LambdicSql.SqlServer
         /// <param name="frequency">Is the frequency (in seconds) that data is collected by this collection item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_item(int? collection_item_id, string name, string new_name, int frequency) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
+        public static int sp_syscollector_update_collection_item(int? collection_item_id, string name, string new_name, int frequency) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
 
         /// <summary>
         /// sp_syscollector_update_collection_item    
@@ -1580,7 +1580,7 @@ namespace LambdicSql.SqlServer
         /// <param name="parameters">The input parameters for the collection item.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_item(int? collection_item_id, string name, string new_name, int frequency, string parameters) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
+        public static int sp_syscollector_update_collection_item(int? collection_item_id, string name, string new_name, int frequency, string parameters) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_item));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1588,7 +1588,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1597,7 +1597,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_id">Is the unique local identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1607,7 +1607,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1618,7 +1618,7 @@ namespace LambdicSql.SqlServer
         /// <param name="new_name">Is the new name for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1630,7 +1630,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">Reserved for future use.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1643,7 +1643,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_mode">Is the type of data collection to use.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1657,7 +1657,7 @@ namespace LambdicSql.SqlServer
         /// <param name="days_until_expiration">Is the number of days that the collected data is saved in the management data warehouse.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1672,7 +1672,7 @@ namespace LambdicSql.SqlServer
         /// <param name="proxy_id">Is the unique identifier for a SQL Server Agent proxy account.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1688,7 +1688,7 @@ namespace LambdicSql.SqlServer
         /// <param name="proxy_name">Is the name of the proxy.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1705,7 +1705,7 @@ namespace LambdicSql.SqlServer
         /// <param name="schedule_uid">Is the GUID that points to a schedule.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name, string schedule_uid) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name, string schedule_uid) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1723,7 +1723,7 @@ namespace LambdicSql.SqlServer
         /// <param name="schedule_name">Is the name of the schedule.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name, string schedule_uid, string schedule_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name, string schedule_uid, string schedule_name) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collection_set    
@@ -1742,7 +1742,7 @@ namespace LambdicSql.SqlServer
         /// <param name="logging_level">Is the logging level.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
+        public static int sp_syscollector_update_collection_set(int? collection_set_id, string name, string new_name, object target, short collection_mode, short days_until_expiration, int proxy_id, string proxy_name, string schedule_uid, string schedule_name, short logging_level) => throw new InvalitContextException(nameof(sp_syscollector_update_collection_set));
 
         /// <summary>
         /// sp_syscollector_update_collector_type    
@@ -1755,7 +1755,7 @@ namespace LambdicSql.SqlServer
         /// <param name="upload_package_id">Is a local unique identifier that points to the SSIS upload package used by the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_update_collector_type(string collector_type_uid, string name, string parameter_schema, string collection_package_id, string upload_package_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collector_type));
+        public static int sp_syscollector_update_collector_type(string collector_type_uid, string name, string parameter_schema, string collection_package_id, string upload_package_id) => throw new InvalitContextException(nameof(sp_syscollector_update_collector_type));
 
         /// <summary>
         /// sp_syscollector_upload_collection_set    
@@ -1763,7 +1763,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_upload_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_upload_collection_set));
+        public static int sp_syscollector_upload_collection_set() => throw new InvalitContextException(nameof(sp_syscollector_upload_collection_set));
 
         /// <summary>
         /// sp_syscollector_upload_collection_set    
@@ -1772,7 +1772,7 @@ namespace LambdicSql.SqlServer
         /// <param name="collection_set_id">Is the unique local identifier for the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_upload_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_upload_collection_set));
+        public static int sp_syscollector_upload_collection_set(int? collection_set_id) => throw new InvalitContextException(nameof(sp_syscollector_upload_collection_set));
 
         /// <summary>
         /// sp_syscollector_upload_collection_set    
@@ -1782,7 +1782,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the collection set.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_syscollector_upload_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_upload_collection_set));
+        public static int sp_syscollector_upload_collection_set(int? collection_set_id, string name) => throw new InvalitContextException(nameof(sp_syscollector_upload_collection_set));
 
         //--------------------------
         //Database Engine Stored Procedures
@@ -1800,7 +1800,7 @@ namespace LambdicSql.SqlServer
         /// <param name="filegrowth">Is the amount of space added to the file each time new space is required.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_add_data_file_recover_suspect_db(string dbName, string filegroup, string name, string filename, string size, string maxsize, string filegrowth) => throw new InvalitContextException(nameof(sp_add_data_file_recover_suspect_db));
+        public static int sp_add_data_file_recover_suspect_db(string dbName, string filegroup, string name, string filename, string size, string maxsize, string filegrowth) => throw new InvalitContextException(nameof(sp_add_data_file_recover_suspect_db));
 
         /// <summary>
         /// sp_addextendedproc    
@@ -1810,7 +1810,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dllname">Is the name of the DLL that contains the function.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproc(string functname, string dllname) => throw new InvalitContextException(nameof(sp_addextendedproc));
+        public static int sp_addextendedproc(string functname, string dllname) => throw new InvalitContextException(nameof(sp_addextendedproc));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1819,7 +1819,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the property to be added.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1829,7 +1829,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Is the value to be associated with the property.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name, object value) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name, object value) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1840,7 +1840,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level0type">Is the type of level 0 object.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name, object value, string level0type) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name, object value, string level0type) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1852,7 +1852,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level0name">Is the name of the level 0 object type specified.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name, object value, string level0type, string level0name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name, object value, string level0type, string level0name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1865,7 +1865,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level1type">Is the type of level 1 object.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1879,7 +1879,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level1name">Is the name of the level 1 object type specified.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1894,7 +1894,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level2type">Is the type of level 2 object.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name, string level2type) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name, string level2type) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_addextendedproperty    
@@ -1910,7 +1910,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level2name">Is the name of the level 2 object type specified.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name, string level2type, string level2name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
+        public static int sp_addextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name, string level2type, string level2name) => throw new InvalitContextException(nameof(sp_addextendedproperty));
 
         /// <summary>
         /// sp_add_log_file_recover_suspect_db    
@@ -1924,7 +1924,7 @@ namespace LambdicSql.SqlServer
         /// <param name="filegrowth">Is the name of the level 1 object type specified.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_add_log_file_recover_suspect_db(string dbName, string name, string filename, string size, string maxsize, string filegrowth) => throw new InvalitContextException(nameof(sp_add_log_file_recover_suspect_db));
+        public static int sp_add_log_file_recover_suspect_db(string dbName, string name, string filename, string size, string maxsize, string filegrowth) => throw new InvalitContextException(nameof(sp_add_log_file_recover_suspect_db));
 
         /// <summary>
         /// sp_addmessage    
@@ -1935,7 +1935,7 @@ namespace LambdicSql.SqlServer
         /// <param name="msgtext">Is the text of the error message.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addmessage(int msgnum, short severity, string msgtext) => throw new InvalitContextException(nameof(sp_addmessage));
+        public static int sp_addmessage(int msgnum, short severity, string msgtext) => throw new InvalitContextException(nameof(sp_addmessage));
 
         /// <summary>
         /// sp_addmessage    
@@ -1947,7 +1947,7 @@ namespace LambdicSql.SqlServer
         /// <param name="lang">Is the language for this message.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addmessage(int msgnum, short severity, string msgtext, string lang) => throw new InvalitContextException(nameof(sp_addmessage));
+        public static int sp_addmessage(int msgnum, short severity, string msgtext, string lang) => throw new InvalitContextException(nameof(sp_addmessage));
 
         /// <summary>
         /// sp_addmessage    
@@ -1960,7 +1960,7 @@ namespace LambdicSql.SqlServer
         /// <param name="with_log">Is whether the message is to be written to the Windows application log when it occurs.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addmessage(int msgnum, short severity, string msgtext, string lang, string with_log) => throw new InvalitContextException(nameof(sp_addmessage));
+        public static int sp_addmessage(int msgnum, short severity, string msgtext, string lang, string with_log) => throw new InvalitContextException(nameof(sp_addmessage));
 
         /// <summary>
         /// sp_addmessage    
@@ -1974,7 +1974,7 @@ namespace LambdicSql.SqlServer
         /// <param name="replace">If specified as the string replace, an existing error message is overwritten with new message text and severity level.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addmessage(int msgnum, short severity, string msgtext, string lang, string with_log, string replace) => throw new InvalitContextException(nameof(sp_addmessage));
+        public static int sp_addmessage(int msgnum, short severity, string msgtext, string lang, string with_log, string replace) => throw new InvalitContextException(nameof(sp_addmessage));
 
         /// <summary>
         /// sp_addtype    
@@ -1984,7 +1984,7 @@ namespace LambdicSql.SqlServer
         /// <param name="phystype">Is the physical, or SQL Server supplied, data type on which the alias data type is based.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addtype(string typename, string phystype) => throw new InvalitContextException(nameof(sp_addtype));
+        public static int sp_addtype(string typename, string phystype) => throw new InvalitContextException(nameof(sp_addtype));
 
         /// <summary>
         /// sp_addumpdevice    
@@ -1995,7 +1995,7 @@ namespace LambdicSql.SqlServer
         /// <param name="physicalname">Is the physical name of the backup device.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_addumpdevice(string devtype, string logicalname, string physicalname) => throw new InvalitContextException(nameof(sp_addumpdevice));
+        public static int sp_addumpdevice(string devtype, string logicalname, string physicalname) => throw new InvalitContextException(nameof(sp_addumpdevice));
 
         /// <summary>
         /// sp_altermessage     
@@ -2006,7 +2006,7 @@ namespace LambdicSql.SqlServer
         /// <param name="parameter_value">Is used with @parameter to indicate that the error is to be written to the Microsoft Windows application log.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_altermessage(int message_id, string parameter, string parameter_value) => throw new InvalitContextException(nameof(sp_altermessage));
+        public static int sp_altermessage(int message_id, string parameter, string parameter_value) => throw new InvalitContextException(nameof(sp_altermessage));
 
         /// <summary>
         /// sp_attach_db     
@@ -2016,7 +2016,7 @@ namespace LambdicSql.SqlServer
         /// <param name="filename1">Is the physical name, including path, of a database file.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_attach_db(string dbname, string filename1) => throw new InvalitContextException(nameof(sp_attach_db));
+        public static int sp_attach_db(string dbname, string filename1) => throw new InvalitContextException(nameof(sp_attach_db));
 
         /// <summary>
         /// sp_attach_single_file_db     
@@ -2026,7 +2026,7 @@ namespace LambdicSql.SqlServer
         /// <param name="physname">Is the physical name, including path, of the database file.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_attach_single_file_db(string dbname, string physname) => throw new InvalitContextException(nameof(sp_attach_single_file_db));
+        public static int sp_attach_single_file_db(string dbname, string physname) => throw new InvalitContextException(nameof(sp_attach_single_file_db));
 
         /// <summary>
         /// sp_autostats     
@@ -2035,7 +2035,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tblname">Is the name of the table or indexed view to display the AUTO_UPDATE_STATISTICS option on.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_autostats(string tblname) => throw new InvalitContextException(nameof(sp_autostats));
+        public static int sp_autostats(string tblname) => throw new InvalitContextException(nameof(sp_autostats));
 
         /// <summary>
         /// sp_autostats     
@@ -2045,7 +2045,7 @@ namespace LambdicSql.SqlServer
         /// <param name="flagc">Updates the AUTO_UPDATE_STATISTICS option to one of these values.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_autostats(string tblname, string flagc) => throw new InvalitContextException(nameof(sp_autostats));
+        public static int sp_autostats(string tblname, string flagc) => throw new InvalitContextException(nameof(sp_autostats));
 
         /// <summary>
         /// sp_autostats     
@@ -2056,7 +2056,7 @@ namespace LambdicSql.SqlServer
         /// <param name="indname">Is the name of the statistics to display or update the AUTO_UPDATE_STATISTICS option on.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_autostats(string tblname, string flagc, string indname) => throw new InvalitContextException(nameof(sp_autostats));
+        public static int sp_autostats(string tblname, string flagc, string indname) => throw new InvalitContextException(nameof(sp_autostats));
 
         /// <summary>
         /// sp_batch_params     
@@ -2081,7 +2081,7 @@ namespace LambdicSql.SqlServer
         /// <param name="objname">Is the name of table and column or the alias data type to which the default is to be bound.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_bindefault(string defname, string objname) => throw new InvalitContextException(nameof(sp_bindefault));
+        public static int sp_bindefault(string defname, string objname) => throw new InvalitContextException(nameof(sp_bindefault));
 
         /// <summary>
         /// sp_bindefault     
@@ -2092,7 +2092,7 @@ namespace LambdicSql.SqlServer
         /// <param name="futureonly">Is used only when binding a default to an alias data type.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_bindefault(string defname, string objname, string futureonly) => throw new InvalitContextException(nameof(sp_bindefault));
+        public static int sp_bindefault(string defname, string objname, string futureonly) => throw new InvalitContextException(nameof(sp_bindefault));
 
         /// <summary>
         /// sp_bindrule     
@@ -2102,7 +2102,7 @@ namespace LambdicSql.SqlServer
         /// <param name="objname">Is the table and column, or the alias data type to which the rule is to be bound.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_bindrule(string rulename, string objname) => throw new InvalitContextException(nameof(sp_bindrule));
+        public static int sp_bindrule(string rulename, string objname) => throw new InvalitContextException(nameof(sp_bindrule));
 
         /// <summary>
         /// sp_bindrule     
@@ -2113,7 +2113,7 @@ namespace LambdicSql.SqlServer
         /// <param name="futureonly">Is used only when binding a rule to an alias data type.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_bindrule(string rulename, string objname, string futureonly) => throw new InvalitContextException(nameof(sp_bindrule));
+        public static int sp_bindrule(string rulename, string objname, string futureonly) => throw new InvalitContextException(nameof(sp_bindrule));
 
         /// <summary>
         /// sp_bindsession     
@@ -2122,7 +2122,7 @@ namespace LambdicSql.SqlServer
         /// <param name="bind_token">Is the name of a rule created by the CREATE RULE statement.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_bindsession(string bind_token) => throw new InvalitContextException(nameof(sp_bindsession));
+        public static int sp_bindsession(string bind_token) => throw new InvalitContextException(nameof(sp_bindsession));
 
         /// <summary>
         /// sp_certify_removable     
@@ -2131,7 +2131,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dbname">Specifies the database to be verified.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_certify_removable(string dbname) => throw new InvalitContextException(nameof(sp_certify_removable));
+        public static int sp_certify_removable(string dbname) => throw new InvalitContextException(nameof(sp_certify_removable));
 
         /// <summary>
         /// sp_certify_removable     
@@ -2141,7 +2141,7 @@ namespace LambdicSql.SqlServer
         /// <param name="autofix">Gives ownership of the database and all database objects to the system administrator, and drops any user-created database users and nondefault permissions.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_certify_removable(string dbname, string autofix) => throw new InvalitContextException(nameof(sp_certify_removable));
+        public static int sp_certify_removable(string dbname, string autofix) => throw new InvalitContextException(nameof(sp_certify_removable));
 
         /// <summary>
         /// sp_clean_db_free_space     
@@ -2150,7 +2150,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dbname">Is the name of the database to clean.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_clean_db_free_space(string dbname) => throw new InvalitContextException(nameof(sp_clean_db_free_space));
+        public static int sp_clean_db_free_space(string dbname) => throw new InvalitContextException(nameof(sp_clean_db_free_space));
 
         /// <summary>
         /// sp_clean_db_free_space     
@@ -2160,7 +2160,7 @@ namespace LambdicSql.SqlServer
         /// <param name="cleaning_delay">Specifies an interval to delay between the cleaning of pages.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_clean_db_free_space(string dbname, int cleaning_delay) => throw new InvalitContextException(nameof(sp_clean_db_free_space));
+        public static int sp_clean_db_free_space(string dbname, int cleaning_delay) => throw new InvalitContextException(nameof(sp_clean_db_free_space));
 
         /// <summary>
         /// sp_clean_db_file_free_space     
@@ -2170,7 +2170,7 @@ namespace LambdicSql.SqlServer
         /// <param name="fileid">Is the data file id to clean.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_clean_db_file_free_space(string dbname, int fileid) => throw new InvalitContextException(nameof(sp_clean_db_file_free_space));
+        public static int sp_clean_db_file_free_space(string dbname, int fileid) => throw new InvalitContextException(nameof(sp_clean_db_file_free_space));
 
         /// <summary>
         /// sp_clean_db_file_free_space     
@@ -2181,7 +2181,7 @@ namespace LambdicSql.SqlServer
         /// <param name="cleaning_delay">Specifies an interval to delay between the cleaning of pages.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_clean_db_file_free_space(string dbname, int fileid, int cleaning_delay) => throw new InvalitContextException(nameof(sp_clean_db_file_free_space));
+        public static int sp_clean_db_file_free_space(string dbname, int fileid, int cleaning_delay) => throw new InvalitContextException(nameof(sp_clean_db_file_free_space));
 
         /// <summary>
         /// sp_configure     
@@ -2190,7 +2190,7 @@ namespace LambdicSql.SqlServer
         /// <param name="configname">Is the name of a configuration option.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_configure(string configname) => throw new InvalitContextException(nameof(sp_configure));
+        public static int sp_configure(string configname) => throw new InvalitContextException(nameof(sp_configure));
 
         /// <summary>
         /// sp_configure     
@@ -2200,7 +2200,7 @@ namespace LambdicSql.SqlServer
         /// <param name="configvalue">Is the new configuration setting.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_configure(string configname, int? configvalue) => throw new InvalitContextException(nameof(sp_configure));
+        public static int sp_configure(string configname, int? configvalue) => throw new InvalitContextException(nameof(sp_configure));
 
         /// <summary>
         /// sp_control_plan_guide     
@@ -2209,7 +2209,7 @@ namespace LambdicSql.SqlServer
         /// <param name="operation">DROP | DROP ALL| DISABLE | DISABLE ALL | ENABLE | ENABLE ALL</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_control_plan_guide(string operation) => throw new InvalitContextException(nameof(sp_control_plan_guide));
+        public static int sp_control_plan_guide(string operation) => throw new InvalitContextException(nameof(sp_control_plan_guide));
 
         /// <summary>
         /// sp_control_plan_guide     
@@ -2219,7 +2219,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Specifies the plan guide that is being dropped, enabled, or disabled.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_control_plan_guide(string operation, string name) => throw new InvalitContextException(nameof(sp_control_plan_guide));
+        public static int sp_control_plan_guide(string operation, string name) => throw new InvalitContextException(nameof(sp_control_plan_guide));
 
         /// <summary>
         /// sp_create_plan_guide     
@@ -2269,7 +2269,7 @@ namespace LambdicSql.SqlServer
         /// <param name="datasize1">Is the size, in megabytes, of a file that contains data tables.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_create_removable(string dbname, string syslogical, string sysphysical, int syssize, string loglogical, string logphysical, int logsize, string datalogical1, string dataphysical1, int datasize1) => throw new InvalitContextException(nameof(sp_create_removable));
+        public static int sp_create_removable(string dbname, string syslogical, string sysphysical, int syssize, string loglogical, string logphysical, int logsize, string datalogical1, string dataphysical1, int datasize1) => throw new InvalitContextException(nameof(sp_create_removable));
 
         /// <summary>
         /// sp_createstats     
@@ -2277,7 +2277,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_createstats() => throw new InvalitContextException(nameof(sp_createstats));
+        public static int sp_createstats() => throw new InvalitContextException(nameof(sp_createstats));
 
         /// <summary>
         /// sp_createstats     
@@ -2286,7 +2286,7 @@ namespace LambdicSql.SqlServer
         /// <param name="indexonly">Creates statistics only on columns that are in an existing index and are not the first column in any index definition.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_createstats(string indexonly) => throw new InvalitContextException(nameof(sp_createstats));
+        public static int sp_createstats(string indexonly) => throw new InvalitContextException(nameof(sp_createstats));
 
         /// <summary>
         /// sp_createstats     
@@ -2296,7 +2296,7 @@ namespace LambdicSql.SqlServer
         /// <param name="fullscan">Uses the CREATE STATISTICS statement with the FULLSCAN option.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_createstats(string indexonly, string fullscan) => throw new InvalitContextException(nameof(sp_createstats));
+        public static int sp_createstats(string indexonly, string fullscan) => throw new InvalitContextException(nameof(sp_createstats));
 
         /// <summary>
         /// sp_createstats     
@@ -2307,7 +2307,7 @@ namespace LambdicSql.SqlServer
         /// <param name="norecompute">Uses the CREATE STATISTICS statement with the NORECOMPUTE option.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_createstats(string indexonly, string fullscan, string norecompute) => throw new InvalitContextException(nameof(sp_createstats));
+        public static int sp_createstats(string indexonly, string fullscan, string norecompute) => throw new InvalitContextException(nameof(sp_createstats));
 
         /// <summary>
         /// sp_createstats     
@@ -2319,7 +2319,7 @@ namespace LambdicSql.SqlServer
         /// <param name="incremental">Uses the CREATE STATISTICS statement with the INCREMENTAL = ON option.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_createstats(string indexonly, string fullscan, string norecompute, string incremental) => throw new InvalitContextException(nameof(sp_createstats));
+        public static int sp_createstats(string indexonly, string fullscan, string norecompute, string incremental) => throw new InvalitContextException(nameof(sp_createstats));
 
         /// <summary>
         /// sp_datatype_info     
@@ -2345,7 +2345,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dbname">Is the name of the database.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_db_increased_partitions(string dbname) => throw new InvalitContextException(nameof(sp_db_increased_partitions));
+        public static int sp_db_increased_partitions(string dbname) => throw new InvalitContextException(nameof(sp_db_increased_partitions));
 
         /// <summary>
         /// sp_db_increased_partitions     
@@ -2355,7 +2355,7 @@ namespace LambdicSql.SqlServer
         /// <param name="increased_partitions">Enables or disables support for 15,000 partitions on the specified database.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_db_increased_partitions(string dbname, string increased_partitions) => throw new InvalitContextException(nameof(sp_db_increased_partitions));
+        public static int sp_db_increased_partitions(string dbname, string increased_partitions) => throw new InvalitContextException(nameof(sp_db_increased_partitions));
 
         /// <summary>
         /// sp_db_vardecimal_storage_format     
@@ -2364,7 +2364,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dbname">Is the name of the database for which the storage format is to be changed.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_db_vardecimal_storage_format(string dbname) => throw new InvalitContextException(nameof(sp_db_vardecimal_storage_format));
+        public static int sp_db_vardecimal_storage_format(string dbname) => throw new InvalitContextException(nameof(sp_db_vardecimal_storage_format));
 
         /// <summary>
         /// sp_db_vardecimal_storage_format     
@@ -2374,7 +2374,7 @@ namespace LambdicSql.SqlServer
         /// <param name="vardecimal_storage_format">Specifies whether the vardecimal storage format is enabled.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_db_vardecimal_storage_format(string dbname, string vardecimal_storage_format) => throw new InvalitContextException(nameof(sp_db_vardecimal_storage_format));
+        public static int sp_db_vardecimal_storage_format(string dbname, string vardecimal_storage_format) => throw new InvalitContextException(nameof(sp_db_vardecimal_storage_format));
 
         /// <summary>
         /// sp_dbcmptlevel     
@@ -2383,7 +2383,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dbname">Is the name of the database for which the compatibility level is to be changed.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dbcmptlevel(string dbname) => throw new InvalitContextException(nameof(sp_dbcmptlevel));
+        public static int sp_dbcmptlevel(string dbname) => throw new InvalitContextException(nameof(sp_dbcmptlevel));
 
         /// <summary>
         /// sp_dbcmptlevel     
@@ -2393,7 +2393,7 @@ namespace LambdicSql.SqlServer
         /// <param name="new_cmptlevel">Is the version of SQL Server with which the database is to be made compatible.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dbcmptlevel(string dbname, byte new_cmptlevel) => throw new InvalitContextException(nameof(sp_dbcmptlevel));
+        public static int sp_dbcmptlevel(string dbname, byte new_cmptlevel) => throw new InvalitContextException(nameof(sp_dbcmptlevel));
 
         /// <summary>
         /// sp_dbmmonitoraddmonitoring     
@@ -2480,7 +2480,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dbname">Is the name of the database to be removed.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dbremove(string dbname) => throw new InvalitContextException(nameof(sp_dbremove));
+        public static int sp_dbremove(string dbname) => throw new InvalitContextException(nameof(sp_dbremove));
 
         /// <summary>
         /// sp_delete_backuphistory       
@@ -2489,7 +2489,7 @@ namespace LambdicSql.SqlServer
         /// <param name="oldest_date">Is the oldest date retained in the backup and restore history tables.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_delete_backuphistory(DateTime oldest_date) => throw new InvalitContextException(nameof(sp_delete_backuphistory));
+        public static int sp_delete_backuphistory(DateTime oldest_date) => throw new InvalitContextException(nameof(sp_delete_backuphistory));
 
         /// <summary>
         /// sp_delete_database_backuphistory       
@@ -2498,7 +2498,7 @@ namespace LambdicSql.SqlServer
         /// <param name="database_name">Specifies the name of the database involved in backup and restore operations.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_delete_database_backuphistory(string database_name) => throw new InvalitContextException(nameof(sp_delete_database_backuphistory));
+        public static int sp_delete_database_backuphistory(string database_name) => throw new InvalitContextException(nameof(sp_delete_database_backuphistory));
 
         /// <summary>
         /// sp_depends       
@@ -2507,7 +2507,7 @@ namespace LambdicSql.SqlServer
         /// <param name="object_name">Is the database object to examine for dependencies.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_depends(string object_name) => throw new InvalitContextException(nameof(sp_depends));
+        public static int sp_depends(string object_name) => throw new InvalitContextException(nameof(sp_depends));
 
         /// <summary>
         /// sp_describe_first_result_set       
@@ -2539,7 +2539,7 @@ namespace LambdicSql.SqlServer
         /// <param name="keepfulltextindexfile">Specifies that the full-text index file associated with the database that is being detached will not be dropped during the database detach operation.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_detach_db(string dbname, string skipchecks, string keepfulltextindexfile) => throw new InvalitContextException(nameof(sp_detach_db));
+        public static int sp_detach_db(string dbname, string skipchecks, string keepfulltextindexfile) => throw new InvalitContextException(nameof(sp_detach_db));
 
         /// <summary>
         /// sp_dropdevice       
@@ -2548,7 +2548,7 @@ namespace LambdicSql.SqlServer
         /// <param name="logicalname">Is the logical name of the database device or backup device as listed in master.dbo.sysdevices.name.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropdevice(string logicalname) => throw new InvalitContextException(nameof(sp_dropdevice));
+        public static int sp_dropdevice(string logicalname) => throw new InvalitContextException(nameof(sp_dropdevice));
 
         /// <summary>
         /// sp_dropdevice       
@@ -2558,7 +2558,7 @@ namespace LambdicSql.SqlServer
         /// <param name="delfile">Specifies whether the physical backup device file should be deleted.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropdevice(string logicalname, string delfile) => throw new InvalitContextException(nameof(sp_dropdevice));
+        public static int sp_dropdevice(string logicalname, string delfile) => throw new InvalitContextException(nameof(sp_dropdevice));
 
         /// <summary>
         /// sp_dropextendedproc       
@@ -2567,7 +2567,7 @@ namespace LambdicSql.SqlServer
         /// <param name="functname">Is the name of the extended stored procedure to drop</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproc(string functname) => throw new InvalitContextException(nameof(sp_dropextendedproc));
+        public static int sp_dropextendedproc(string functname) => throw new InvalitContextException(nameof(sp_dropextendedproc));
 
         /// <summary>
         /// sp_dropextendedproperty       
@@ -2576,7 +2576,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name">Is the name of the property to be dropped</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproperty(string name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
+        public static int sp_dropextendedproperty(string name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
 
         /// <summary>
         /// sp_dropextendedproperty       
@@ -2586,7 +2586,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level0type">Is the name of the level 0 object type specified</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproperty(string name, string level0type) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
+        public static int sp_dropextendedproperty(string name, string level0type) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
 
         /// <summary>
         /// sp_dropextendedproperty       
@@ -2597,7 +2597,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level0name">Is the name of the level 0 object type specified</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproperty(string name, string level0type, string level0name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
+        public static int sp_dropextendedproperty(string name, string level0type, string level0name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
 
         /// <summary>
         /// sp_dropextendedproperty       
@@ -2609,7 +2609,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level1type">Is the type of level 1 object</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproperty(string name, string level0type, string level0name, string level1type) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
+        public static int sp_dropextendedproperty(string name, string level0type, string level0name, string level1type) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
 
         /// <summary>
         /// sp_dropextendedproperty       
@@ -2622,7 +2622,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level1name">Is the name of the level 1 object type specified</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproperty(string name, string level0type, string level0name, string level1type, string level1name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
+        public static int sp_dropextendedproperty(string name, string level0type, string level0name, string level1type, string level1name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
 
         /// <summary>
         /// sp_dropextendedproperty       
@@ -2636,7 +2636,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level2type">Is the type of level 2 object</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproperty(string name, string level0type, string level0name, string level1type, string level1name, string level2type) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
+        public static int sp_dropextendedproperty(string name, string level0type, string level0name, string level1type, string level1name, string level2type) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
 
         /// <summary>
         /// sp_dropextendedproperty       
@@ -2651,7 +2651,7 @@ namespace LambdicSql.SqlServer
         /// <param name="level2name">Is the name of the level 2 object type specified</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropextendedproperty(string name, string level0type, string level0name, string level1type, string level1name, string level2type, string level2name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
+        public static int sp_dropextendedproperty(string name, string level0type, string level0name, string level1type, string level1name, string level2type, string level2name) => throw new InvalitContextException(nameof(sp_dropextendedproperty));
 
         /// <summary>
         /// sp_dropmessage       
@@ -2660,7 +2660,7 @@ namespace LambdicSql.SqlServer
         /// <param name="msgnum">Is the message number to drop</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropmessage(int? msgnum) => throw new InvalitContextException(nameof(sp_dropmessage));
+        public static int sp_dropmessage(int? msgnum) => throw new InvalitContextException(nameof(sp_dropmessage));
 
         /// <summary>
         /// sp_dropmessage       
@@ -2670,7 +2670,7 @@ namespace LambdicSql.SqlServer
         /// <param name="lang">Is the language of the message to drop</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_dropmessage(int? msgnum, string lang) => throw new InvalitContextException(nameof(sp_dropmessage));
+        public static int sp_dropmessage(int? msgnum, string lang) => throw new InvalitContextException(nameof(sp_dropmessage));
 
         /// <summary>
         /// sp_droptype       
@@ -2679,7 +2679,7 @@ namespace LambdicSql.SqlServer
         /// <param name="typename">Is the name of an alias data type that you own</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_droptype(string typename) => throw new InvalitContextException(nameof(sp_droptype));
+        public static int sp_droptype(string typename) => throw new InvalitContextException(nameof(sp_droptype));
 
         /// <summary>
         /// sp_estimate_data_compression_savings       
@@ -2692,7 +2692,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data_compression">Is the type of compression to be evaluated</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_estimate_data_compression_savings(string schema_name, string object_name, int index_id, int? partition_number, string data_compression) => throw new InvalitContextException(nameof(sp_estimate_data_compression_savings));
+        public static int sp_estimate_data_compression_savings(string schema_name, string object_name, int index_id, int? partition_number, string data_compression) => throw new InvalitContextException(nameof(sp_estimate_data_compression_savings));
 
         /// <summary>
         /// sp_estimated_rowsize_reduction_for_vardecimal       
@@ -2700,7 +2700,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_estimated_rowsize_reduction_for_vardecimal() => throw new InvalitContextException(nameof(sp_estimated_rowsize_reduction_for_vardecimal));
+        public static int sp_estimated_rowsize_reduction_for_vardecimal() => throw new InvalitContextException(nameof(sp_estimated_rowsize_reduction_for_vardecimal));
 
         /// <summary>
         /// sp_estimated_rowsize_reduction_for_vardecimal       
@@ -2709,7 +2709,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table_name">Is the three part name of the table for which the storage format is to be changed</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_estimated_rowsize_reduction_for_vardecimal(string table_name) => throw new InvalitContextException(nameof(sp_estimated_rowsize_reduction_for_vardecimal));
+        public static int sp_estimated_rowsize_reduction_for_vardecimal(string table_name) => throw new InvalitContextException(nameof(sp_estimated_rowsize_reduction_for_vardecimal));
 
         /// <summary>
         /// sp_execute_remote       
@@ -2719,7 +2719,7 @@ namespace LambdicSql.SqlServer
         /// <param name="stmt">Is a Unicode string that contains a Transact-SQL statement or batch</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_execute_remote(string data_source_name, string stmt) => throw new InvalitContextException(nameof(sp_execute_remote));
+        public static int sp_execute_remote(string data_source_name, string stmt) => throw new InvalitContextException(nameof(sp_execute_remote));
 
         /// <summary>
         /// sp_execute_remote       
@@ -2730,7 +2730,7 @@ namespace LambdicSql.SqlServer
         /// <param name="params">Is one string that contains the definitions of all parameters that have been embedded in @stmt</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_execute_remote(string data_source_name, string stmt, string @params) => throw new InvalitContextException(nameof(sp_execute_remote));
+        public static int sp_execute_remote(string data_source_name, string stmt, string @params) => throw new InvalitContextException(nameof(sp_execute_remote));
 
         /// <summary>
         /// sp_execute_remote       
@@ -2742,7 +2742,7 @@ namespace LambdicSql.SqlServer
         /// <param name="param1">Is a value for the first parameter that is defined in the parameter string</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_execute_remote(string data_source_name, string stmt, string @params, string param1) => throw new InvalitContextException(nameof(sp_execute_remote));
+        public static int sp_execute_remote(string data_source_name, string stmt, string @params, string param1) => throw new InvalitContextException(nameof(sp_execute_remote));
 
         /// <summary>
         /// sp_executesql        
@@ -2751,7 +2751,7 @@ namespace LambdicSql.SqlServer
         /// <param name="stmt">Is a Unicode string that contains a Transact-SQL statement or batch</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_executesql(string stmt) => throw new InvalitContextException(nameof(sp_executesql));
+        public static int sp_executesql(string stmt) => throw new InvalitContextException(nameof(sp_executesql));
 
         /// <summary>
         /// sp_executesql        
@@ -2761,7 +2761,7 @@ namespace LambdicSql.SqlServer
         /// <param name="params">Is one string that contains the definitions of all parameters that have been embedded in @stmt</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_executesql(string stmt, string @params) => throw new InvalitContextException(nameof(sp_executesql));
+        public static int sp_executesql(string stmt, string @params) => throw new InvalitContextException(nameof(sp_executesql));
 
         /// <summary>
         /// sp_executesql        
@@ -2772,7 +2772,7 @@ namespace LambdicSql.SqlServer
         /// <param name="param1">Is a value for the first parameter that is defined in the parameter string</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_executesql(string stmt, string @params, string param1) => throw new InvalitContextException(nameof(sp_executesql));
+        public static int sp_executesql(string stmt, string @params, string param1) => throw new InvalitContextException(nameof(sp_executesql));
 
         /// <summary>
         /// sp_execute_external_script         
@@ -2935,7 +2935,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_help() => throw new InvalitContextException(nameof(sp_help));
+        public static int sp_help() => throw new InvalitContextException(nameof(sp_help));
 
         /// <summary>
         /// sp_help         
@@ -2944,7 +2944,7 @@ namespace LambdicSql.SqlServer
         /// <param name="objname">Is the name of any object, in sysobjects or any user-defined data type in the systypes table</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_help(string objname) => throw new InvalitContextException(nameof(sp_help));
+        public static int sp_help(string objname) => throw new InvalitContextException(nameof(sp_help));
 
         /// <summary>
         /// sp_helpconstraint         
@@ -2953,7 +2953,7 @@ namespace LambdicSql.SqlServer
         /// <param name="objname">Is the table about which constraint information is returned</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpconstraint(string objname) => throw new InvalitContextException(nameof(sp_helpconstraint));
+        public static int sp_helpconstraint(string objname) => throw new InvalitContextException(nameof(sp_helpconstraint));
 
         /// <summary>
         /// sp_helpconstraint         
@@ -2963,7 +2963,7 @@ namespace LambdicSql.SqlServer
         /// <param name="nomsg">Is an optional parameter that prints the table name</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpconstraint(string objname, string nomsg) => throw new InvalitContextException(nameof(sp_helpconstraint));
+        public static int sp_helpconstraint(string objname, string nomsg) => throw new InvalitContextException(nameof(sp_helpconstraint));
 
         /// <summary>
         /// sp_helpdb         
@@ -2971,7 +2971,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpdb() => throw new InvalitContextException(nameof(sp_helpdb));
+        public static int sp_helpdb() => throw new InvalitContextException(nameof(sp_helpdb));
 
         /// <summary>
         /// sp_helpdb         
@@ -2980,7 +2980,7 @@ namespace LambdicSql.SqlServer
         /// <param name="dbname">Is the name of the database for which information is reported</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpdb(string dbname) => throw new InvalitContextException(nameof(sp_helpdb));
+        public static int sp_helpdb(string dbname) => throw new InvalitContextException(nameof(sp_helpdb));
 
         /// <summary>
         /// sp_helpdevice          
@@ -2988,7 +2988,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpdevice() => throw new InvalitContextException(nameof(sp_helpdevice));
+        public static int sp_helpdevice() => throw new InvalitContextException(nameof(sp_helpdevice));
 
         /// <summary>
         /// sp_helpdevice          
@@ -2997,7 +2997,7 @@ namespace LambdicSql.SqlServer
         /// <param name="devname">Is the name of the backup device for which information is reported</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpdevice(string devname) => throw new InvalitContextException(nameof(sp_helpdevice));
+        public static int sp_helpdevice(string devname) => throw new InvalitContextException(nameof(sp_helpdevice));
 
         /// <summary>
         /// sp_helpextendedproc          
@@ -3005,7 +3005,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpextendedproc() => throw new InvalitContextException(nameof(sp_helpextendedproc));
+        public static int sp_helpextendedproc() => throw new InvalitContextException(nameof(sp_helpextendedproc));
 
         /// <summary>
         /// sp_helpextendedproc          
@@ -3014,7 +3014,7 @@ namespace LambdicSql.SqlServer
         /// <param name="funcname">Is the name of the extended stored procedure for which information is reported</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpextendedproc(string funcname) => throw new InvalitContextException(nameof(sp_helpextendedproc));
+        public static int sp_helpextendedproc(string funcname) => throw new InvalitContextException(nameof(sp_helpextendedproc));
 
         /// <summary>
         /// sp_helpfile          
@@ -3022,7 +3022,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpfile() => throw new InvalitContextException(nameof(sp_helpfile));
+        public static int sp_helpfile() => throw new InvalitContextException(nameof(sp_helpfile));
 
         /// <summary>
         /// sp_helpfile          
@@ -3031,7 +3031,7 @@ namespace LambdicSql.SqlServer
         /// <param name="filename">Is the logical name of any file in the current database</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpfile(string filename) => throw new InvalitContextException(nameof(sp_helpfile));
+        public static int sp_helpfile(string filename) => throw new InvalitContextException(nameof(sp_helpfile));
 
         /// <summary>
         /// sp_helpfilegroup          
@@ -3039,7 +3039,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpfilegroup() => throw new InvalitContextException(nameof(sp_helpfilegroup));
+        public static int sp_helpfilegroup() => throw new InvalitContextException(nameof(sp_helpfilegroup));
 
         /// <summary>
         /// sp_helpfilegroup          
@@ -3048,7 +3048,7 @@ namespace LambdicSql.SqlServer
         /// <param name="filegroupname ">Is the logical name of any filegroup in the current database</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpfilegroup(string filegroupname) => throw new InvalitContextException(nameof(sp_helpfilegroup));
+        public static int sp_helpfilegroup(string filegroupname) => throw new InvalitContextException(nameof(sp_helpfilegroup));
 
         /// <summary>
         /// sp_helpindex          
@@ -3057,7 +3057,7 @@ namespace LambdicSql.SqlServer
         /// <param name="objname">Is the qualified or nonqualified name of a user-defined table or view</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpindex(string objname) => throw new InvalitContextException(nameof(sp_helpindex));
+        public static int sp_helpindex(string objname) => throw new InvalitContextException(nameof(sp_helpindex));
 
         /// <summary>
         /// sp_helplanguage          
@@ -3065,7 +3065,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helplanguage() => throw new InvalitContextException(nameof(sp_helplanguage));
+        public static int sp_helplanguage() => throw new InvalitContextException(nameof(sp_helplanguage));
 
         /// <summary>
         /// sp_helplanguage          
@@ -3074,7 +3074,7 @@ namespace LambdicSql.SqlServer
         /// <param name="language">Is the name of the alternative language for which to display information.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helplanguage(string language) => throw new InvalitContextException(nameof(sp_helplanguage));
+        public static int sp_helplanguage(string language) => throw new InvalitContextException(nameof(sp_helplanguage));
 
         /// <summary>
         /// sp_helpserver          
@@ -3082,7 +3082,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpserver() => throw new InvalitContextException(nameof(sp_helpserver));
+        public static int sp_helpserver() => throw new InvalitContextException(nameof(sp_helpserver));
 
         /// <summary>
         /// sp_helpserver          
@@ -3091,7 +3091,7 @@ namespace LambdicSql.SqlServer
         /// <param name="server">Is the server about which information is reported.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpserver(string server) => throw new InvalitContextException(nameof(sp_helpserver));
+        public static int sp_helpserver(string server) => throw new InvalitContextException(nameof(sp_helpserver));
 
         /// <summary>
         /// sp_helpserver          
@@ -3101,7 +3101,7 @@ namespace LambdicSql.SqlServer
         /// <param name="optname">Is the option describing the server.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpserver(string server, string optname) => throw new InvalitContextException(nameof(sp_helpserver));
+        public static int sp_helpserver(string server, string optname) => throw new InvalitContextException(nameof(sp_helpserver));
 
         /// <summary>
         /// sp_helpserver          
@@ -3112,7 +3112,7 @@ namespace LambdicSql.SqlServer
         /// <param name="show_topology">Is the relationship of the specified server to other servers.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpserver(string server, string optname, string show_topology) => throw new InvalitContextException(nameof(sp_helpserver));
+        public static int sp_helpserver(string server, string optname, string show_topology) => throw new InvalitContextException(nameof(sp_helpserver));
 
         /// <summary>
         /// sp_helpsort          
@@ -3120,7 +3120,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpsort() => throw new InvalitContextException(nameof(sp_helpsort));
+        public static int sp_helpsort() => throw new InvalitContextException(nameof(sp_helpsort));
 
         /// <summary>
         /// sp_helpstats          
@@ -3129,7 +3129,7 @@ namespace LambdicSql.SqlServer
         /// <param name="objname">Specifies the table on which to provide statistics information.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpstats(string objname) => throw new InvalitContextException(nameof(sp_helpstats));
+        public static int sp_helpstats(string objname) => throw new InvalitContextException(nameof(sp_helpstats));
 
         /// <summary>
         /// sp_helpstats          
@@ -3139,7 +3139,7 @@ namespace LambdicSql.SqlServer
         /// <param name="results">Specifies the extent of information to provide.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helpstats(string objname, string results) => throw new InvalitContextException(nameof(sp_helpstats));
+        public static int sp_helpstats(string objname, string results) => throw new InvalitContextException(nameof(sp_helpstats));
 
         /// <summary>
         /// sp_helptext          
@@ -3148,7 +3148,7 @@ namespace LambdicSql.SqlServer
         /// <param name="objname">Is the qualified or nonqualified name of a user-defined, schema-scoped object.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helptext(string objname) => throw new InvalitContextException(nameof(sp_helptext));
+        public static int sp_helptext(string objname) => throw new InvalitContextException(nameof(sp_helptext));
 
         /// <summary>
         /// sp_helptext          
@@ -3158,8 +3158,609 @@ namespace LambdicSql.SqlServer
         /// <param name="columnname">Is the name of the computed column for which to display definition information.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static bool sp_helptext(string objname, string columnname) => throw new InvalitContextException(nameof(sp_helptext));
+        public static int sp_helptext(string objname, string columnname) => throw new InvalitContextException(nameof(sp_helptext));
 
+        /// <summary>
+        /// sp_helptrigger          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-helptrigger-transact-sql
+        /// </summary>
+        /// <param name="tabname">Is the name of the table in the current database for which to return trigger information.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_helptrigger(string tabname) => throw new InvalitContextException(nameof(sp_helptrigger));
+
+        /// <summary>
+        /// sp_helptrigger          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-helptrigger-transact-sql
+        /// </summary>
+        /// <param name="tabname">Is the name of the table in the current database for which to return trigger information.</param>
+        /// <param name="triggertype">Is the type of DML trigger to return information about.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_helptrigger(string tabname, string triggertype) => throw new InvalitContextException(nameof(sp_helptrigger));
+
+        /// <summary>
+        /// sp_indexoption          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-indexoption-transact-sql
+        /// </summary>
+        /// <param name="IndexNamePattern">Is the qualified or nonqualified name of a user-defined table or index.</param>
+        /// <param name="OptionName">Is an index option name.</param>
+        /// <param name="OptionValue">Specifies whether the option_name setting is enabled (TRUE, ON, yes, or 1) or disabled (FALSE, OFF, no, or 0).</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_indexoption(string IndexNamePattern, string OptionName, string OptionValue) => throw new InvalitContextException(nameof(sp_indexoption));
+
+        /// <summary>
+        /// sp_invalidate_textptr          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-invalidate-textptr-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_invalidate_textptr() => throw new InvalitContextException(nameof(sp_invalidate_textptr));
+
+        /// <summary>
+        /// sp_invalidate_textptr          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-invalidate-textptr-transact-sql
+        /// </summary>
+        /// <param name="TextPtrValue">Is the in-row text pointer that to be invalidated.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_invalidate_textptr(string TextPtrValue) => throw new InvalitContextException(nameof(sp_invalidate_textptr));
+
+        /// <summary>
+        /// sp_lock          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-invalidate-textptr-transact-sql
+        /// </summary>
+        /// <returns>0 (success)</returns>
+        [ClauseStyleConverter]
+        public static int sp_lock() => throw new InvalitContextException(nameof(sp_lock));
+
+        /// <summary>
+        /// sp_lock          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-invalidate-textptr-transact-sql
+        /// </summary>
+        /// <param name="spid1">Is a Database Engine session ID number from sys.dm_exec_sessions for which the user wants locking information.</param>
+        /// <returns>0 (success)</returns>
+        [ClauseStyleConverter]
+        public static int sp_lock(int? spid1) => throw new InvalitContextException(nameof(sp_lock));
+
+        /// <summary>
+        /// sp_lock          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-invalidate-textptr-transact-sql
+        /// </summary>
+        /// <param name="spid1">Is a Database Engine session ID number from sys.dm_exec_sessions for which the user wants locking information.</param>
+        /// <param name="spid2">Is another Database Engine session ID number from sys.dm_exec_sessions that might have a lock at the same time as session ID1 and about which the user also wants information.</param>
+        /// <returns>0 (success)</returns>
+        [ClauseStyleConverter]
+        public static int sp_lock(int? spid1, int? spid2) => throw new InvalitContextException(nameof(sp_lock));
+
+        /// <summary>
+        /// sp_monitor          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-monitor-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_monitor() => throw new InvalitContextException(nameof(sp_monitor));
+
+        /// <summary>
+        /// sp_procoption          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-procoption-transact-sql
+        /// </summary>
+        /// <param name="ProcName">Is the name of the procedure for which to set an option.</param>
+        /// <param name="OptionName">Is the name of the option to set.</param>
+        /// <param name="OptionValue">Is whether to set the option on (true or on) or off (false or off).</param>
+        /// <returns>0 (success) or error number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_procoption(string ProcName, string OptionName, string OptionValue) => throw new InvalitContextException(nameof(sp_procoption));
+
+        /// <summary>
+        /// sp_recompile          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-recompile-transact-sql
+        /// </summary>
+        /// <param name="objname">The qualified or unqualified name of a stored procedure, trigger, table, view, or user-defined function in the current database.</param>
+        /// <returns>0 (success) or a nonzero number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_recompile(string objname) => throw new InvalitContextException(nameof(sp_recompile));
+
+        /// <summary>
+        /// sp_refreshsqlmodule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-procoption-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the stored procedure, user-defined function, view, DML trigger, database-level DDL trigger, or server-level DDL trigger.</param>
+        /// <returns>0 (success) or a nonzero number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_refreshsqlmodule(string name) => throw new InvalitContextException(nameof(sp_refreshsqlmodule));
+
+        /// <summary>
+        /// sp_refreshsqlmodule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-procoption-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the stored procedure, user-defined function, view, DML trigger, database-level DDL trigger, or server-level DDL trigger.</param>
+        /// <param name="namespace">Is the class of the specified module.</param>
+        /// <returns>0 (success) or a nonzero number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_refreshsqlmodule(string name, string @namespace) => throw new InvalitContextException(nameof(sp_refreshsqlmodule));
+
+        /// <summary>
+        /// sp_refreshview          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-refreshview-transact-sql
+        /// </summary>
+        /// <param name="viewname">Is the name of the view.</param>
+        /// <returns>0 (success) or a nonzero number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_refreshview(string viewname) => throw new InvalitContextException(nameof(sp_refreshview));
+
+        /// <summary>
+        /// sp_releaseapplock          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-releaseapplock-transact-sql
+        /// </summary>
+        /// <param name="Resource">Is a lock resource name specified by the client application.</param>
+        /// <returns>>= 0 (success), or &lt; 0 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_releaseapplock(string Resource) => throw new InvalitContextException(nameof(sp_releaseapplock));
+
+        /// <summary>
+        /// sp_releaseapplock          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-releaseapplock-transact-sql
+        /// </summary>
+        /// <param name="Resource">Is a lock resource name specified by the client application.</param>
+        /// <param name="LockOwner">Is the owner of the lock, which is the lock_owner value when the lock was requested.</param>
+        /// <returns>>= 0 (success), or &lt; 0 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_releaseapplock(string Resource, string LockOwner) => throw new InvalitContextException(nameof(sp_releaseapplock));
+
+        /// <summary>
+        /// sp_releaseapplock          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-releaseapplock-transact-sql
+        /// </summary>
+        /// <param name="Resource">Is a lock resource name specified by the client application.</param>
+        /// <param name="LockOwner">Is the owner of the lock, which is the lock_owner value when the lock was requested.</param>
+        /// <param name="DbPrincipal">Is the user, role, or application role that has permissions to an object in a database.</param>
+        /// <returns>>= 0 (success), or &lt; 0 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_releaseapplock(string Resource, string LockOwner, string DbPrincipal) => throw new InvalitContextException(nameof(sp_releaseapplock));
+
+        /// <summary>
+        /// sp_rename          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the current qualified or nonqualified name of the user object or data type.</param>
+        /// <param name="newname">Is the new name for the specified object.</param>
+        /// <param name="objtype">Is the type of object being renamed.</param>
+        /// <returns>>= 0 (success) or a nonzero number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_rename(string objname, string newname, string objtype) => throw new InvalitContextException(nameof(sp_rename));
+
+        /// <summary>
+        /// sp_renamedb          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-renamedb-transact-sql
+        /// </summary>
+        /// <param name="dbname">Is the current name of the database.</param>
+        /// <param name="newname">Is the new name of the database.</param>
+        /// <returns>>= 0 (success) or a nonzero number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_renamedb(string dbname, string newname) => throw new InvalitContextException(nameof(sp_renamedb));
+
+        /// <summary>
+        /// sp_resetstatus          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-resetstatus-transact-sql
+        /// </summary>
+        /// <param name="dbname">Is the name of the database to reset.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_resetstatus(string dbname) => throw new InvalitContextException(nameof(sp_resetstatus));
+
+        /// <summary>
+        /// sp_sequence_get_range          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-sequence-get-range-transact-sql
+        /// </summary>
+        /// <param name="sequence_name">The name of the sequence object.</param>
+        /// <param name="range_size">The number of values to fetch from the sequence.</param>
+        /// <param name="range_first_value">Output parameter returns the first (minimum or maximum) value of the sequence object used to calculate the requested range.</param>
+        /// <param name="range_last_value">Optional output parameter returns the last value of the requested range.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_sequence_get_range(string sequence_name, long range_size, object range_first_value, object range_last_value) => throw new InvalitContextException(nameof(sp_sequence_get_range));
+
+        /// <summary>
+        /// sp_sequence_get_range          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-sequence-get-range-transact-sql
+        /// </summary>
+        /// <param name="sequence_name">The name of the sequence object.</param>
+        /// <param name="range_size">The number of values to fetch from the sequence.</param>
+        /// <param name="range_first_value">Output parameter returns the first (minimum or maximum) value of the sequence object used to calculate the requested range.</param>
+        /// <param name="range_last_value">Optional output parameter returns the last value of the requested range.</param>
+        /// <param name="range_cycle_count">Optional output parameter returns the number of times that the sequence object cycled in order to return the requested range.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_sequence_get_range(string sequence_name, long range_size, object range_first_value, object range_last_value, int range_cycle_count) => throw new InvalitContextException(nameof(sp_sequence_get_range));
+
+        /// <summary>
+        /// sp_sequence_get_range          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-sequence-get-range-transact-sql
+        /// </summary>
+        /// <param name="sequence_name">The name of the sequence object.</param>
+        /// <param name="range_size">The number of values to fetch from the sequence.</param>
+        /// <param name="range_first_value">Output parameter returns the first (minimum or maximum) value of the sequence object used to calculate the requested range.</param>
+        /// <param name="range_last_value">Optional output parameter returns the last value of the requested range.</param>
+        /// <param name="range_cycle_count">Optional output parameter returns the number of times that the sequence object cycled in order to return the requested range.</param>
+        /// <param name="sequence_increment">Optional output parameter returns the increment of the sequence object used to calculate the requested range.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_sequence_get_range(string sequence_name, long range_size, object range_first_value, object range_last_value, int range_cycle_count, object sequence_increment) => throw new InvalitContextException(nameof(sp_sequence_get_range));
+
+        /// <summary>
+        /// sp_sequence_get_range          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-sequence-get-range-transact-sql
+        /// </summary>
+        /// <param name="sequence_name">The name of the sequence object.</param>
+        /// <param name="range_size">The number of values to fetch from the sequence.</param>
+        /// <param name="range_first_value">Output parameter returns the first (minimum or maximum) value of the sequence object used to calculate the requested range.</param>
+        /// <param name="range_last_value">Optional output parameter returns the last value of the requested range.</param>
+        /// <param name="range_cycle_count">Optional output parameter returns the number of times that the sequence object cycled in order to return the requested range.</param>
+        /// <param name="sequence_increment">Optional output parameter returns the increment of the sequence object used to calculate the requested range.</param>
+        /// <param name="sequence_min_value">Optional output parameter returns the minimum value of the sequence object.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_sequence_get_range(string sequence_name, long range_size, object range_first_value, object range_last_value, int range_cycle_count, object sequence_increment, object sequence_min_value) => throw new InvalitContextException(nameof(sp_sequence_get_range));
+
+        /// <summary>
+        /// sp_sequence_get_range          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-sequence-get-range-transact-sql
+        /// </summary>
+        /// <param name="sequence_name">The name of the sequence object.</param>
+        /// <param name="range_size">The number of values to fetch from the sequence.</param>
+        /// <param name="range_first_value">Output parameter returns the first (minimum or maximum) value of the sequence object used to calculate the requested range.</param>
+        /// <param name="range_last_value">Optional output parameter returns the last value of the requested range.</param>
+        /// <param name="range_cycle_count">Optional output parameter returns the number of times that the sequence object cycled in order to return the requested range.</param>
+        /// <param name="sequence_increment">Optional output parameter returns the increment of the sequence object used to calculate the requested range.</param>
+        /// <param name="sequence_min_value">Optional output parameter returns the minimum value of the sequence object.</param>
+        /// <param name="sequence_max_value">Optional output parameter returns the maximum value of the sequence object.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_sequence_get_range(string sequence_name, long range_size, object range_first_value, object range_last_value, int range_cycle_count, object sequence_increment, object sequence_min_value, object sequence_max_value) => throw new InvalitContextException(nameof(sp_sequence_get_range));
+
+        /// <summary>
+        /// sp_server_diagnostics          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-server-diagnostics-transact-sql
+        /// </summary>
+        /// <param name="repeat_interval">The name of the sequence object.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_server_diagnostics(int repeat_interval) => throw new InvalitContextException(nameof(sp_server_diagnostics));
+
+        /// <summary>
+        /// sp_set_session_context          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql
+        /// </summary>
+        /// <param name="key">The key being set, of type sysname.</param>
+        /// <param name="value">The value for the specified key, of type sql_variant.</param>
+        [ClauseStyleConverter]
+        public static void sp_set_session_context(string key, object value) => throw new InvalitContextException(nameof(sp_set_session_context));
+
+        /// <summary>
+        /// sp_set_session_context          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql
+        /// </summary>
+        /// <param name="key">The key being set, of type sysname.</param>
+        /// <param name="value">The value for the specified key, of type sql_variant.</param>
+        /// <param name="read_only">A flag of type bit.</param>
+        [ClauseStyleConverter]
+        public static void sp_set_session_context(string key, object value, int read_only) => throw new InvalitContextException(nameof(sp_set_session_context));
+
+        /// <summary>
+        /// sp_setnetname          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-setnetname-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the remote server as referenced in user-coded remote stored procedure call syntax.</param>
+        /// <param name="netname">Is the network name of the computer to which remote stored procedure calls are made.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_setnetname(string server, string netname) => throw new InvalitContextException(nameof(sp_setnetname));
+
+        /// <summary>
+        /// sp_settriggerorder          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-settriggerorder-transact-sql
+        /// </summary>
+        /// <param name="triggername">Is the name of the trigger and the schema to which it belongs, if applicable, whose order is to be set or changed.</param>
+        /// <param name="order">Is the setting for the new order of the trigger.</param>
+        /// <param name="stmttype">Specifies the SQL statement that fires the trigger.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_settriggerorder(string triggername, string order, string stmttype) => throw new InvalitContextException(nameof(sp_settriggerorder));
+
+        /// <summary>
+        /// sp_settriggerorder          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-settriggerorder-transact-sql
+        /// </summary>
+        /// <param name="triggername">Is the name of the trigger and the schema to which it belongs, if applicable, whose order is to be set or changed.</param>
+        /// <param name="order">Is the setting for the new order of the trigger.</param>
+        /// <param name="stmttype">Specifies the SQL statement that fires the trigger.</param>
+        /// <param name="namespace">When triggername is a DDL trigger, @namespace specifies whether triggername was created with database scope or server scope.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_settriggerorder(string triggername, string order, string stmttype, string @namespace) => throw new InvalitContextException(nameof(sp_settriggerorder));
+
+        /// <summary>
+        /// sp_spaceused          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql
+        /// </summary>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_spaceused() => throw new InvalitContextException(nameof(sp_spaceused));
+
+        /// <summary>
+        /// sp_spaceused          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the qualified or nonqualified name of the table, indexed view, or queue for which space usage information is requested.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_spaceused(string objname) => throw new InvalitContextException(nameof(sp_spaceused));
+
+        /// <summary>
+        /// sp_spaceused          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the qualified or nonqualified name of the table, indexed view, or queue for which space usage information is requested.</param>
+        /// <param name="updateusage">Indicates DBCC UPDATEUSAGE should be run to update space usage information.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_spaceused(string objname, string updateusage) => throw new InvalitContextException(nameof(sp_spaceused));
+
+        /// <summary>
+        /// sp_spaceused          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the qualified or nonqualified name of the table, indexed view, or queue for which space usage information is requested.</param>
+        /// <param name="updateusage">Indicates DBCC UPDATEUSAGE should be run to update space usage information.</param>
+        /// <param name="mode">Indicates the scope of the results.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_spaceused(string objname, string updateusage, string mode) => throw new InvalitContextException(nameof(sp_spaceused));
+
+        /// <summary>
+        /// sp_spaceused          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the qualified or nonqualified name of the table, indexed view, or queue for which space usage information is requested.</param>
+        /// <param name="updateusage">Indicates DBCC UPDATEUSAGE should be run to update space usage information.</param>
+        /// <param name="mode">Indicates the scope of the results.</param>
+        /// <param name="oneresultset">Indicates whether to return a single result set.</param>
+        /// <returns>>= 0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_spaceused(string objname, string updateusage, string mode, int oneresultset) => throw new InvalitContextException(nameof(sp_spaceused));
+
+        /// <summary>
+        /// sp_tableoption          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-tableoption-transact-sql
+        /// </summary>
+        /// <param name="TableNamePattern">Is the qualified or nonqualified name of a user-defined database table.</param>
+        /// <param name="OptionName">Is a table option name.</param>
+        /// <param name="OptionValue">Is whether the option_name is enabled (TRUE, ON, or 1) or disabled (FALSE, OFF, or 0).</param>
+        /// <returns>>= 0 (success) or error number (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_tableoption(string TableNamePattern, string OptionName, string OptionValue) => throw new InvalitContextException(nameof(sp_tableoption));
+
+        /// <summary>
+        /// sp_unbindefault          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-unbindefault-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the name of the table and column or the alias data type from which the default is to be unbound.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_unbindefault(string objname) => throw new InvalitContextException(nameof(sp_unbindefault));
+
+        /// <summary>
+        /// sp_unbindefault          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-unbindefault-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the name of the table and column or the alias data type from which the default is to be unbound.</param>
+        /// <param name="futureonly">Is used only when unbinding a default from an alias data type.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_unbindefault(string objname, string futureonly) => throw new InvalitContextException(nameof(sp_unbindefault));
+
+        /// <summary>
+        /// sp_unbindrule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-unbindrule-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the name of the table and column or the alias data type from which the default is to be unbound.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_unbindrule(string objname) => throw new InvalitContextException(nameof(sp_unbindrule));
+
+        /// <summary>
+        /// sp_unbindrule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-unbindrule-transact-sql
+        /// </summary>
+        /// <param name="objname">Is the name of the table and column or the alias data type from which the default is to be unbound.</param>
+        /// <param name="futureonly">Is used only when unbinding a default from an alias data type.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_unbindrule(string objname, string futureonly) => throw new InvalitContextException(nameof(sp_unbindrule));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <param name="value">Is the value associated with the property.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name, object value) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <param name="value">Is the value associated with the property.</param>
+        /// <param name="level0type">Is the user or user-defined type.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name, object value, string level0type) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <param name="value">Is the value associated with the property.</param>
+        /// <param name="level0type">Is the user or user-defined type.</param>
+        /// <param name="level0name">Is the name of the level 1 object type specified.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name, object value, string level0type, string level0name) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <param name="value">Is the value associated with the property.</param>
+        /// <param name="level0type">Is the user or user-defined type.</param>
+        /// <param name="level0name">Is the name of the level 1 object type specified.</param>
+        /// <param name="level1type">Is the type of level 1 object.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name, object value, string level0type, string level0name, string level1type) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <param name="value">Is the value associated with the property.</param>
+        /// <param name="level0type">Is the user or user-defined type.</param>
+        /// <param name="level0name">Is the name of the level 1 object type specified.</param>
+        /// <param name="level1type">Is the type of level 1 object.</param>
+        /// <param name="level1name">Is the name of the level 1 object type specified.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <param name="value">Is the value associated with the property.</param>
+        /// <param name="level0type">Is the user or user-defined type.</param>
+        /// <param name="level0name">Is the name of the level 1 object type specified.</param>
+        /// <param name="level1type">Is the type of level 1 object.</param>
+        /// <param name="level1name">Is the name of the level 1 object type specified.</param>
+        /// <param name="level2type">Is the type of level 2 object.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name, string level2type) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updateextendedproperty          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updateextendedproperty-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the property to be updated.</param>
+        /// <param name="value">Is the value associated with the property.</param>
+        /// <param name="level0type">Is the user or user-defined type.</param>
+        /// <param name="level0name">Is the name of the level 1 object type specified.</param>
+        /// <param name="level1type">Is the type of level 1 object.</param>
+        /// <param name="level1name">Is the name of the level 1 object type specified.</param>
+        /// <param name="level2type">Is the type of level 2 object.</param>
+        /// <param name="level2name">Is the name of the level 2 object type specified.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updateextendedproperty(string name, object value, string level0type, string level0name, string level1type, string level1name, string level2type, string level2name) => throw new InvalitContextException(nameof(sp_updateextendedproperty));
+
+        /// <summary>
+        /// sp_updatestats          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-updatestats-transact-sql
+        /// </summary>
+        /// <param name="resample">Specifies that sp_updatestats will use the RESAMPLE option of the UPDATE STATISTICS statement.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_updatestats(string resample) => throw new InvalitContextException(nameof(sp_updatestats));
+
+        /// <summary>
+        /// sp_validname          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-validname-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the identifiers for which to check validity.</param>
+        [ClauseStyleConverter]
+        public static int sp_validname(string name) => throw new InvalitContextException(nameof(sp_validname));
+
+        /// <summary>
+        /// sp_validname          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-validname-transact-sql
+        /// </summary>
+        /// <param name="name">Is the name of the identifiers for which to check validity.</param>
+        /// <param name="raise_error">Specifies whether to raise an error.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_validname(string name, int? raise_error) => throw new InvalitContextException(nameof(sp_validname));
+
+        /// <summary>
+        /// sp_who          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-who-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_who() => throw new InvalitContextException(nameof(sp_who));
+
+        /// <summary>
+        /// sp_who          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-who-transact-sql
+        /// </summary>
+        /// <param name="loginame">Is used to filter the result set.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_who(object loginame) => throw new InvalitContextException(nameof(sp_who));
+
+        //--------------------------
+        //Database Mail Stored Procedures
+        //--------------------------
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <param name="query_result_width">Is the line width, in characters, to use for formatting the results of the query.</param>
+        /// <param name="query_result_separator">Is the character used to separate columns in the query output.</param>
+        /// <param name="exclude_query_output">Specifies whether to return the output of the query execution in the e-mail message.</param>
+        /// <param name="append_query_error">Specifies whether to send the e-mail when an error returns from the query specified in the @query argument.</param>
+        /// <param name="query_no_truncate">Specifies whether to execute the query with the option that avoids truncation of large variable length data types (varchar(max), nvarchar(max), varbinary(max), xml, text, ntext, image, and user-defined data types).</param>
+        /// <param name="query_result_no_padding">The type is bit. The default is 0. When you set to 1, the query results are not padded, possibly reducing the file size.</param>
+        /// <param name="mailitem_id">A return code of 0 means success.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address, 
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query, 
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width,
+            char query_result_separator, int exclude_query_output, int? append_query_error, string query_no_truncate, int? query_result_no_padding, int mailitem_id) => throw new InvalitContextException(nameof(sp_send_dbmail));
 
 
 

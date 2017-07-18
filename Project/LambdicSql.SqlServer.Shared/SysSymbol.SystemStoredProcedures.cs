@@ -42,7 +42,7 @@ namespace LambdicSql.SqlServer
         /// <param name="start_job">Flag indicating whether the job should be started immediately after it is added.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_add_job")]
-        public bool sp_cdc_add_job(string job_type, bool? start_job) => throw new InvalitContextException(nameof(sp_cdc_add_job));
+        public bool sp_cdc_add_job(string job_type, int? start_job) => throw new InvalitContextException(nameof(sp_cdc_add_job));
 
         /// <summary>
         /// sys.sp_cdc_add_job  
@@ -53,7 +53,7 @@ namespace LambdicSql.SqlServer
         /// <param name="maxtrans">Maximum number of transactions to process in each scan cycle.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_add_job")]
-        public bool sp_cdc_add_job(string job_type, bool? start_job, int maxtrans) => throw new InvalitContextException(nameof(sp_cdc_add_job));
+        public bool sp_cdc_add_job(string job_type, int? start_job, int maxtrans) => throw new InvalitContextException(nameof(sp_cdc_add_job));
 
         /// <summary>
         /// sys.sp_cdc_add_job  
@@ -65,7 +65,7 @@ namespace LambdicSql.SqlServer
         /// <param name="maxscans">Maximum number of scan cycles to execute in order to extract all rows from the log.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_add_job")]
-        public bool sp_cdc_add_job(string job_type, bool? start_job, int maxtrans, int maxscans) => throw new InvalitContextException(nameof(sp_cdc_add_job));
+        public bool sp_cdc_add_job(string job_type, int? start_job, int maxtrans, int maxscans) => throw new InvalitContextException(nameof(sp_cdc_add_job));
 
         /// <summary>
         /// sys.sp_cdc_add_job  
@@ -78,7 +78,7 @@ namespace LambdicSql.SqlServer
         /// <param name="continuous">Indicates whether the capture job is to run continuously (1), or run only once (0).</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_add_job")]
-        public bool sp_cdc_add_job(string job_type, bool? start_job, int maxtrans, int maxscans, bool? continuous) => throw new InvalitContextException(nameof(sp_cdc_add_job));
+        public bool sp_cdc_add_job(string job_type, int? start_job, int maxtrans, int maxscans, int continuous) => throw new InvalitContextException(nameof(sp_cdc_add_job));
 
         /// <summary>
         /// sys.sp_cdc_add_job  
@@ -92,7 +92,7 @@ namespace LambdicSql.SqlServer
         /// <param name="pollinginterval">Number of seconds between log scan cycles.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_add_job")]
-        public bool sp_cdc_add_job(string job_type, bool? start_job, int maxtrans, int maxscans, bool? continuous, long pollinginterval) => throw new InvalitContextException(nameof(sp_cdc_add_job));
+        public bool sp_cdc_add_job(string job_type, int? start_job, int maxtrans, int maxscans, int continuous, long pollinginterval) => throw new InvalitContextException(nameof(sp_cdc_add_job));
 
         /// <summary>
         /// sys.sp_cdc_add_job  
@@ -107,7 +107,7 @@ namespace LambdicSql.SqlServer
         /// <param name="retention">Number of minutes that change data rows are to be retained in change tables.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_add_job")]
-        public bool sp_cdc_add_job(string job_type, bool? start_job, int maxtrans, int maxscans, bool? continuous, long pollinginterval, long retention) => throw new InvalitContextException(nameof(sp_cdc_add_job));
+        public bool sp_cdc_add_job(string job_type, int? start_job, int maxtrans, int maxscans, int continuous, long pollinginterval, long retention) => throw new InvalitContextException(nameof(sp_cdc_add_job));
 
         /// <summary>
         /// sys.sp_cdc_add_job  
@@ -123,7 +123,7 @@ namespace LambdicSql.SqlServer
         /// <param name="threshold">Maximum number of delete entries that can be deleted by using a single statement on cleanup.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_add_job")]
-        public bool sp_cdc_add_job(string job_type, bool? start_job, int maxtrans, int maxscans, bool? continuous, long pollinginterval, long retention, long threshold) => throw new InvalitContextException(nameof(sp_cdc_add_job));
+        public bool sp_cdc_add_job(string job_type, int? start_job, int maxtrans, int maxscans, int continuous, long pollinginterval, long retention, long threshold) => throw new InvalitContextException(nameof(sp_cdc_add_job));
 
         /// <summary>
         /// sys.sp_cdc_change_job  
@@ -165,7 +165,7 @@ namespace LambdicSql.SqlServer
         /// <param name="continuous">Indicates whether the capture job is to run continuously (1), or run only once (0).</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_change_job")]
-        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, bool? continuous) => throw new InvalitContextException(nameof(sp_cdc_change_job));
+        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, int? continuous) => throw new InvalitContextException(nameof(sp_cdc_change_job));
 
         /// <summary>
         /// sys.sp_cdc_change_job  
@@ -178,7 +178,7 @@ namespace LambdicSql.SqlServer
         /// <param name="pollinginterval">Number of seconds between log scan cycles.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_change_job")]
-        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, bool? continuous, long? pollinginterval) => throw new InvalitContextException(nameof(sp_cdc_change_job));
+        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, int? continuous, long? pollinginterval) => throw new InvalitContextException(nameof(sp_cdc_change_job));
 
         /// <summary>
         /// sys.sp_cdc_change_job  
@@ -192,7 +192,7 @@ namespace LambdicSql.SqlServer
         /// <param name="retention">Number of minutes that change rows are to be retained in change tables.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_change_job")]
-        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, bool? continuous, long? pollinginterval, long? retention) => throw new InvalitContextException(nameof(sp_cdc_change_job));
+        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, int? continuous, long? pollinginterval, long? retention) => throw new InvalitContextException(nameof(sp_cdc_change_job));
 
         /// <summary>
         /// sys.sp_cdc_change_job  
@@ -207,7 +207,7 @@ namespace LambdicSql.SqlServer
         /// <param name="threshold">Maximum number of delete entries that can be deleted using a single statement on cleanup.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_change_job")]
-        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, bool? continuous, long? pollinginterval, long? retention, long? threshold) => throw new InvalitContextException(nameof(sp_cdc_change_job));
+        public bool sp_cdc_change_job(string job_type, int? maxtrans, int? maxscans, int? continuous, long? pollinginterval, long? retention, long? threshold) => throw new InvalitContextException(nameof(sp_cdc_change_job));
 
         /// <summary>
         /// sys.sp_cdc_cleanup_change_table  
@@ -305,7 +305,7 @@ namespace LambdicSql.SqlServer
         /// <param name="supports_net_changes">Indicates whether support for querying for net changes is to be enabled for this capture instance.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_enable_table")]
-        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, bool? supports_net_changes) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
+        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, int? supports_net_changes) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
 
         /// <summary>
         /// sys.sp_cdc_enable_table  
@@ -318,7 +318,7 @@ namespace LambdicSql.SqlServer
         /// <param name="role_name">Is the name of the database role used to gate access to change data.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_enable_table")]
-        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, bool? supports_net_changes, string role_name) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
+        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, int? supports_net_changes, string role_name) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
 
         /// <summary>
         /// sys.sp_cdc_enable_table  
@@ -332,7 +332,7 @@ namespace LambdicSql.SqlServer
         /// <param name="index_name">The name of a unique index to use to uniquely identify rows in the source table.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_enable_table")]
-        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, bool? supports_net_changes, string role_name, string index_name) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
+        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, int? supports_net_changes, string role_name, string index_name) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
 
         /// <summary>
         /// sys.sp_cdc_enable_table  
@@ -347,7 +347,7 @@ namespace LambdicSql.SqlServer
         /// <param name="captured_column_list">Identifies the source table columns that are to be included in the change table.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_enable_table")]
-        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, bool? supports_net_changes, string role_name, string index_name, string captured_column_list) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
+        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, int? supports_net_changes, string role_name, string index_name, string captured_column_list) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
 
         /// <summary>
         /// sys.sp_cdc_enable_table  
@@ -363,7 +363,7 @@ namespace LambdicSql.SqlServer
         /// <param name="filegroup_name">Is the filegroup to be used for the change table created for the capture instance.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_enable_table")]
-        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, bool? supports_net_changes, string role_name, string index_name, string captured_column_list, string filegroup_name) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
+        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, int? supports_net_changes, string role_name, string index_name, string captured_column_list, string filegroup_name) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
 
         /// <summary>
         /// sys.sp_cdc_enable_table  
@@ -380,7 +380,7 @@ namespace LambdicSql.SqlServer
         /// <param name="allow_partition_switch">Indicates whether the SWITCH PARTITION command of ALTER TABLE can be executed against a table that is enabled for change data capture.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_enable_table")]
-        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, bool? supports_net_changes, string role_name, string index_name, string captured_column_list, string filegroup_name, bool allow_partition_switch) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
+        public bool sp_cdc_enable_table(string source_schema, string source_name, string capture_instance, int? supports_net_changes, string role_name, string index_name, string captured_column_list, string filegroup_name, bool allow_partition_switch) => throw new InvalitContextException(nameof(sp_cdc_enable_table));
 
         /// <summary>
         /// sys.sp_cdc_generate_wrapper_function  
@@ -399,7 +399,7 @@ namespace LambdicSql.SqlServer
         /// <param name="closed_high_end_point">Is the flag bit that indicates whether changes that have a commit time equal to the high endpoint are to be included within the extraction interval by the generated procedure.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_generate_wrapper_function")]
-        public bool sp_cdc_generate_wrapper_function(string capture_instance, bool? closed_high_end_point) => throw new InvalitContextException(nameof(sp_cdc_generate_wrapper_function));
+        public bool sp_cdc_generate_wrapper_function(string capture_instance, int? closed_high_end_point) => throw new InvalitContextException(nameof(sp_cdc_generate_wrapper_function));
 
         /// <summary>
         /// sys.sp_cdc_generate_wrapper_function  
@@ -410,7 +410,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column_list">Is a list of captured columns to be included in the result set that is returned by the wrapper function.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_generate_wrapper_function")]
-        public bool sp_cdc_generate_wrapper_function(string capture_instance, bool? closed_high_end_point, string column_list) => throw new InvalitContextException(nameof(sp_cdc_generate_wrapper_function));
+        public bool sp_cdc_generate_wrapper_function(string capture_instance, int? closed_high_end_point, string column_list) => throw new InvalitContextException(nameof(sp_cdc_generate_wrapper_function));
 
         /// <summary>
         /// sys.sp_cdc_generate_wrapper_function  
@@ -422,7 +422,7 @@ namespace LambdicSql.SqlServer
         /// <param name="update_flag_list">Is a list of included columns for which an update flag is included in the result set that is returned by the wrapper function.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [FuncStyleConverter(Name = "sys.sp_cdc_generate_wrapper_function")]
-        public bool sp_cdc_generate_wrapper_function(string capture_instance, bool? closed_high_end_point, string column_list, string update_flag_list) => throw new InvalitContextException(nameof(sp_cdc_generate_wrapper_function));
+        public bool sp_cdc_generate_wrapper_function(string capture_instance, int? closed_high_end_point, string column_list, string update_flag_list) => throw new InvalitContextException(nameof(sp_cdc_generate_wrapper_function));
 
         /// <summary>
         /// sys.sp_cdc_get_captured_columns  

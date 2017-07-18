@@ -203,7 +203,7 @@ namespace LambdicSql.SqlServer
         /// <param name="use_replica_computer_name">A bit value that defines how the server name should be returned in an Always On availability group.</param>
         /// <returns>nvarchar(max)</returns>
         [FuncStyleConverter]
-        public static string PathName(string column_name, int option, bool? use_replica_computer_name) => throw new InvalitContextException(nameof(PathName));
+        public static string PathName(string column_name, int option, int? use_replica_computer_name) => throw new InvalitContextException(nameof(PathName));
 
         //--------------------------
         //Managed Backup Functions

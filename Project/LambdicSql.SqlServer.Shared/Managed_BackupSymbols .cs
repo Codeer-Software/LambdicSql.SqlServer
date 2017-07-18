@@ -24,7 +24,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>bit.</returns>
         [FuncStyleConverter(Name = "managed_backup.fn_is_master_switch_on")]
-        public bool? fn_is_master_switch_on() => throw new InvalitContextException(nameof(fn_is_master_switch_on));
+        public int? fn_is_master_switch_on() => throw new InvalitContextException(nameof(fn_is_master_switch_on));
 
         /// <summary>
         /// managed_backup.fn_get_current_xevent_settings 
