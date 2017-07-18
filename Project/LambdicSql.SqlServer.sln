@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LambdicSql.SqlServer.Shared", "LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.shproj", "{028FE542-3C97-45FB-88A6-8EED82AF2D68}"
 EndProject
@@ -16,6 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0E03C2
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.NetFramework.3.5", "LambdicSql.SqlServer.NetFramework.3.5\LambdicSql.SqlServer.NetFramework.3.5.csproj", "{335592C4-241D-4E16-94E0-B1A23FC279B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{314076CB-DAFB-46F4-876D-B8D0B5C0217C} = {314076CB-DAFB-46F4-876D-B8D0B5C0217C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.NetFramework.4.6", "LambdicSql.SqlServer.NetFramework.4.6\LambdicSql.SqlServer.NetFramework.4.6.csproj", "{314076CB-DAFB-46F4-876D-B8D0B5C0217C}"
 EndProject
