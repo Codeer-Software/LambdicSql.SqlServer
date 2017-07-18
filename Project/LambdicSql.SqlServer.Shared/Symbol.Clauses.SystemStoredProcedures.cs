@@ -3731,6 +3731,507 @@ namespace LambdicSql.SqlServer
         /// sp_send_dbmail          
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
         /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail() => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <param name="query_result_width">Is the line width, in characters, to use for formatting the results of the query.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <param name="query_result_width">Is the line width, in characters, to use for formatting the results of the query.</param>
+        /// <param name="query_result_separator">Is the character used to separate columns in the query output.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width,
+            char query_result_separator) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <param name="query_result_width">Is the line width, in characters, to use for formatting the results of the query.</param>
+        /// <param name="query_result_separator">Is the character used to separate columns in the query output.</param>
+        /// <param name="exclude_query_output">Specifies whether to return the output of the query execution in the e-mail message.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width,
+            char query_result_separator, int exclude_query_output) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <param name="query_result_width">Is the line width, in characters, to use for formatting the results of the query.</param>
+        /// <param name="query_result_separator">Is the character used to separate columns in the query output.</param>
+        /// <param name="exclude_query_output">Specifies whether to return the output of the query execution in the e-mail message.</param>
+        /// <param name="append_query_error">Specifies whether to send the e-mail when an error returns from the query specified in the @query argument.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width,
+            char query_result_separator, int exclude_query_output, int? append_query_error) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <param name="query_result_width">Is the line width, in characters, to use for formatting the results of the query.</param>
+        /// <param name="query_result_separator">Is the character used to separate columns in the query output.</param>
+        /// <param name="exclude_query_output">Specifies whether to return the output of the query execution in the e-mail message.</param>
+        /// <param name="append_query_error">Specifies whether to send the e-mail when an error returns from the query specified in the @query argument.</param>
+        /// <param name="query_no_truncate">Specifies whether to execute the query with the option that avoids truncation of large variable length data types (varchar(max), nvarchar(max), varbinary(max), xml, text, ntext, image, and user-defined data types).</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width,
+            char query_result_separator, int exclude_query_output, int? append_query_error, string query_no_truncate) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
+        /// <param name="profile_name">Is the name of the profile to send the message from.</param>
+        /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
+        /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
+        /// <param name="blind_copy_recipients">Is a semicolon-delimited list of e-mail addresses to blind carbon copy the message to.</param>
+        /// <param name="from_address">Is the value of the 'from address' of the email message.</param>
+        /// <param name="reply_to">Is the value of the 'reply to address' of the email message.</param>
+        /// <param name="subject">Is the subject of the e-mail message.</param>
+        /// <param name="body">Is the body of the e-mail message.</param>
+        /// <param name="body_format">Is the format of the message body.</param>
+        /// <param name="importance">Is the importance of the message.</param>
+        /// <param name="sensitivity">Is the sensitivity of the message.</param>
+        /// <param name="file_attachments">Is a semicolon-delimited list of file names to attach to the e-mail message.</param>
+        /// <param name="query">Is a query to execute.</param>
+        /// <param name="execute_query_database">Is the database context within which the stored procedure runs the query.</param>
+        /// <param name="attach_query_result_as_file">Specifies whether the result set of the query is returned as an attached file.</param>
+        /// <param name="query_attachment_filename">Specifies the file name to use for the result set of the query attachment.</param>
+        /// <param name="query_result_header">Specifies whether the query results include column headers.</param>
+        /// <param name="query_result_width">Is the line width, in characters, to use for formatting the results of the query.</param>
+        /// <param name="query_result_separator">Is the character used to separate columns in the query output.</param>
+        /// <param name="exclude_query_output">Specifies whether to return the output of the query execution in the e-mail message.</param>
+        /// <param name="append_query_error">Specifies whether to send the e-mail when an error returns from the query specified in the @query argument.</param>
+        /// <param name="query_no_truncate">Specifies whether to execute the query with the option that avoids truncation of large variable length data types (varchar(max), nvarchar(max), varbinary(max), xml, text, ntext, image, and user-defined data types).</param>
+        /// <param name="query_result_no_padding">The type is bit. The default is 0. When you set to 1, the query results are not padded, possibly reducing the file size.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
+            string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width,
+            char query_result_separator, int exclude_query_output, int? append_query_error, string query_no_truncate, int? query_result_no_padding) => throw new InvalitContextException(nameof(sp_send_dbmail));
+
+        /// <summary>
+        /// sp_send_dbmail          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql
+        /// </summary>
         /// <param name="profile_name">Is the name of the profile to send the message from.</param>
         /// <param name="recipients">Is a semicolon-delimited list of e-mail addresses to send the message to.</param>
         /// <param name="copy_recipients">Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.</param>
@@ -3757,11 +4258,2227 @@ namespace LambdicSql.SqlServer
         /// <param name="mailitem_id">A return code of 0 means success.</param>
         /// <returns>0 (success) or 1 (failure)</returns>
         [ClauseStyleConverter]
-        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address, 
-            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query, 
+        public static int sp_send_dbmail(string profile_name, string recipients, string copy_recipients, string blind_copy_recipients, string from_address,
+            string reply_to, string subject, string body, string body_format, string importance, string sensitivity, string file_attachments, string query,
             string execute_query_database, int? attach_query_result_as_file, string query_attachment_filename, int? query_result_header, int query_result_width,
             char query_result_separator, int exclude_query_output, int? append_query_error, string query_no_truncate, int? query_result_no_padding, int mailitem_id) => throw new InvalitContextException(nameof(sp_send_dbmail));
 
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The type of e-mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name, string mailserver_type) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The type of e-mail server.</param>
+        /// <param name="port">The port number for the e-mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name, string mailserver_type, int port) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The type of e-mail server.</param>
+        /// <param name="port">The port number for the e-mail server.</param>
+        /// <param name="username">The user name to use to log on to the e-mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name, string mailserver_type, int port, string username) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The type of e-mail server.</param>
+        /// <param name="port">The port number for the e-mail server.</param>
+        /// <param name="username">The user name to use to log on to the e-mail server.</param>
+        /// <param name="password">The password to use to log on to the e-mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name, string mailserver_type, int port, string username, string password) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The type of e-mail server.</param>
+        /// <param name="port">The port number for the e-mail server.</param>
+        /// <param name="username">The user name to use to log on to the e-mail server.</param>
+        /// <param name="password">The password to use to log on to the e-mail server.</param>
+        /// <param name="use_default_credentials">Specifies whether to send the mail to the SMTP server using the credentials of the SQL Server Database Engine.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name, string mailserver_type, int port, string username, string password, int? use_default_credentials) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The type of e-mail server.</param>
+        /// <param name="port">The port number for the e-mail server.</param>
+        /// <param name="username">The user name to use to log on to the e-mail server.</param>
+        /// <param name="password">The password to use to log on to the e-mail server.</param>
+        /// <param name="use_default_credentials">Specifies whether to send the mail to the SMTP server using the credentials of the SQL Server Database Engine.</param>
+        /// <param name="enable_ssl">Specifies whether Database Mail encrypts communication using Secure Sockets Layer.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name, string mailserver_type, int port, string username, string password, int? use_default_credentials, int? enable_ssl) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_name">The name of the account to add. </param>
+        /// <param name="email_address">The e-mail address to send the message from.</param>
+        /// <param name="display_name">The display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The address that responses to messages from this account are sent to.</param>
+        /// <param name="description">Is a description for the account.</param>
+        /// <param name="mailserver_name">The name or IP address of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The type of e-mail server.</param>
+        /// <param name="port">The port number for the e-mail server.</param>
+        /// <param name="username">The user name to use to log on to the e-mail server.</param>
+        /// <param name="password">The password to use to log on to the e-mail server.</param>
+        /// <param name="use_default_credentials">Specifies whether to send the mail to the SMTP server using the credentials of the SQL Server Database Engine.</param>
+        /// <param name="enable_ssl">Specifies whether Database Mail encrypts communication using Secure Sockets Layer.</param>
+        /// <param name="account_id">Returns the account id for the new account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_account_sp(string account_name, string email_address, string display_name, string replyto_address, string description,
+            string mailserver_name, string mailserver_type, int port, string username, string password, int? use_default_credentials, int? enable_ssl, int? account_id) => throw new InvalitContextException(nameof(sysmail_add_account_sp));
+
+        /// <summary>
+        /// sysmail_add_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_principalprofile_sp() => throw new InvalitContextException(nameof(sysmail_add_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_add_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_principalprofile_sp(int principal_id) => throw new InvalitContextException(nameof(sysmail_add_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_add_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association. </param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_principalprofile_sp(int principal_id, string principal_name) => throw new InvalitContextException(nameof(sysmail_add_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_add_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association. </param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association.</param>
+        /// <param name="profile_id">The id of the profile for the association.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_principalprofile_sp(int principal_id, string principal_name, int profile_id) => throw new InvalitContextException(nameof(sysmail_add_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_add_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association. </param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association.</param>
+        /// <param name="profile_id">The id of the profile for the association.</param>
+        /// <param name="profile_name">The name of the profile for the association.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_principalprofile_sp(int principal_id, string principal_name, int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_add_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_add_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association. </param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association.</param>
+        /// <param name="profile_id">The id of the profile for the association.</param>
+        /// <param name="profile_name">The name of the profile for the association.</param>
+        /// <param name="is_default">Specifies whether this profile is the default profile for the principal.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_principalprofile_sp(int principal_id, string principal_name, int profile_id, string profile_name, int? is_default) => throw new InvalitContextException(nameof(sysmail_add_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_add_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_name">The name for the new profile. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profile_sp(string profile_name) => throw new InvalitContextException(nameof(sysmail_add_profile_sp));
+
+        /// <summary>
+        /// sysmail_add_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_name">The name for the new profile. </param>
+        /// <param name="description">The optional description for the new profile.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profile_sp(string profile_name, string description) => throw new InvalitContextException(nameof(sysmail_add_profile_sp));
+
+        /// <summary>
+        /// sysmail_add_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_name">The name for the new profile. </param>
+        /// <param name="description">The optional description for the new profile.</param>
+        /// <param name="profile_id">Returns the ID for the new profile.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profile_sp(string profile_name, string description, int profile_id) => throw new InvalitContextException(nameof(sysmail_add_profile_sp));
+
+        /// <summary>
+        /// sysmail_add_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profileaccount_sp() => throw new InvalitContextException(nameof(sysmail_add_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_add_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to add the account to. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profileaccount_sp(int profile_id) => throw new InvalitContextException(nameof(sysmail_add_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_add_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to add the account to. </param>
+        /// <param name="profile_name">The profile name to add the account to.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profileaccount_sp(int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_add_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_add_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to add the account to. </param>
+        /// <param name="profile_name">The profile name to add the account to.</param>
+        /// <param name="account_id">The account id to add to the profile.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profileaccount_sp(int profile_id, string profile_name, int account_id) => throw new InvalitContextException(nameof(sysmail_add_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_add_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to add the account to. </param>
+        /// <param name="profile_name">The profile name to add the account to.</param>
+        /// <param name="account_id">The account id to add to the profile.</param>
+        /// <param name="account_name">The name of the account to add to the profile.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profileaccount_sp(int profile_id, string profile_name, int account_id, string account_name) => throw new InvalitContextException(nameof(sysmail_add_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_add_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-add-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to add the account to. </param>
+        /// <param name="profile_name">The profile name to add the account to.</param>
+        /// <param name="account_id">The account id to add to the profile.</param>
+        /// <param name="account_name">The name of the account to add to the profile.</param>
+        /// <param name="sequence_number">The sequence number of the account within the profile.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_add_profileaccount_sp(int profile_id, string profile_name, int account_id, string account_name, int sequence_number) => throw new InvalitContextException(nameof(sysmail_add_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_configure_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-configure-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_configure_sp() => throw new InvalitContextException(nameof(sysmail_configure_sp));
+
+        /// <summary>
+        /// sysmail_configure_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-configure-sp-transact-sql
+        /// </summary>
+        /// <param name="parameter_name">The name of the parameter to change. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_configure_sp(string parameter_name) => throw new InvalitContextException(nameof(sysmail_configure_sp));
+
+        /// <summary>
+        /// sysmail_configure_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-configure-sp-transact-sql
+        /// </summary>
+        /// <param name="parameter_name">The name of the parameter to change. </param>
+        /// <param name="parameter_value">The new value of the parameter.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_configure_sp(string parameter_name, string parameter_value) => throw new InvalitContextException(nameof(sysmail_configure_sp));
+
+        /// <summary>
+        /// sysmail_configure_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-configure-sp-transact-sql
+        /// </summary>
+        /// <param name="parameter_name">The name of the parameter to change. </param>
+        /// <param name="parameter_value">The new value of the parameter.</param>
+        /// <param name="description">A description of the parameter.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_configure_sp(string parameter_name, string parameter_value, string description) => throw new InvalitContextException(nameof(sysmail_configure_sp));
+
+        /// <summary>
+        /// sysmail_delete_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-account-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_account_sp() => throw new InvalitContextException(nameof(sysmail_delete_account_sp));
+
+        /// <summary>
+        /// sysmail_delete_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The ID number of the account to delete. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_account_sp(int account_id) => throw new InvalitContextException(nameof(sysmail_delete_account_sp));
+
+        /// <summary>
+        /// sysmail_delete_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The ID number of the account to delete. </param>
+        /// <param name="account_name">The name of the account to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_account_sp(int account_id, string account_name) => throw new InvalitContextException(nameof(sysmail_delete_account_sp));
+
+        /// <summary>
+        /// sysmail_delete_log_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-log-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_log_sp() => throw new InvalitContextException(nameof(sysmail_delete_log_sp));
+
+        /// <summary>
+        /// sysmail_delete_log_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-log-sp-transact-sql
+        /// </summary>
+        /// <param name="logged_before">Deletes entries up to the date and time specified by the logged_before argument. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_log_sp(DateTime logged_before) => throw new InvalitContextException(nameof(sysmail_delete_log_sp));
+
+        /// <summary>
+        /// sysmail_delete_log_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-log-sp-transact-sql
+        /// </summary>
+        /// <param name="logged_before">Deletes log entries of the type specified as the event_type. </param>
+        /// <param name="event_type">The name of the account to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_log_sp(DateTime logged_before, string event_type) => throw new InvalitContextException(nameof(sysmail_delete_log_sp));
+
+        /// <summary>
+        /// sysmail_delete_mailitems_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-mailitems-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_mailitems_sp() => throw new InvalitContextException(nameof(sysmail_delete_mailitems_sp));
+
+        /// <summary>
+        /// sysmail_delete_mailitems_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-mailitems-sp-transact-sql
+        /// </summary>
+        /// <param name="sent_before">Deletes log entries of the type specified as the event_type. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_mailitems_sp(DateTime sent_before) => throw new InvalitContextException(nameof(sysmail_delete_mailitems_sp));
+
+        /// <summary>
+        /// sysmail_delete_mailitems_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-mailitems-sp-transact-sql
+        /// </summary>
+        /// <param name="sent_before">Deletes log entries of the type specified as the event_type. </param>
+        /// <param name="sent_status">The name of the account to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_mailitems_sp(DateTime sent_before, string sent_status) => throw new InvalitContextException(nameof(sysmail_delete_mailitems_sp));
+
+        /// <summary>
+        /// sysmail_delete_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_principalprofile_sp() => throw new InvalitContextException(nameof(sysmail_delete_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_delete_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to delete. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_principalprofile_sp(int principal_id) => throw new InvalitContextException(nameof(sysmail_delete_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_delete_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to delete. </param>
+        /// <param name="principal_name">Is the name of the database user or role in the msdb database for the association to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_principalprofile_sp(int principal_id, string principal_name) => throw new InvalitContextException(nameof(sysmail_delete_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_delete_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to delete. </param>
+        /// <param name="principal_name">Is the name of the database user or role in the msdb database for the association to delete.</param>
+        /// <param name="profile_id">Is the ID of the profile for the association to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_principalprofile_sp(int principal_id, string principal_name, int profile_id) => throw new InvalitContextException(nameof(sysmail_delete_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_delete_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to delete. </param>
+        /// <param name="principal_name">Is the name of the database user or role in the msdb database for the association to delete.</param>
+        /// <param name="profile_id">Is the ID of the profile for the association to delete.</param>
+        /// <param name="profile_name">Is the name of the profile for the association to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_principalprofile_sp(int principal_id, string principal_name, int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_delete_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_delete_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profile-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profile_sp() => throw new InvalitContextException(nameof(sysmail_delete_profile_sp));
+
+        /// <summary>
+        /// sysmail_delete_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The ID number of the account to delete. </param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profile_sp(int account_id) => throw new InvalitContextException(nameof(sysmail_delete_profile_sp));
+
+        /// <summary>
+        /// sysmail_delete_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The ID number of the account to delete. </param>
+        /// <param name="account_name">The name of the account to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profile_sp(int account_id, string account_name) => throw new InvalitContextException(nameof(sysmail_delete_profile_sp));
+
+        /// <summary>
+        /// sysmail_delete_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profileaccount_sp() => throw new InvalitContextException(nameof(sysmail_delete_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_delete_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile ID of the profile to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profileaccount_sp(int profile_id) => throw new InvalitContextException(nameof(sysmail_delete_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_delete_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile ID of the profile to delete.</param>
+        /// <param name="profile_name">The profile name of the profile to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profileaccount_sp(int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_delete_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_delete_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile ID of the profile to delete.</param>
+        /// <param name="profile_name">The profile name of the profile to delete.</param>
+        /// <param name="account_id">The account ID to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profileaccount_sp(int profile_id, string profile_name, int account_id) => throw new InvalitContextException(nameof(sysmail_delete_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_delete_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-delete-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile ID of the profile to delete.</param>
+        /// <param name="profile_name">The profile name of the profile to delete.</param>
+        /// <param name="account_id">The account ID to delete.</param>
+        /// <param name="account_name">The name of the account to delete.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_delete_profileaccount_sp(int profile_id, string profile_name, int account_id, string account_name) => throw new InvalitContextException(nameof(sysmail_delete_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_help_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-account-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_account_sp() => throw new InvalitContextException(nameof(sysmail_help_account_sp));
+
+        /// <summary>
+        /// sysmail_help_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID of the account to list information for.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_account_sp(int account_id) => throw new InvalitContextException(nameof(sysmail_help_account_sp));
+
+        /// <summary>
+        /// sysmail_help_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID of the account to list information for.</param>
+        /// <param name="account_name">The name of the account to list information for.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_account_sp(int account_id, string account_name) => throw new InvalitContextException(nameof(sysmail_help_account_sp));
+
+        /// <summary>
+        /// sysmail_help_configure_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-configure-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_configure_sp() => throw new InvalitContextException(nameof(sysmail_help_configure_sp));
+
+        /// <summary>
+        /// sysmail_help_configure_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-configure-sp-transact-sql
+        /// </summary>
+        /// <param name="parameter_name">The name of the configuration setting to retrieve.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_configure_sp(string parameter_name) => throw new InvalitContextException(nameof(sysmail_help_configure_sp));
+
+        /// <summary>
+        /// sysmail_help_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_principalprofile_sp() => throw new InvalitContextException(nameof(sysmail_help_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_help_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_principalprofile_sp(int principal_id) => throw new InvalitContextException(nameof(sysmail_help_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_help_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to list.</param>
+        /// <param name="principal_name">Is the name of the database user or role in the msdb database for the association to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_principalprofile_sp(int principal_id, string principal_name) => throw new InvalitContextException(nameof(sysmail_help_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_help_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to list.</param>
+        /// <param name="principal_name">Is the name of the database user or role in the msdb database for the association to list.</param>
+        /// <param name="profile_id">Is the ID of the profile for the association to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_principalprofile_sp(int principal_id, string principal_name, int profile_id) => throw new InvalitContextException(nameof(sysmail_help_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_help_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">Is the ID of the database user or role in the msdb database for the association to list.</param>
+        /// <param name="principal_name">Is the name of the database user or role in the msdb database for the association to list.</param>
+        /// <param name="profile_id">Is the ID of the profile for the association to list.</param>
+        /// <param name="profile_name">Is the name of the profile for the association to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_principalprofile_sp(int principal_id, string principal_name, int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_help_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_help_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profile-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profile_sp() => throw new InvalitContextException(nameof(sysmail_help_profile_sp));
+
+        /// <summary>
+        /// sysmail_help_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to return information for.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profile_sp(int profile_id) => throw new InvalitContextException(nameof(sysmail_help_profile_sp));
+
+        /// <summary>
+        /// sysmail_help_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to return information for.</param>
+        /// <param name="profile_name">The profile name to return information for.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profile_sp(int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_help_profile_sp));
+
+        /// <summary>
+        /// sysmail_help_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profileaccount_sp() => throw new InvalitContextException(nameof(sysmail_help_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_help_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">Is the profile ID of the profile to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profileaccount_sp(int profile_id) => throw new InvalitContextException(nameof(sysmail_help_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_help_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">Is the profile ID of the profile to list.</param>
+        /// <param name="profile_name">Is the profile name of the profile to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profileaccount_sp(int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_help_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_help_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">Is the profile ID of the profile to list.</param>
+        /// <param name="profile_name">Is the profile name of the profile to list.</param>
+        /// <param name="account_id">Is the account ID to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profileaccount_sp(int profile_id, string profile_name, int account_id) => throw new InvalitContextException(nameof(sysmail_help_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_help_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">Is the profile ID of the profile to list.</param>
+        /// <param name="profile_name">Is the profile name of the profile to list.</param>
+        /// <param name="account_id">Is the account ID to list.</param>
+        /// <param name="account_name">Is the name of the account to list.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_profileaccount_sp(int profile_id, string profile_name, int account_id, string account_name) => throw new InvalitContextException(nameof(sysmail_help_profileaccount_sp));
+
+        /// <summary>
+        /// sysmail_help_queue_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-queue-sp-transact-sql
+        /// </summary>
+        /// <param name="queue_type">Optional argument deletes e-mails of the type specified as the queue_type.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_queue_sp(string queue_type) => throw new InvalitContextException(nameof(sysmail_help_queue_sp));
+
+        /// <summary>
+        /// sysmail_help_status_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-help-status-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_help_status_sp() => throw new InvalitContextException(nameof(sysmail_help_status_sp));
+
+        /// <summary>
+        /// sysmail_start_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-start-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_start_sp() => throw new InvalitContextException(nameof(sysmail_start_sp));
+
+        /// <summary>
+        /// sysmail_stop_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-stop-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_stop_sp() => throw new InvalitContextException(nameof(sysmail_stop_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp() => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The new type of the mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name, string mailserver_type) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The new type of the mail server.</param>
+        /// <param name="port">The new port number of the mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name, string mailserver_type, int port) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The new type of the mail server.</param>
+        /// <param name="port">The new port number of the mail server.</param>
+        /// <param name="timeout">Timeout parameter for SmtpClient.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name, string mailserver_type, int port, int timeout) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The new type of the mail server.</param>
+        /// <param name="port">The new port number of the mail server.</param>
+        /// <param name="timeout">Timeout parameter for SmtpClient.</param>
+        /// <param name="username">The new user name to use to log on to the mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name, string mailserver_type, int port, int timeout, string username) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The new type of the mail server.</param>
+        /// <param name="port">The new port number of the mail server.</param>
+        /// <param name="timeout">Timeout parameter for SmtpClient.</param>
+        /// <param name="username">The new user name to use to log on to the mail server.</param>
+        /// <param name="password">The new password to use to log on to the mail server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name, string mailserver_type, int port, int timeout, string username, string password) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The new type of the mail server.</param>
+        /// <param name="port">The new port number of the mail server.</param>
+        /// <param name="timeout">Timeout parameter for SmtpClient.</param>
+        /// <param name="username">The new user name to use to log on to the mail server.</param>
+        /// <param name="password">The new password to use to log on to the mail server.</param>
+        /// <param name="use_default_credentials">Specifies whether to send the mail to the SMTP server using the credentials of the SQL Server Database Engine service.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name, string mailserver_type, int port, int timeout, string username, string password, int? use_default_credentials) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_account_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-account-sp-transact-sql
+        /// </summary>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="email_address">The new e-mail address to send the message from.</param>
+        /// <param name="display_name">The new display name to use on e-mail messages from this account.</param>
+        /// <param name="replyto_address">The new address to use in the Reply-To header of e-mail messages from this account.</param>
+        /// <param name="description">The new description for the account.</param>
+        /// <param name="mailserver_name">The new name of the SMTP mail server to use for this account.</param>
+        /// <param name="mailserver_type">The new type of the mail server.</param>
+        /// <param name="port">The new port number of the mail server.</param>
+        /// <param name="timeout">Timeout parameter for SmtpClient.</param>
+        /// <param name="username">The new user name to use to log on to the mail server.</param>
+        /// <param name="password">The new password to use to log on to the mail server.</param>
+        /// <param name="use_default_credentials">Specifies whether to send the mail to the SMTP server using the credentials of the SQL Server Database Engine service.</param>
+        /// <param name="enable_ssl">Specifies whether Database Mail encrypts communication using Secure Sockets Layer (SSL).</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_account_sp(int account_id, string account_name, string email_address, string display_name, string replyto_address,
+            string description, string mailserver_name, string mailserver_type, int port, int timeout, string username, string password, int? use_default_credentials, int? enable_ssl) => throw new InvalitContextException(nameof(sysmail_update_account_sp));
+
+        /// <summary>
+        /// sysmail_update_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_principalprofile_sp() => throw new InvalitContextException(nameof(sysmail_update_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_update_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association to change.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_principalprofile_sp(int principal_id) => throw new InvalitContextException(nameof(sysmail_update_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_update_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association to change.</param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association to update.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_principalprofile_sp(int principal_id, string principal_name) => throw new InvalitContextException(nameof(sysmail_update_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_update_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association to change.</param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association to update.</param>
+        /// <param name="profile_id">The id of the profile for the association to change.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_principalprofile_sp(int principal_id, string principal_name, int profile_id) => throw new InvalitContextException(nameof(sysmail_update_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_update_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association to change.</param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association to update.</param>
+        /// <param name="profile_id">The id of the profile for the association to change.</param>
+        /// <param name="profile_name">The name of the profile for the association to change.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_principalprofile_sp(int principal_id, string principal_name, int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_update_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_update_principalprofile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-principalprofile-sp-transact-sql
+        /// </summary>
+        /// <param name="principal_id">The ID of the database user or role in the msdb database for the association to change.</param>
+        /// <param name="principal_name">The name of the database user or role in the msdb database for the association to update.</param>
+        /// <param name="profile_id">The id of the profile for the association to change.</param>
+        /// <param name="profile_name">The name of the profile for the association to change.</param>
+        /// <param name="is_default">Is whether this profile is the default profile for the database user.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_principalprofile_sp(int principal_id, string principal_name, int profile_id, string profile_name, int? is_default) => throw new InvalitContextException(nameof(sysmail_update_principalprofile_sp));
+
+        /// <summary>
+        /// sysmail_update_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-profile-sp-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_profile_sp() => throw new InvalitContextException(nameof(sysmail_update_profile_sp));
+
+        /// <summary>
+        /// sysmail_update_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to update.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_profile_sp(int profile_id) => throw new InvalitContextException(nameof(sysmail_update_profile_sp));
+
+        /// <summary>
+        /// sysmail_update_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to update.</param>
+        /// <param name="profile_name">The name of the profile to update or the new name for the profile.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_profile_sp(int profile_id, string profile_name) => throw new InvalitContextException(nameof(sysmail_update_profile_sp));
+
+        /// <summary>
+        /// sysmail_update_profile_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-profile-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile id to update.</param>
+        /// <param name="profile_name">The name of the profile to update or the new name for the profile.</param>
+        /// <param name="description">The new description for the profile.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_profile_sp(int profile_id, string profile_name, string description) => throw new InvalitContextException(nameof(sysmail_update_profile_sp));
+
+        /// <summary>
+        /// sysmail_update_profileaccount_sp          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sysmail-update-profileaccount-sp-transact-sql
+        /// </summary>
+        /// <param name="profile_id">The profile ID of the profile to update.</param>
+        /// <param name="profile_name">The profile name of the profile to update.</param>
+        /// <param name="account_id">The account ID to update.</param>
+        /// <param name="account_name">The name of the account to update.</param>
+        /// <param name="sequence_number">The new sequence number for the account.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sysmail_update_profileaccount_sp(int profile_id, string profile_name, int account_id, string account_name, int sequence_number) => throw new InvalitContextException(nameof(sysmail_update_profileaccount_sp));
+
+        //--------------------------
+        //Database Maintenance Plan Stored Procedures
+        //--------------------------
+        /// <summary>
+        /// sp_add_maintenance_plan          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-add-maintenance-plan-transact-sql
+        /// </summary>
+        /// <param name="plan_name">Specifies the name of the maintenance plan to be added.</param>
+        /// <param name="plan_id">Specifies the ID of the maintenance plan.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_add_maintenance_plan(string plan_name, string plan_id) => throw new InvalitContextException(nameof(sp_add_maintenance_plan));
+
+        /// <summary>
+        /// sp_add_maintenance_plan_db          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-add-maintenance-plan-db-transact-sql
+        /// </summary>
+        /// <param name="plan_id">Specifies the plan ID of the maintenance plan.</param>
+        /// <param name="db_name">Specifies the name of the database to be added to the maintenance plan.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_add_maintenance_plan_db(string plan_id, string db_name) => throw new InvalitContextException(nameof(sp_add_maintenance_plan_db));
+
+        /// <summary>
+        /// sp_add_maintenance_plan_job          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-add-maintenance-plan-job-transact-sql
+        /// </summary>
+        /// <param name="plan_id">Specifies the ID of the maintenance plan.</param>
+        /// <param name="job_id">Specifies the ID of the job to be associated with the maintenance plan.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_add_maintenance_plan_job(string plan_id, string job_id) => throw new InvalitContextException(nameof(sp_add_maintenance_plan_job));
+
+        /// <summary>
+        /// sp_delete_maintenance_plan          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-delete-maintenance-plan-transact-sql
+        /// </summary>
+        /// <param name="plan_id">Specifies the ID of the maintenance plan to be deleted.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_delete_maintenance_plan(string plan_id) => throw new InvalitContextException(nameof(sp_delete_maintenance_plan));
+
+        /// <summary>
+        /// sp_delete_maintenance_plan_db          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-delete-maintenance-plan-db-transact-sql
+        /// </summary>
+        /// <param name="plan_id">Specifies the maintenance plan ID.</param>
+        /// <param name="db_name">Specifies the database name to be deleted from the maintenance plan.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_delete_maintenance_plan_db(string plan_id, string db_name) => throw new InvalitContextException(nameof(sp_delete_maintenance_plan_db));
+
+        /// <summary>
+        /// sp_delete_maintenance_plan_job          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-delete-maintenance-plan-job-transact-sql
+        /// </summary>
+        /// <param name="plan_id">Specifies the ID of the maintenance plan.</param>
+        /// <param name="job_id">Specifies the ID of the job with which the maintenance plan is associated.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_delete_maintenance_plan_job(string plan_id, string job_id) => throw new InvalitContextException(nameof(sp_delete_maintenance_plan_job));
+
+        /// <summary>
+        /// sp_help_maintenance_plan          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-maintenance-plan-transact-sql
+        /// </summary>
+        /// <param name="plan_id">Specifies the plan ID of the maintenance plan.</param>
+        [ClauseStyleConverter]
+        public static void sp_help_maintenance_plan(string plan_id) => throw new InvalitContextException(nameof(sp_help_maintenance_plan));
+
+        //--------------------------
+        //Distributed Queries Stored Procedures
+        //--------------------------
+        /// <summary>
+        /// sp_addlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedserver() => throw new InvalitContextException(nameof(sp_addlinkedserver));
+
+        /// <summary>
+        /// sp_addlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the linked server to create.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedserver(string server) => throw new InvalitContextException(nameof(sp_addlinkedserver));
+
+        /// <summary>
+        /// sp_addlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the linked server to create.</param>
+        /// <param name="srvproduct">Is the product name of the OLE DB data source to add as a linked server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedserver(string server, string srvproduct) => throw new InvalitContextException(nameof(sp_addlinkedserver));
+
+        /// <summary>
+        /// sp_addlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the linked server to create.</param>
+        /// <param name="srvproduct">Is the product name of the OLE DB data source to add as a linked server.</param>
+        /// <param name="provider">Is the unique programmatic identifier (PROGID) of the OLE DB provider that corresponds to this data source.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedserver(string server, string srvproduct, string provider) => throw new InvalitContextException(nameof(sp_addlinkedserver));
+
+        /// <summary>
+        /// sp_addlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the linked server to create.</param>
+        /// <param name="srvproduct">Is the product name of the OLE DB data source to add as a linked server.</param>
+        /// <param name="provider">Is the unique programmatic identifier (PROGID) of the OLE DB provider that corresponds to this data source.</param>
+        /// <param name="datasrc">Is the name of the data source as interpreted by the OLE DB provider.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedserver(string server, string srvproduct, string provider, string datasrc) => throw new InvalitContextException(nameof(sp_addlinkedserver));
+
+        /// <summary>
+        /// sp_addlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the linked server to create.</param>
+        /// <param name="srvproduct">Is the product name of the OLE DB data source to add as a linked server.</param>
+        /// <param name="provider">Is the unique programmatic identifier (PROGID) of the OLE DB provider that corresponds to this data source.</param>
+        /// <param name="datasrc">Is the name of the data source as interpreted by the OLE DB provider.</param>
+        /// <param name="location">Is the location of the database as interpreted by the OLE DB provider.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedserver(string server, string srvproduct, string provider, string datasrc, string location) => throw new InvalitContextException(nameof(sp_addlinkedserver));
+
+        /// <summary>
+        /// sp_addlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the linked server to create.</param>
+        /// <param name="srvproduct">Is the product name of the OLE DB data source to add as a linked server.</param>
+        /// <param name="provider">Is the unique programmatic identifier (PROGID) of the OLE DB provider that corresponds to this data source.</param>
+        /// <param name="datasrc">Is the name of the data source as interpreted by the OLE DB provider.</param>
+        /// <param name="location">Is the location of the database as interpreted by the OLE DB provider.</param>
+        /// <param name="provstr">Is the OLE DB provider-specific connection string that identifies a unique data source.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedserver(string server, string srvproduct, string provider, string datasrc, string location, string provstr) => throw new InvalitContextException(nameof(sp_addlinkedserver));
+
+        /// <summary>
+        /// sp_addlinkedsrvlogin          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedsrvlogin-transact-sql
+        /// </summary>
+        /// <param name="rmtsrvname">Is the name of a linked server that the login mapping applies to.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedsrvlogin(string rmtsrvname) => throw new InvalitContextException(nameof(sp_addlinkedsrvlogin));
+
+        /// <summary>
+        /// sp_addlinkedsrvlogin          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedsrvlogin-transact-sql
+        /// </summary>
+        /// <param name="rmtsrvname">Is the name of a linked server that the login mapping applies to.</param>
+        /// <param name="useself">Determines whether to connect to rmtsrvname by impersonating local logins or explicitly submitting a login and password.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedsrvlogin(string rmtsrvname, string useself) => throw new InvalitContextException(nameof(sp_addlinkedsrvlogin));
+
+        /// <summary>
+        /// sp_addlinkedsrvlogin          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedsrvlogin-transact-sql
+        /// </summary>
+        /// <param name="rmtsrvname">Is the name of a linked server that the login mapping applies to.</param>
+        /// <param name="useself">Determines whether to connect to rmtsrvname by impersonating local logins or explicitly submitting a login and password.</param>
+        /// <param name="locallogin">Is a login on the local server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedsrvlogin(string rmtsrvname, string useself, string locallogin) => throw new InvalitContextException(nameof(sp_addlinkedsrvlogin));
+
+        /// <summary>
+        /// sp_addlinkedsrvlogin          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedsrvlogin-transact-sql
+        /// </summary>
+        /// <param name="rmtsrvname">Is the name of a linked server that the login mapping applies to.</param>
+        /// <param name="useself">Determines whether to connect to rmtsrvname by impersonating local logins or explicitly submitting a login and password.</param>
+        /// <param name="locallogin">Is a login on the local server.</param>
+        /// <param name="rmtuser">Is the remote login used to connect to rmtsrvname when @useself is FALSE.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedsrvlogin(string rmtsrvname, string useself, string locallogin, string rmtuser) => throw new InvalitContextException(nameof(sp_addlinkedsrvlogin));
+
+        /// <summary>
+        /// sp_addlinkedsrvlogin          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addlinkedsrvlogin-transact-sql
+        /// </summary>
+        /// <param name="rmtsrvname">Is the name of a linked server that the login mapping applies to.</param>
+        /// <param name="useself">Determines whether to connect to rmtsrvname by impersonating local logins or explicitly submitting a login and password.</param>
+        /// <param name="locallogin">Is a login on the local server.</param>
+        /// <param name="rmtuser">Is the remote login used to connect to rmtsrvname when @useself is FALSE.</param>
+        /// <param name="rmtpassword">Is the password associated with rmtuser.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_addlinkedsrvlogin(string rmtsrvname, string useself, string locallogin, string rmtuser, string rmtpassword) => throw new InvalitContextException(nameof(sp_addlinkedsrvlogin));
+
+        /// <summary>
+        /// sp_catalogs          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-catalogs-transact-sql
+        /// </summary>
+        /// <param name="server_name">Is the name of a linked server.</param>
+        [ClauseStyleConverter]
+        public static void sp_catalogs(string server_name) => throw new InvalitContextException(nameof(sp_catalogs));
+
+        /// <summary>
+        /// sp_column_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-column-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        [ClauseStyleConverter]
+        public static void sp_column_privileges_ex(string table_server) => throw new InvalitContextException(nameof(sp_column_privileges_ex));
+
+        /// <summary>
+        /// sp_column_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-column-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table that contains the specified column.</param>
+        [ClauseStyleConverter]
+        public static void sp_column_privileges_ex(string table_server, string table_name) => throw new InvalitContextException(nameof(sp_column_privileges_ex));
+
+        /// <summary>
+        /// sp_column_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-column-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table that contains the specified column.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        [ClauseStyleConverter]
+        public static void sp_column_privileges_ex(string table_server, string table_name, string table_schema) => throw new InvalitContextException(nameof(sp_column_privileges_ex));
+
+        /// <summary>
+        /// sp_column_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-column-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table that contains the specified column.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which the specified table_name resides.</param>
+        [ClauseStyleConverter]
+        public static void sp_column_privileges_ex(string table_server, string table_name, string table_schema, string table_catalog) => throw new InvalitContextException(nameof(sp_column_privileges_ex));
+
+        /// <summary>
+        /// sp_column_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-column-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table that contains the specified column.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which the specified table_name resides.</param>
+        /// <param name="column_name">Is the name of the column for which to provide privilege information.</param>
+        [ClauseStyleConverter]
+        public static void sp_column_privileges_ex(string table_server, string table_name, string table_schema, string table_catalog, string column_name) => throw new InvalitContextException(nameof(sp_column_privileges_ex));
+
+        /// <summary>
+        /// sp_columns_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-columns-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return column information.</param>
+        [ClauseStyleConverter]
+        public static void sp_columns_ex(string table_server) => throw new InvalitContextException(nameof(sp_columns_ex));
+
+        /// <summary>
+        /// sp_columns_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-columns-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return column information.</param>
+        /// <param name="table_name">Is the name of the table for which to return column information.</param>
+        [ClauseStyleConverter]
+        public static void sp_columns_ex(string table_server, string table_name) => throw new InvalitContextException(nameof(sp_columns_ex));
+
+        /// <summary>
+        /// sp_columns_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-columns-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return column information.</param>
+        /// <param name="table_name">Is the name of the table for which to return column information.</param>
+        /// <param name="table_schema">Is the schema name of the table for which to return column information.</param>
+        [ClauseStyleConverter]
+        public static void sp_columns_ex(string table_server, string table_name, string table_schema) => throw new InvalitContextException(nameof(sp_columns_ex));
+
+        /// <summary>
+        /// sp_columns_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-columns-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return column information.</param>
+        /// <param name="table_name">Is the name of the table for which to return column information.</param>
+        /// <param name="table_schema">Is the schema name of the table for which to return column information.</param>
+        /// <param name="table_catalog">Is the catalog name of the table for which to return column information.</param>
+        [ClauseStyleConverter]
+        public static void sp_columns_ex(string table_server, string table_name, string table_schema, string table_catalog) => throw new InvalitContextException(nameof(sp_columns_ex));
+
+        /// <summary>
+        /// sp_columns_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-columns-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return column information.</param>
+        /// <param name="table_name">Is the name of the table for which to return column information.</param>
+        /// <param name="table_schema">Is the schema name of the table for which to return column information.</param>
+        /// <param name="table_catalog">Is the catalog name of the table for which to return column information.</param>
+        /// <param name="column_name">Is the name of the database column for which to provide information.</param>
+        [ClauseStyleConverter]
+        public static void sp_columns_ex(string table_server, string table_name, string table_schema, string table_catalog, string column_name) => throw new InvalitContextException(nameof(sp_columns_ex));
+
+        /// <summary>
+        /// sp_columns_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-columns-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return column information.</param>
+        /// <param name="table_name">Is the name of the table for which to return column information.</param>
+        /// <param name="table_schema">Is the schema name of the table for which to return column information.</param>
+        /// <param name="table_catalog">Is the catalog name of the table for which to return column information.</param>
+        /// <param name="column_name">Is the name of the database column for which to provide information.</param>
+        /// <param name="ODBCVer">Is the version of ODBC that is being used.</param>
+        [ClauseStyleConverter]
+        public static void sp_columns_ex(string table_server, string table_name, string table_schema, string table_catalog, string column_name, int ODBCVer) => throw new InvalitContextException(nameof(sp_columns_ex));
+
+        /// <summary>
+        /// sp_droplinkedsrvlogin          
+        /// rmtsrvname
+        /// </summary>
+        /// <param name="rmtsrvname">Is the name of a linked server that the SQL Server login mapping applies to.</param>
+        /// <param name="locallogin">Is the SQL Server login on the local server that has a mapping to the linked server rmtsrvname.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_droplinkedsrvlogin(string rmtsrvname, string locallogin) => throw new InvalitContextException(nameof(sp_droplinkedsrvlogin));
+
+        /// <summary>
+        /// sp_foreignkeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-foreignkeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        [ClauseStyleConverter]
+        public static void sp_foreignkeys(string table_server) => throw new InvalitContextException(nameof(sp_foreignkeys));
+
+        /// <summary>
+        /// sp_foreignkeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-foreignkeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="pktab_name">Is the name of the table with a primary key.</param>
+        [ClauseStyleConverter]
+        public static void sp_foreignkeys(string table_server, string pktab_name) => throw new InvalitContextException(nameof(sp_foreignkeys));
+
+        /// <summary>
+        /// sp_foreignkeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-foreignkeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="pktab_name">Is the name of the table with a primary key.</param>
+        /// <param name="pktab_schema">Is the name of the schema with a primary key.</param>
+        [ClauseStyleConverter]
+        public static void sp_foreignkeys(string table_server, string pktab_name, string pktab_schema) => throw new InvalitContextException(nameof(sp_foreignkeys));
+
+        /// <summary>
+        /// sp_foreignkeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-foreignkeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="pktab_name">Is the name of the table with a primary key.</param>
+        /// <param name="pktab_schema">Is the name of the schema with a primary key.</param>
+        /// <param name="pktab_catalog">Is the name of the catalog with a primary key.</param>
+        [ClauseStyleConverter]
+        public static void sp_foreignkeys(string table_server, string pktab_name, string pktab_schema, string pktab_catalog) => throw new InvalitContextException(nameof(sp_foreignkeys));
+
+        /// <summary>
+        /// sp_foreignkeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-foreignkeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="pktab_name">Is the name of the table with a primary key.</param>
+        /// <param name="pktab_schema">Is the name of the schema with a primary key.</param>
+        /// <param name="pktab_catalog">Is the name of the catalog with a primary key.</param>
+        /// <param name="fktab_name">Is the name of the table with a foreign key.</param>
+        [ClauseStyleConverter]
+        public static void sp_foreignkeys(string table_server, string pktab_name, string pktab_schema, string pktab_catalog, string fktab_name) => throw new InvalitContextException(nameof(sp_foreignkeys));
+
+        /// <summary>
+        /// sp_foreignkeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-foreignkeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="pktab_name">Is the name of the table with a primary key.</param>
+        /// <param name="pktab_schema">Is the name of the schema with a primary key.</param>
+        /// <param name="pktab_catalog">Is the name of the catalog with a primary key.</param>
+        /// <param name="fktab_name">Is the name of the table with a foreign key.</param>
+        /// <param name="fktab_schema">Is the name of the schema with a foreign key.</param>
+        [ClauseStyleConverter]
+        public static void sp_foreignkeys(string table_server, string pktab_name, string pktab_schema, string pktab_catalog, string fktab_name, string fktab_schema) => throw new InvalitContextException(nameof(sp_foreignkeys));
+
+        /// <summary>
+        /// sp_foreignkeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-foreignkeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="pktab_name">Is the name of the table with a primary key.</param>
+        /// <param name="pktab_schema">Is the name of the schema with a primary key.</param>
+        /// <param name="pktab_catalog">Is the name of the catalog with a primary key.</param>
+        /// <param name="fktab_name">Is the name of the table with a foreign key.</param>
+        /// <param name="fktab_schema">Is the name of the schema with a foreign key.</param>
+        /// <param name="fktab_catalog">Is the name of the catalog with a foreign key.</param>
+        [ClauseStyleConverter]
+        public static void sp_foreignkeys(string table_server, string pktab_name, string pktab_schema, string pktab_catalog, string fktab_name, string fktab_schema, string fktab_catalog) => throw new InvalitContextException(nameof(sp_foreignkeys));
+
+        /// <summary>
+        /// sp_indexes          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-indexes-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of a linked server running SQL Server for which table information is being requested.</param>
+        [ClauseStyleConverter]
+        public static void sp_indexes(string table_server) => throw new InvalitContextException(nameof(sp_indexes));
+
+        /// <summary>
+        /// sp_indexes          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-indexes-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of a linked server running SQL Server for which table information is being requested.</param>
+        /// <param name="table_name">Is the name of the remote table for which to provide index information.</param>
+        [ClauseStyleConverter]
+        public static void sp_indexes(string table_server, string table_name) => throw new InvalitContextException(nameof(sp_indexes));
+
+        /// <summary>
+        /// sp_indexes          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-indexes-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of a linked server running SQL Server for which table information is being requested.</param>
+        /// <param name="table_name">Is the name of the remote table for which to provide index information.</param>
+        /// <param name="table_schema">Specifies the table schema.</param>
+        [ClauseStyleConverter]
+        public static void sp_indexes(string table_server, string table_name, string table_schema) => throw new InvalitContextException(nameof(sp_indexes));
+
+        /// <summary>
+        /// sp_indexes          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-indexes-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of a linked server running SQL Server for which table information is being requested.</param>
+        /// <param name="table_name">Is the name of the remote table for which to provide index information.</param>
+        /// <param name="table_schema">Specifies the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which table_name resides.</param>
+        [ClauseStyleConverter]
+        public static void sp_indexes(string table_server, string table_name, string table_schema, string table_catalog) => throw new InvalitContextException(nameof(sp_indexes));
+
+        /// <summary>
+        /// sp_indexes          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-indexes-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of a linked server running SQL Server for which table information is being requested.</param>
+        /// <param name="table_name">Is the name of the remote table for which to provide index information.</param>
+        /// <param name="table_schema">Specifies the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which table_name resides.</param>
+        /// <param name="index_name">Is the name of the index for which information is being requested.</param>
+        [ClauseStyleConverter]
+        public static void sp_indexes(string table_server, string table_name, string table_schema, string table_catalog, string index_name) => throw new InvalitContextException(nameof(sp_indexes));
+
+        /// <summary>
+        /// sp_indexes          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-indexes-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of a linked server running SQL Server for which table information is being requested.</param>
+        /// <param name="table_name">Is the name of the remote table for which to provide index information.</param>
+        /// <param name="table_schema">Specifies the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which table_name resides.</param>
+        /// <param name="index_name">Is the name of the index for which information is being requested.</param>
+        /// <param name="is_unique">Is the type of index for which to return information.</param>
+        [ClauseStyleConverter]
+        public static void sp_indexes(string table_server, string table_name, string table_schema, string table_catalog, string index_name, int? is_unique) => throw new InvalitContextException(nameof(sp_indexes));
+
+        /// <summary>
+        /// sp_linkedservers          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-linkedservers-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or a nonzero number (failure)</returns>
+       [ClauseStyleConverter]
+        public static bool sp_linkedservers() => throw new InvalitContextException(nameof(sp_linkedservers));
+
+        /// <summary>
+        /// sp_primarykeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-primarykeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server from which to return primary key information.</param>
+        [ClauseStyleConverter]
+        public static void sp_primarykeys(string table_server) => throw new InvalitContextException(nameof(sp_primarykeys));
+
+        /// <summary>
+        /// sp_primarykeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-primarykeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server from which to return primary key information.</param>
+        /// <param name="table_name">Is the name of the table for which to provide primary key information.</param>
+        [ClauseStyleConverter]
+        public static void sp_primarykeys(string table_server, string table_name) => throw new InvalitContextException(nameof(sp_primarykeys));
+
+        /// <summary>
+        /// sp_primarykeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-primarykeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server from which to return primary key information.</param>
+        /// <param name="table_name">Is the name of the table for which to provide primary key information.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        [ClauseStyleConverter]
+        public static void sp_primarykeys(string table_server, string table_name, string table_schema) => throw new InvalitContextException(nameof(sp_primarykeys));
+
+        /// <summary>
+        /// sp_primarykeys          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-primarykeys-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server from which to return primary key information.</param>
+        /// <param name="table_name">Is the name of the table for which to provide primary key information.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        /// <param name="table_catalog">Is the name of the catalog in which the specified table_name resides.</param>
+        [ClauseStyleConverter]
+        public static void sp_primarykeys(string table_server, string table_name, string table_schema, string table_catalog) => throw new InvalitContextException(nameof(sp_primarykeys));
+
+        /// <summary>
+        /// sp_serveroption          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-serveroption-transact-sql
+        /// </summary>
+        /// <param name="server">Is the name of the server for which to set the option.</param>
+        /// <param name="optname">Is the option to set for the specified server.</param>
+        /// <param name="optvalue">Specifies whether or not the option_name should be enabled (TRUE or on) or disabled (FALSE or off). option_value is varchar(10), with no default.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_serveroption(string server, string optname, string optvalue) => throw new InvalitContextException(nameof(sp_serveroption));
+
+        /// <summary>
+        /// sp_table_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-table-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        [ClauseStyleConverter]
+        public static void sp_table_privileges_ex(string table_server) => throw new InvalitContextException(nameof(sp_table_privileges_ex));
+
+        /// <summary>
+        /// sp_table_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-table-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table for which to provide table privilege information.</param>
+        [ClauseStyleConverter]
+        public static void sp_table_privileges_ex(string table_server, string table_name) => throw new InvalitContextException(nameof(sp_table_privileges_ex));
+
+        /// <summary>
+        /// sp_table_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-table-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table for which to provide table privilege information.</param>
+        /// <param name="table_schema">Is the table schema. This in some DBMS environments is the table owner.</param>
+        [ClauseStyleConverter]
+        public static void sp_table_privileges_ex(string table_server, string table_name, string table_schema) => throw new InvalitContextException(nameof(sp_table_privileges_ex));
+
+        /// <summary>
+        /// sp_table_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-table-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table for which to provide table privilege information.</param>
+        /// <param name="table_schema">Is the table schema. This in some DBMS environments is the table owner.</param>
+        /// <param name="table_catalog">Is the name of the database in which the specified table_name resides.</param>
+        [ClauseStyleConverter]
+        public static void sp_table_privileges_ex(string table_server, string table_name, string table_schema, string table_catalog) => throw new InvalitContextException(nameof(sp_table_privileges_ex));
+
+        /// <summary>
+        /// sp_table_privileges_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-table-privileges-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return information.</param>
+        /// <param name="table_name">Is the name of the table for which to provide table privilege information.</param>
+        /// <param name="table_schema">Is the table schema. This in some DBMS environments is the table owner.</param>
+        /// <param name="table_catalog">Is the name of the database in which the specified table_name resides.</param>
+        /// <param name="fUsePattern">Determines whether the characters '_', '%', '[', and ']' are interpreted as wildcard characters.</param>
+        [ClauseStyleConverter]
+        public static void sp_table_privileges_ex(string table_server, string table_name, string table_schema, string table_catalog, int? fUsePattern) => throw new InvalitContextException(nameof(sp_table_privileges_ex));
+
+        /// <summary>
+        /// sp_tables_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-tables-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        [ClauseStyleConverter]
+        public static void sp_tables_ex(string table_server) => throw new InvalitContextException(nameof(sp_tables_ex));
+
+        /// <summary>
+        /// sp_tables_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-tables-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="table_name">Is the name of the table for which to return data type information.</param>
+        [ClauseStyleConverter]
+        public static void sp_tables_ex(string table_server, string table_name) => throw new InvalitContextException(nameof(sp_tables_ex));
+
+        /// <summary>
+        /// sp_tables_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-tables-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="table_name">Is the name of the table for which to return data type information.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        [ClauseStyleConverter]
+        public static void sp_tables_ex(string table_server, string table_name, string table_schema) => throw new InvalitContextException(nameof(sp_tables_ex));
+
+        /// <summary>
+        /// sp_tables_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-tables-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="table_name">Is the name of the table for which to return data type information.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which the specified table_name resides.</param>
+        [ClauseStyleConverter]
+        public static void sp_tables_ex(string table_server, string table_name, string table_schema, string table_catalog) => throw new InvalitContextException(nameof(sp_tables_ex));
+
+        /// <summary>
+        /// sp_tables_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-tables-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="table_name">Is the name of the table for which to return data type information.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which the specified table_name resides.</param>
+        /// <param name="table_type">Is the type of the table to return.</param>
+        [ClauseStyleConverter]
+        public static void sp_tables_ex(string table_server, string table_name, string table_schema, string table_catalog, string table_type) => throw new InvalitContextException(nameof(sp_tables_ex));
+
+        /// <summary>
+        /// sp_tables_ex          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-tables-ex-transact-sql
+        /// </summary>
+        /// <param name="table_server">Is the name of the linked server for which to return table information.</param>
+        /// <param name="table_name">Is the name of the table for which to return data type information.</param>
+        /// <param name="table_schema">Is the table schema.</param>
+        /// <param name="table_catalog">Is the name of the database in which the specified table_name resides.</param>
+        /// <param name="table_type">Is the type of the table to return.</param>
+        /// <param name="fUsePattern">Determines whether the characters _, %, [, and ] are interpreted as wildcard characters.</param>
+        [ClauseStyleConverter]
+        public static void sp_tables_ex(string table_server, string table_name, string table_schema, string table_catalog, string table_type, int? fUsePattern) => throw new InvalitContextException(nameof(sp_tables_ex));
+
+        /// <summary>
+        /// sp_testlinkedserver          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-testlinkedserver-transact-sql
+        /// </summary>
+        /// <param name="servername">Is the name of the linked server.</param>
+        [ClauseStyleConverter]
+        public static void sp_testlinkedserver(string servername) => throw new InvalitContextException(nameof(sp_testlinkedserver));
+
+        //--------------------------
+        //Firewall Rules Stored Procedures
+        //--------------------------
+        /// <summary>
+        /// sp_set_firewall_rule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-set-firewall-rule-azure-sql-database
+        /// </summary>
+        /// <param name="name">The name used to describe and distinguish the server-level firewall setting.</param>
+        /// <param name="start_ip_address">The lowest IP address in the range of the server-level firewall setting.</param>
+        /// <param name="end_ip_address">The highest IP address in the range of the server-level firewall setting.</param>
+        [ClauseStyleConverter]
+        public static void sp_set_firewall_rule(string name, string start_ip_address, string end_ip_address) => throw new InvalitContextException(nameof(sp_set_firewall_rule));
+
+        /// <summary>
+        /// sp_set_database_firewall_rule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database
+        /// </summary>
+        /// <param name="name">The name used to describe and distinguish the database-level firewall setting.</param>
+        /// <param name="start_ip_address">The lowest IP address in the range of the database-level firewall setting.</param>
+        /// <param name="end_ip_address">The highest IP address in the range of the database-level firewall setting.</param>
+        [ClauseStyleConverter]
+        public static void sp_set_database_firewall_rule(string name, string start_ip_address, string end_ip_address) => throw new InvalitContextException(nameof(sp_set_database_firewall_rule));
+
+        /// <summary>
+        /// sp_delete_firewall_rule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-delete-firewall-rule-azure-sql-database
+        /// </summary>
+        /// <param name="name">The name of the server-level firewall setting that will be removed.</param>
+        [ClauseStyleConverter]
+        public static void sp_delete_firewall_rule(string name) => throw new InvalitContextException(nameof(sp_delete_firewall_rule));
+
+        /// <summary>
+        /// sp_delete_database_firewall_rule          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-delete-database-firewall-rule-azure-sql-database
+        /// </summary>
+        /// <param name="name">The name of the database-level firewall setting that will be removed.</param>
+        [ClauseStyleConverter]
+        public static void sp_delete_database_firewall_rule(string name) => throw new InvalitContextException(nameof(sp_delete_database_firewall_rule));
+
+        //--------------------------
+        //Full-Text Search and Semantic Search Stored Procedures 
+        //--------------------------
+        /// <summary>
+        /// sp_fulltext_catalog          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-catalog-transact-sql
+        /// </summary>
+        /// <param name="ftcat">Is the name of the full-text catalog.</param>
+        /// <param name="action">Is the action to be performed.</param>
+        /// <param name="path">Is the root directory (not the complete physical path) for a create action.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_catalog(string ftcat, string action, string path) => throw new InvalitContextException(nameof(sp_fulltext_catalog));
+
+        /// <summary>
+        /// sp_fulltext_column          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-column-transact-sql
+        /// </summary>
+        /// <param name="tabname">Is a one- or two-part table name.</param>
+        /// <param name="colname">Is the name of a column in qualified_table_name.</param>
+        /// <param name="action">Is the action to be performed.</param>
+        /// <param name="language">Is the language of the data stored in the column.</param>
+        /// <param name="type_colname">Is the name of a column in qualified_table_name that holds the document type of column_name.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_column(string tabname, string colname, string action, string language, string type_colname) => throw new InvalitContextException(nameof(sp_fulltext_column));
+
+        /// <summary>
+        /// sp_fulltext_database          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-column-transact-sql
+        /// </summary>
+        /// <param name="action">Is the action to be performed.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_database(string action) => throw new InvalitContextException(nameof(sp_fulltext_database));
+
+        /// <summary>
+        /// sp_fulltext_keymappings          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-keymappings-transact-sql
+        /// </summary>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_keymappings() => throw new InvalitContextException(nameof(sp_fulltext_keymappings));
+
+        /// <summary>
+        /// sp_fulltext_keymappings          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-keymappings-transact-sql
+        /// </summary>
+        /// <param name="table_id">Is the object ID of the full-text indexed table.</param>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_keymappings(int table_id) => throw new InvalitContextException(nameof(sp_fulltext_keymappings));
+
+        /// <summary>
+        /// sp_fulltext_keymappings          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-keymappings-transact-sql
+        /// </summary>
+        /// <param name="table_id">Is the object ID of the full-text indexed table.</param>
+        /// <param name="docid">Is an internal document identifier (DocId) that corresponds to the key value.</param>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_keymappings(int table_id, int docid) => throw new InvalitContextException(nameof(sp_fulltext_keymappings));
+
+        /// <summary>
+        /// sp_fulltext_keymappings          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-keymappings-transact-sql
+        /// </summary>
+        /// <param name="table_id">Is the object ID of the full-text indexed table.</param>
+        /// <param name="docid">Is an internal document identifier (DocId) that corresponds to the key value.</param>
+        /// <param name="null">null.</param>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_keymappings(int table_id, int docid, object @null) => throw new InvalitContextException(nameof(sp_fulltext_keymappings));
+
+        /// <summary>
+        /// sp_fulltext_keymappings          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-keymappings-transact-sql
+        /// </summary>
+        /// <param name="table_id">Is the object ID of the full-text indexed table.</param>
+        /// <param name="docid">Is an internal document identifier (DocId) that corresponds to the key value.</param>
+        /// <param name="null">null.</param>
+        /// <param name="key">Is the full-text key value from the specified table.</param>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_keymappings(int table_id, int docid, object @null, string key) => throw new InvalitContextException(nameof(sp_fulltext_keymappings));
+
+        /// <summary>
+        /// sp_fulltext_load_thesaurus_file          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-load-thesaurus-file-transact-sql
+        /// </summary>
+        /// <param name="lcid">Integer mapping the locale identifier (LCID) of the language for which you want to lade the thesaurus XML definition.</param>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_load_thesaurus_file(int lcid) => throw new InvalitContextException(nameof(sp_fulltext_load_thesaurus_file));
+
+        /// <summary>
+        /// sp_fulltext_load_thesaurus_file          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-load-thesaurus-file-transact-sql
+        /// </summary>
+        /// <param name="lcid">Integer mapping the locale identifier (LCID) of the language for which you want to lade the thesaurus XML definition.</param>
+        /// <param name="loadOnlyIfNotLoaded">Specifies whether the thesaurus file is loaded into the internal thesaurus tables even if it has already been loaded.</param>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_load_thesaurus_file(int lcid, int loadOnlyIfNotLoaded) => throw new InvalitContextException(nameof(sp_fulltext_load_thesaurus_file));
+
+        /// <summary>
+        /// sp_fulltext_pendingchanges          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-pendingchanges-transact-sql
+        /// </summary>
+        /// <param name="table_id">ID of the table.</param>
+        [ClauseStyleConverter]
+        public static void sp_fulltext_pendingchanges(int table_id) => throw new InvalitContextException(nameof(sp_fulltext_pendingchanges));
+
+        /// <summary>
+        /// sp_fulltext_semantic_register_language_statistics_db          
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-semantic-register-language-statistics-db-transact-sql
+        /// </summary>
+        /// <param name="dbname">Is the name of the Semantic Language Statistics database to be registered for the current instance of SQL Server.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_semantic_register_language_statistics_db(string dbname) => throw new InvalitContextException(nameof(sp_fulltext_semantic_register_language_statistics_db));
+
+        /// <summary>
+        /// sp_fulltext_semantic_unregister_language_statistics_db           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-semantic-unregister-language-statistics-db-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_semantic_unregister_language_statistics_db() => throw new InvalitContextException(nameof(sp_fulltext_semantic_unregister_language_statistics_db));
+
+        /// <summary>
+        /// sp_fulltext_service           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-service-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_service() => throw new InvalitContextException(nameof(sp_fulltext_service));
+
+        /// <summary>
+        /// sp_fulltext_service           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-service-transact-sql
+        /// </summary>
+        /// <param name="action">Is the property to be changed or reset.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_service(string action) => throw new InvalitContextException(nameof(sp_fulltext_service));
+
+        /// <summary>
+        /// sp_fulltext_service           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-service-transact-sql
+        /// </summary>
+        /// <param name="action">Is the property to be changed or reset.</param>
+        /// <param name="value">Is the value of the specified property.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_service(string action, object value) => throw new InvalitContextException(nameof(sp_fulltext_service));
+
+        /// <summary>
+        /// sp_fulltext_table           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-table-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_table() => throw new InvalitContextException(nameof(sp_fulltext_table));
+
+        /// <summary>
+        /// sp_fulltext_table           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-table-transact-sql
+        /// </summary>
+        /// <param name="tabname">Is a one- or two-part table name.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_table(string tabname) => throw new InvalitContextException(nameof(sp_fulltext_table));
+
+        /// <summary>
+        /// sp_fulltext_table           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-table-transact-sql
+        /// </summary>
+        /// <param name="tabname">Is a one- or two-part table name.</param>
+        /// <param name="action">Is the action to be performed.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_table(string tabname, string action) => throw new InvalitContextException(nameof(sp_fulltext_table));
+
+        /// <summary>
+        /// sp_fulltext_table           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-table-transact-sql
+        /// </summary>
+        /// <param name="tabname">Is a one- or two-part table name.</param>
+        /// <param name="action">Is the action to be performed.</param>
+        /// <param name="ftcat">Is a valid, existing full-text catalog name for a create action.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_table(string tabname, string action, string ftcat) => throw new InvalitContextException(nameof(sp_fulltext_table));
+
+        /// <summary>
+        /// sp_fulltext_table           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-fulltext-table-transact-sql
+        /// </summary>
+        /// <param name="tabname">Is a one- or two-part table name.</param>
+        /// <param name="action">Is the action to be performed.</param>
+        /// <param name="ftcat">Is a valid, existing full-text catalog name for a create action.</param>
+        /// <param name="keyname">Is a valid single-key-column, unique nonnullable index on qualified_table_name for a create action.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_fulltext_table(string tabname, string action, string ftcat, string keyname) => throw new InvalitContextException(nameof(sp_fulltext_table));
+
+        /// <summary>
+        /// sp_help_fulltext_catalogs           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-catalogs-transact-sql
+        /// </summary>
+        /// <param name="fulltext_catalog_name">Is the name of the full-text catalog.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_catalogs(string fulltext_catalog_name) => throw new InvalitContextException(nameof(sp_help_fulltext_catalogs));
+
+        /// <summary>
+        /// sp_help_fulltext_catalog_components           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-catalog-components-transact-sql
+        /// </summary>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_catalog_components() => throw new InvalitContextException(nameof(sp_help_fulltext_catalog_components));
+
+        /// <summary>
+        /// sp_help_fulltext_catalogs_cursor           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-catalogs-cursor-transact-sql
+        /// </summary>
+        /// <param name="cursor_return">Is the output variable of type cursor.</param>
+        /// <param name="fulltext_catalog_name">Is the name of the full-text catalog.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_catalogs_cursor(object cursor_return, string fulltext_catalog_name) => throw new InvalitContextException(nameof(sp_help_fulltext_catalogs_cursor));
+
+        /// <summary>
+        /// sp_help_fulltext_columns           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-columns-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_columns() => throw new InvalitContextException(nameof(sp_help_fulltext_columns));
+
+        /// <summary>
+        /// sp_help_fulltext_columns           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-columns-transact-sql
+        /// </summary>
+        /// <param name="table_name">Is the one- or two-part table name for which full-text index information is requested.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_columns(string table_name) => throw new InvalitContextException(nameof(sp_help_fulltext_columns));
+
+        /// <summary>
+        /// sp_help_fulltext_columns           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-columns-transact-sql
+        /// </summary>
+        /// <param name="table_name">Is the one- or two-part table name for which full-text index information is requested.</param>
+        /// <param name="column_name">Is the name of the column for which full-text index metadata is requested.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_columns(string table_name, string column_name) => throw new InvalitContextException(nameof(sp_help_fulltext_columns));
+
+        /// <summary>
+        /// sp_help_fulltext_columns_cursor           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-columns-cursor-transact-sql
+        /// </summary>
+        /// <param name="cursor_return">Is the output variable of type cursor.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_columns_cursor(object cursor_return) => throw new InvalitContextException(nameof(sp_help_fulltext_columns_cursor));
+
+        /// <summary>
+        /// sp_help_fulltext_columns_cursor           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-columns-cursor-transact-sql
+        /// </summary>
+        /// <param name="cursor_return">Is the output variable of type cursor.</param>
+        /// <param name="table_name">Is the one- or two-part table name for which full-text index information is requested.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_columns_cursor(object cursor_return, string table_name) => throw new InvalitContextException(nameof(sp_help_fulltext_columns_cursor));
+
+        /// <summary>
+        /// sp_help_fulltext_columns_cursor           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-columns-cursor-transact-sql
+        /// </summary>
+        /// <param name="cursor_return">Is the output variable of type cursor.</param>
+        /// <param name="table_name">Is the one- or two-part table name for which full-text index information is requested.</param>
+        /// <param name="column_name">Is the name of the column for which full-text index metadata is desired.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_columns_cursor(object cursor_return, string table_name, string column_name) => throw new InvalitContextException(nameof(sp_help_fulltext_columns_cursor));
+
+        /// <summary>
+        /// sp_help_fulltext_system_components           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-system-components-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_system_components() => throw new InvalitContextException(nameof(sp_help_fulltext_system_components));
+
+        /// <summary>
+        /// sp_help_fulltext_system_components           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-system-components-transact-sql
+        /// </summary>
+        /// <param name="component_type">Specifies the type of component. component_type can be one of the following.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_system_components(string component_type) => throw new InvalitContextException(nameof(sp_help_fulltext_system_components));
+
+        /// <summary>
+        /// sp_help_fulltext_system_components           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-system-components-transact-sql
+        /// </summary>
+        /// <param name="component_type">Specifies the type of component. component_type can be one of the following.</param>
+        /// <param name="param">Depending on component type, this is one of the following.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_system_components(string component_type, int @param) => throw new InvalitContextException(nameof(sp_help_fulltext_system_components));
+
+        /// <summary>
+        /// sp_help_fulltext_tables           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-tables-transact-sql
+        /// </summary>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_tables() => throw new InvalitContextException(nameof(sp_help_fulltext_tables));
+
+        /// <summary>
+        /// sp_help_fulltext_tables           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-tables-transact-sql
+        /// </summary>
+        /// <param name="fulltext_catalog_name">Is the name of the full-text catalog.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_tables(string fulltext_catalog_name) => throw new InvalitContextException(nameof(sp_help_fulltext_tables));
+
+        /// <summary>
+        /// sp_help_fulltext_tables           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-tables-transact-sql
+        /// </summary>
+        /// <param name="fulltext_catalog_name">Is the name of the full-text catalog.</param>
+        /// <param name="table_name">Is the one- or two-part table name for which the full-text metadata is requested.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_tables(string fulltext_catalog_name, string table_name) => throw new InvalitContextException(nameof(sp_help_fulltext_tables));
+
+        /// <summary>
+        /// sp_help_fulltext_tables_cursor           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-tables-cursor-transact-sql
+        /// </summary>
+        /// <param name="cursor_return">Is the output variable of type cursor.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_tables_cursor(object cursor_return) => throw new InvalitContextException(nameof(sp_help_fulltext_tables_cursor));
+
+        /// <summary>
+        /// sp_help_fulltext_tables_cursor           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-tables-cursor-transact-sql
+        /// </summary>
+        /// <param name="cursor_return">Is the output variable of type cursor.</param>
+        /// <param name="fulltext_catalog_name">Is the name of the full-text catalog.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_tables_cursor(object cursor_return, string fulltext_catalog_name) => throw new InvalitContextException(nameof(sp_help_fulltext_tables_cursor));
+
+        /// <summary>
+        /// sp_help_fulltext_tables_cursor           
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-fulltext-tables-cursor-transact-sql
+        /// </summary>
+        /// <param name="cursor_return">Is the output variable of type cursor.</param>
+        /// <param name="fulltext_catalog_name">Is the name of the full-text catalog.</param>
+        /// <param name="table_name">Is the one- or two-part table name for which the full-text metadata is requested.</param>
+        /// <returns>0 (success) or 1 (failure)</returns>
+        [ClauseStyleConverter]
+        public static int sp_help_fulltext_tables_cursor(object cursor_return, string fulltext_catalog_name, string table_name) => throw new InvalitContextException(nameof(sp_help_fulltext_tables_cursor));
 
 
 
