@@ -31,11 +31,11 @@ namespace Test
             var sql = Db<DB>.Sql(db =>
                 Select(new
                 {
-                    Sys.trace_xe_action_map.trace_column_id,
-                    Sys.trace_xe_action_map.package_name,
-                    Sys.trace_xe_action_map.xe_action_name,
+                    Sys.Trace_xe_action_map.Trace_column_id,
+                    Sys.Trace_xe_action_map.Package_name,
+                    Sys.Trace_xe_action_map.Xe_action_name,
                 }).
-                From(Sys.trace_xe_action_map));
+                From(Sys.Trace_xe_action_map));
 
             sql.Gen(_connection);
 

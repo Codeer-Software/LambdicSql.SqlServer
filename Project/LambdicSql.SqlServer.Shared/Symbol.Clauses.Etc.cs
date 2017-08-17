@@ -1,7 +1,5 @@
 ﻿using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
-using LambdicSql.Specialized.SymbolConverters;
-using System;
 
 namespace LambdicSql.SqlServer
 {
@@ -14,16 +12,25 @@ namespace LambdicSql.SqlServer
     {
         /// <summary>
         /// sys
-        /// Always On Availability Groups Functions
-        /// Change Data Capture Functions
         /// </summary>
         public static SysSymbol Sys => throw new InvalitContextException(nameof(Sys));
 
         /// <summary>
-        /// sys
-        /// Change Data Capture Functions
+        /// msdb
+        /// </summary>
+        public static MsdbSymbol Msdb => throw new InvalitContextException(nameof(Msdb));
+
+        /// <summary>
+        /// cdc
         /// </summary>
         public static CdcSymbols Cdc => throw new InvalitContextException(nameof(Cdc));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/sysopentapes-transact-sql
+        /// sysopentapes
+        /// </summary>
+        [MemberTableConverter(Name = "sysopentapes")]
+        public static Table_sysopentapes Sysopentapes => throw new InvalitContextException(nameof(Sysopentapes));
 
         //TODO test, and return special type.
         /// <summary>

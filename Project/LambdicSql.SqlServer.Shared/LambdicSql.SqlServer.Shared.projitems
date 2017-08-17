@@ -14,7 +14,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)DateDiffElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DateAddElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DateNameElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DboSymbol.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managed_BackupSymbols .cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MsdbSymbol.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SetOnOffClauseAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.ServiceBrokerStatements.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.BackupRestore.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemStoredFunctions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemStoredProcedures.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemTables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SystemTableDefines.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TopElement.cs" />
   </ItemGroup>
 </Project>
