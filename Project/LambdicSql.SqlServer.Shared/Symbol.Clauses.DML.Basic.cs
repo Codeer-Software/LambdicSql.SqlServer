@@ -671,6 +671,17 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter]
         public static Clause<Non> Update(object table) { throw new InvalitContextException(nameof(Update)); }
 
+        //@@@
+        /// <summary>
+        /// UPDATE clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">Table for UPDATE.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> Update<T>(this Clause<T> before, object table) { throw new InvalitContextException(nameof(Update)); }
+
         /// <summary>
         /// SET clause.
         /// </summary>
@@ -696,6 +707,16 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter]
         public static Clause<Non> Delete() { throw new InvalitContextException(nameof(Delete)); }
 
+        //@@@
+        /// <summary>
+        /// DELETE clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> Delete<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Delete)); }
+
         /// <summary>
         /// INSERT INTO clause.
         /// </summary>
@@ -703,6 +724,17 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "INSERT INTO")]
         public static Clause<Non> InsertInto(object table) { throw new InvalitContextException(nameof(InsertInto)); }
+
+        //@@@
+        /// <summary>
+        /// INSERT INTO clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">Table for INSERT.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter(Name = "INSERT INTO")]
+        public static Clause<T> InsertInto<T>(this Clause<T> before, object table) { throw new InvalitContextException(nameof(InsertInto)); }
 
         /// <summary>
         /// INSERT INTO clause.
@@ -712,6 +744,18 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "INSERT INTO [0](|[#<, >1])")]
         public static Clause<Non> InsertInto(object table, params object[] columns) { throw new InvalitContextException(nameof(InsertInto)); }
+
+        //@@@
+        /// <summary>
+        /// INSERT INTO clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">Table for INSERT.</param>
+        /// <param name="columns">It is a column that performs INSERT.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "INSERT INTO [0](|[#<, >1])")]
+        public static Clause<T> InsertInto<T>(this Clause<T> before, object table, params object[] columns) { throw new InvalitContextException(nameof(InsertInto)); }
 
         /// <summary>
         /// INSERT INTO clause.

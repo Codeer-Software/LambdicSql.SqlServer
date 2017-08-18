@@ -24,6 +24,29 @@ namespace Test
 
         [TestCleanup]
         public void TestCleanup() => _connection.Dispose();
-        
+
+        [TestMethod]
+        public void Test()
+        {
+            int id = 0;
+            string name = string.Empty;
+            string staffCursor = nameof(staffCursor);
+            
+            var sql = Db<DB>.Sql(db =>
+                DeclareCursorFor(staffCursor).Select(new { db.tbl_staff.id, db.tbl_staff.name }).From(db.tbl_staff).
+                Open(staffCursor).
+                FetchNextFromInto(staffCursor, id, name).
+                While(AtAtFetch_Status() == 0).
+                Begin().
+                Select(new { id, name }).FetchNextFromInto(staffCursor, id, name).
+                End().
+                Close(staffCursor).
+                Deallocate(staffCursor)
+            );
+
+            sql.Gen(_connection);
+
+            var datas = _connection.Query(sql).ToList();
+        }
     }
 }

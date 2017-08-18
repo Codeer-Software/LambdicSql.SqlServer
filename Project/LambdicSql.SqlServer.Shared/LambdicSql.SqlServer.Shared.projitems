@@ -27,7 +27,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SetStatements.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SystemStoredFunctions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SystemStoredProcedures.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.SystemTables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.TransactionStatements.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Funcs.Cryptographic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.DML.Basic.cs" />

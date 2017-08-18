@@ -7,6 +7,7 @@ namespace LambdicSql.SqlServer
     //Change Data Capture Tables(Transact-SQL)
     //Replication Tables
 
+        //@@@
     /// <summary>
     /// SQL Server provides the following groups of system functions.
     /// </summary>

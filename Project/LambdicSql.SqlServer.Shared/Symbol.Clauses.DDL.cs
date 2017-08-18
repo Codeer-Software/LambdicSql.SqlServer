@@ -154,6 +154,17 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter(Name = "DROP TABLE")]
         public static Clause<Non> DropTable(params object[] tables) { throw new InvalitContextException(nameof(DropTable)); }
 
+        //@@@
+        /// <summary>
+        /// DROP TABLE clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="tables">Tables.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter(Name = "DROP TABLE")]
+        public static Clause<T> DropTable<T>(this Clause<T> before, params object[] tables) { throw new InvalitContextException(nameof(DropTable)); }
+
         /// <summary>
         /// DROP DATABASE clause.
         /// </summary>
@@ -162,6 +173,17 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "CREATE DATABASE [!0]")]
         public static Clause<Non> CreateDataBase(string name) { throw new InvalitContextException(nameof(CreateDataBase)); }
 
+        //@@@
+        /// <summary>
+        /// DROP DATABASE clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">DataBase name.</param>
+        /// <returns>Clause chain. You can write SQL statements in succession, of course you can end it.</returns>
+        [MethodFormatConverter(Format = "CREATE DATABASE [!0]")]
+        public static Clause<T> CreateDataBase<T>(this Clause<T> before, string name) { throw new InvalitContextException(nameof(CreateDataBase)); }
+
         /// <summary>
         /// DROP DATABASE clause.
         /// </summary>
@@ -169,6 +191,17 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause chain. You can write SQL statements in succession, of course you can end it.</returns>
         [MethodFormatConverter(Format = "DROP DATABASE [!0]")]
         public static Clause<Non> DropDataBase(string name) { throw new InvalitContextException(nameof(DropDataBase)); }
+
+        //@@@
+        /// <summary>
+        /// DROP DATABASE clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">DataBase name.</param>
+        /// <returns>Clause chain. You can write SQL statements in succession, of course you can end it.</returns>
+        [MethodFormatConverter(Format = "DROP DATABASE [!0]")]
+        public static Clause<T> DropDataBase<T>(this Clause<T> before, string name) { throw new InvalitContextException(nameof(DropDataBase)); }
 
         /// <summary>
         /// IDENTITY

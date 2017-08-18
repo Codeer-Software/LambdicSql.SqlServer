@@ -2,6 +2,7 @@
 
 namespace LambdicSql.SqlServer
 {
+    //@@@
     /// <summary>
     /// SQL Server provides the following groups of msdb functions.
     /// </summary>
