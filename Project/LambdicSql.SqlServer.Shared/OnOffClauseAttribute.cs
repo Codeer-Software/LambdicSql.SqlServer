@@ -6,9 +6,9 @@ using System.Linq.Expressions;
 namespace LambdicSql.SqlServer
 {
     /// <summary>
-    /// SQL symbol converter attribute for SET ON-OFF Clauses.
+    /// SQL symbol converter attribute for ON-OFF Clauses.
     /// </summary>
-    public class SetOnOffClauseAttribute : MethodConverterAttribute
+    public class OnOffClauseAttribute : MethodConverterAttribute
     {
         /// <summary>
         /// Name.
@@ -23,7 +23,7 @@ namespace LambdicSql.SqlServer
         /// <returns>Parts.</returns>
         public override ICode Convert(MethodCallExpression expression, ExpressionConverter converter)
         {
-            var isOn = (bool)converter.ConvertToObject(expression.Arguments[0]);
+            var isOn = (bool)converter.ConvertToObject(expression.Arguments[expression.Arguments.Count - 1]);
             return new SingleTextCode(Name + " " + (isOn ? "ON" : "OFF"));
         }
     }

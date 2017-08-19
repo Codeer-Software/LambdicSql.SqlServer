@@ -13,7 +13,7 @@ namespace LambdicSql.SqlServer
     {        
         /*
          * https://msdn.microsoft.com/en-au/library/ff848768.aspx
-        BACKUP
+        BACKUP  BackupDataBase(params elements[] x) With(params elements[] backupwithelements)
         BACKUP CERTIFICATE
         BACKUP MASTER KEY
         BACKUP SERVICE MASTER KEY

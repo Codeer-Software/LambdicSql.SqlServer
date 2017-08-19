@@ -12,7 +12,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_DEFAULTS")]
+        [OnOffClause(Name = "SET ANSI_DEFAULTS")]
         public static Clause<Non> Set_Ansi_Defaults(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Defaults));
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_DEFAULTS")]
+        [OnOffClause(Name = "SET ANSI_DEFAULTS")]
         public static Clause<T> Set_Ansi_Defaults<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Defaults));
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_NULL_DFLT_OFF")]
+        [OnOffClause(Name = "SET ANSI_NULL_DFLT_OFF")]
         public static Clause<Non> Set_Ansi_Null_Dflt_Off(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_Off));
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_NULL_DFLT_OFF")]
+        [OnOffClause(Name = "SET ANSI_NULL_DFLT_OFF")]
         public static Clause<T> Set_Ansi_Null_Dflt_Off<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_Off));
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_NULL_DFLT_ON")]
+        [OnOffClause(Name = "SET ANSI_NULL_DFLT_ON")]
         public static Clause<Non> Set_Ansi_Null_Dflt_On(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_On));
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_NULL_DFLT_ON")]
+        [OnOffClause(Name = "SET ANSI_NULL_DFLT_ON")]
         public static Clause<T> Set_Ansi_Null_Dflt_On<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_On));
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_NULLS")]
+        [OnOffClause(Name = "SET ANSI_NULLS")]
         public static Clause<Non> Set_Ansi_Nulls(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Nulls));
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_NULLS")]
+        [OnOffClause(Name = "SET ANSI_NULLS")]
         public static Clause<T> Set_Ansi_Nulls<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Nulls));
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_PADDING")]
+        [OnOffClause(Name = "SET ANSI_PADDING")]
         public static Clause<Non> Set_Ansi_Padding(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Padding));
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_PADDING")]
+        [OnOffClause(Name = "SET ANSI_PADDING")]
         public static Clause<T> Set_Ansi_Padding<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Padding));
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_WARNINGS")]
+        [OnOffClause(Name = "SET ANSI_WARNINGS")]
         public static Clause<Non> Set_Ansi_Warnings(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Warnings));
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ANSI_WARNINGS")]
+        [OnOffClause(Name = "SET ANSI_WARNINGS")]
         public static Clause<T> Set_Ansi_Warnings<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Warnings));
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ARITHABORT")]
+        [OnOffClause(Name = "SET ARITHABORT")]
         public static Clause<Non> Set_ArithAbort(bool isOn) => throw new InvalitContextException(nameof(Set_ArithAbort));
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ARITHABORT")]
+        [OnOffClause(Name = "SET ARITHABORT")]
         public static Clause<T> Set_ArithAbort<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ArithAbort));
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ARITHIGNORE")]
+        [OnOffClause(Name = "SET ARITHIGNORE")]
         public static Clause<Non> Set_ArithIgnore(bool isOn) => throw new InvalitContextException(nameof(Set_ArithIgnore));
 
         /// <summary>.
@@ -163,7 +163,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET ARITHIGNORE")]
+        [OnOffClause(Name = "SET ARITHIGNORE")]
         public static Clause<T> Set_ArithIgnore<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ArithIgnore));
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET CONCAT_NULL_YIELDS_NULL")]
+        [OnOffClause(Name = "SET CONCAT_NULL_YIELDS_NULL")]
         public static Clause<Non> Set_Concat_Null_Yields_Null(bool isOn) => throw new InvalitContextException(nameof(Set_Concat_Null_Yields_Null));
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET CONCAT_NULL_YIELDS_NULL")]
+        [OnOffClause(Name = "SET CONCAT_NULL_YIELDS_NULL")]
         public static Clause<T> Set_Concat_Null_Yields_Null<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Concat_Null_Yields_Null));
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
+        [OnOffClause(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
         public static Clause<Non> Set_Cursor_Close_On_Commit(bool isOn) => throw new InvalitContextException(nameof(Set_Cursor_Close_On_Commit));
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
+        [OnOffClause(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
         public static Clause<T> Set_Cursor_Close_On_Commit<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Cursor_Close_On_Commit));
 
         /// <summary>
@@ -330,7 +330,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET FMTONLY")]
+        [OnOffClause(Name = "SET FMTONLY")]
         public static Clause<Non> Set_Fmtonly(bool isOn) => throw new InvalitContextException(nameof(Set_Fmtonly));
 
         /// <summary>
@@ -341,7 +341,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET FMTONLY")]
+        [OnOffClause(Name = "SET FMTONLY")]
         public static Clause<T> Set_Fmtonly<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Fmtonly));
 
         /// <summary>
@@ -350,7 +350,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET FORCEPLAN")]
+        [OnOffClause(Name = "SET FORCEPLAN")]
         public static Clause<Non> Set_ForcePlan(bool isOn) => throw new InvalitContextException(nameof(Set_ForcePlan));
 
         /// <summary>
@@ -361,7 +361,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET FORCEPLAN")]
+        [OnOffClause(Name = "SET FORCEPLAN")]
         public static Clause<T> Set_ForcePlan<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ForcePlan));
 
         /// <summary>
@@ -390,7 +390,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET IMPLICIT_TRANSACTIONS")]
+        [OnOffClause(Name = "SET IMPLICIT_TRANSACTIONS")]
         public static Clause<Non> Set_Implicit_Transactions(bool isOn) => throw new InvalitContextException(nameof(Set_Implicit_Transactions));
 
         /// <summary>
@@ -401,7 +401,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET IMPLICIT_TRANSACTIONS")]
+        [OnOffClause(Name = "SET IMPLICIT_TRANSACTIONS")]
         public static Clause<T> Set_Implicit_Transactions<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Implicit_Transactions));
 
         /// <summary>
@@ -450,7 +450,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET NOCOUNT")]
+        [OnOffClause(Name = "SET NOCOUNT")]
         public static Clause<Non> Set_NoCount(bool isOn) => throw new InvalitContextException(nameof(Set_NoCount));
 
         /// <summary>
@@ -461,7 +461,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET NOCOUNT")]
+        [OnOffClause(Name = "SET NOCOUNT")]
         public static Clause<T> Set_NoCount<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_NoCount));
 
         /// <summary>
@@ -470,7 +470,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET NOEXEC")]
+        [OnOffClause(Name = "SET NOEXEC")]
         public static Clause<Non> SetNoExec(bool isOn) => throw new InvalitContextException(nameof(SetNoExec));
 
         /// <summary>
@@ -481,7 +481,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET NOEXEC")]
+        [OnOffClause(Name = "SET NOEXEC")]
         public static Clause<T> SetNoExec<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(SetNoExec));
 
         /// <summary>
@@ -490,7 +490,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET NUMERIC_ROUNDABORT")]
+        [OnOffClause(Name = "SET NUMERIC_ROUNDABORT")]
         public static Clause<Non> Set_Numeric_RoundAbort(bool isOn) => throw new InvalitContextException(nameof(Set_Numeric_RoundAbort));
 
         /// <summary>
@@ -501,7 +501,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET NUMERIC_ROUNDABORT")]
+        [OnOffClause(Name = "SET NUMERIC_ROUNDABORT")]
         public static Clause<T> Set_Numeric_RoundAbort<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Numeric_RoundAbort));
 
         /// <summary>
@@ -550,7 +550,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET PARSEONLY")]
+        [OnOffClause(Name = "SET PARSEONLY")]
         public static Clause<Non> SetParseOnly(bool isOn) => throw new InvalitContextException(nameof(SetParseOnly));
 
         /// <summary>
@@ -561,7 +561,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET PARSEONLY")]
+        [OnOffClause(Name = "SET PARSEONLY")]
         public static Clause<T> SetParseOnly<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(SetParseOnly));
 
         /// <summary>
@@ -590,7 +590,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET QUOTED_IDENTIFIER")]
+        [OnOffClause(Name = "SET QUOTED_IDENTIFIER")]
         public static Clause<Non> Set_Quoted_Identifier(bool isOn) => throw new InvalitContextException(nameof(Set_Quoted_Identifier));
 
         /// <summary>
@@ -601,7 +601,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET QUOTED_IDENTIFIER")]
+        [OnOffClause(Name = "SET QUOTED_IDENTIFIER")]
         public static Clause<T> Set_Quoted_Identifier<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Quoted_Identifier));
 
         /// <summary>
@@ -610,7 +610,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET REMOTE_PROC_TRANSACTIONS")]
+        [OnOffClause(Name = "SET REMOTE_PROC_TRANSACTIONS")]
         public static Clause<Non> Set_Remote_Proc_Transactions(bool isOn) => throw new InvalitContextException(nameof(Set_Remote_Proc_Transactions));
 
         /// <summary>
@@ -621,7 +621,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET REMOTE_PROC_TRANSACTIONS")]
+        [OnOffClause(Name = "SET REMOTE_PROC_TRANSACTIONS")]
         public static Clause<T> Set_Remote_Proc_Transactions<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Remote_Proc_Transactions));
 
         /// <summary>
@@ -650,7 +650,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET SHOWPLAN_ALL")]
+        [OnOffClause(Name = "SET SHOWPLAN_ALL")]
         public static Clause<Non> Set_ShowPlan_All(bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_All));
 
         /// <summary>
@@ -661,7 +661,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET SHOWPLAN_ALL")]
+        [OnOffClause(Name = "SET SHOWPLAN_ALL")]
         public static Clause<T> Set_ShowPlan_All<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_All));
 
         /// <summary>
@@ -670,7 +670,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET SHOWPLAN_TEXT")]
+        [OnOffClause(Name = "SET SHOWPLAN_TEXT")]
         public static Clause<Non> Set_ShowPlan_Text(bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Text));
 
         /// <summary>
@@ -681,7 +681,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET SHOWPLAN_TEXT")]
+        [OnOffClause(Name = "SET SHOWPLAN_TEXT")]
         public static Clause<T> Set_ShowPlan_Text<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Text));
 
         /// <summary>
@@ -690,7 +690,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET SHOWPLAN_XML")]
+        [OnOffClause(Name = "SET SHOWPLAN_XML")]
         public static Clause<Non> Set_ShowPlan_Xml(bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Xml));
 
         /// <summary>
@@ -701,7 +701,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET SHOWPLAN_XML")]
+        [OnOffClause(Name = "SET SHOWPLAN_XML")]
         public static Clause<T> Set_ShowPlan_Xml<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Xml));
 
         /// <summary>
@@ -710,7 +710,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS IO")]
+        [OnOffClause(Name = "SET STATISTICS IO")]
         public static Clause<Non> Set_Statistics_IO(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_IO));
 
         /// <summary>
@@ -721,7 +721,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS IO")]
+        [OnOffClause(Name = "SET STATISTICS IO")]
         public static Clause<T> Set_Statistics_IO<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_IO));
 
         /// <summary>
@@ -730,7 +730,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS PROFILE")]
+        [OnOffClause(Name = "SET STATISTICS PROFILE")]
         public static Clause<Non> Set_Statistics_Profile(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Profile));
 
         /// <summary>
@@ -741,7 +741,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS PROFILE")]
+        [OnOffClause(Name = "SET STATISTICS PROFILE")]
         public static Clause<T> Set_Statistics_Profile<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Profile));
 
         /// <summary>
@@ -750,7 +750,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS TIME")]
+        [OnOffClause(Name = "SET STATISTICS TIME")]
         public static Clause<Non> Set_Statistics_Time(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Time));
 
         /// <summary>
@@ -761,7 +761,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS TIME")]
+        [OnOffClause(Name = "SET STATISTICS TIME")]
         public static Clause<T> Set_Statistics_Time<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Time));
 
         /// <summary>
@@ -770,7 +770,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS XML")]
+        [OnOffClause(Name = "SET STATISTICS XML")]
         public static Clause<Non> Set_Statistics_Xml(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Xml));
 
         /// <summary>
@@ -781,7 +781,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET STATISTICS XML")]
+        [OnOffClause(Name = "SET STATISTICS XML")]
         public static Clause<T> Set_Statistics_Xml<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Xml));
 
         /// <summary>
@@ -830,7 +830,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET XACT_ABORT")]
+        [OnOffClause(Name = "SET XACT_ABORT")]
         public static Clause<Non> Set_Xact_Abort(bool isOn) => throw new InvalitContextException(nameof(Set_Xact_Abort));
 
         /// <summary>
@@ -841,7 +841,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="isOn">is on.</param>
         /// <returns>Clause.</returns>
-        [SetOnOffClause(Name = "SET XACT_ABORT")]
+        [OnOffClause(Name = "SET XACT_ABORT")]
         public static Clause<T> Set_Xact_Abort<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Xact_Abort));
     }
 }
