@@ -940,11 +940,257 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "WITHIN GROUP(|[< >0])", FormatDirection = FormatDirection.Vertical)]
         public static OverReturnValue WithinGroup(params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
 
+        //@@@
+        /// <summary>
+        /// BULK INSERT.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter(Name = "BULK INSERT")]
+        public static Clause<Non> BulkInsert(object table) { throw new InvalitContextException(nameof(BulkInsert)); }
+
+        /// <summary>
+        /// BULK INSERT.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter(Name = "BULK INSERT")]
+        public static Clause<Non> BulkInsert<T>(this Clause<T> before, object table) { throw new InvalitContextException(nameof(BulkInsert)); }
+
+        /// <summary>
+        /// WITH clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="defines">defines.</param>
+        /// <returns>Clause.</returns>
+        [FuncStyleConverter]
+        public static Clause<Non> With(params IBulkInsertWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
+
+        /// <summary>
+        /// WITH clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="defines">defines.</param>
+        /// <returns>Clause.</returns>
+        [FuncStyleConverter]
+        public static Clause<T> With<T>(this Clause<T> before, params IBulkInsertWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
+
+        /// <summary>
+        /// BATCHSIZE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="batch_size">batch_size.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "BATCHSIZE =")]
+        public static IBulkInsertWithElement BatchSize_Assign(long batch_size) => throw new InvalitContextException(nameof(BatchSize_Assign));
+
+        /// <summary>
+        /// CHECK_CONSTRAINTS
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter]
+        public static IBulkInsertWithElement Check_Constraints() => throw new InvalitContextException(nameof(Check_Constraints));
+
+        /// <summary>
+        /// CODEPAGE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="page">page.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "CODEPAGE =")]
+        public static IBulkInsertWithElement CodePage_Assign(string page) => throw new InvalitContextException(nameof(CodePage_Assign));
+
+        /// <summary>
+        /// DATAFILETYPE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="type">type.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "DATAFILETYPE =")]
+        public static IBulkInsertWithElement DataFileType_Assign(string type) => throw new InvalitContextException(nameof(DataFileType_Assign));
+
+        /// <summary>
+        /// DATASOURCE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="data_source_name">data_source_name.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "DATASOURCE =")]
+        public static IBulkInsertWithElement DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(DataSource_Assign));
+
+        /// <summary>
+        /// ERRORFILE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="file_name">file_name.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "ERRORFILE =")]
+        public static IBulkInsertWithElement ErrorFile_Assign(string file_name) => throw new InvalitContextException(nameof(ErrorFile_Assign));
+
+        /// <summary>
+        /// ERRORFILE_DATASOURCE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="data_source_name">data_source_name.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "ERRORFILE_DATASOURCE =")]
+        public static IBulkInsertWithElement ErrorFile_DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(ErrorFile_DataSource_Assign));
+
+        /// <summary>
+        /// FIRSTROW =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="first_row">first_row.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "FIRSTROW =")]
+        public static IBulkInsertWithElement FirstRow_Assign(long first_row) => throw new InvalitContextException(nameof(FirstRow_Assign));
+
+        /// <summary>
+        /// FIRE_TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter]
+        public static IBulkInsertWithElement Fire_Trigger() => throw new InvalitContextException(nameof(Fire_Trigger));
+
+        /// <summary>
+        /// FORMATFILE_DATASOURCE =
+        /// </summary>
+        /// <param name="data_source_name">data_source_name.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "FORMATFILE_DATASOURCE =")]
+        public static IBulkInsertWithElement FormatFile_DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(FormatFile_DataSource_Assign));
+
+        /// <summary>
+        /// KEEPIDENTITY
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter]
+        public static IBulkInsertWithElement KeepIdentity() => throw new InvalitContextException(nameof(KeepIdentity));
+
+        /// <summary>
+        /// KEEPNULLS
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter]
+        public static IBulkInsertWithElement KeepNulls() => throw new InvalitContextException(nameof(KeepNulls));
+
+        /// <summary>
+        /// KILOBYTES_PER_BATCH =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="kilobytes_per_batch">kilobytes_per_batch.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "KILOBYTES_PER_BATCH =")]
+        public static IBulkInsertWithElement Kilobytes_Per_Batch_Assign(long kilobytes_per_batch) => throw new InvalitContextException(nameof(Kilobytes_Per_Batch_Assign));
+
+        /// <summary>
+        /// LASTROW =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="last_row">last_row.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "LASTROW =")]
+        public static IBulkInsertWithElement LastRow_Assign(long last_row) => throw new InvalitContextException(nameof(LastRow_Assign));
+
+        /// <summary>
+        /// MAXERRORS =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="max_errors">max_errors.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "MAXERRORS =")]
+        public static IBulkInsertWithElement MaxErrors_Assign(long max_errors) => throw new InvalitContextException(nameof(MaxErrors_Assign));
+
+        /// <summary>
+        /// ROWS_PER_BATCH =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="rows_per_batch">rows_per_batch.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "ROWS_PER_BATCH =")]
+        public static IBulkInsertWithElement Rows_Per_Batch_Assign(long rows_per_batch) => throw new InvalitContextException(nameof(Rows_Per_Batch_Assign));
+
+        /// <summary>
+        /// ROWTERMINATOR =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="row_terminator">row_terminator.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "ROWTERMINATOR =")]
+        public static IBulkInsertWithElement RowTerminator_Assign(string row_terminator) => throw new InvalitContextException(nameof(RowTerminator_Assign));
+
+        /// <summary>
+        /// TABLOCK
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter]
+        public static IBulkInsertWithElement TabLock() => throw new InvalitContextException(nameof(TabLock));
+
+        /// <summary>
+        /// FORMAT =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="format">format.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "FORMAT =")]
+        public static IBulkInsertWithElement Format_Assign(string format) => throw new InvalitContextException(nameof(Format_Assign));
+
+        /// <summary>
+        /// FIELDQUOTE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="quote_characters">quote_characters.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "FIELDQUOTE =")]
+        public static IBulkInsertWithElement FieldQuote_Assign(string quote_characters) => throw new InvalitContextException(nameof(FieldQuote_Assign));
+
+        /// <summary>
+        /// FORMATFILE =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="format_file_path">format_file_path.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "FORMATFILE =")]
+        public static IBulkInsertWithElement FormatFile_Assign(string format_file_path) => throw new InvalitContextException(nameof(FormatFile_Assign));
+
+        /// <summary>
+        /// FIELDTERMINATOR =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
+        /// </summary>
+        /// <param name="field_terminator">field_terminator.</param>
+        /// <returns>IBulkInsertWithElement.</returns>
+        [ClauseStyleConverter(Name = "FIELDTERMINATOR =")]
+        public static IBulkInsertWithElement FieldTerminator_Assign(string field_terminator) => throw new InvalitContextException(nameof(FieldTerminator_Assign));
+
+        /// <summary>
+        /// EXPLAIN.
+        /// </summary>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> Explain() => throw new InvalitContextException(nameof(Explain));
+
+        /// <summary>
+        /// EXPLAIN.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> Explain<T>(this Clause<T>  before) => throw new InvalitContextException(nameof(Explain));
+
         /*
          * https://msdn.microsoft.com/en-us/library/ff848766.aspx
-        Aliasing (Azure SQL Data Warehouse, Parallel Data Warehouse)
-        BULK INSERT
-        EXPLAIN
         Hints
         MERGE
         OPTION Clause
@@ -955,12 +1201,16 @@ namespace LambdicSql.SqlServer
         Table Value Constructor
         UPDATETEXT
         WRITETEXT
+        TRUNCATE TABLE
+        DISABLE TRIGGER
+        ENABLE TRIGGER
         */
 
-        //https://msdn.microsoft.com/en-us/library/ms188332.aspx
+        //@@@Å™
 
         /// <summary>
         /// EXEC
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
         /// </summary>
         /// <typeparam name="T">expression result.</typeparam>
         /// <param name="expression">expression</param>
@@ -970,6 +1220,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// EXEC
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
         /// </summary>
         /// <typeparam name="T">expression result.</typeparam>
         /// <param name="expression">expression</param>
@@ -979,6 +1230,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// EXECUTE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
         /// </summary>
         /// <typeparam name="T">expression result.</typeparam>
         /// <param name="expression">expression</param>
@@ -988,6 +1240,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// EXECUTE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
         /// </summary>
         /// <typeparam name="T">expression result.</typeparam>
         /// <param name="expression">expression</param>
@@ -995,4 +1248,6 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter]
         public static T Execute<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Execute));
     }
+
+    public interface IBulkInsertWithElement { }
 }

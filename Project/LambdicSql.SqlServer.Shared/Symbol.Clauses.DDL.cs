@@ -220,18 +220,15 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "INDEX [!0]([1])")]
         public static Clause<ConstraintElement> Index(string name, object column) => null;
-        
+
         /*
          https://msdn.microsoft.com/en-us/library/ff848799.aspx
-        ALTER Statements
-        BACKUP DATABASE (Parallel Data Warehouse)
-        CREATE Statements
-        DISABLE TRIGGER
-        DROP Statements
-        ENABLE TRIGGER
+        >ALTER Statements
+            AlterApplicationWith()
+        >CREATE Statements
+        >DROP Statements
         RENAME
-        RESTORE DATABASE (Parallel Data Warehouse)
-        TRUNCATE TABLE
+        
         UPDATE STATISTICS*/
     }
 }

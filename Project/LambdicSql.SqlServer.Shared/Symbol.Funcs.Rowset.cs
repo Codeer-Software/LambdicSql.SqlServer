@@ -33,11 +33,34 @@ namespace LambdicSql.SqlServer
         /// OPENJSON
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
         /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="jsonExpression">jsonExpression.</param>
+        /// <returns>json value.</returns>
+        [FuncStyleConverter]
+        public static Clause<T> OpenJson<T>(this Clause<T> before, string jsonExpression) => throw new InvalitContextException(nameof(OpenJson));
+
+        /// <summary>
+        /// OPENJSON
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
+        /// </summary>
         /// <param name="jsonExpression">jsonExpression.</param>
         /// <param name="path">path.</param>
         /// <returns>json value.</returns>
         [FuncStyleConverter]
         public static Clause<Non> OpenJson(string jsonExpression, string path) => throw new InvalitContextException(nameof(OpenJson));
+
+        /// <summary>
+        /// OPENJSON
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="jsonExpression">jsonExpression.</param>
+        /// <param name="path">path.</param>
+        /// <returns>json value.</returns>
+        [FuncStyleConverter]
+        public static Clause<T> OpenJson<T>(this Clause<T> before, string jsonExpression, string path) => throw new InvalitContextException(nameof(OpenJson));
 
         /// <summary>
         /// OPENQUERY
@@ -76,6 +99,18 @@ namespace LambdicSql.SqlServer
         /// OPENXML
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openxml-transact-sql
         /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="idoc">idoc.</param>
+        /// <param name="path">path.</param>
+        /// <returns>xml value.</returns>
+        [FuncStyleConverter]
+        public static Clause<T> OpenXml<T>(this Clause<T> before, string idoc, string path) => throw new InvalitContextException(nameof(OpenXml));
+
+        /// <summary>
+        /// OPENXML
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openxml-transact-sql
+        /// </summary>
         /// <param name="idoc">idoc.</param>
         /// <param name="path">path.</param>
         /// <param name="flags">flags.</param>
@@ -84,13 +119,35 @@ namespace LambdicSql.SqlServer
         public static Clause<Non> OpenXml(string idoc, string path, byte flags) => throw new InvalitContextException(nameof(OpenXml));
 
         /// <summary>
+        /// OPENXML
+        /// https://docs.microsoft.com/en-us/sql/t-sql/functions/openxml-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="idoc">idoc.</param>
+        /// <param name="path">path.</param>
+        /// <param name="flags">flags.</param>
+        /// <returns>xml value.</returns>
+        [FuncStyleConverter]
+        public static Clause<T> OpenXml<T>(this Clause<T> before, string idoc, string path, byte flags) => throw new InvalitContextException(nameof(OpenXml));
+
+        /// <summary>
         /// WITH clause.
         /// </summary>
-        /// <param name="src">src.</param>
         /// <param name="defines">defines.</param>
         /// <returns></returns>
         [FuncStyleConverter]
-        public static T With<T>(this Clause src, params IOpenWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
+        public static Clause<Non> With(params IOpenWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
+
+        /// <summary>
+        /// WITH clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="defines">defines.</param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static Clause<T> With<T>(this Clause<T> before, params IOpenWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
     }
 
     /// <summary>
@@ -109,15 +166,23 @@ namespace LambdicSql.SqlServer
         /// <param name="column">Column.</param>
         /// <param name="type">Type.</param>
         /// <param name="path">Path.</param>
-        [NewFormatConverter(Format = "[0] [1] [1]")]
+        [NewFormatConverter(Format = "[0] [1] [2]")]
         public OpenWithElement(object column, DataTypeElement type, string path) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="column">Column.</param>
+        /// <param name="type">Type.</param>
+        [NewFormatConverter(Format = "[0] [1]")]
+        public OpenWithElement(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
     }
 
     /// <summary>
     /// Open function with element.
     /// column type as json.
     /// </summary>
-    public class OpenWithElementTypeJson : IOpenWithElement
+    public class OpenWithElementTypeAsJson : IOpenWithElement
     {
         /// <summary>
         /// Constructor.
@@ -125,7 +190,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column">Column.</param>
         /// <param name="type">Type.</param>
         [OpenWithElementTypeJson]
-        public OpenWithElementTypeJson(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
+        public OpenWithElementTypeAsJson(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(OpenWithElementTypeAsJson)); }
     }
 
     /// <summary>
