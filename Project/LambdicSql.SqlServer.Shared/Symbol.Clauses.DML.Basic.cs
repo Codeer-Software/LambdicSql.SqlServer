@@ -1191,19 +1191,22 @@ namespace LambdicSql.SqlServer
 
         /*
          * https://msdn.microsoft.com/en-us/library/ff848766.aspx
-        Hints
-        MERGE
         OPTION Clause
+        
+        DISABLE TRIGGER
+        https://docs.microsoft.com/en-us/sql/t-sql/statements/disable-trigger-transact-sql
+
+        ENABLE TRIGGER
+        https://docs.microsoft.com/en-us/sql/t-sql/statements/enable-trigger-transact-sql
+            
+        Table Value Constructor
+            Å®Values 
+
+        MERGE
         OUTPUT Clause
         READTEXT
-        Search Condition
-        Subqueries (Azure SQL Data Warehouse, Parallel Data Warehouse)
-        Table Value Constructor
         UPDATETEXT
         WRITETEXT
-        TRUNCATE TABLE
-        DISABLE TRIGGER
-        ENABLE TRIGGER
         */
 
         //@@@Å™

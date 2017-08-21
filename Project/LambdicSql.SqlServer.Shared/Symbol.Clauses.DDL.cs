@@ -228,7 +228,11 @@ namespace LambdicSql.SqlServer
         >CREATE Statements
         >DROP Statements
         RENAME
-        
-        UPDATE STATISTICS*/
+        UPDATE STATISTICS
+
+        ★TRUNCATE TABLE
+        https://docs.microsoft.com/en-us/sql/t-sql/statements/truncate-table-transact-sql
+
+        */
     }
 }

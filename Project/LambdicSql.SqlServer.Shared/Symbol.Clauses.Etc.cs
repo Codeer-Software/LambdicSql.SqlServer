@@ -102,7 +102,7 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter]
         public static AggregatePredicateElement Distinct() { throw new InvalitContextException(nameof(All)); }
 
-        //@@@
+        //@@@↓
         /// <summary>
         /// ;
         /// </summary>
@@ -120,37 +120,60 @@ namespace LambdicSql.SqlServer
         public static Clause<T> Semicolon<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Semicolon)); }
         /*
          * https://msdn.microsoft.com/en-au/library/ms184391.aspx
-            COLLATE
+            https://docs.microsoft.com/en-us/sql/t-sql/statements/collation-precedence-transact-sql
          */
 
-        //https://msdn.microsoft.com/en-us/library/b2ca6791-3a07-4209-ba8e-2248a92dd738
-        /*
-        SQL Server Utilities Statements
-        (Backslash)
-        GO
-        */
+        //https://docs.microsoft.com/en-us/sql/t-sql/language-elements/sql-server-utilities-statements-go
+        public static Clause<Non> Go() => throw new InvalitContextException(nameof(Go));
+        public static Clause<T> Go<T>(Clause<T> before) => throw new InvalitContextException(nameof(Go));
 
         //https://msdn.microsoft.com/en-us/library/ff848809.aspx
         /*Variables
         SET @local_variable
-        SELECT @local_variable
-        DECLARE @local_variable*/
+        SELECT @local_variable = も
+        DECLARE @local_variable
+            →これは・・・
+         */
 
-        //https://msdn.microsoft.com/en-us/library/dbba47d7-e08e-4435-b876-35dced1f325d
         /*
-         XML Statements
+        XML Statements
+        https://docs.microsoft.com/en-us/sql/t-sql/xml/xml-schema-namespace
+
         WITH XMLNAMESPACES
-        xml_schema_namespace
-        */
-        //https://msdn.microsoft.com/en-us/library/ms176047.aspx
-        //PRINT
+        https://docs.microsoft.com/en-us/sql/t-sql/xml/with-xmlnamespaces
+        https://docs.microsoft.com/ja-jp/sql/relational-databases/xml/add-namespaces-to-queries-with-with-xmlnamespaces
+         */
 
-        //https://msdn.microsoft.com/en-us/library/ms178592.aspx
-        //RAISERROR     
 
-        //https://msdn.microsoft.com/en-us/library/ms190286.aspx
-        /*
-        AT TIME ZONE
-        NULLIF*/
+        //https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql
+        //RAISERROR
+
+        //https://docs.microsoft.com/en-us/sql/t-sql/xml/xml-schema-namespace
+        [FuncStyleConverter]
+        public static T Xml_Schema_Namespace<T>(string Relational_schema, string XML_schema_collection_name) => throw new InvalitContextException(nameof(Xml_Schema_Namespace));
+        [FuncStyleConverter]
+        public static T Xml_Schema_Namespace<T>(string Relational_schema, string XML_schema_collection_name, string url) => throw new InvalitContextException(nameof(Xml_Schema_Namespace));
+
+        //https://docs.microsoft.com/en-us/sql/t-sql/language-elements/print-transact-sql
+        public static Clause<Non> Print(string text) => throw new InvalitContextException(nameof(Print));
+        public static Clause<Non> Print<T>(Clause<T> before, string text) => throw new InvalitContextException(nameof(Print));
+        
+        //https://docs.microsoft.com/en-us/sql/t-sql/queries/at-time-zone-transact-sql
+        [ClauseStyleConverter(Name = "AT TIME ZONE")]
+        public static Clause<Non> AtTimeZone(string timezone) => throw new InvalitContextException(nameof(AtTimeZone));
+        [ClauseStyleConverter(Name = "AT TIME ZONE")]
+        public static Clause<Non> AtTimeZone<T>(Clause<T> before, string timezone) => throw new InvalitContextException(nameof(AtTimeZone));
+
+        //https://docs.microsoft.com/en-us/sql/t-sql/language-elements/nullif-transact-sql
+        [FuncStyleConverter]
+        public static T NULLIF<T>(T expression1, object expression2) => throw new InvalitContextException(nameof(NULLIF));
+        [FuncStyleConverter]
+        public static T NULLIF<T>(Clause<T> expression1, object expression2) => throw new InvalitContextException(nameof(NULLIF));
+        [FuncStyleConverter]
+        public static T NULLIF<T>(Clause<Non> expression1, object expression2) => throw new InvalitContextException(nameof(NULLIF));
+        [FuncStyleConverter]
+        public static T NULLIF<T>(Sql expression1, object expression2) => throw new InvalitContextException(nameof(NULLIF));
+        [FuncStyleConverter]
+        public static T NULLIF<T>(Sql<T> expression1, object expression2) => throw new InvalitContextException(nameof(NULLIF));
     }
 }
