@@ -1,20 +1,18 @@
 ﻿using LambdicSql.BuilderServices.CodeParts;
 using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
+using LambdicSql.SqlServer.Inside.CodeParts;
+using System.Linq;
 using System.Linq.Expressions;
+using static LambdicSql.SqlServer.Inside.PartsUtils;
 
-namespace LambdicSql.SqlServer
+namespace LambdicSql.SqlServer.ConverterAttributes
 {
     /// <summary>
-    /// SQL symbol converter attribute for ON-OFF Clauses.
+    /// Converter for ALL clause conversion.
     /// </summary>
-    public class OnOffClauseAttribute : MethodConverterAttribute
+    public class AllConverterAttribute : MethodConverterAttribute
     {
-        /// <summary>
-        /// Name.
-        /// </summary>
-        public string Name { get; set; }
-
         /// <summary>
         /// Convert expression to code.
         /// </summary>
@@ -23,8 +21,8 @@ namespace LambdicSql.SqlServer
         /// <returns>Parts.</returns>
         public override ICode Convert(MethodCallExpression expression, ExpressionConverter converter)
         {
-            var isOn = (bool)converter.ConvertToObject(expression.Arguments[expression.Arguments.Count - 1]);
-            return new SingleTextCode(Name + " " + (isOn ? "ON" : "OFF"));
+            var args = expression.Arguments.Select(e => converter.ConvertToCode(e)).ToArray();
+            return new AllDisableBinaryExpressionBracketsCode(Func("ALL".ToCode(), args[0]));
         }
     }
 }

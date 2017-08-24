@@ -32,8 +32,8 @@
     <DocumentationFile>bin\Release\LambdicSql.SqlServer.NetFramework.4.6.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LambdicSql.NetFramework.4.6, Version=0.52.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.52.0\lib\net46\LambdicSql.NetFramework.4.6.dll</HintPath>
+    <Reference Include="LambdicSql.NetFramework.4.6, Version=0.53.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.53.0\lib\net46\LambdicSql.NetFramework.4.6.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,11 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultiplatformCompatibe\ReflectionAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="..\LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
-using LambdicSql.Specialized.SymbolConverters;
+using LambdicSql.SqlServer.ConverterAttributes;
 
 namespace LambdicSql.SqlServer
 {
@@ -845,34 +845,33 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "[0] IS NOT NULL|")]
         public static bool IsNotNull(object target) { throw new InvalitContextException(nameof(IsNull)); }
 
-        //TODO test.
         /// <summary>
-        /// WITH clause.
+        /// It becomes code which expanded T's property as argument. For example, data(a, b,c).
         /// </summary>
-        /// <param name="subQuerys">sub querys.</param>
-        /// <returns></returns>
-        [WithConverter]
-        public static Clause<Non> With(params Sql[] subQuerys) { throw new InvalitContextException(nameof(With)); }
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <returns>IArgumentsExpandedObject.</returns>
+        [ExpandArgumentsConverter]
+        public static IArgumentsExpandedObject ExpandArguments<T>(this Sql<T> data) => throw new InvalitContextException(nameof(ExpandArguments));
+
+        /// <summary>
+        /// AS
+        /// </summary>
+        /// <typeparam name="T">before type.</typeparam>
+        /// <param name="before">AS clause before.</param>
+        /// <param name="expression">As clause after expression.</param>
+        /// <returns>T</returns>
+        [ClauseStyleConverter]
+        public static T As<T>(this T before, object expression) => throw new InvalitContextException(nameof(As));
 
         /// <summary>
         /// WITH clause.
         /// </summary>
-        /// <typeparam name="T">Type representing argument of recursive part.</typeparam>
-        /// <param name="args">Argument of recursive part.</param>
-        /// <param name="subQuery">sub query.</param>
+        /// <param name="expression">Argument of recursive part.</param>
         /// <returns>Clause.</returns>
-        [WithConverter]
-        public static Clause<T> With<T>(SqlRecursiveArguments<T> args, Sql subQuery) { throw new InvalitContextException(nameof(With)); }
-
-        /// <summary>
-        /// RECURSIVE clause.
-        /// </summary>
-        /// <typeparam name="T">Type representing argument of recursive part.</typeparam>
-        /// <param name="args">Argument of recursive part.</param>
-        /// <returns>Class representing argument of recursive part.</returns>
-        [RecursiveConverter]
-        public static RecursiveArguments<T> Recursive<T>(T args) { throw new InvalitContextException(nameof(Recursive)); }
-
+        [ClauseStyleConverter]
+        public static Clause<Non> With(IArgumentsExpandedObject expression) => throw new InvalitContextException(nameof(With));
+        
         /// <summary>
         /// ROWS.
         /// </summary>
@@ -1251,6 +1250,4 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter]
         public static T Execute<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Execute));
     }
-
-    public interface IBulkInsertWithElement { }
 }

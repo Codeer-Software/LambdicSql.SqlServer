@@ -6,6 +6,7 @@ using LambdicSql.feat.Dapper;
 using static LambdicSql.SqlServer.Symbol;
 using static Test.Helper.DBProviderInfo;
 using Test.Helper;
+using LambdicSql.SqlServer;
 
 namespace Test
 {
@@ -575,6 +576,18 @@ FROM tbl_remuneration");
 	tbl_remuneration.staff_id AS Id
 FROM tbl_remuneration
 GROUP BY tbl_remuneration.staff_id");
+        }
+
+        [TestMethod]
+        public void Test()
+        {
+            int val = 0;
+            var sql1 = Db<DB>.Sql(db =>
+                Set(new Assign(val, Select(Count(Asterisk())).From(db.tbl_staff))));
+            sql1.Gen(_connection);
+            var sql2 = Db<DB>.Sql(db =>
+                Select(new Assign(val, 0)));
+            sql2.Gen(_connection);
         }
     }
 }

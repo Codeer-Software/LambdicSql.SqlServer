@@ -1,6 +1,7 @@
 ﻿using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
 using LambdicSql.Specialized.SymbolConverters;
+using LambdicSql.SqlServer.ConverterAttributes;
 
 namespace LambdicSql.SqlServer
 {
@@ -241,7 +242,7 @@ namespace LambdicSql.SqlServer
         /// <param name="conversation_handle">conversation_handle.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "END CONVERSATION")]
-        public static Clause<T> EndConversation<T>(this Clause<T> before, object dialogHandle) => throw new InvalitContextException(nameof(EndConversation));
+        public static Clause<T> EndConversation<T>(this Clause<T> before, object conversation_handle) => throw new InvalitContextException(nameof(EndConversation));
 
         /// <summary>
         /// ERROR =

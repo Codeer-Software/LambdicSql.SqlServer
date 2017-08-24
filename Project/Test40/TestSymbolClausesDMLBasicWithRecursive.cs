@@ -34,7 +34,7 @@ namespace Test
         [Priority(1)]
         public void Test_Recursive_1()
         {
-            var rec = Db<DB>.Sql(db => Recursive(new { val = 0 }));
+            var rec = Db<DB>.Sql(db => new { val = 0 });
 
             var select = Db<DB>.Sql(db =>
                 Select(new object[] { 1 }).
@@ -45,16 +45,19 @@ namespace Test
                 );
 
             var sql = Db<DB>.Sql(db =>
-                With(rec, select).
+                With(rec.ExpandArguments().As(select)).
                 Select(rec.Body.val).
                 From(rec)
                 );
+
+            sql.Gen(_connection);
 
             var datas = _connection.Query<SelectedData>(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"WITH
-	rec(val) AS
+	rec(val)
+	AS
 		(SELECT
 			@p_0
 		UNION ALL

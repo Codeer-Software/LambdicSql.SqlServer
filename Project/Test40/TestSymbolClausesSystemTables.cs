@@ -43,9 +43,9 @@ namespace Test
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
-	sys.trace_xe_action_map.trace_column_id AS trace_column_id,
-	sys.trace_xe_action_map.package_name AS package_name,
-	sys.trace_xe_action_map.xe_action_name AS xe_action_name
+	sys.trace_xe_action_map.Trace_column_id AS Trace_column_id,
+	sys.trace_xe_action_map.Package_name AS Package_name,
+	sys.trace_xe_action_map.Xe_action_name AS Xe_action_name
 FROM sys.trace_xe_action_map");
         }
     }
