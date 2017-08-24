@@ -25,6 +25,12 @@ namespace LambdicSql.SqlServer
         /// </summary>
         public static CdcSymbols Cdc => throw new InvalitContextException(nameof(Cdc));
 
+        //TODO
+        /// <summary>
+        /// ?
+        /// </summary>
+        public static Replication Replication => throw new InvalitContextException(nameof(Replication));
+
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/sysopentapes-transact-sql
         /// sysopentapes

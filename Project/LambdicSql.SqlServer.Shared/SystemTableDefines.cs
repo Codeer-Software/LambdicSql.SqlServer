@@ -408,7 +408,7 @@ namespace LambdicSql.SqlServer
         public int Pdw_node_id { get; set; }
     }
 
-    //TODO can't use.
+    //@@@ can't use.
     /// <summary>
     /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-plan-attributes-transact-sql
     /// </summary>
@@ -545,7 +545,7 @@ namespace LambdicSql.SqlServer
         public short Merge_action_type { get; set; }
     }
 
-    //TODO can't use.
+    //@@@ can't use.
     /// <summary>
     /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql
     /// </summary>
@@ -1214,7 +1214,7 @@ namespace LambdicSql.SqlServer
         public int Pdw_node_id { get; set; }
     }
 
-    //TODO can't use.
+    //@@@ can't use.
     /// <summary>
     /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-cursors-transact-sql
     /// </summary>
@@ -1321,7 +1321,7 @@ namespace LambdicSql.SqlServer
         public long Dormant_duration { get; set; }
     }
 
-    //TODO can't use.
+    //@@@ can't use.
     /// <summary>
     /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-xml-handles-transact-sql
     /// </summary>
@@ -1640,7 +1640,7 @@ namespace LambdicSql.SqlServer
         public int Pdw_node_id { get; set; }
     }
 
-    //TODO can't use.
+    //@@@ can't use.
     /// <summary>
     /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-cached-plan-dependent-objects-transact-sql
     /// </summary>
@@ -3052,7 +3052,7 @@ namespace LambdicSql.SqlServer
         public DateTime Modify_date { get; set; }
     }
 
-    //TODO can't use.
+    //@@@ can't use.
     /// <summary>
     /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql
     /// </summary>

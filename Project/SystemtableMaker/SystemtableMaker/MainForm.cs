@@ -237,7 +237,7 @@ namespace SystemtableMaker
 
             string propName = info.Name.LastName().ToCspName();
             lines.Add("public " + info.Name.ClassDefineName() + " " + propName + " => throw new InvalitContextException(nameof(" + propName + "));");
-            return new Tuple<string, string>(info.Name.FirstName(), string.Join(Environment.NewLine, lines));
+            return new Tuple<string, string>(info.Name.FirstNameEx(), string.Join(Environment.NewLine, lines));
         }
     }
 
@@ -294,10 +294,10 @@ namespace SystemtableMaker
         public static string ClassDefineName(this string name)
             => "Table_" + name.Replace(".", "_");
 
-        public static string FirstName(this string name)
+        public static string FirstNameEx(this string name)
         {
             var sp = name.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
-            return sp.First();
+            return sp.Count() ==1 ? string.Empty : sp.First();
         }
 
         public static string LastName(this string name)

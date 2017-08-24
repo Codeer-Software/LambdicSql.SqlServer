@@ -440,7 +440,7 @@ namespace LambdicSql.SqlServer
         [FuncStyleConverter]
         public static int? TypeProperty(int? type_id, string property) => throw new InvalitContextException(nameof(TypeProperty));
 
-        //TODO can't use.
+        //@@@ can't use.
         /// <summary>
         /// VERSION.
         /// https://docs.microsoft.com/en-us/sql/t-sql/functions/version-transact-sql-metadata-functions

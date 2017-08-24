@@ -41,7 +41,7 @@ namespace LambdicSql.SqlServer
         [MemberTableConverter(Name = "sys.dm_exec_cached_plans")]
         public Table_sys_dm_exec_cached_plans Dm_exec_cached_plans => throw new InvalitContextException(nameof(Dm_exec_cached_plans));
 
-        //TODO can't use.
+        //@@@ can't use.
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-plan-attributes-transact-sql
         /// sys.dm_exec_plan_attributes
@@ -49,7 +49,7 @@ namespace LambdicSql.SqlServer
         [MemberTableConverter(Name = "sys.dm_exec_plan_attributes")]
         public Table_sys_dm_exec_plan_attributes Dm_exec_plan_attributes => throw new InvalitContextException(nameof(Dm_exec_plan_attributes));
 
-        //TODO can't use.
+        //@@@ can't use.
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql
         /// sys.dm_exec_sql_text
@@ -71,7 +71,7 @@ namespace LambdicSql.SqlServer
         [MemberTableConverter(Name = "sys.dm_exec_requests")]
         public Table_sys_dm_exec_requests Dm_exec_requests => throw new InvalitContextException(nameof(Dm_exec_requests));
 
-        //TODO can't use.
+        //@@@ can't use.
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-cursors-transact-sql
         /// sys.dm_exec_cursors
@@ -79,7 +79,7 @@ namespace LambdicSql.SqlServer
         [MemberTableConverter(Name = "sys.dm_exec_cursors")]
         public Table_sys_dm_exec_cursors Dm_exec_cursors => throw new InvalitContextException(nameof(Dm_exec_cursors));
 
-        //TODO can't use.
+        //@@@ can't use.
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-xml-handles-transact-sql
         /// sys.dm_exec_xml_handles
@@ -101,7 +101,7 @@ namespace LambdicSql.SqlServer
         [MemberTableConverter(Name = "sys.dm_exec_connections")]
         public Table_sys_dm_exec_connections Dm_exec_connections => throw new InvalitContextException(nameof(Dm_exec_connections));
 
-        //TODO can't use.
+        //@@@ can't use.
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-cached-plan-dependent-objects-transact-sql
         /// sys.dm_exec_cached_plan_dependent_objects
@@ -214,7 +214,7 @@ namespace LambdicSql.SqlServer
         [MemberTableConverter(Name = "sys.servers")]
         public Table_sys_servers Servers => throw new InvalitContextException(nameof(Servers));
 
-        //TODO can't use.
+        //@@@ can't use.
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql
         /// sys.dm_io_virtual_file_stats

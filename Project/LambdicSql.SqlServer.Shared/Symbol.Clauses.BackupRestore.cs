@@ -4,11 +4,6 @@ using LambdicSql.Specialized.SymbolConverters;
 
 namespace LambdicSql.SqlServer
 {
-    /// <summary>
-    /// SQL Symbol.
-    /// It can only be used within methods of the LambdicSql.Db class.
-    /// Use[using static LambdicSql.SqlServer.Symbol;], you can use to write natural SQL.
-    /// </summary>
     public static partial class Symbol
     {        
         /*

@@ -357,5 +357,41 @@ namespace LambdicSql.SqlServer
         /// </summary>
         [MemberTableConverter(Name = "msdb.dbo.systaskids")]
         public Table_msdb_dbo_systaskids Systaskids => throw new InvalitContextException(nameof(Systaskids));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/msdbms-transact-sql
+        /// msdb.dbo.MSdbms
+        /// </summary>
+        [MemberTableConverter(Name = "msdb.dbo.MSdbms")]
+        public Table_msdb_dbo_MSdbms MSdbms => throw new InvalitContextException(nameof(MSdbms));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/msdbms-datatype-transact-sql
+        /// msdb.dbo.MSdbms_datatype
+        /// </summary>
+        [MemberTableConverter(Name = "msdb.dbo.MSdbms_datatype")]
+        public Table_msdb_dbo_MSdbms_datatype MSdbms_datatype => throw new InvalitContextException(nameof(MSdbms_datatype));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/msdbms-datatype-mapping-transact-sql
+        /// msdb.dbo.MSdbms_datatype_mapping
+        /// </summary>
+        [MemberTableConverter(Name = "msdb.dbo.MSdbms_datatype_mapping")]
+        public Table_msdb_dbo_MSdbms_datatype_mapping MSdbms_datatype_mapping => throw new InvalitContextException(nameof(MSdbms_datatype_mapping));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/msdbms-map-transact-sql
+        /// msdb.dbo.MSdbms_map
+        /// </summary>
+        [MemberTableConverter(Name = "msdb.dbo.MSdbms_map")]
+        public Table_msdb_dbo_MSdbms_map MSdbms_map => throw new InvalitContextException(nameof(MSdbms_map));
+
+        //@@@ can't use.
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/dbo-cdc-jobs-transact-sql
+        /// dbo.cdc_jobs
+        /// </summary>
+        [MemberTableConverter(Name = "dbo.cdc_jobs")]
+        public Table_dbo_cdc_jobs Cdc_jobs => throw new InvalitContextException(nameof(Cdc_jobs));
     }
 }

@@ -70,6 +70,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemStoredProcedures.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SysSymbol.SystemTables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SystemTableDefines.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SystemTableDefines2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SystemTableDefines3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TopElement.cs" />
   </ItemGroup>
 </Project>
