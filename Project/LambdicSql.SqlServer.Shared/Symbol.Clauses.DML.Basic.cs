@@ -758,7 +758,7 @@ namespace LambdicSql.SqlServer
         public static Clause<T> InsertInto<T>(this Clause<T> before, object table, params object[] columns) { throw new InvalitContextException(nameof(InsertInto)); }
 
         /// <summary>
-        /// INSERT INTO clause.
+        /// VALUES clause.
         /// </summary>
         /// <param name="values">It is the value to be Inserted.</param>
         /// <returns>Clause.</returns>
@@ -766,7 +766,7 @@ namespace LambdicSql.SqlServer
         public static Clause<Non> Values(params object[] values) { throw new InvalitContextException(nameof(Values)); }
 
         /// <summary>
-        /// INSERT INTO clause.
+        /// VALUES clause.
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
         /// <param name="before">It is the previous clause.</param>
@@ -774,6 +774,24 @@ namespace LambdicSql.SqlServer
         /// <returns>Clause.</returns>
         [FuncStyleConverter(Indent = 1)]
         public static Clause<T> Values<T>(this Clause<T> before, params object[] values) { throw new InvalitContextException(nameof(Values)); }
+
+        /// <summary>
+        /// VALUES clause.
+        /// </summary>
+        /// <param name="values">It is the value to be Inserted.</param>
+        /// <returns>Clause.</returns>
+        [ValuesMultiConverter]
+        public static Clause<Non> Values(params object[][] values) { throw new InvalitContextException(nameof(Values)); }
+
+        /// <summary>
+        /// VALUES clause.
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="values">It is the value to be Inserted.</param>
+        /// <returns>Clause.</returns>
+        [ValuesMultiConverter(ParamsIndex = 1)]
+        public static Clause<T> Values<T>(this Clause<T> before, params object[][] values) { throw new InvalitContextException(nameof(Values)); }
 
         /// <summary>
         /// LIKE keyword.
@@ -848,8 +866,8 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// It becomes code which expanded T's property as argument. For example, data(a, b,c).
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="data"></param>
+        /// <typeparam name="T">data type.</typeparam>
+        /// <param name="data">data.</param>
         /// <returns>IArgumentsExpandedObject.</returns>
         [ExpandArgumentsConverter]
         public static IArgumentsExpandedObject ExpandArguments<T>(this Sql<T> data) => throw new InvalitContextException(nameof(ExpandArguments));
@@ -897,8 +915,8 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// OVER
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="before"></param>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
         /// <param name="args"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "OVER(|[< >1])", FormatDirection = FormatDirection.Vertical)]
@@ -924,8 +942,8 @@ namespace LambdicSql.SqlServer
         /// <summary>
         ///  WITHIN GROUP
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="before"></param>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
         /// <param name="args"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "WITHIN GROUP(|[< >1])", FormatDirection = FormatDirection.Vertical)]
@@ -939,7 +957,47 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "WITHIN GROUP(|[< >0])", FormatDirection = FormatDirection.Vertical)]
         public static OverReturnValue WithinGroup(params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
 
-        //@@@
+        /// <summary>
+        /// EXEC
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Exec<T>(T expression) => throw new InvalitContextException(nameof(Exec));
+
+        /// <summary>
+        /// EXEC
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Exec<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Exec));
+
+        /// <summary>
+        /// EXECUTE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Execute<T>(T expression) => throw new InvalitContextException(nameof(Execute));
+
+        /// <summary>
+        /// EXECUTE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
+        /// </summary>
+        /// <typeparam name="T">expression result.</typeparam>
+        /// <param name="expression">expression</param>
+        /// <returns>expression result.</returns>
+        [ClauseStyleConverter]
+        public static T Execute<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Execute));
+
+        //@@@Å´
         /// <summary>
         /// BULK INSERT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql
@@ -1188,66 +1246,282 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter]
         public static Clause<T> Explain<T>(this Clause<T>  before) => throw new InvalitContextException(nameof(Explain));
 
+        /// <summary>
+        /// OPTION
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/option-clause-transact-sql
+        /// </summary>
+        /// <param name="options">options.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "OPTION([!<, >0])")]
+        public static Clause<Non> Option(params string[] options) => throw new InvalitContextException(nameof(Option));
+
+        /// <summary>
+        /// OPTION
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/option-clause-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="options">options.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "OPTION([!<, >1])")]
+        public static Clause<T> Option<T>(Clause<T> before, params string[] options) => throw new InvalitContextException(nameof(Option));
+
+        /// <summary>
+        /// OUTPUT.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <param name="elements">elements.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> Output(params object[] elements) => throw new InvalitContextException(nameof(Output));
+
+        /// <summary>
+        /// OUTPUT.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="elements">elements.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> Output<T>(this Clause<T> before, params object[] elements) => throw new InvalitContextException(nameof(Output));
+
+        /// <summary>
+        /// INSERTED
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <typeparam name="T">inserted items type.</typeparam>
+        /// <returns>INSERTED</returns>
+        [ClauseStyleConverter]
+        public static T Inserted<T>() => throw new InvalitContextException(nameof(Inserted));
+
+        /// <summary>
+        /// DELETED
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <typeparam name="T">deleted items type.</typeparam>
+        /// <returns>DELETED</returns>
+        [ClauseStyleConverter]
+        public static T Deleted<T>() => throw new InvalitContextException(nameof(Deleted));
+
+        /// <summary>
+        /// INSERTED.*
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <returns>INSERTED.*</returns>
+        [MethodFormatConverter(Format = "INSERTED.*")]
+        public static AsteriskElement InsertedAsterisk() => throw new InvalitContextException(nameof(InsertedAsterisk));
+
+        /// <summary>
+        /// DELETED.*
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <returns>DELETED.*</returns>
+        [MethodFormatConverter(Format = "DELETED.*")]
+        public static AsteriskElement DeletedAsterisk() => throw new InvalitContextException(nameof(DeletedAsterisk));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <param name="elements">elements.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> Into(params object[] elements) => throw new InvalitContextException(nameof(Into));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="elements">elements.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> Into<T>(this Clause<T> before, params object[] elements) => throw new InvalitContextException(nameof(Into));
+
+        /// <summary>
+        /// DISABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/disable-trigger-transact-sql
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "DISABLE TRIGGER [!0] ON [1]")]
+        public static Clause<Non> DisableTreggerOn(string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// DISABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/disable-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">name.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "DISABLE TRIGGER [!1] ON [2]")]
+        public static Clause<T> DisableTreggerOn<T>(Clause<T> before, string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// DISABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/disable-trigger-transact-sql
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <param name="target">DataBase() or AllServer().</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "DISABLE TRIGGER [!0] ON [1]")]
+        public static Clause<Non> DisableTreggerOn(string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// DISABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/disable-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">name.</param>
+        /// <param name="target">DataBase() or AllServer().</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "DISABLE TRIGGER [!1] ON [2]")]
+        public static Clause<T> DisableTreggerOn<T>(Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// ENABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/enable-trigger-transact-sql
+        /// </summary
+        /// <param name="name">trigger name.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "ENABLE TRIGGER [!0] ON [1]")]
+        public static Clause<Non> EnableTreggerOn(string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// ENABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/enable-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">trigger name.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "ENABLE TRIGGER [!1] ON [2]")]
+        public static Clause<T> EnableTreggerOn<T>(Clause<T> before, string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// ENABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/enable-trigger-transact-sql
+        /// </summary>
+        /// <param name="name">trigger name.</param>
+        /// <param name="target">DataBase() or AllServer().</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "ENABLE TRIGGER [!0] ON [1]")]
+        public static Clause<Non> EnableTreggerOn(string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// ENABLE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/enable-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">trigger name.</param>
+        /// <param name="target">DataBase() or AllServer().</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "ENABLE TRIGGER [!1] ON [2]")]
+        public static Clause<T> EnableTreggerOn<T>(Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// READTEXT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/readtext-transact-sql
+        /// </summary>
+        /// <param name="column">column.</param>
+        /// <param name="text_ptr">text_ptr.</param>
+        /// <param name="offset"></param>
+        /// <param name="size"></param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> ReadText(object column, object text_ptr, int offset, int size) => throw new InvalitContextException(nameof(ReadText));
+
+        /// <summary>
+        /// READTEXT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/readtext-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="column">column.</param>
+        /// <param name="text_ptr">text_ptr.</param>
+        /// <param name="offset"></param>
+        /// <param name="size"></param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> ReadText<T>(Clause<T> before, object column, object text_ptr, int offset, int size) => throw new InvalitContextException(nameof(ReadText));
+
+        /// <summary>
+        /// WRITETEXT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/writetext-transact-sql
+        /// </summary>
+        /// <param name="column">column.</param>
+        /// <param name="text_ptr">text_ptr.</param>
+        /// <param name="data">data.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> WriteText(object column, object text_ptr, object data) => throw new InvalitContextException(nameof(WriteText));
+
+        /// <summary>
+        /// WRITETEXT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/writetext-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="column">column.</param>
+        /// <param name="text_ptr">text_ptr.</param>
+        /// <param name="data">data.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> WriteText<T>(Clause<T> before, object column, object text_ptr, object data) => throw new InvalitContextException(nameof(WriteText));
+
+        /// <summary>
+        /// UPDATETEXT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/updatetext-transact-sql
+        /// </summary>
+        /// <param name="column">column.</param>
+        /// <param name="text_ptr">text_ptr.</param>
+        /// <param name="insert_offset"></param>
+        /// <param name="delete_length"></param>
+        /// <param name="data">data.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> UpdateText(object column, object text_ptr, int? insert_offset, int? delete_length, object data) => throw new InvalitContextException(nameof(UpdateText));
+
+        /// <summary>
+        /// UPDATETEXT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/updatetext-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="column">column.</param>
+        /// <param name="text_ptr">text_ptr.</param>
+        /// <param name="insert_offset"></param>
+        /// <param name="delete_length"></param>
+        /// <param name="data">data.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> UpdateText<T>(Clause<T> before, object column, object text_ptr, int? insert_offset, int? delete_length, object data) => throw new InvalitContextException(nameof(UpdateText));
+
         /*
-         * https://msdn.microsoft.com/en-us/library/ff848766.aspx
-        OPTION Clause
-        
-        DISABLE TRIGGER
-        https://docs.microsoft.com/en-us/sql/t-sql/statements/disable-trigger-transact-sql
-
-        ENABLE TRIGGER
-        https://docs.microsoft.com/en-us/sql/t-sql/statements/enable-trigger-transact-sql
-            
-        Table Value Constructor
-            Å®Values 
-
         MERGE
-        OUTPUT Clause
-        READTEXT
-        UPDATETEXT
-        WRITETEXT
+            //ASÇÕÇ¢ÇÁÇ           
+            Merge(Sql<T> table) 
+            Merge(Sql<T> table, ITableHint) 
+            Merge(Top, Sql<T> table)
+            Merge(Top, Sql<T> table, ITableHint)
+            Uinsg(Sql<T> t)
+            On(bool condition)
+
+            WhenMatched()
+            WhenMatched(bool)
+            WhenNotMatched()
+            WhenNotMatched(bool)
+            WhenNotMatchedBySource()
+            WhenNotMatchedBySource(bool)
+
+            Insert
         */
-
-        //@@@Å™
-
-        /// <summary>
-        /// EXEC
-        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
-        /// </summary>
-        /// <typeparam name="T">expression result.</typeparam>
-        /// <param name="expression">expression</param>
-        /// <returns>expression result.</returns>
-        [ClauseStyleConverter]
-        public static T Exec<T>(T expression) => throw new InvalitContextException(nameof(Exec));
-
-        /// <summary>
-        /// EXEC
-        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
-        /// </summary>
-        /// <typeparam name="T">expression result.</typeparam>
-        /// <param name="expression">expression</param>
-        /// <returns>expression result.</returns>
-        [ClauseStyleConverter]
-        public static T Exec<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Exec));
-
-        /// <summary>
-        /// EXECUTE
-        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
-        /// </summary>
-        /// <typeparam name="T">expression result.</typeparam>
-        /// <param name="expression">expression</param>
-        /// <returns>expression result.</returns>
-        [ClauseStyleConverter]
-        public static T Execute<T>(T expression) => throw new InvalitContextException(nameof(Execute));
-
-        /// <summary>
-        /// EXECUTE
-        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
-        /// </summary>
-        /// <typeparam name="T">expression result.</typeparam>
-        /// <param name="expression">expression</param>
-        /// <returns>expression result.</returns>
-        [ClauseStyleConverter]
-        public static T Execute<T>(Sql<T> expression) => throw new InvalitContextException(nameof(Execute));
     }
 }

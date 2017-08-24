@@ -320,7 +320,17 @@ namespace LambdicSql.SqlServer
     public interface IBulkInsertWithElement { }
 
     /// <summary>
-    /// DELAYED_DURABILITY's result value.
+    /// DELAYED_DURABILITY's result value.展開するパラメータのインデックス
     /// </summary>
     public interface IDelayedDurability { }
+
+    /// <summary>
+    /// Object when targeting non-table with CREATE TRIGGER.
+    /// </summary>
+    public interface ITriggerTarget { }
+
+    /// <summary>
+    /// DDL trigger option.
+    /// </summary>
+    public interface IDDLTriggerOption { }
 }

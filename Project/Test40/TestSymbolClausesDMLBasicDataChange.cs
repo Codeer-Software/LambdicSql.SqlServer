@@ -115,6 +115,69 @@ FROM tbl_data");
 1, "val2");
         }
 
+        [Priority(1)]
+        [TestMethod]
+        public void Test_InsertInto_Values_Multi_1()
+        {
+            Test_Delete_All();
+
+            var datas = new[] { new object[] { 1, "val2" }, new object[] { 2, "val3" } };
+
+            var sql = Db<DB>.Sql(db =>
+                   InsertInto(db.tbl_data, db.tbl_data.id, db.tbl_data.val2).
+                   Values(datas));
+
+            Assert.AreEqual(2, _connection.Execute(sql));
+            AssertEx.AreEqual(sql, _connection,
+@"INSERT INTO tbl_data(id, val2)
+	VALUES
+		(@p_0, @p_1), 
+		(@p_2, @p_3)",
+1, "val2", 2, "val3");
+        }
+
+        [Priority(1)]
+        [TestMethod]
+        public void Test_InsertInto_Values_Multi_2()
+        {
+            Test_Delete_All();
+
+            var vals = new object[] { 2, "val3" };
+
+            var sql = Db<DB>.Sql(db =>
+                   InsertInto(db.tbl_data, db.tbl_data.id, db.tbl_data.val2).
+                   Values(new[] { new object[] { 1, "val2" }, vals }));
+
+            Assert.AreEqual(2, _connection.Execute(sql));
+            AssertEx.AreEqual(sql, _connection,
+@"INSERT INTO tbl_data(id, val2)
+	VALUES
+		(@p_0, @p_1), 
+		(@p_2, @p_3)",
+1, "val2", 2, "val3");
+        }
+
+        [Priority(1)]
+        [TestMethod]
+        public void Test_InsertInto_Values_Multi_3()
+        {
+            Test_Delete_All();
+
+            var vals = new object[] { 2, "val3" };
+
+            var sql = Db<DB>.Sql(db =>
+                   InsertInto(db.tbl_data, db.tbl_data.id, db.tbl_data.val2) + 
+                   Values(new[] { new object[] { 1, "val2" }, vals }));
+
+            Assert.AreEqual(2, _connection.Execute(sql));
+            AssertEx.AreEqual(sql, _connection,
+@"INSERT INTO tbl_data(id, val2)
+	VALUES
+		(@p_0, @p_1), 
+		(@p_2, @p_3)",
+1, "val2", 2, "val3");
+        }
+
         [TestMethod]
         [Priority(1)]
         public void Test_InsertInto_Values_Start()

@@ -234,5 +234,144 @@ namespace LambdicSql.SqlServer
         https://docs.microsoft.com/en-us/sql/t-sql/statements/truncate-table-transact-sql
 
         */
+
+
+
+
+        /// <summary>
+        /// CREATE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "CREATE TRIGGER [!0] ON [1]")]
+        public static Clause<Non> CreateTreggerOn(string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// CREATE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">name.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "CREATE TRIGGER [!1] ON [2]")]
+        public static Clause<T> CreateTreggerOn<T>(Clause<T> before, string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// CREATE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "CREATE TRIGGER [!0] ON [1]")]
+        public static Clause<Non> CreateTreggerOn(string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// CREATE TRIGGER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="name">name.</param>
+        /// <param name="target">target.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "CREATE TRIGGER [!1] ON [2]")]
+        public static Clause<T> CreateTreggerOn<T>(Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+
+        /// <summary>
+        /// WITH
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <param name="option">option.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<Non> With(params IDDLTriggerOption[] option) => throw new InvalitContextException(nameof(With));
+
+        /// <summary>
+        /// WITH
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="option">option.</param>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter]
+        public static Clause<T> With<T>(Clause<T> before, params IDDLTriggerOption[] option) => throw new InvalitContextException(nameof(With));
+
+        /// <summary>
+        /// ENCRYPTION
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <returns>IDDLTriggerOption</returns>
+        [ClauseStyleConverter]
+        public static IDDLTriggerOption Encryption() => throw new InvalitContextException(nameof(With));
+
+        /// <summary>
+        /// EXECUTE AS CLAUSE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <returns>IDDLTriggerOption</returns>
+        [ClauseStyleConverter(Name = "EXECUTE AS CLAUSE")]
+        public static IDDLTriggerOption ExecuteAsClause() => throw new InvalitContextException(nameof(ExecuteAsClause));
+
+        /// <summary>
+        /// DATABASE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <returns>IDDLTriggerOption</returns>
+        [ClauseStyleConverter]
+        public static ITriggerTarget DataBase() => throw new InvalitContextException(nameof(ExecuteAsClause));
+
+        /// <summary>
+        /// ALL SERVER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <returns>IDDLTriggerOption</returns>
+        [ClauseStyleConverter(Name = "ALL SERVER")]
+        public static ITriggerTarget AllServer() => throw new InvalitContextException(nameof(ExecuteAsClause));
+
+        //TODO  WITH APPEND, NOT FOR REPLICATION
+        /// <summary>
+        /// FOR eventNames AS
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <param name="eventNames">eventNames.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "FOR [!<, >0] AS")]
+        public static Clause<Non> ForAs(params string[] eventNames) => throw new InvalitContextException(nameof(ForAs));
+
+        /// <summary>
+        /// FOR eventNames AS
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="eventNames">eventNames.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "FOR [!<, >1] AS")]
+        public static Clause<T> ForAs<T>(Clause<T> before, params string[] eventNames) => throw new InvalitContextException(nameof(ForAs));
+
+        /// <summary>
+        /// AFTER eventNames AS
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <param name="eventNames">eventNames.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "AFTER [!<, >0] AS")]
+        public static Clause<Non> AfterAs(params string[] eventNames) => throw new InvalitContextException(nameof(AfterAs));
+
+        /// <summary>
+        /// AFTER eventNames AS
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="eventNames">eventNames.</param>
+        /// <returns>Clause.</returns>
+        public static Clause<T> AfterAs<T>(Clause<T> before, params string[] eventNames) => throw new InvalitContextException(nameof(AfterAs));
     }
 }
