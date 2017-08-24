@@ -318,4 +318,9 @@ namespace LambdicSql.SqlServer
     /// The type of the element in the WITH clause of BULKINSERT.
     /// </summary>
     public interface IBulkInsertWithElement { }
+
+    /// <summary>
+    /// DELAYED_DURABILITY's result value.
+    /// </summary>
+    public interface IDelayedDurability { }
 }
