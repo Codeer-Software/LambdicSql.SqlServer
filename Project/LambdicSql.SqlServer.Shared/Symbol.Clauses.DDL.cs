@@ -221,6 +221,7 @@ namespace LambdicSql.SqlServer
         [MethodFormatConverter(Format = "INDEX [!0]([1])")]
         public static Clause<ConstraintElement> Index(string name, object column) => null;
 
+
         /*
          https://msdn.microsoft.com/en-us/library/ff848799.aspx
         >ALTER Statements

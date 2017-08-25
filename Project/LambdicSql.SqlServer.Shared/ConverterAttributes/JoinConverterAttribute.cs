@@ -35,13 +35,14 @@ namespace LambdicSql.SqlServer.ConverterAttributes
         /// <returns>Parts.</returns>
         public override ICode Convert(MethodCallExpression expression, ExpressionConverter converter)
         {
-            //TODO これちょっとおかしい
+            //TODO SkipMethodChain -> other
             var startIndex = expression.SkipMethodChain(0);
             var table = FromConverterAttribute.ConvertTable(converter, expression.Arguments[startIndex]);
             if (table.IsEmpty) return string.Empty.ToCode();
 
             var condition = ((startIndex + 1) < expression.Arguments.Count) ? converter.ConvertToCode(expression.Arguments[startIndex + 1]) : null;
 
+            //TODO no need Indent
             var join = new HCode() { AddIndentNewLine = true, Separator = " ", Indent = 1 };
             join.Add(_nameCode);
             join.Add(table);

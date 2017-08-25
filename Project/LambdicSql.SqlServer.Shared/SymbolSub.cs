@@ -5,6 +5,11 @@ using System;
 namespace LambdicSql.SqlServer
 {
     /// <summary>
+    /// TOP keyword.
+    /// </summary>
+    public abstract class TopElement { }
+
+    /// <summary>
     /// Data type.
     /// </summary>
     public abstract class DataTypeElement { }
@@ -333,4 +338,18 @@ namespace LambdicSql.SqlServer
     /// DDL trigger option.
     /// </summary>
     public interface IDDLTriggerOption { }
+
+    /// <summary>
+    /// Query hint.
+    /// </summary>
+    public interface IQueryHintElement { }
+
+    /// <summary>
+    /// Table hint.
+    /// </summary>
+    public abstract class TableHintElement
+    {
+        public static implicit operator TableHintElement(ConstraintElement src) => throw new InvalitContextException("operator TableHintElement");
+        public static implicit operator TableHintElement(Clause<ConstraintElement> src) => throw new InvalitContextException("operator TableHintElement");
+    }
 }

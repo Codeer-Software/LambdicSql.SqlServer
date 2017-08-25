@@ -32,6 +32,15 @@ namespace LambdicSql.SqlServer
         public static Replication Replication => throw new InvalitContextException(nameof(Replication));
 
         /// <summary>
+        /// Assign
+        /// </summary>
+        /// <param name="lhs">left.</param>
+        /// <param name="rhs">right.</param>
+        /// <returns>Assign.</returns>
+        [MethodFormatConverter(Format = "[#0] = [1]")]
+        public static Assign Assign(this object lhs, object rhs) => throw new InvalitContextException(nameof(Assign));
+
+        /// <summary>
         /// https://docs.microsoft.com/en-us/sql/relational-databases/system-tables/sysopentapes-transact-sql
         /// sysopentapes
         /// </summary>

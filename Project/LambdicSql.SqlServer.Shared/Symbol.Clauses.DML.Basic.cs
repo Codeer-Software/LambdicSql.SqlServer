@@ -305,6 +305,98 @@ namespace LambdicSql.SqlServer
         [JoinConverter(Name = "JOIN")]
         public static Clause<T> Join<T>(this Clause<T> before, object table, bool condition) { throw new InvalitContextException(nameof(Join)); }
 
+        //----@@@↓-----
+
+        /// <summary>
+        /// INNER LOOP JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER LOOP JOIN")]
+        public static Clause<Non> InnerLoopJoin(object table, bool condition) { throw new InvalitContextException(nameof(InnerLoopJoin)); }
+
+        /// <summary>
+        /// INNER LOOP JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER LOOP JOIN")]
+        public static Clause<T> InnerLoopJoin<T>(this Clause<T> before, object table, bool condition) { throw new InvalitContextException(nameof(InnerLoopJoin)); }
+
+        /// <summary>
+        /// INNER HASH JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER HASH JOIN")]
+        public static Clause<Non> InnerHashJoin(object table, bool condition) { throw new InvalitContextException(nameof(InnerHashJoin)); }
+
+        /// <summary>
+        /// INNER HASH JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER HASH JOIN")]
+        public static Clause<T> InnerHashJoin<T>(this Clause<T> before, object table, bool condition) { throw new InvalitContextException(nameof(InnerHashJoin)); }
+
+        /// <summary>
+        /// INNER MERGE JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER MERGE JOIN")]
+        public static Clause<Non> InnerMergeJoin(object table, bool condition) { throw new InvalitContextException(nameof(InnerMergeJoin)); }
+
+        /// <summary>
+        /// INNER MERGE JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER MERGE JOIN")]
+        public static Clause<T> InnerMergeJoin<T>(this Clause<T> before, object table, bool condition) { throw new InvalitContextException(nameof(InnerMergeJoin)); }
+
+        /// <summary>
+        /// INNER REMOTE JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER REMOTE JOIN")]
+        public static Clause<Non> InnerRemoteJoin(object table, bool condition) { throw new InvalitContextException(nameof(InnerRemoteJoin)); }
+
+        /// <summary>
+        /// INNER REMOTE JOIN clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">Table or subquery.</param>
+        /// <param name="condition">It is a condition of JOIN.</param>
+        /// <returns>Clause.</returns>
+        [JoinConverter(Name = "INNER REMOTE JOIN")]
+        public static Clause<T> InnerRemoteJoin<T>(this Clause<T> before, object table, bool condition) { throw new InvalitContextException(nameof(InnerRemoteJoin)); }
+
+        //----@@@↑-----
+
         /// <summary>
         /// JOIN clause.
         /// </summary>
@@ -1252,8 +1344,8 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="options">options.</param>
         /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "OPTION([!<, >0])")]
-        public static Clause<Non> Option(params string[] options) => throw new InvalitContextException(nameof(Option));
+        [FuncStyleConverter]
+        public static Clause<Non> Option(params IQueryHintElement[] options) => throw new InvalitContextException(nameof(Option));
 
         /// <summary>
         /// OPTION
@@ -1263,8 +1355,8 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="options">options.</param>
         /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "OPTION([!<, >1])")]
-        public static Clause<T> Option<T>(Clause<T> before, params string[] options) => throw new InvalitContextException(nameof(Option));
+        [FuncStyleConverter]
+        public static Clause<T> Option<T>(this Clause<T> before, params IQueryHintElement[] options) => throw new InvalitContextException(nameof(Option));
 
         /// <summary>
         /// OUTPUT.
@@ -1358,7 +1450,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "DISABLE TRIGGER [!1] ON [2]")]
-        public static Clause<T> DisableTreggerOn<T>(Clause<T> before, string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<T> DisableTreggerOn<T>(this Clause<T> before, string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// DISABLE TRIGGER
@@ -1380,7 +1472,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">DataBase() or AllServer().</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "DISABLE TRIGGER [!1] ON [2]")]
-        public static Clause<T> DisableTreggerOn<T>(Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<T> DisableTreggerOn<T>(this Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// ENABLE TRIGGER
@@ -1402,7 +1494,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "ENABLE TRIGGER [!1] ON [2]")]
-        public static Clause<T> EnableTreggerOn<T>(Clause<T> before, string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<T> EnableTreggerOn<T>(this Clause<T> before, string name, object table) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// ENABLE TRIGGER
@@ -1424,7 +1516,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">DataBase() or AllServer().</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "ENABLE TRIGGER [!1] ON [2]")]
-        public static Clause<T> EnableTreggerOn<T>(Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<T> EnableTreggerOn<T>(this Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// READTEXT
@@ -1432,8 +1524,8 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="column">column.</param>
         /// <param name="text_ptr">text_ptr.</param>
-        /// <param name="offset"></param>
-        /// <param name="size"></param>
+        /// <param name="offset">offset.</param>
+        /// <param name="size">size.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<Non> ReadText(object column, object text_ptr, int offset, int size) => throw new InvalitContextException(nameof(ReadText));
@@ -1446,11 +1538,11 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="column">column.</param>
         /// <param name="text_ptr">text_ptr.</param>
-        /// <param name="offset"></param>
-        /// <param name="size"></param>
+        /// <param name="offset">offset.</param>
+        /// <param name="size">size.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<T> ReadText<T>(Clause<T> before, object column, object text_ptr, int offset, int size) => throw new InvalitContextException(nameof(ReadText));
+        public static Clause<T> ReadText<T>(this Clause<T> before, object column, object text_ptr, int offset, int size) => throw new InvalitContextException(nameof(ReadText));
 
         /// <summary>
         /// WRITETEXT
@@ -1474,7 +1566,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data">data.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<T> WriteText<T>(Clause<T> before, object column, object text_ptr, object data) => throw new InvalitContextException(nameof(WriteText));
+        public static Clause<T> WriteText<T>(this Clause<T> before, object column, object text_ptr, object data) => throw new InvalitContextException(nameof(WriteText));
 
         /// <summary>
         /// UPDATETEXT
@@ -1482,8 +1574,8 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="column">column.</param>
         /// <param name="text_ptr">text_ptr.</param>
-        /// <param name="insert_offset"></param>
-        /// <param name="delete_length"></param>
+        /// <param name="insert_offset">insert_offset.</param>
+        /// <param name="delete_length">delete_length.</param>
         /// <param name="data">data.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
@@ -1497,31 +1589,617 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="column">column.</param>
         /// <param name="text_ptr">text_ptr.</param>
-        /// <param name="insert_offset"></param>
-        /// <param name="delete_length"></param>
+        /// <param name="insert_offset">insert_offset.</param>
+        /// <param name="delete_length">delete_length.</param>
         /// <param name="data">data.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> UpdateText<T>(Clause<T> before, object column, object text_ptr, int? insert_offset, int? delete_length, object data) => throw new InvalitContextException(nameof(UpdateText));
+        public static Clause<Non> UpdateText<T>(this Clause<T> before, object column, object text_ptr, int? insert_offset, int? delete_length, object data) => throw new InvalitContextException(nameof(UpdateText));
 
+        /// <summary>
+        /// PERCENT
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql
+        /// </summary>
+        /// <param name="src">Source TopElement.</param>
+        /// <returns>TopElement.</returns>
+        [ClauseStyleConverter]
+        public static TopElement Percent(this TopElement src) => throw new InvalitContextException(nameof(Percent));
+
+        /// <summary>
+        /// WITH TIES 
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql
+        /// </summary>
+        /// <param name="src">Source TopElement.</param>
+        /// <returns>TopElement.</returns>
+        [ClauseStyleConverter(Name = "WITH TIES ")]
+        public static TopElement WithTies(this TopElement src) => throw new InvalitContextException(nameof(Percent));
         /*
-        MERGE
-            //ASはいらぬ          
-            Merge(Sql<T> table) 
-            Merge(Sql<T> table, ITableHint) 
-            Merge(Top, Sql<T> table)
-            Merge(Top, Sql<T> table, ITableHint)
-            Uinsg(Sql<T> t)
-            On(bool condition)
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <param name="table">table.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> Merge<TData>(Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
 
-            WhenMatched()
-            WhenMatched(bool)
-            WhenNotMatched()
-            WhenNotMatched(bool)
-            WhenNotMatchedBySource()
-            WhenNotMatchedBySource(bool)
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
 
-            Insert
-        */
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <param name="table">table.</param>
+        /// <param name="tableHints">table hints.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> Merge<TData>(Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">table.</param>
+        /// <param name="tableHints">table hints.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <param name="top"></param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> Merge<TData>(TopElement top, Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
+
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="top"></param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopElement top, Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
+
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <param name="top"></param>
+        /// <param name="table">table.</param>
+        /// <param name="tableHints">table hints.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> Merge<TData>(TopElement top, Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+
+        /// <summary>
+        /// MERGE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="top"></param>
+        /// <param name="table">table.</param>
+        /// <param name="tableHints">table hints.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopElement top, Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+
+        /// <summary>
+        /// USING
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <param name="table">table.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> Uinsg<TData>(Sql<TData> table) => throw new InvalitContextException(nameof(Uinsg));
+
+        /// <summary>
+        /// USING
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="TData">data type.</typeparam>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="table">table.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> Uinsg<TData, T>(this Clause<T> before, Sql<TData> table) => throw new InvalitContextException(nameof(Uinsg));
+
+        /// <summary>
+        /// ON
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> On(bool condition) => throw new InvalitContextException(nameof(On));
+
+        /// <summary>
+        /// ON
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> On<T>(this Clause<T> before, bool condition) => throw new InvalitContextException(nameof(On));
+
+        /// <summary>
+        /// WHEN MATCHED
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <returns>Clause</returns>
+        public static Clause<Non> WhenMatched() => throw new InvalitContextException(nameof(WhenMatched));
+
+        /// <summary>
+        /// WHEN MATCHED
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> WhenMatched<T>(this Clause<T> before) => throw new InvalitContextException(nameof(WhenMatched));
+
+        /// <summary>
+        /// WHEN MATCHED AND
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> WhenMatchedAnd(bool condition) => throw new InvalitContextException(nameof(WhenMatchedAnd));
+
+        /// <summary>
+        /// WHEN MATCHED AND
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> WhenMatchedAnd<T>(this Clause<T> before, bool condition) => throw new InvalitContextException(nameof(WhenMatchedAnd));
+
+        /// <summary>
+        /// WHEN MATCHED BY SOURCE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <returns>Clause</returns>
+        public static Clause<Non> WhenMatchedBySource() => throw new InvalitContextException(nameof(WhenMatchedBySource));
+
+        /// <summary>
+        /// WHEN MATCHED BY SOURCE
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> WhenMatchedBySource<T>(this Clause<T> before) => throw new InvalitContextException(nameof(WhenMatchedBySource));
+
+        /// <summary>
+        /// WHEN MATCHED BY SOURCE AND
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> WhenMatchedBySourceAnd(bool condition) => throw new InvalitContextException(nameof(WhenMatchedBySourceAnd));
+
+        /// <summary>
+        /// WHEN MATCHED BY SOURCE AND
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <param name="condition">condition.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> WhenMatchedBySourceAnd<T>(this Clause<T> before, bool condition) => throw new InvalitContextException(nameof(WhenMatchedBySourceAnd));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <returns>Clause</returns>
+        public static Clause<Non> Then() => throw new InvalitContextException(nameof(Then));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
+        /// <returns>Clause</returns>
+        public static Clause<T> Then<T>(this Clause<T> before) => throw new InvalitContextException(nameof(Then));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql
+        /// </summary>
+        /// <param name="columns">columns</param>
+        /// <returns>Clause</returns>
+        public static Clause<Non> Insert(params object[] columns) => throw new InvalitContextException(nameof(Insert));
+
+        /// <summary>
+        /// HASH GROUP  
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement HashGroup() => throw new InvalitContextException(nameof(HashGroup));
+
+        /// <summary>
+        /// ORDER GROUP  
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement OrderGroup() => throw new InvalitContextException(nameof(OrderGroup));
+
+        /// <summary>
+        ///  CONCAT UNION   
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// HASH UNION   
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// MERGE UNION   
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// LOOP JOIN   
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// MERGE JOIN   
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// HASH JOIN   
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// EXPAND VIEWS   
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// FAST 
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X(long number_rows) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// FORCE ORDER
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// FORCE EXTERNALPUSHDOWN 
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// DISABLE EXTERNALPUSHDOWN 
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// KEEP PLAN
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// KEEPFIXED PLAN
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// MAX_GRANT_PERCENT =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <param name="percent"></param>
+        /// <returns></returns>
+        public static IQueryHintElement X(int percent) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// MIN_GRANT_PERCENT =
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <param name="percent"></param>
+        /// <returns></returns>
+        public static IQueryHintElement X(int percent) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// MAXDOP
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <param name="number_of_processors"></param>
+        /// <returns></returns>
+        public static IQueryHintElement X(int number_of_processors) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// MAXRECURSION
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X(int number) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// NO_PERFORMANCE_SPOOL
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// OPTIMIZE FOR
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X(params object[] elements) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// UNKNOWN
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format= "[0] UNKNOWN")]
+        public static Assign Unknown(this object t) => throw new InvalitContextException(nameof(Unknown));
+
+        /// <summary>
+        /// OPTIMIZE FOR UNKNOWN
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// PARAMETERIZATION SIMPLE
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// PARAMETERIZATION FORCED
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// RECOMPILE
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// ROBUST PLAN
+        /// </summary>
+        /// <returns></returns>
+        public static IQueryHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// USE HINT
+        /// </summary>
+        /// <param name="hintNames"></param>
+        /// <returns></returns>
+        public static IQueryHintElement X(params string[] hintNames) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// USE PLAN
+        /// </summary>
+        /// <param name="xml_plan"></param>
+        /// <returns></returns>
+        public static IQueryHintElement X(string xml_plan) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// TABLE HINT
+        /// </summary>
+        /// <param name="exposed_object_name"></param>
+        /// <param name="tableHints"></param>
+        /// <returns></returns>
+        public static IQueryHintElement X(object exposed_object_name, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(X));
+
+
+        /// <summary>
+        /// INDEX
+        /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table
+        /// </summary>
+        /// <param name="names">Index name.</param>
+        /// <returns>Clause.</returns>
+        [MethodFormatConverter(Format = "INDEX([!<, >0])")]
+        public static Clause<ConstraintElement> Index(params string[] names) => null;
+
+        /// <summary>
+        /// FORCESEEK [( index_value ( index_column_name  [ ,... ] ) )
+        /// </summary>
+        /// <param name="index_value"></param>
+        /// <param name="columns"></param>
+        /// <returns></returns>
+        public static TableHintElement X(string index_value, params object[] columns) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// FORCESEEK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// FORCESCAN
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// HOLDLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// NOLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// NOWAIT
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// PAGLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// READCOMMITTED
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// READCOMMITTEDLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// READPAST
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// READUNCOMMITTED
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// REPEATABLEREAD
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// ROWLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// SERIALIZABLE
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// SNAPSHOT
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// SPATIAL_WINDOW_MAX_CELLS =
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public static TableHintElement X(int count) => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// TABLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// TABLOCKX
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// UPDLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// XLOCK
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+
+        /// <summary>
+        /// KEEPDEFAULTS
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// IGNORE_CONSTRAINTS
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+
+        /// <summary>
+        /// IGNORE_TRIGGERS
+        /// </summary>
+        /// <returns></returns>
+        public static TableHintElement X() => throw new InvalitContextException(nameof(X));
+        //KEEPIDENTITY ヤバいのと被った
+        //とりあえずインターフェイスを活用するしかないか
+        //ていうかなんでインターフェイスにしなかったんだっけ？*/
     }
 }
