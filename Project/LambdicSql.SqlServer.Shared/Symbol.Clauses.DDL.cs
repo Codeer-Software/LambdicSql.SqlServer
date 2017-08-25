@@ -266,10 +266,10 @@ namespace LambdicSql.SqlServer
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
         /// </summary>
         /// <param name="name">name.</param>
-        /// <param name="table">table.</param>
+        /// <param name="target">target.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "CREATE TRIGGER [!0] ON [1]")]
-        public static Clause<Non> CreateTreggerOn(string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<Non> CreateTreggerOn(string name, TriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// CREATE TRIGGER
@@ -281,7 +281,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">target.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "CREATE TRIGGER [!1] ON [2]")]
-        public static Clause<T> CreateTreggerOn<T>(Clause<T> before, string name, ITriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<T> CreateTreggerOn<T>(Clause<T> before, string name, TriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// WITH
@@ -290,7 +290,7 @@ namespace LambdicSql.SqlServer
         /// <param name="option">option.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> With(params IDDLTriggerOption[] option) => throw new InvalitContextException(nameof(With));
+        public static Clause<Non> With(params DDLTriggerOption[] option) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// WITH
@@ -301,7 +301,7 @@ namespace LambdicSql.SqlServer
         /// <param name="option">option.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<T> With<T>(Clause<T> before, params IDDLTriggerOption[] option) => throw new InvalitContextException(nameof(With));
+        public static Clause<T> With<T>(Clause<T> before, params DDLTriggerOption[] option) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// ENCRYPTION
@@ -309,7 +309,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IDDLTriggerOption</returns>
         [ClauseStyleConverter]
-        public static IDDLTriggerOption Encryption() => throw new InvalitContextException(nameof(With));
+        public static DDLTriggerOption Encryption() => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// EXECUTE AS CLAUSE
@@ -317,7 +317,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IDDLTriggerOption</returns>
         [ClauseStyleConverter(Name = "EXECUTE AS CLAUSE")]
-        public static IDDLTriggerOption ExecuteAsClause() => throw new InvalitContextException(nameof(ExecuteAsClause));
+        public static DDLTriggerOption ExecuteAsClause() => throw new InvalitContextException(nameof(ExecuteAsClause));
 
         /// <summary>
         /// DATABASE
@@ -325,7 +325,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IDDLTriggerOption</returns>
         [ClauseStyleConverter]
-        public static ITriggerTarget DataBase() => throw new InvalitContextException(nameof(ExecuteAsClause));
+        public static TriggerTarget DataBase() => throw new InvalitContextException(nameof(ExecuteAsClause));
 
         /// <summary>
         /// ALL SERVER
@@ -333,7 +333,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IDDLTriggerOption</returns>
         [ClauseStyleConverter(Name = "ALL SERVER")]
-        public static ITriggerTarget AllServer() => throw new InvalitContextException(nameof(ExecuteAsClause));
+        public static TriggerTarget AllServer() => throw new InvalitContextException(nameof(ExecuteAsClause));
 
         //TODO  WITH APPEND, NOT FOR REPLICATION
         /// <summary>

@@ -13,7 +13,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\ConditionClauseConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\FromConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\JoinConverterAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\MergeConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\SelectConverterAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\UsingConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\ValuesMultiConverterAttribue.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SymbolSub.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CdcSymbols.cs" />

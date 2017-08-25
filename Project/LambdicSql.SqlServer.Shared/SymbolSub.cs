@@ -317,39 +317,60 @@ namespace LambdicSql.SqlServer
     /// <summary>
     /// ExpandArguments's result value.
     /// </summary>
-    public interface IArgumentsExpandedObject { }
+    public abstract class ArgumentsExpandedObject { }
 
     /// <summary>
     /// The type of the element in the WITH clause of BULKINSERT.
     /// </summary>
-    public interface IBulkInsertWithElement { }
+    public abstract class BulkInsertWithElement { }
 
     /// <summary>
     /// DELAYED_DURABILITY's result value.展開するパラメータのインデックス
     /// </summary>
-    public interface IDelayedDurability { }
+    public abstract class DelayedDurability { }
 
     /// <summary>
     /// Object when targeting non-table with CREATE TRIGGER.
     /// </summary>
-    public interface ITriggerTarget { }
+    public abstract class TriggerTarget { }
 
     /// <summary>
     /// DDL trigger option.
     /// </summary>
-    public interface IDDLTriggerOption { }
+    public abstract class DDLTriggerOption { }
 
     /// <summary>
     /// Query hint.
     /// </summary>
-    public interface IQueryHintElement { }
+    public abstract class QueryHintElement { }
 
     /// <summary>
     /// Table hint.
     /// </summary>
     public abstract class TableHintElement
     {
+        /// <summary>
+        /// cast from ConstraintElement at implicit.
+        /// </summary>
+        /// <param name="src"></param>
         public static implicit operator TableHintElement(ConstraintElement src) => throw new InvalitContextException("operator TableHintElement");
+
+        /// <summary>
+        /// cast from Clause&lt;ConstraintElement&gt; at implicit.
+        /// </summary>
+        /// <param name="src"></param>
         public static implicit operator TableHintElement(Clause<ConstraintElement> src) => throw new InvalitContextException("operator TableHintElement");
+
+        /// <summary>
+        /// cast from BulkInsertWithElement at implicit.
+        /// </summary>
+        /// <param name="src"></param>
+        public static implicit operator TableHintElement(BulkInsertWithElement src) => throw new InvalitContextException("operator TableHintElement");
+
+        /// <summary>
+        /// cast from (Clause&lt;BulkInsertWithElement&gt; at implicit.
+        /// </summary>
+        /// <param name="src"></param>
+        public static implicit operator TableHintElement(Clause<BulkInsertWithElement> src) => throw new InvalitContextException("operator TableHintElement");
     }
 }

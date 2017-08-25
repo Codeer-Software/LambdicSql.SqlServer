@@ -7,30 +7,21 @@ using static LambdicSql.SqlServer.Inside.PartsUtils;
 namespace LambdicSql.SqlServer.ConverterAttributes
 {
     /// <summary>
-    /// Converter for WHERE and HAVING clause conversion.
+    /// Converter forUSING clause conversion.
     /// </summary>
-    public class ConditionClauseConverterAttribute : MethodConverterAttribute
+    public class UsingConverterAttribute : MethodConverterAttribute
     {
-        ICode _nameCode;
-        string _name;
+        ICode _nameCode = "USING".ToCode();
 
         /// <summary>
-        /// Name.
+        /// Has top cluase
         /// </summary>
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                _nameCode = value.ToCode();
-            }
-        }
+        public bool HasTop { get; set; }
 
         /// <summary>
-        /// If it is true, the condition is enclosed in parentheses.
+        /// Has hint lcase
         /// </summary>
-        public bool IsFuncType { get; set; }
+        public bool HasHints { get; set; }
 
         /// <summary>
         /// Convert expression to code.
@@ -40,9 +31,9 @@ namespace LambdicSql.SqlServer.ConverterAttributes
         /// <returns>Parts.</returns>
         public override ICode Convert(MethodCallExpression expression, ExpressionConverter converter)
         {
-            var condition = converter.ConvertToCode(expression.Arguments[expression.SkipMethodChain(0)]);
-            if (condition.IsEmpty) return string.Empty.ToCode();
-            return IsFuncType ? Func(_nameCode, condition) : Clause(_nameCode, condition);
+            var startIndex = expression.SkipMethodChain(0);
+            var table = FromConverterAttribute.ConvertTable(converter, expression.Arguments[startIndex]);
+            return new HCode(new[] { _nameCode, table }) { Separator = " " };
         }
     }
 }
