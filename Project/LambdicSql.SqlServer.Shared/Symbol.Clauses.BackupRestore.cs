@@ -5,9 +5,9 @@ using LambdicSql.Specialized.SymbolConverters;
 namespace LambdicSql.SqlServer
 {
     public static partial class Symbol
-    {        
+    {
         /*
-         * https://msdn.microsoft.com/en-au/library/ff848768.aspx
+         *https://docs.microsoft.com/ja-jp/sql/t-sql/statements/backup-transact-sql
         BACKUP  BackupDataBase(params elements[] x) With(params elements[] backupwithelements)
         BACKUP CERTIFICATE
         BACKUP MASTER KEY

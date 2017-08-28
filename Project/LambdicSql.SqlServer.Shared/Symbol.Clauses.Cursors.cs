@@ -12,8 +12,11 @@ namespace LambdicSql.SqlServer
     /// </summary>
     public static partial class Symbol
     {
+        //TODO detail clauses.
+
         /// <summary>
         /// DECLARE CURSOR FOR clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/declare-cursor-transact-sql
         /// </summary>
         /// <param name="vendor_cursor">vendor_cursor.</param>
         /// <returns>Clause.</returns>
@@ -22,6 +25,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// DECLARE CURSOR FOR clause.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/declare-cursor-transact-sql
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
         /// <param name="before">It is the previous clause.</param>
@@ -32,6 +36,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// OPEN.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/open-transact-sql
         /// </summary>
         /// <param name="vendor_cursor">vendor_cursor.</param>
         /// <returns>Clause.</returns>
@@ -40,6 +45,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// OPEN.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/open-transact-sql
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
         /// <param name="before">It is the previous clause.</param>
@@ -50,6 +56,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// CLOSE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/close-transact-sql
         /// </summary>
         /// <param name="vendor_cursor">vendor_cursor.</param>
         /// <returns>Clause.</returns>
@@ -58,6 +65,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// CLOSE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/close-transact-sql
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
         /// <param name="before">It is the previous clause.</param>
@@ -68,6 +76,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// DEALLOCATE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/deallocate-transact-sql
         /// </summary>
         /// <param name="vendor_cursor">vendor_cursor.</param>
         /// <returns>Clause.</returns>
@@ -76,6 +85,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// DEALLOCATE.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/deallocate-transact-sql
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
         /// <param name="before">It is the previous clause.</param>
@@ -86,6 +96,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FETCH NEXT FROM INTO.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/fetch-transact-sql
         /// </summary>
         /// <param name="vendor_cursor"></param>
         /// <param name="variables"></param>
@@ -95,6 +106,7 @@ namespace LambdicSql.SqlServer
 
         /// <summary>
         /// FETCH NEXT FROM INTO.
+        /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/fetch-transact-sql
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
         /// <param name="before">It is the previous clause.</param>

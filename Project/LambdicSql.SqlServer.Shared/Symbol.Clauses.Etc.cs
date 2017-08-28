@@ -62,7 +62,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">The type you want to obtain with the SELECT clause. Usually you specify a table element.</param>
         /// <returns>*</returns>
         [ClauseStyleConverter(Name = "*")]
-        public static AsteriskElement<TSelected> Asterisk<TSelected>(TSelected selected) { throw new InvalitContextException(nameof(Asterisk)); }
+        public static AsteriskBase<TSelected> Asterisk<TSelected>(TSelected selected) { throw new InvalitContextException(nameof(Asterisk)); }
 
         /// <summary>
         /// It's *.
@@ -70,14 +70,14 @@ namespace LambdicSql.SqlServer
         /// <typeparam name="TSelected">Type of selected.</typeparam>
         /// <returns>*</returns>
         [ClauseStyleConverter(Name = "*")]
-        public static AsteriskElement<TSelected> Asterisk<TSelected>() { throw new InvalitContextException(nameof(Asterisk)); }
+        public static AsteriskBase<TSelected> Asterisk<TSelected>() { throw new InvalitContextException(nameof(Asterisk)); }
 
         /// <summary>
         /// It's *.
         /// </summary>
         /// <returns>*</returns>
         [ClauseStyleConverter(Name = "*")]
-        public static AsteriskElement Asterisk() { throw new InvalitContextException(nameof(Asterisk)); }
+        public static AsteriskBase Asterisk() { throw new InvalitContextException(nameof(Asterisk)); }
 
         /// <summary>
         /// ASC Keyword.
@@ -85,7 +85,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">target column.</param>
         /// <returns>ASC.</returns>
         [MethodFormatConverter(Format = "[0] ASC")]
-        public static OrderByElement Asc(object target) { throw new InvalitContextException(nameof(Asc)); }
+        public static OrderByElementBase Asc(object target) { throw new InvalitContextException(nameof(Asc)); }
 
         /// <summary>
         /// DESC Keyword.
@@ -93,7 +93,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">target column.</param>
         /// <returns>DESC.</returns>
         [MethodFormatConverter(Format = "[0] DESC")]
-        public static OrderByElement Desc(object target) { throw new InvalitContextException(nameof(Desc)); }
+        public static OrderByElementBase Desc(object target) { throw new InvalitContextException(nameof(Desc)); }
 
         /// <summary>
         /// TOP Keyword.
@@ -101,21 +101,21 @@ namespace LambdicSql.SqlServer
         /// <param name="count">Count.</param>
         /// <returns>TOP.</returns>
         [MethodFormatConverter(Format = "TOP [$0]")]
-        public static TopElement Top(long count) { throw new InvalitContextException(nameof(Top)); }
+        public static TopBase Top(long count) { throw new InvalitContextException(nameof(Top)); }
 
         /// <summary>
         /// ALL Keyword
         /// </summary>
         /// <returns>ALL.</returns>
         [ClauseStyleConverter]
-        public static AggregatePredicateAllElement All() { throw new InvalitContextException(nameof(All)); }
+        public static AggregatePredicateAllBase All() { throw new InvalitContextException(nameof(All)); }
 
         /// <summary>
         /// DISTINCT Keyword.
         /// </summary>
         /// <returns>DISTINCT.</returns>
         [ClauseStyleConverter]
-        public static AggregatePredicateElement Distinct() { throw new InvalitContextException(nameof(All)); }
+        public static AggregatePredicateBase Distinct() { throw new InvalitContextException(nameof(All)); }
 
         //@@@↓
         /// <summary>
@@ -141,7 +141,7 @@ namespace LambdicSql.SqlServer
         /// <param name="type">type.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "COLLATE [!0]")]
-        public static Clause<ConstraintElement> Collate(string type) => throw new InvalitContextException(nameof(type));
+        public static Clause<ConstraintBase> Collate(string type) => throw new InvalitContextException(nameof(type));
 
         /// <summary>
         /// COLLATE.
@@ -161,7 +161,7 @@ namespace LambdicSql.SqlServer
         /// <param name="type">type.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "COLLATE [!0]")]
-        public static Clause<ConstraintElement> Collate(OrderByElement type) => throw new InvalitContextException(nameof(type));
+        public static Clause<ConstraintBase> Collate(OrderByElementBase type) => throw new InvalitContextException(nameof(type));
 
         /// <summary>
         /// COLLATE.
@@ -172,7 +172,7 @@ namespace LambdicSql.SqlServer
         /// <param name="type">type.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "COLLATE [!1]")]
-        public static Clause<T> Collate<T>(Clause<T> before, OrderByElement type) => throw new InvalitContextException(nameof(type));
+        public static Clause<T> Collate<T>(Clause<T> before, OrderByElementBase type) => throw new InvalitContextException(nameof(type));
 
         /// <summary>
         /// GO.

@@ -39,7 +39,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<T>(TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<T>(TopBase top, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -51,7 +51,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, TopBase top, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -59,7 +59,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select(AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select(AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -69,7 +69,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -78,7 +78,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<T>(AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<T>(AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -89,7 +89,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -98,7 +98,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select(TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select(TopBase top, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -109,7 +109,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, TopBase top, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -119,7 +119,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<T>(TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<T>(TopBase top, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -131,7 +131,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, TopBase top, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -141,7 +141,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<T>(AggregatePredicateElement predicate, T selected) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<T>(AggregatePredicateBase predicate, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -153,7 +153,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, T selected) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateBase predicate, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -164,7 +164,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<T>(AggregatePredicateElement predicate, TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<T>(AggregatePredicateBase predicate, TopBase top, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -177,7 +177,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateBase predicate, TopBase top, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -186,7 +186,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select(AggregatePredicateElement predicate, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select(AggregatePredicateBase predicate, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -197,7 +197,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, AggregatePredicateElement predicate, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, AggregatePredicateBase predicate, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -207,7 +207,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<T>(AggregatePredicateElement predicate, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<T>(AggregatePredicateBase predicate, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -219,7 +219,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateBase predicate, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -229,7 +229,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select(AggregatePredicateElement predicate, TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select(AggregatePredicateBase predicate, TopBase top, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -241,7 +241,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, AggregatePredicateElement predicate, TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, AggregatePredicateBase predicate, TopBase top, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -252,7 +252,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<T>(AggregatePredicateElement predicate, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<T>(AggregatePredicateBase predicate, TopBase top, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -265,7 +265,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
+        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateBase predicate, TopBase top, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// FROM clause.
@@ -589,7 +589,7 @@ namespace LambdicSql.SqlServer
         /// <param name="elements">Specify column and sort order. Asc(column) or Desc(column).</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "ORDER BY |[<, >0]", FormatDirection = FormatDirection.Vertical, VanishIfEmptyParams = true)]
-        public static Clause<OverElement> OrderBy(params OrderByElement[] elements) { throw new InvalitContextException(nameof(OrderBy)); }
+        public static Clause<OverElementBase> OrderBy(params OrderByElementBase[] elements) { throw new InvalitContextException(nameof(OrderBy)); }
 
         /// <summary>
         /// ORDER BY clause.
@@ -599,7 +599,7 @@ namespace LambdicSql.SqlServer
         /// <param name="elements">Specify column and sort order. Asc(column) or Desc(column).</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "ORDER BY |[<, >1]", FormatDirection = FormatDirection.Vertical, VanishIfEmptyParams = true)]
-        public static Clause<T> OrderBy<T>(this Clause<T> before, params OrderByElement[] elements) { throw new InvalitContextException(nameof(OrderBy)); }
+        public static Clause<T> OrderBy<T>(this Clause<T> before, params OrderByElementBase[] elements) { throw new InvalitContextException(nameof(OrderBy)); }
 
         /// <summary>
         /// OFFSET count ROWS clause.
@@ -659,7 +659,7 @@ namespace LambdicSql.SqlServer
         /// <param name="all">If isAll is true, add an ALL predicate.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> Union(AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Union)); }
+        public static Clause<Non> Union(AggregatePredicateAllBase all) { throw new InvalitContextException(nameof(Union)); }
 
         /// <summary>
         /// UNION clause.
@@ -669,7 +669,7 @@ namespace LambdicSql.SqlServer
         /// <param name="all">If isAll is true, add an ALL predicate.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<T> Union<T>(this Clause<T> before, AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Union)); }
+        public static Clause<T> Union<T>(this Clause<T> before, AggregatePredicateAllBase all) { throw new InvalitContextException(nameof(Union)); }
 
         /// <summary>
         /// INTERSECT clause.
@@ -693,7 +693,7 @@ namespace LambdicSql.SqlServer
         /// <param name="all">If isAll is true, add an ALL predicate.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> Intersect(AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Intersect)); }
+        public static Clause<Non> Intersect(AggregatePredicateAllBase all) { throw new InvalitContextException(nameof(Intersect)); }
 
         /// <summary>
         /// INTERSECT clause.
@@ -703,7 +703,7 @@ namespace LambdicSql.SqlServer
         /// <param name="all">If isAll is true, add an ALL predicate.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<T> Intersect<T>(this Clause<T> before, AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Intersect)); }
+        public static Clause<T> Intersect<T>(this Clause<T> before, AggregatePredicateAllBase all) { throw new InvalitContextException(nameof(Intersect)); }
 
         /// <summary>
         /// EXCEPT clause.
@@ -727,7 +727,7 @@ namespace LambdicSql.SqlServer
         /// <param name="all">If isAll is true, add an ALL predicate.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> Except(AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Except)); }
+        public static Clause<Non> Except(AggregatePredicateAllBase all) { throw new InvalitContextException(nameof(Except)); }
 
         /// <summary>
         /// EXCEPT clause.
@@ -737,7 +737,7 @@ namespace LambdicSql.SqlServer
         /// <param name="all">If isAll is true, add an ALL predicate.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<T> Except<T>(this Clause<T> before, AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Except)); }
+        public static Clause<T> Except<T>(this Clause<T> before, AggregatePredicateAllBase all) { throw new InvalitContextException(nameof(Except)); }
 
         /// <summary>
         /// MINUS clause.
@@ -962,7 +962,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data">data.</param>
         /// <returns>IArgumentsExpandedObject.</returns>
         [ExpandArgumentsConverter]
-        public static ArgumentsExpandedObject ExpandArguments<T>(this Sql<T> data) => throw new InvalitContextException(nameof(ExpandArguments));
+        public static ArgumentsExpandedObjectBase ExpandArguments<T>(this Sql<T> data) => throw new InvalitContextException(nameof(ExpandArguments));
 
         /// <summary>
         /// AS
@@ -980,7 +980,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">Argument of recursive part.</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> With(ArgumentsExpandedObject expression) => throw new InvalitContextException(nameof(With));
+        public static Clause<Non> With(ArgumentsExpandedObjectBase expression) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// ROWS.
@@ -988,7 +988,7 @@ namespace LambdicSql.SqlServer
         /// <param name="preceding">Preceding row count.</param>
         /// <returns>OverElement</returns>
         [MethodFormatConverter(Format = "ROWS [$0] PRECEDING")]
-        public static OverElement Rows(long preceding) { throw new InvalitContextException(nameof(Rows)); }
+        public static OverElementBase Rows(long preceding) { throw new InvalitContextException(nameof(Rows)); }
 
         /// <summary>
         /// ROWS.
@@ -997,7 +997,7 @@ namespace LambdicSql.SqlServer
         /// <param name="following">Following row count.</param>
         /// <returns>OverElement</returns>
         [MethodFormatConverter(Format = "ROWS BETWEEN [$0] PRECEDING AND [$1] FOLLOWING")]
-        public static OverElement Rows(long preceding, long following) { throw new InvalitContextException(nameof(Rows)); }
+        public static OverElementBase Rows(long preceding, long following) { throw new InvalitContextException(nameof(Rows)); }
 
         /// <summary>
         /// PARTITION BY.
@@ -1005,7 +1005,7 @@ namespace LambdicSql.SqlServer
         /// <param name="columns">Specify column or expression.</param>
         /// <returns>OverElement</returns>
         [MethodFormatConverter(Format = "PARTITION BY|[<,>0]", FormatDirection = FormatDirection.Vertical)]
-        public static OverElement PartitionBy(params object[] columns) { throw new InvalitContextException(nameof(PartitionBy)); }
+        public static OverElementBase PartitionBy(params object[] columns) { throw new InvalitContextException(nameof(PartitionBy)); }
 
         /// <summary>
         /// OVER
@@ -1015,7 +1015,7 @@ namespace LambdicSql.SqlServer
         /// <param name="args"></param>
         /// <returns>T</returns>
         [MethodFormatConverter(Format = "OVER(|[< >1])", FormatDirection = FormatDirection.Vertical)]
-        public static T Over<T>(this T before, params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
+        public static T Over<T>(this T before, params OverElementBase[] args) { throw new InvalitContextException(nameof(Over)); }
 
         /// <summary>
         /// OVER
@@ -1023,7 +1023,7 @@ namespace LambdicSql.SqlServer
         /// <param name="args"></param>
         /// <returns>OverReturnValue</returns>
         [MethodFormatConverter(Format = "OVER(|[< >0])", FormatDirection = FormatDirection.Vertical)]
-        public static OverReturnValue Over(params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
+        public static OverReturnValueBase Over(params OverElementBase[] args) { throw new InvalitContextException(nameof(Over)); }
 
         /// <summary>
         /// COALESCE function.
@@ -1042,7 +1042,7 @@ namespace LambdicSql.SqlServer
         /// <param name="args"></param>
         /// <returns>T</returns>
         [MethodFormatConverter(Format = "WITHIN GROUP(|[< >1])", FormatDirection = FormatDirection.Vertical)]
-        public static T WithinGroup<T>(this T before, params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
+        public static T WithinGroup<T>(this T before, params OverElementBase[] args) { throw new InvalitContextException(nameof(Over)); }
 
         /// <summary>
         ///  WITHIN GROUP
@@ -1050,7 +1050,7 @@ namespace LambdicSql.SqlServer
         /// <param name="args"></param>
         /// <returns>OverReturnValue</returns>
         [MethodFormatConverter(Format = "WITHIN GROUP(|[< >0])", FormatDirection = FormatDirection.Vertical)]
-        public static OverReturnValue WithinGroup(params OverElement[] args) { throw new InvalitContextException(nameof(Over)); }
+        public static OverReturnValueBase WithinGroup(params OverElementBase[] args) { throw new InvalitContextException(nameof(Over)); }
 
         /// <summary>
         /// EXEC
@@ -1120,7 +1120,7 @@ namespace LambdicSql.SqlServer
         /// <param name="defines">defines.</param>
         /// <returns>Clause.</returns>
         [FuncStyleConverter]
-        public static Clause<Non> With(params BulkInsertWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
+        public static Clause<Non> With(params BulkInsertWithElementBase[] defines) { throw new InvalitContextException(nameof(With)); }
 
         /// <summary>
         /// WITH clause.
@@ -1131,7 +1131,7 @@ namespace LambdicSql.SqlServer
         /// <param name="defines">defines.</param>
         /// <returns>Clause.</returns>
         [FuncStyleConverter]
-        public static Clause<T> With<T>(this Clause<T> before, params BulkInsertWithElement[] defines) { throw new InvalitContextException(nameof(With)); }
+        public static Clause<T> With<T>(this Clause<T> before, params BulkInsertWithElementBase[] defines) { throw new InvalitContextException(nameof(With)); }
 
         /// <summary>
         /// BATCHSIZE =
@@ -1140,7 +1140,7 @@ namespace LambdicSql.SqlServer
         /// <param name="batch_size">batch_size.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "BATCHSIZE =")]
-        public static BulkInsertWithElement BatchSize_Assign(long batch_size) => throw new InvalitContextException(nameof(BatchSize_Assign));
+        public static BulkInsertWithElementBase BatchSize_Assign(long batch_size) => throw new InvalitContextException(nameof(BatchSize_Assign));
 
         /// <summary>
         /// CHECK_CONSTRAINTS
@@ -1148,7 +1148,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter]
-        public static BulkInsertWithElement Check_Constraints() => throw new InvalitContextException(nameof(Check_Constraints));
+        public static BulkInsertWithElementBase Check_Constraints() => throw new InvalitContextException(nameof(Check_Constraints));
 
         /// <summary>
         /// CODEPAGE =
@@ -1157,7 +1157,7 @@ namespace LambdicSql.SqlServer
         /// <param name="page">page.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "CODEPAGE =")]
-        public static BulkInsertWithElement CodePage_Assign(string page) => throw new InvalitContextException(nameof(CodePage_Assign));
+        public static BulkInsertWithElementBase CodePage_Assign(string page) => throw new InvalitContextException(nameof(CodePage_Assign));
 
         /// <summary>
         /// DATAFILETYPE =
@@ -1166,7 +1166,7 @@ namespace LambdicSql.SqlServer
         /// <param name="type">type.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "DATAFILETYPE =")]
-        public static BulkInsertWithElement DataFileType_Assign(string type) => throw new InvalitContextException(nameof(DataFileType_Assign));
+        public static BulkInsertWithElementBase DataFileType_Assign(string type) => throw new InvalitContextException(nameof(DataFileType_Assign));
 
         /// <summary>
         /// DATASOURCE =
@@ -1175,7 +1175,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data_source_name">data_source_name.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "DATASOURCE =")]
-        public static BulkInsertWithElement DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(DataSource_Assign));
+        public static BulkInsertWithElementBase DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(DataSource_Assign));
 
         /// <summary>
         /// ERRORFILE =
@@ -1184,7 +1184,7 @@ namespace LambdicSql.SqlServer
         /// <param name="file_name">file_name.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "ERRORFILE =")]
-        public static BulkInsertWithElement ErrorFile_Assign(string file_name) => throw new InvalitContextException(nameof(ErrorFile_Assign));
+        public static BulkInsertWithElementBase ErrorFile_Assign(string file_name) => throw new InvalitContextException(nameof(ErrorFile_Assign));
 
         /// <summary>
         /// ERRORFILE_DATASOURCE =
@@ -1193,7 +1193,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data_source_name">data_source_name.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "ERRORFILE_DATASOURCE =")]
-        public static BulkInsertWithElement ErrorFile_DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(ErrorFile_DataSource_Assign));
+        public static BulkInsertWithElementBase ErrorFile_DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(ErrorFile_DataSource_Assign));
 
         /// <summary>
         /// FIRSTROW =
@@ -1202,7 +1202,7 @@ namespace LambdicSql.SqlServer
         /// <param name="first_row">first_row.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "FIRSTROW =")]
-        public static BulkInsertWithElement FirstRow_Assign(long first_row) => throw new InvalitContextException(nameof(FirstRow_Assign));
+        public static BulkInsertWithElementBase FirstRow_Assign(long first_row) => throw new InvalitContextException(nameof(FirstRow_Assign));
 
         /// <summary>
         /// FIRE_TRIGGER
@@ -1210,7 +1210,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter]
-        public static BulkInsertWithElement Fire_Trigger() => throw new InvalitContextException(nameof(Fire_Trigger));
+        public static BulkInsertWithElementBase Fire_Trigger() => throw new InvalitContextException(nameof(Fire_Trigger));
 
         /// <summary>
         /// FORMATFILE_DATASOURCE =
@@ -1218,7 +1218,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data_source_name">data_source_name.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "FORMATFILE_DATASOURCE =")]
-        public static BulkInsertWithElement FormatFile_DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(FormatFile_DataSource_Assign));
+        public static BulkInsertWithElementBase FormatFile_DataSource_Assign(string data_source_name) => throw new InvalitContextException(nameof(FormatFile_DataSource_Assign));
 
         /// <summary>
         /// KEEPIDENTITY
@@ -1228,7 +1228,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter]
-        public static BulkInsertWithElement KeepIdentity() => throw new InvalitContextException(nameof(KeepIdentity));
+        public static BulkInsertWithElementBase KeepIdentity() => throw new InvalitContextException(nameof(KeepIdentity));
 
         /// <summary>
         /// KEEPNULLS
@@ -1236,7 +1236,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter]
-        public static BulkInsertWithElement KeepNulls() => throw new InvalitContextException(nameof(KeepNulls));
+        public static BulkInsertWithElementBase KeepNulls() => throw new InvalitContextException(nameof(KeepNulls));
 
         /// <summary>
         /// KILOBYTES_PER_BATCH =
@@ -1245,7 +1245,7 @@ namespace LambdicSql.SqlServer
         /// <param name="kilobytes_per_batch">kilobytes_per_batch.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "KILOBYTES_PER_BATCH =")]
-        public static BulkInsertWithElement Kilobytes_Per_Batch_Assign(long kilobytes_per_batch) => throw new InvalitContextException(nameof(Kilobytes_Per_Batch_Assign));
+        public static BulkInsertWithElementBase Kilobytes_Per_Batch_Assign(long kilobytes_per_batch) => throw new InvalitContextException(nameof(Kilobytes_Per_Batch_Assign));
 
         /// <summary>
         /// LASTROW =
@@ -1254,7 +1254,7 @@ namespace LambdicSql.SqlServer
         /// <param name="last_row">last_row.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "LASTROW =")]
-        public static BulkInsertWithElement LastRow_Assign(long last_row) => throw new InvalitContextException(nameof(LastRow_Assign));
+        public static BulkInsertWithElementBase LastRow_Assign(long last_row) => throw new InvalitContextException(nameof(LastRow_Assign));
 
         /// <summary>
         /// MAXERRORS =
@@ -1263,7 +1263,7 @@ namespace LambdicSql.SqlServer
         /// <param name="max_errors">max_errors.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "MAXERRORS =")]
-        public static BulkInsertWithElement MaxErrors_Assign(long max_errors) => throw new InvalitContextException(nameof(MaxErrors_Assign));
+        public static BulkInsertWithElementBase MaxErrors_Assign(long max_errors) => throw new InvalitContextException(nameof(MaxErrors_Assign));
 
         /// <summary>
         /// ROWS_PER_BATCH =
@@ -1272,7 +1272,7 @@ namespace LambdicSql.SqlServer
         /// <param name="rows_per_batch">rows_per_batch.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "ROWS_PER_BATCH =")]
-        public static BulkInsertWithElement Rows_Per_Batch_Assign(long rows_per_batch) => throw new InvalitContextException(nameof(Rows_Per_Batch_Assign));
+        public static BulkInsertWithElementBase Rows_Per_Batch_Assign(long rows_per_batch) => throw new InvalitContextException(nameof(Rows_Per_Batch_Assign));
 
         /// <summary>
         /// ROWTERMINATOR =
@@ -1281,7 +1281,7 @@ namespace LambdicSql.SqlServer
         /// <param name="row_terminator">row_terminator.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "ROWTERMINATOR =")]
-        public static BulkInsertWithElement RowTerminator_Assign(string row_terminator) => throw new InvalitContextException(nameof(RowTerminator_Assign));
+        public static BulkInsertWithElementBase RowTerminator_Assign(string row_terminator) => throw new InvalitContextException(nameof(RowTerminator_Assign));
 
         /// <summary>
         /// TABLOCK
@@ -1291,7 +1291,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter]
-        public static BulkInsertWithElement TabLock() => throw new InvalitContextException(nameof(TabLock));
+        public static BulkInsertWithElementBase TabLock() => throw new InvalitContextException(nameof(TabLock));
 
         /// <summary>
         /// FORMAT =
@@ -1300,7 +1300,7 @@ namespace LambdicSql.SqlServer
         /// <param name="format">format.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "FORMAT =")]
-        public static BulkInsertWithElement Format_Assign(string format) => throw new InvalitContextException(nameof(Format_Assign));
+        public static BulkInsertWithElementBase Format_Assign(string format) => throw new InvalitContextException(nameof(Format_Assign));
 
         /// <summary>
         /// FIELDQUOTE =
@@ -1309,7 +1309,7 @@ namespace LambdicSql.SqlServer
         /// <param name="quote_characters">quote_characters.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "FIELDQUOTE =")]
-        public static BulkInsertWithElement FieldQuote_Assign(string quote_characters) => throw new InvalitContextException(nameof(FieldQuote_Assign));
+        public static BulkInsertWithElementBase FieldQuote_Assign(string quote_characters) => throw new InvalitContextException(nameof(FieldQuote_Assign));
 
         /// <summary>
         /// FORMATFILE =
@@ -1318,7 +1318,7 @@ namespace LambdicSql.SqlServer
         /// <param name="format_file_path">format_file_path.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "FORMATFILE =")]
-        public static BulkInsertWithElement FormatFile_Assign(string format_file_path) => throw new InvalitContextException(nameof(FormatFile_Assign));
+        public static BulkInsertWithElementBase FormatFile_Assign(string format_file_path) => throw new InvalitContextException(nameof(FormatFile_Assign));
 
         /// <summary>
         /// FIELDTERMINATOR =
@@ -1327,7 +1327,7 @@ namespace LambdicSql.SqlServer
         /// <param name="field_terminator">field_terminator.</param>
         /// <returns>IBulkInsertWithElement.</returns>
         [ClauseStyleConverter(Name = "FIELDTERMINATOR =")]
-        public static BulkInsertWithElement FieldTerminator_Assign(string field_terminator) => throw new InvalitContextException(nameof(FieldTerminator_Assign));
+        public static BulkInsertWithElementBase FieldTerminator_Assign(string field_terminator) => throw new InvalitContextException(nameof(FieldTerminator_Assign));
 
         /// <summary>
         /// EXPLAIN.
@@ -1352,7 +1352,7 @@ namespace LambdicSql.SqlServer
         /// <param name="options">options.</param>
         /// <returns>Clause.</returns>
         [FuncStyleConverter]
-        public static Clause<Non> Option(params QueryHintElement[] options) => throw new InvalitContextException(nameof(Option));
+        public static Clause<Non> Option(params QueryHintBase[] options) => throw new InvalitContextException(nameof(Option));
 
         /// <summary>
         /// OPTION
@@ -1363,7 +1363,7 @@ namespace LambdicSql.SqlServer
         /// <param name="options">options.</param>
         /// <returns>Clause.</returns>
         [FuncStyleConverter]
-        public static Clause<T> Option<T>(this Clause<T> before, params QueryHintElement[] options) => throw new InvalitContextException(nameof(Option));
+        public static Clause<T> Option<T>(this Clause<T> before, params QueryHintBase[] options) => throw new InvalitContextException(nameof(Option));
 
         /// <summary>
         /// OUTPUT.
@@ -1409,7 +1409,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>INSERTED.*</returns>
         [MethodFormatConverter(Format = "INSERTED.*")]
-        public static AsteriskElement InsertedAsterisk() => throw new InvalitContextException(nameof(InsertedAsterisk));
+        public static AsteriskBase InsertedAsterisk() => throw new InvalitContextException(nameof(InsertedAsterisk));
 
         /// <summary>
         /// DELETED.*
@@ -1417,7 +1417,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>DELETED.*</returns>
         [MethodFormatConverter(Format = "DELETED.*")]
-        public static AsteriskElement DeletedAsterisk() => throw new InvalitContextException(nameof(DeletedAsterisk));
+        public static AsteriskBase DeletedAsterisk() => throw new InvalitContextException(nameof(DeletedAsterisk));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql
@@ -1467,7 +1467,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">DataBase() or AllServer().</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "DISABLE TRIGGER [!0] ON [1]")]
-        public static Clause<Non> DisableTreggerOn(string name, TriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<Non> DisableTreggerOn(string name, TriggerTargetBase target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// DISABLE TRIGGER
@@ -1479,7 +1479,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">DataBase() or AllServer().</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "DISABLE TRIGGER [!1] ON [2]")]
-        public static Clause<T> DisableTreggerOn<T>(this Clause<T> before, string name, TriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<T> DisableTreggerOn<T>(this Clause<T> before, string name, TriggerTargetBase target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// ENABLE TRIGGER
@@ -1511,7 +1511,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">DataBase() or AllServer().</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "ENABLE TRIGGER [!0] ON [1]")]
-        public static Clause<Non> EnableTreggerOn(string name, TriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<Non> EnableTreggerOn(string name, TriggerTargetBase target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// ENABLE TRIGGER
@@ -1523,7 +1523,7 @@ namespace LambdicSql.SqlServer
         /// <param name="target">DataBase() or AllServer().</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "ENABLE TRIGGER [!1] ON [2]")]
-        public static Clause<T> EnableTreggerOn<T>(this Clause<T> before, string name, TriggerTarget target) => throw new InvalitContextException(nameof(CreateTreggerOn));
+        public static Clause<T> EnableTreggerOn<T>(this Clause<T> before, string name, TriggerTargetBase target) => throw new InvalitContextException(nameof(CreateTreggerOn));
 
         /// <summary>
         /// READTEXT
@@ -1610,7 +1610,7 @@ namespace LambdicSql.SqlServer
         /// <param name="src">Source TopElement.</param>
         /// <returns>TopElement.</returns>
         [ClauseStyleConverter]
-        public static TopElement Percent(this TopElement src) => throw new InvalitContextException(nameof(Percent));
+        public static TopBase Percent(this TopBase src) => throw new InvalitContextException(nameof(Percent));
 
         /// <summary>
         /// WITH TIES 
@@ -1619,7 +1619,7 @@ namespace LambdicSql.SqlServer
         /// <param name="src">Source TopElement.</param>
         /// <returns>TopElement.</returns>
         [ClauseStyleConverter(Name = "WITH TIES ")]
-        public static TopElement WithTies(this TopElement src) => throw new InvalitContextException(nameof(Percent));
+        public static TopBase WithTies(this TopBase src) => throw new InvalitContextException(nameof(Percent));
         
         /// <summary>
         /// MERGE
@@ -1652,7 +1652,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasHints = true)]
-        public static Clause<Non> Merge<TData>(Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<Non> Merge<TData>(Sql<TData> table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1665,7 +1665,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasHints = true)]
-        public static Clause<T> Merge<TData, T>(this Clause<T> before, Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, Sql<TData> table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1676,7 +1676,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true)]
-        public static Clause<Non> Merge<TData>(TopElement top, Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<Non> Merge<TData>(TopBase top, Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1689,7 +1689,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true)]
-        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopElement top, Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopBase top, Sql<TData> table) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1701,7 +1701,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true, HasHints = true)]
-        public static Clause<Non> Merge<TData>(TopElement top, Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<Non> Merge<TData>(TopBase top, Sql<TData> table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1715,7 +1715,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true, HasHints = true)]
-        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopElement top, Sql<TData> table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopBase top, Sql<TData> table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1748,7 +1748,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasHints = true)]
-        public static Clause<Non> Merge<TData>(object table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<Non> Merge<TData>(object table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1761,7 +1761,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasHints = true)]
-        public static Clause<T> Merge<TData, T>(this Clause<T> before, object table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, object table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1772,7 +1772,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true)]
-        public static Clause<Non> Merge<TData>(TopElement top, object table) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<Non> Merge<TData>(TopBase top, object table) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1785,7 +1785,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true)]
-        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopElement top, object table) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopBase top, object table) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1797,7 +1797,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true, HasHints = true)]
-        public static Clause<Non> Merge<TData>(TopElement top, object table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<Non> Merge<TData>(TopBase top, object table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
 
         /// <summary>
         /// MERGE
@@ -1811,7 +1811,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>Clause</returns>
         [MergeConverter(HasTop = true, HasHints = true)]
-        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopElement top, object table, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(Merge));
+        public static Clause<T> Merge<TData, T>(this Clause<T> before, TopBase top, object table, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(Merge));
         
         /// <summary>
         /// USING
@@ -1843,7 +1843,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> Uinsg<TData>(ArgumentsExpandedObject table) => throw new InvalitContextException(nameof(Uinsg));
+        public static Clause<Non> Uinsg<TData>(ArgumentsExpandedObjectBase table) => throw new InvalitContextException(nameof(Uinsg));
 
         /// <summary>
         /// USING
@@ -1855,7 +1855,7 @@ namespace LambdicSql.SqlServer
         /// <param name="table">table.</param>
         /// <returns>Clause</returns>
         [ClauseStyleConverter]
-        public static Clause<T> Uinsg<TData, T>(this Clause<T> before, ArgumentsExpandedObject table) => throw new InvalitContextException(nameof(Uinsg));
+        public static Clause<T> Uinsg<TData, T>(this Clause<T> before, ArgumentsExpandedObjectBase table) => throw new InvalitContextException(nameof(Uinsg));
 
         /// <summary>
         /// ON
@@ -1986,7 +1986,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement HashGroup() => throw new InvalitContextException(nameof(HashGroup));
+        public static QueryHintBase HashGroup() => throw new InvalitContextException(nameof(HashGroup));
 
         /// <summary>
         /// ORDER GROUP  
@@ -1994,7 +1994,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement OrderGroup() => throw new InvalitContextException(nameof(OrderGroup));
+        public static QueryHintBase OrderGroup() => throw new InvalitContextException(nameof(OrderGroup));
 
         /// <summary>
         ///  CONCAT UNION   
@@ -2002,7 +2002,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement ConcatUnion() => throw new InvalitContextException(nameof(ConcatUnion));
+        public static QueryHintBase ConcatUnion() => throw new InvalitContextException(nameof(ConcatUnion));
 
         /// <summary>
         /// HASH UNION   
@@ -2010,7 +2010,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement HashUnion() => throw new InvalitContextException(nameof(HashUnion));
+        public static QueryHintBase HashUnion() => throw new InvalitContextException(nameof(HashUnion));
 
         /// <summary>
         /// MERGE UNION   
@@ -2018,7 +2018,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement MergeUnion() => throw new InvalitContextException(nameof(MergeUnion));
+        public static QueryHintBase MergeUnion() => throw new InvalitContextException(nameof(MergeUnion));
 
         /// <summary>
         /// LOOP JOIN   
@@ -2026,7 +2026,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement LoopJoin() => throw new InvalitContextException(nameof(LoopJoin));
+        public static QueryHintBase LoopJoin() => throw new InvalitContextException(nameof(LoopJoin));
 
         /// <summary>
         /// MERGE JOIN   
@@ -2034,7 +2034,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement MergeJoin() => throw new InvalitContextException(nameof(MergeJoin));
+        public static QueryHintBase MergeJoin() => throw new InvalitContextException(nameof(MergeJoin));
 
         /// <summary>
         /// HASH JOIN   
@@ -2042,7 +2042,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement HashJoin() => throw new InvalitContextException(nameof(HashJoin));
+        public static QueryHintBase HashJoin() => throw new InvalitContextException(nameof(HashJoin));
 
         /// <summary>
         /// EXPAND VIEWS   
@@ -2050,7 +2050,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement ExpandView() => throw new InvalitContextException(nameof(ExpandView));
+        public static QueryHintBase ExpandView() => throw new InvalitContextException(nameof(ExpandView));
 
         /// <summary>
         /// FAST 
@@ -2058,7 +2058,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement Fast(long number_rows) => throw new InvalitContextException(nameof(Fast));
+        public static QueryHintBase Fast(long number_rows) => throw new InvalitContextException(nameof(Fast));
 
         /// <summary>
         /// FORCE ORDER
@@ -2066,7 +2066,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement ForceOrder() => throw new InvalitContextException(nameof(ForceOrder));
+        public static QueryHintBase ForceOrder() => throw new InvalitContextException(nameof(ForceOrder));
 
         /// <summary>
         /// FORCE EXTERNALPUSHDOWN 
@@ -2074,7 +2074,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement ForceExternalPushDown() => throw new InvalitContextException(nameof(ForceExternalPushDown));
+        public static QueryHintBase ForceExternalPushDown() => throw new InvalitContextException(nameof(ForceExternalPushDown));
 
         /// <summary>
         /// DISABLE EXTERNALPUSHDOWN 
@@ -2082,7 +2082,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement DisableExternalPushDown() => throw new InvalitContextException(nameof(DisableExternalPushDown));
+        public static QueryHintBase DisableExternalPushDown() => throw new InvalitContextException(nameof(DisableExternalPushDown));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query
@@ -2090,7 +2090,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement Ignore_NonClusttred_ColumnStore_Index() => throw new InvalitContextException(nameof(Ignore_NonClusttred_ColumnStore_Index));
+        public static QueryHintBase Ignore_NonClusttred_ColumnStore_Index() => throw new InvalitContextException(nameof(Ignore_NonClusttred_ColumnStore_Index));
 
         /// <summary>
         /// KEEP PLAN
@@ -2098,7 +2098,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement KeepPlan() => throw new InvalitContextException(nameof(KeepPlan));
+        public static QueryHintBase KeepPlan() => throw new InvalitContextException(nameof(KeepPlan));
 
         /// <summary>
         /// KEEPFIXED PLAN
@@ -2106,7 +2106,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement KeepFixedPlan() => throw new InvalitContextException(nameof(KeepFixedPlan));
+        public static QueryHintBase KeepFixedPlan() => throw new InvalitContextException(nameof(KeepFixedPlan));
 
         /// <summary>
         /// MAX_GRANT_PERCENT =
@@ -2115,7 +2115,7 @@ namespace LambdicSql.SqlServer
         /// <param name="percent">percent.</param>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement Max_Grant_Percent_Assign(int percent) => throw new InvalitContextException(nameof(Max_Grant_Percent_Assign));
+        public static QueryHintBase Max_Grant_Percent_Assign(int percent) => throw new InvalitContextException(nameof(Max_Grant_Percent_Assign));
 
         /// <summary>
         /// MIN_GRANT_PERCENT =
@@ -2124,7 +2124,7 @@ namespace LambdicSql.SqlServer
         /// <param name="percent">percent.</param>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement Min_Grant_Percent(int percent) => throw new InvalitContextException(nameof(Min_Grant_Percent));
+        public static QueryHintBase Min_Grant_Percent(int percent) => throw new InvalitContextException(nameof(Min_Grant_Percent));
 
         /// <summary>
         /// MAXDOP
@@ -2133,7 +2133,7 @@ namespace LambdicSql.SqlServer
         /// <param name="number_of_processors">number_of_processors.</param>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement MaxDop(int number_of_processors) => throw new InvalitContextException(nameof(MaxDop));
+        public static QueryHintBase MaxDop(int number_of_processors) => throw new InvalitContextException(nameof(MaxDop));
 
         /// <summary>
         /// MAXRECURSION
@@ -2141,7 +2141,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement MaxRecursion(int number) => throw new InvalitContextException(nameof(MaxRecursion));
+        public static QueryHintBase MaxRecursion(int number) => throw new InvalitContextException(nameof(MaxRecursion));
 
         /// <summary>
         /// NO_PERFORMANCE_SPOOL
@@ -2149,7 +2149,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement No_Performance_Spool() => throw new InvalitContextException(nameof(No_Performance_Spool));
+        public static QueryHintBase No_Performance_Spool() => throw new InvalitContextException(nameof(No_Performance_Spool));
 
         /// <summary>
         /// OPTIMIZE FOR
@@ -2157,7 +2157,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement OptimizeFor(params object[] elements) => throw new InvalitContextException(nameof(OptimizeFor));
+        public static QueryHintBase OptimizeFor(params object[] elements) => throw new InvalitContextException(nameof(OptimizeFor));
 
         /// <summary>
         /// UNKNOWN
@@ -2174,7 +2174,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement OptimizeForUnknown() => throw new InvalitContextException(nameof(OptimizeForUnknown));
+        public static QueryHintBase OptimizeForUnknown() => throw new InvalitContextException(nameof(OptimizeForUnknown));
 
         /// <summary>
         /// PARAMETERIZATION SIMPLE
@@ -2182,7 +2182,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement ParameterizationSimple() => throw new InvalitContextException(nameof(ParameterizationSimple));
+        public static QueryHintBase ParameterizationSimple() => throw new InvalitContextException(nameof(ParameterizationSimple));
 
         /// <summary>
         /// PARAMETERIZATION FORCED
@@ -2190,7 +2190,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement ParameterizationForced() => throw new InvalitContextException(nameof(ParameterizationForced));
+        public static QueryHintBase ParameterizationForced() => throw new InvalitContextException(nameof(ParameterizationForced));
 
         /// <summary>
         /// RECOMPILE
@@ -2198,7 +2198,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement Recompile() => throw new InvalitContextException(nameof(Recompile));
+        public static QueryHintBase Recompile() => throw new InvalitContextException(nameof(Recompile));
 
         /// <summary>
         /// ROBUST PLAN
@@ -2206,7 +2206,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement RobustPlan() => throw new InvalitContextException(nameof(RobustPlan));
+        public static QueryHintBase RobustPlan() => throw new InvalitContextException(nameof(RobustPlan));
 
         /// <summary>
         /// USE HINT
@@ -2215,7 +2215,7 @@ namespace LambdicSql.SqlServer
         /// <param name="hintNames">int names.</param>
         /// <returns>QueryHintElement</returns>
         [FuncStyleConverter]
-        public static QueryHintElement UseHint(params string[] hintNames) => throw new InvalitContextException(nameof(UseHint));
+        public static QueryHintBase UseHint(params string[] hintNames) => throw new InvalitContextException(nameof(UseHint));
 
         /// <summary>
         /// USE PLAN
@@ -2224,7 +2224,7 @@ namespace LambdicSql.SqlServer
         /// <param name="xml_plan">xml_plan.</param>
         /// <returns>QueryHintElement</returns>
         [ClauseStyleConverter]
-        public static QueryHintElement UsePlan(string xml_plan) => throw new InvalitContextException(nameof(UsePlan));
+        public static QueryHintBase UsePlan(string xml_plan) => throw new InvalitContextException(nameof(UsePlan));
 
         /// <summary>
         /// TABLE HINT
@@ -2234,7 +2234,7 @@ namespace LambdicSql.SqlServer
         /// <param name="tableHints">table hints.</param>
         /// <returns>QueryHintElement</returns>
         [FuncStyleConverter]
-        public static QueryHintElement TableHint(object exposed_object_name, params TableHintElement[] tableHints) => throw new InvalitContextException(nameof(TableHint));
+        public static QueryHintBase TableHint(object exposed_object_name, params TableHintBase[] tableHints) => throw new InvalitContextException(nameof(TableHint));
 
         /// <summary>
         /// INDEX
@@ -2243,7 +2243,7 @@ namespace LambdicSql.SqlServer
         /// <param name="names">Index name.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "INDEX([!<, >0])")]
-        public static Clause<ConstraintElement> Index(params string[] names) => null;
+        public static Clause<ConstraintBase> Index(params string[] names) => null;
 
         /// <summary>
         /// FORCESEEK [( index_value ( index_column_name  [ ,... ] ) )
@@ -2253,7 +2253,7 @@ namespace LambdicSql.SqlServer
         /// <param name="columns"></param>
         /// <returns>TableHintElement</returns>
         [MethodFormatConverter(Format = "FORCESEEK [!0]([<, >1])")]
-        public static TableHintElement ForceSeek(string index_value, params object[] columns) => throw new InvalitContextException(nameof(ForceSeek));
+        public static TableHintBase ForceSeek(string index_value, params object[] columns) => throw new InvalitContextException(nameof(ForceSeek));
 
         /// <summary>
         /// FORCESEEK
@@ -2261,7 +2261,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement ForceSeek() => throw new InvalitContextException(nameof(ForceSeek));
+        public static TableHintBase ForceSeek() => throw new InvalitContextException(nameof(ForceSeek));
 
         /// <summary>
         /// FORCESCAN
@@ -2269,7 +2269,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement ForceScan() => throw new InvalitContextException(nameof(ForceScan));
+        public static TableHintBase ForceScan() => throw new InvalitContextException(nameof(ForceScan));
 
         /// <summary>
         /// HOLDLOCK
@@ -2277,7 +2277,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement HoldLock() => throw new InvalitContextException(nameof(HoldLock));
+        public static TableHintBase HoldLock() => throw new InvalitContextException(nameof(HoldLock));
 
         /// <summary>
         /// NOLOCK
@@ -2285,7 +2285,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement NoLock() => throw new InvalitContextException(nameof(NoLock));
+        public static TableHintBase NoLock() => throw new InvalitContextException(nameof(NoLock));
 
         /// <summary>
         /// NOWAIT
@@ -2293,7 +2293,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement NoWait() => throw new InvalitContextException(nameof(NoWait));
+        public static TableHintBase NoWait() => throw new InvalitContextException(nameof(NoWait));
 
         /// <summary>
         /// PAGLOCK
@@ -2301,7 +2301,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement PagLock() => throw new InvalitContextException(nameof(PagLock));
+        public static TableHintBase PagLock() => throw new InvalitContextException(nameof(PagLock));
 
         /// <summary>
         /// READCOMMITTED
@@ -2309,7 +2309,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement ReadCommitted() => throw new InvalitContextException(nameof(ReadCommitted));
+        public static TableHintBase ReadCommitted() => throw new InvalitContextException(nameof(ReadCommitted));
 
         /// <summary>
         /// READCOMMITTEDLOCK
@@ -2317,7 +2317,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement ReadCommittedLock() => throw new InvalitContextException(nameof(ReadCommittedLock));
+        public static TableHintBase ReadCommittedLock() => throw new InvalitContextException(nameof(ReadCommittedLock));
 
         /// <summary>
         /// READPAST
@@ -2325,7 +2325,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement ReadPast() => throw new InvalitContextException(nameof(ReadPast));
+        public static TableHintBase ReadPast() => throw new InvalitContextException(nameof(ReadPast));
 
         /// <summary>
         /// READUNCOMMITTED
@@ -2333,7 +2333,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement ReadUnCommitted() => throw new InvalitContextException(nameof(ReadUnCommitted));
+        public static TableHintBase ReadUnCommitted() => throw new InvalitContextException(nameof(ReadUnCommitted));
 
         /// <summary>
         /// REPEATABLEREAD
@@ -2341,7 +2341,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement RepeaTableRead() => throw new InvalitContextException(nameof(RepeaTableRead));
+        public static TableHintBase RepeaTableRead() => throw new InvalitContextException(nameof(RepeaTableRead));
 
         /// <summary>
         /// ROWLOCK
@@ -2349,7 +2349,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement RowLock() => throw new InvalitContextException(nameof(RowLock));
+        public static TableHintBase RowLock() => throw new InvalitContextException(nameof(RowLock));
 
         /// <summary>
         /// SERIALIZABLE
@@ -2357,7 +2357,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement Serializable() => throw new InvalitContextException(nameof(Serializable));
+        public static TableHintBase Serializable() => throw new InvalitContextException(nameof(Serializable));
 
         /// <summary>
         /// SNAPSHOT
@@ -2365,7 +2365,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement Snapshot() => throw new InvalitContextException(nameof(Snapshot));
+        public static TableHintBase Snapshot() => throw new InvalitContextException(nameof(Snapshot));
 
         /// <summary>
         /// SPATIAL_WINDOW_MAX_CELLS =
@@ -2374,7 +2374,7 @@ namespace LambdicSql.SqlServer
         /// <param name="count">count.</param>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement Spatial_Window_Max_Cells_Assign(int count) => throw new InvalitContextException(nameof(Spatial_Window_Max_Cells_Assign));
+        public static TableHintBase Spatial_Window_Max_Cells_Assign(int count) => throw new InvalitContextException(nameof(Spatial_Window_Max_Cells_Assign));
 
         /// <summary>
         /// TABLOCKX
@@ -2382,7 +2382,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement TabLockX() => throw new InvalitContextException(nameof(TabLockX));
+        public static TableHintBase TabLockX() => throw new InvalitContextException(nameof(TabLockX));
 
         /// <summary>
         /// UPDLOCK
@@ -2390,7 +2390,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement UpdLock() => throw new InvalitContextException(nameof(UpdLock));
+        public static TableHintBase UpdLock() => throw new InvalitContextException(nameof(UpdLock));
 
         /// <summary>
         /// XLOCK
@@ -2398,7 +2398,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement XLock() => throw new InvalitContextException(nameof(XLock));
+        public static TableHintBase XLock() => throw new InvalitContextException(nameof(XLock));
 
         /// <summary>
         /// KEEPDEFAULTS
@@ -2406,7 +2406,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement KeepDefaults() => throw new InvalitContextException(nameof(KeepDefaults));
+        public static TableHintBase KeepDefaults() => throw new InvalitContextException(nameof(KeepDefaults));
 
         /// <summary>
         /// IGNORE_CONSTRAINTS
@@ -2414,7 +2414,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement Ignore_Constraints() => throw new InvalitContextException(nameof(Ignore_Constraints));
+        public static TableHintBase Ignore_Constraints() => throw new InvalitContextException(nameof(Ignore_Constraints));
 
         /// <summary>
         /// IGNORE_TRIGGERS
@@ -2422,6 +2422,6 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <returns>TableHintElement</returns>
         [ClauseStyleConverter]
-        public static TableHintElement Ignore_Triggers() => throw new InvalitContextException(nameof(Ignore_Triggers));
+        public static TableHintBase Ignore_Triggers() => throw new InvalitContextException(nameof(Ignore_Triggers));
     }
 }

@@ -153,7 +153,7 @@ namespace LambdicSql.SqlServer
         /// <param name="isOn"></param>
         /// <returns>IDelayedDurability.</returns>
         [OnOffClause(Name = "DELAYED_DURABILITY =")]
-        public static DelayedDurability Delayed_Durability_Assign(bool isOn) => throw new InvalitContextException(nameof(Delayed_Durability_Assign));
+        public static DelayedDurabilityBase Delayed_Durability_Assign(bool isOn) => throw new InvalitContextException(nameof(Delayed_Durability_Assign));
 
         /// <summary>
         /// WITH.
@@ -162,7 +162,7 @@ namespace LambdicSql.SqlServer
         /// <param name="delayedDurability">delayed durability</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<Non> With(DelayedDurability delayedDurability) => throw new InvalitContextException(nameof(With));
+        public static Clause<Non> With(DelayedDurabilityBase delayedDurability) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// WITH.
@@ -173,7 +173,7 @@ namespace LambdicSql.SqlServer
         /// <param name="delayedDurability">delayed durability</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<T> With<T>(this Clause<T> before, DelayedDurability delayedDurability) => throw new InvalitContextException(nameof(With));
+        public static Clause<T> With<T>(this Clause<T> before, DelayedDurabilityBase delayedDurability) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// COMMIT WORK.

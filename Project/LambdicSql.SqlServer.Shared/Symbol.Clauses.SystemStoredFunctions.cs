@@ -21,7 +21,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
         /// <returns>Table.</returns>
         [MethodFormatConverter(Format = "CHANGETABLE() AS [0]")]
-        public static object Changetable(params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
+        public static object Changetable(params TableDefinitionBase[] column_alias) => throw new InvalitContextException(nameof(Changetable));
 
         /// <summary>
         /// CHANGETABLE 
@@ -31,7 +31,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
         /// <returns>Table.</returns>
         [MethodFormatConverter(Format = "CHANGETABLE([0]) AS [1]")]
-        public static object Changetable(object CHANGES_table, params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
+        public static object Changetable(object CHANGES_table, params TableDefinitionBase[] column_alias) => throw new InvalitContextException(nameof(Changetable));
 
         /// <summary>
         /// CHANGETABLE 
@@ -42,7 +42,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
         /// <returns>Table.</returns>
         [MethodFormatConverter(Format = "CHANGETABLE([0], [1]) AS [2]")]
-        public static object Changetable(object CHANGES_table, object version, params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
+        public static object Changetable(object CHANGES_table, object version, params TableDefinitionBase[] column_alias) => throw new InvalitContextException(nameof(Changetable));
 
         /// <summary>
         /// CHANGETABLE 
@@ -54,7 +54,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column_alias">Is the alias name of the table that is returned by CHANGETABLE.</param>
         /// <returns>Table.</returns>
         [MethodFormatConverter(Format = "CHANGETABLE([0], [1], [2]) AS [3]")]
-        public static object Changetable(object CHANGES_table, object version, object primary_key_values, params TableDefinitionElement[] column_alias) => throw new InvalitContextException(nameof(Changetable));
+        public static object Changetable(object CHANGES_table, object version, object primary_key_values, params TableDefinitionBase[] column_alias) => throw new InvalitContextException(nameof(Changetable));
 
         /// <summary>
         /// CHANGE_TRACKING_MIN_VALID_VERSION  

@@ -426,7 +426,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<T> Receive<T>(TopElement top, T selected) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<T> Receive<T>(TopBase top, T selected) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -439,7 +439,7 @@ namespace LambdicSql.SqlServer
         /// <param name="selected">Specify a new expression to represent the selection.</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<T> Receive<TSrc, T>(this Clause<TSrc> before, TopElement top, T selected) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<T> Receive<TSrc, T>(this Clause<TSrc> before, TopBase top, T selected) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -448,7 +448,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<Non> Receive(AsteriskElement asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<Non> Receive(AsteriskBase asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -459,7 +459,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<Non> Receive<TSrc>(this Clause<TSrc> before, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<Non> Receive<TSrc>(this Clause<TSrc> before, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -469,7 +469,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<T> Receive<T>(AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<T> Receive<T>(AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -481,7 +481,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<T> Receive<TSrc, T>(this Clause<TSrc> before, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<T> Receive<TSrc, T>(this Clause<TSrc> before, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -491,7 +491,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<Non> Receive(TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<Non> Receive(TopBase top, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -503,7 +503,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<Non> Receive<TSrc>(this Clause<TSrc> before, TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<Non> Receive<TSrc>(this Clause<TSrc> before, TopBase top, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -514,7 +514,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<T> Receive<T>(TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<T> Receive<T>(TopBase top, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// RECEIVE  clause.
@@ -527,7 +527,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Clause.</returns>
         [SelectConverter(Name = "RECEIVE")]
-        public static Clause<T> Receive<TSrc, T>(this Clause<TSrc> before, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
+        public static Clause<T> Receive<TSrc, T>(this Clause<TSrc> before, TopBase top, AsteriskBase<T> asterisk) { throw new InvalitContextException(nameof(Receive)); }
 
         /// <summary>
         /// SEND ON CONVERSATION.

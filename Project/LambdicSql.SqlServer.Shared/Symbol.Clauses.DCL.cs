@@ -11,7 +11,7 @@ namespace LambdicSql.SqlServer
     /// </summary>
     public static partial class Symbol
     {
-        //https://msdn.microsoft.com/en-us/library/5a3b7424-408e-4cb0-8957-667ebf4596fc
+        //https://docs.microsoft.com/en-us/sql/t-sql/statements/add-signature-transact-sql
         /*Security Statements
         ADD SIGNATURE
         CLOSE MASTER KEY
@@ -27,7 +27,7 @@ namespace LambdicSql.SqlServer
         SETUSER
         Azure SQL Data Warehouse and Parallel Data Warehouse Security Statements*/
 
-        //https://msdn.microsoft.com/en-us/library/ff848727.aspx
+        //https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/database-console-commands
         /*
         Management Commands
         DBCC SHOW_STATISTICS

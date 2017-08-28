@@ -24,7 +24,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the checksum of the values in a group.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static int CheckSum_Agg(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(CheckSum_Agg)); }
+        public static int CheckSum_Agg(AggregatePredicateBase aggregatePredicate, object expression) { throw new InvalitContextException(nameof(CheckSum_Agg)); }
 
         /// <summary>
         /// COUNT_BIG function.
@@ -42,7 +42,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Count.</returns>
         [FuncStyleConverter]
-        public static int Count_Big(AsteriskElement asterisk) { throw new InvalitContextException(nameof(Count_Big)); }
+        public static int Count_Big(AsteriskBase asterisk) { throw new InvalitContextException(nameof(Count_Big)); }
 
         /// <summary>
         /// COUNT_BIG function.
@@ -52,7 +52,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Count.</returns>
         [MethodFormatConverter(Format = "COUNT_BIG(|[0] [1])")]
-        public static int Count_Big(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Count_Big)); }
+        public static int Count_Big(AggregatePredicateBase aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Count_Big)); }
 
         /// <summary>
         /// GROUPING function.
@@ -89,7 +89,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical standard deviation of all values in the specified expression.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static double Stdev(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Stdev)); }
+        public static double Stdev(AggregatePredicateBase aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Stdev)); }
 
         /// <summary>
         /// STDEVP function.
@@ -108,7 +108,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical standard deviation for the population for all values in the specified expression.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static double StdevP(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(StdevP)); }
+        public static double StdevP(AggregatePredicateBase aggregatePredicate, object expression) { throw new InvalitContextException(nameof(StdevP)); }
 
         /// <summary>
         /// VAR function.
@@ -127,7 +127,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical variance of all values in the specified expression. May be followed by the OVER clause.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static double Var(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Var)); }
+        public static double Var(AggregatePredicateBase aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Var)); }
 
         /// <summary>
         /// VARP function.
@@ -146,7 +146,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Returns the statistical variance for the population for all values in the specified expression.</returns>
         [MethodFormatConverter(Format = "CHECKSUM_AGG(|[0] [1])")]
-        public static double VarP(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(VarP)); }
+        public static double VarP(AggregatePredicateBase aggregatePredicate, object expression) { throw new InvalitContextException(nameof(VarP)); }
         
         /// <summary>
         /// AVG function.
@@ -170,7 +170,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Count.</returns>
         [FuncStyleConverter]
-        public static int Count(AsteriskElement asterisk) { throw new InvalitContextException(nameof(Count)); }
+        public static int Count(AsteriskBase asterisk) { throw new InvalitContextException(nameof(Count)); }
 
         /// <summary>
         /// COUNT function.
@@ -179,7 +179,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Count.</returns>
         [MethodFormatConverter(Format = "COUNT(|[0] [1])")]
-        public static int Count(AggregatePredicateElement aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Count)); }
+        public static int Count(AggregatePredicateBase aggregatePredicate, object expression) { throw new InvalitContextException(nameof(Count)); }
 
         /// <summary>
         /// COUNT function.
@@ -188,7 +188,7 @@ namespace LambdicSql.SqlServer
         /// <param name="asterisk">*</param>
         /// <returns>Count.</returns>
         [MethodFormatConverter(Format = "COUNT(|[0] [1])")]
-        public static int Count(AggregatePredicateElement aggregatePredicate, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Count)); }
+        public static int Count(AggregatePredicateBase aggregatePredicate, AsteriskBase asterisk) { throw new InvalitContextException(nameof(Count)); }
 
         /// <summary>
         /// MIN function.
@@ -225,6 +225,6 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">The column or expression that is function target.</param>
         /// <returns>Total.</returns>
         [MethodFormatConverter(Format = "SUM(|[0] [1])")]
-        public static T Sum<T>(AggregatePredicateElement aggregatePredicate, T expression) { throw new InvalitContextException(nameof(Sum)); }
+        public static T Sum<T>(AggregatePredicateBase aggregatePredicate, T expression) { throw new InvalitContextException(nameof(Sum)); }
     }
 }

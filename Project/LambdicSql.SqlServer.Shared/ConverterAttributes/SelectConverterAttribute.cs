@@ -44,7 +44,7 @@ namespace LambdicSql.SqlServer.ConverterAttributes
             var selectTargets = expression.Arguments[expression.Arguments.Count - 1];
 
             //*
-            if (typeof(AsteriskElement).IsAssignableFromEx(selectTargets.Type))
+            if (typeof(AsteriskBase).IsAssignableFromEx(selectTargets.Type))
             {
                 select.Add("*".ToCode());
                 return new SelectClauseCode(select);

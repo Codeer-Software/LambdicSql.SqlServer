@@ -4,56 +4,57 @@ using System;
 
 namespace LambdicSql.SqlServer
 {
+    //TODO add abstract to name.
     /// <summary>
     /// TOP keyword.
     /// </summary>
-    public abstract class TopElement { }
+    public abstract class TopBase { }
 
     /// <summary>
     /// Data type.
     /// </summary>
-    public abstract class DataTypeElement { }
+    public abstract class DataTypeBase { }
 
     /// <summary>
     /// It's *.
     /// Used in Select clause and Count function.
     /// </summary>
-    public abstract class AsteriskElement { }
+    public abstract class AsteriskBase { }
 
     /// <summary>
     /// It's *.
     /// Used in Select clause and Count function.
     /// </summary>
     /// <typeparam name="T">It represents the type to select when used in the Select clause.</typeparam>
-    public abstract class AsteriskElement<T> : AsteriskElement { }
+    public abstract class AsteriskBase<T> : AsteriskBase { }
 
     /// <summary>
     /// It is an object representing the sort order
     /// Implemented classes include Asc and Desc.
     /// </summary>
-    public abstract class OrderByElement { }
+    public abstract class OrderByElementBase { }
 
     /// <summary>
     /// Aggregation predicate.
     /// ALL or DISTINCT.
     /// </summary>
-    public abstract class AggregatePredicateElement { }
+    public abstract class AggregatePredicateBase { }
 
     /// <summary>
     /// Aggregation predicate.
     /// ALL
     /// </summary>
-    public abstract class AggregatePredicateAllElement : AggregatePredicateElement { }
+    public abstract class AggregatePredicateAllBase : AggregatePredicateBase { }
 
     /// <summary>
     /// OVER clause argument.
     /// </summary>
-    public abstract class OverElement { }
+    public abstract class OverElementBase { }
 
     /// <summary>
     /// OVER clause result.
     /// </summary>
-    public abstract class OverReturnValue : SqlExpression
+    public abstract class OverReturnValueBase : SqlExpression
     {
         /// <summary>
         /// Additional operator.
@@ -61,7 +62,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static object operator +(object value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static object operator +(object value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -69,7 +70,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static string operator +(string value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static string operator +(string value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -77,7 +78,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static bool operator +(bool value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static bool operator +(bool value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -85,7 +86,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static bool? operator +(bool? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static bool? operator +(bool? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -93,7 +94,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static byte operator +(byte value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static byte operator +(byte value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -101,7 +102,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static byte? operator +(byte? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static byte? operator +(byte? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -109,7 +110,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static short operator +(short value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static short operator +(short value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -117,7 +118,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static short? operator +(short? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static short? operator +(short? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -125,7 +126,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static int operator +(int value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static int operator +(int value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -133,7 +134,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static int? operator +(int? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static int? operator +(int? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -141,7 +142,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static long operator +(long value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static long operator +(long value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -149,7 +150,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static long? operator +(long? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static long? operator +(long? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -157,7 +158,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static float operator +(float value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static float operator +(float value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -165,7 +166,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static float? operator +(float? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static float? operator +(float? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -173,7 +174,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static double operator +(double value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static double operator +(double value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -181,7 +182,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static double? operator +(double? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static double? operator +(double? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -189,7 +190,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static decimal operator +(decimal value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static decimal operator +(decimal value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -197,7 +198,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static decimal? operator +(decimal? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static decimal? operator +(decimal? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -205,7 +206,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static DateTime operator +(DateTime value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static DateTime operator +(DateTime value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -213,7 +214,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static DateTime? operator +(DateTime? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static DateTime? operator +(DateTime? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -221,7 +222,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static DateTimeOffset operator +(DateTimeOffset value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static DateTimeOffset operator +(DateTimeOffset value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -229,7 +230,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static DateTimeOffset? operator +(DateTimeOffset? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static DateTimeOffset? operator +(DateTimeOffset? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -237,7 +238,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static TimeSpan operator +(TimeSpan value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static TimeSpan operator +(TimeSpan value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -245,7 +246,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static TimeSpan? operator +(TimeSpan? value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static TimeSpan? operator +(TimeSpan? value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -253,7 +254,7 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static byte[] operator +(byte[] value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static byte[] operator +(byte[] value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
 
         /// <summary>
         /// Additional operator.
@@ -261,24 +262,24 @@ namespace LambdicSql.SqlServer
         /// <param name="value">Value.</param>
         /// <param name="returnValue">Return value.</param>
         /// <returns>Value.</returns>
-        public static char[] operator +(char[] value, OverReturnValue returnValue) { throw new InvalitContextException("additional operator"); }
+        public static char[] operator +(char[] value, OverReturnValueBase returnValue) { throw new InvalitContextException("additional operator"); }
     }
 
     /// <summary>
     /// Table definition item.
     /// </summary>
-    public abstract class TableDefinitionElement { }
+    public abstract class TableDefinitionBase { }
 
     /// <summary>
     /// Constraint object.
     /// </summary>
-    public abstract class ConstraintElement : TableDefinitionElement { }
+    public abstract class ConstraintBase : TableDefinitionBase { }
 
     /// <summary>
     /// Column definition.
     /// It can only be used within lambda of the LambdicSql.
     /// </summary>
-    public class Column : TableDefinitionElement
+    public class Column : TableDefinitionBase
     {
         /// <summary>
         /// Constructor.
@@ -286,7 +287,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column">Column.</param>
         /// <param name="type">Type.</param>
         [NewFormatConverter(Format = "[0] [1]")]
-        public Column(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(Column)); }
+        public Column(object column, DataTypeBase type) { throw new InvalitContextException("new " + nameof(Column)); }
 
         /// <summary>
         /// Constructor.
@@ -295,7 +296,7 @@ namespace LambdicSql.SqlServer
         /// <param name="type">Type.</param>
         /// <param name="constraints">Constraints.</param>
         [NewFormatConverter(Format = "[0] [1] [< >2]")]
-        public Column(object column, DataTypeElement type, params ConstraintElement[] constraints) { throw new InvalitContextException("new " + nameof(Column)); }
+        public Column(object column, DataTypeBase type, params ConstraintBase[] constraints) { throw new InvalitContextException("new " + nameof(Column)); }
     }
 
     /// <summary>
@@ -317,60 +318,123 @@ namespace LambdicSql.SqlServer
     /// <summary>
     /// ExpandArguments's result value.
     /// </summary>
-    public abstract class ArgumentsExpandedObject { }
+    public abstract class ArgumentsExpandedObjectBase { }
 
     /// <summary>
     /// The type of the element in the WITH clause of BULKINSERT.
     /// </summary>
-    public abstract class BulkInsertWithElement { }
+    public abstract class BulkInsertWithElementBase { }
 
     /// <summary>
     /// DELAYED_DURABILITY's result value.展開するパラメータのインデックス
     /// </summary>
-    public abstract class DelayedDurability { }
+    public abstract class DelayedDurabilityBase { }
 
     /// <summary>
     /// Object when targeting non-table with CREATE TRIGGER.
     /// </summary>
-    public abstract class TriggerTarget { }
+    public abstract class TriggerTargetBase { }
 
     /// <summary>
     /// DDL trigger option.
     /// </summary>
-    public abstract class DDLTriggerOption { }
+    public abstract class DDLTriggerOptionBase { }
 
     /// <summary>
     /// Query hint.
     /// </summary>
-    public abstract class QueryHintElement { }
+    public abstract class QueryHintBase { }
 
     /// <summary>
     /// Table hint.
     /// </summary>
-    public abstract class TableHintElement
+    public abstract class TableHintBase
     {
         /// <summary>
-        /// cast from ConstraintElement at implicit.
+        /// cast from ConstraintBase at implicit.
         /// </summary>
         /// <param name="src"></param>
-        public static implicit operator TableHintElement(ConstraintElement src) => throw new InvalitContextException("operator TableHintElement");
+        public static implicit operator TableHintBase(ConstraintBase src) => throw new InvalitContextException("operator TableHintBase");
 
         /// <summary>
-        /// cast from Clause&lt;ConstraintElement&gt; at implicit.
+        /// cast from Clause&lt;ConstraintBase&gt; at implicit.
         /// </summary>
         /// <param name="src"></param>
-        public static implicit operator TableHintElement(Clause<ConstraintElement> src) => throw new InvalitContextException("operator TableHintElement");
+        public static implicit operator TableHintBase(Clause<ConstraintBase> src) => throw new InvalitContextException("operator TableHintBase");
 
         /// <summary>
-        /// cast from BulkInsertWithElement at implicit.
+        /// cast from BulkInsertWithElementBase at implicit.
         /// </summary>
         /// <param name="src"></param>
-        public static implicit operator TableHintElement(BulkInsertWithElement src) => throw new InvalitContextException("operator TableHintElement");
+        public static implicit operator TableHintBase(BulkInsertWithElementBase src) => throw new InvalitContextException("operator TableHintBase");
 
         /// <summary>
-        /// cast from (Clause&lt;BulkInsertWithElement&gt; at implicit.
+        /// cast from (Clause&lt;BulkInsertWithElementBase&gt; at implicit.
         /// </summary>
         /// <param name="src"></param>
-        public static implicit operator TableHintElement(Clause<BulkInsertWithElement> src) => throw new InvalitContextException("operator TableHintElement");
+        public static implicit operator TableHintBase(Clause<BulkInsertWithElementBase> src) => throw new InvalitContextException("operator TableHintBase");
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-aggregate-transact-sql
+    /// </summary>
+    public class AggregateArgument
+    {
+        [NewFormatConverter(Format = "![0] [1]")]
+        public AggregateArgument(string variable, DataTypeBase type) => throw new InvalitContextException(nameof(AggregateArgument));
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-application-role-transact-sql
+    /// </summary>
+    public abstract class CreateApplicationRoleBase { }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-assembly-transact-sql
+    /// </summary>
+    public abstract class CreateAssemblyBase { }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-assembly-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum PermissionSetElement
+    {
+        Safe,
+        External_Access,
+        Unsafe
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
+    /// </summary>
+    public abstract class AsymKeySourceBase { }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
+    /// </summary>
+    public abstract class KeyOptionBase { }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum AlgorithmElement
+    {
+        RSA_4096,
+        RSA_3072,
+        RSA_2048,
+        RSA_1024,
+        RSA_512
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum CreationDispositionElement
+    {
+        Create_New,
+        Open_Existing
     }
 }

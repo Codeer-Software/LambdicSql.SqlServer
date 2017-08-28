@@ -423,7 +423,7 @@ ORDER BY
         [Priority(1)]
         public void Test_OrderBy_Element_Vanish_1()
         {
-            var desc = new Sql<OrderByElement>();
+            var desc = new Sql<OrderByElementBase>();
             var sql = Db<DB>.Sql(db =>
                 Select(new
                 {
@@ -446,7 +446,7 @@ ORDER BY
         [Priority(1)]
         public void Test_OrderBy_Element_Vanish_2()
         {
-            var asc = new Sql<OrderByElement>();
+            var asc = new Sql<OrderByElementBase>();
             var sql = Db<DB>.Sql(db =>
                 Select(new
                 {
@@ -469,8 +469,8 @@ ORDER BY
         [Priority(1)]
         public void Test_OrderBy_Element_Vanish_3()
         {
-            var asc1 = new Sql<OrderByElement>();
-            var asc2 = new Sql<OrderByElement>();
+            var asc1 = new Sql<OrderByElementBase>();
+            var asc2 = new Sql<OrderByElementBase>();
             var sql = Db<DB>.Sql(db =>
                 Select(new
                 {
@@ -495,8 +495,8 @@ ORDER BY
         [Priority(1)]
         public void Test_OrderBy_Vanish()
         {
-            var asc = new Sql<OrderByElement>();
-            var desc = new Sql<OrderByElement>();
+            var asc = new Sql<OrderByElementBase>();
+            var desc = new Sql<OrderByElementBase>();
             var sql = Db<DB>.Sql(db =>
                Select(new
                {
@@ -517,8 +517,8 @@ FROM tbl_remuneration");
         [Priority(1)]
         public void Test_OrderBy_Vanish_Start()
         {
-            var asc = new Sql<OrderByElement>();
-            var desc = new Sql<OrderByElement>();
+            var asc = new Sql<OrderByElementBase>();
+            var desc = new Sql<OrderByElementBase>();
             var sql = Db<DB>.Sql(db =>
                Select(new
                {

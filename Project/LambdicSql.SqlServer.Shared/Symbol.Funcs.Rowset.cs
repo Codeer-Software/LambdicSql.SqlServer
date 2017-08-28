@@ -167,7 +167,7 @@ namespace LambdicSql.SqlServer
         /// <param name="type">Type.</param>
         /// <param name="path">Path.</param>
         [NewFormatConverter(Format = "[0] [1] [2]")]
-        public OpenWithElement(object column, DataTypeElement type, string path) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
+        public OpenWithElement(object column, DataTypeBase type, string path) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
 
         /// <summary>
         /// Constructor.
@@ -175,7 +175,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column">Column.</param>
         /// <param name="type">Type.</param>
         [NewFormatConverter(Format = "[0] [1]")]
-        public OpenWithElement(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
+        public OpenWithElement(object column, DataTypeBase type) { throw new InvalitContextException("new " + nameof(OpenWithElement)); }
     }
 
     /// <summary>
@@ -190,7 +190,7 @@ namespace LambdicSql.SqlServer
         /// <param name="column">Column.</param>
         /// <param name="type">Type.</param>
         [OpenWithElementTypeJson]
-        public OpenWithElementTypeAsJson(object column, DataTypeElement type) { throw new InvalitContextException("new " + nameof(OpenWithElementTypeAsJson)); }
+        public OpenWithElementTypeAsJson(object column, DataTypeBase type) { throw new InvalitContextException("new " + nameof(OpenWithElementTypeAsJson)); }
     }
 
     /// <summary>

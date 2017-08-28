@@ -50,7 +50,7 @@ namespace LambdicSql.SqlServer
         /// <param name="columnName">Is the name of the column that is to be inserted into the new table.</param>
         /// <returns>Returns the same as data_type.</returns>
         [MethodFormatConverter(Format = "IDENTITY([0]) AS [$1]")]
-        public static DataTypeElement Identity(DataTypeElement dataType, string columnName) => throw new InvalitContextException(nameof(Identity));
+        public static DataTypeBase Identity(DataTypeBase dataType, string columnName) => throw new InvalitContextException(nameof(Identity));
 
         /// <summary>
         /// IDENTITY function.
@@ -61,7 +61,7 @@ namespace LambdicSql.SqlServer
         /// <param name="seed">Is the integer value to be assigned to the first row in the table. Each subsequent row is assigned the next identity value, which is equal to the last IDENTITY value plus the increment value. If neither seed nor increment is specified, both default to 1.</param>
         /// <returns>Returns the same as data_type.</returns>
         [MethodFormatConverter(Format = "IDENTITY([0, 1]) AS [2]")]
-        public static DataTypeElement Identity(DataTypeElement dataType, string columnName, int seed) => throw new InvalitContextException(nameof(Identity));
+        public static DataTypeBase Identity(DataTypeBase dataType, string columnName, int seed) => throw new InvalitContextException(nameof(Identity));
 
         /// <summary>
         /// IDENTITY function.
@@ -73,7 +73,7 @@ namespace LambdicSql.SqlServer
         /// <param name="increment">Is the integer value to add to the seed value for successive rows in the table.</param>
         /// <returns>Returns the same as data_type.</returns>
         [MethodFormatConverter(Format = "IDENTITY([0, 1, 2]) AS [3]")]
-        public static DataTypeElement Identity(DataTypeElement dataType, string columnName, int seed, int increment) => throw new InvalitContextException(nameof(Identity));
+        public static DataTypeBase Identity(DataTypeBase dataType, string columnName, int seed, int increment) => throw new InvalitContextException(nameof(Identity));
 
         /// <summary>
         /// SQL_VARIANT_PROPERTY function.

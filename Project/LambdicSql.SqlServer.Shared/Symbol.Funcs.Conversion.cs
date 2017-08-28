@@ -14,7 +14,7 @@ namespace LambdicSql.SqlServer
         /// <param name="destinationType">Type of destination.</param>
         /// <returns>Converted data.</returns>
         [MethodFormatConverter(Format = "CAST(|[0] AS [1])")]
-        public static TDst Cast<TDst>(object target, DataTypeElement destinationType) => throw new InvalitContextException(nameof(Cast));
+        public static TDst Cast<TDst>(object target, DataTypeBase destinationType) => throw new InvalitContextException(nameof(Cast));
 
         /// <summary>
         /// CONVERT function.
@@ -25,7 +25,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">Is any valid expression.</param>
         /// <returns>Converted data.</returns>
         [FuncStyleConverter]
-        public static TDst Convert<TDst>(DataTypeElement type, object expression) => throw new InvalitContextException(nameof(Convert));
+        public static TDst Convert<TDst>(DataTypeBase type, object expression) => throw new InvalitContextException(nameof(Convert));
 
         /// <summary>
         /// PARSE function.
@@ -36,7 +36,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data_type">Literal value representing the data type requested for the result.</param>
         /// <returns>Converted data.</returns>
         [MethodFormatConverter(Format = "PARSE([0] AS [1])")]
-        public static TDst Parse<TDst>(object string_value, DataTypeElement data_type) => throw new InvalitContextException(nameof(Parse));
+        public static TDst Parse<TDst>(object string_value, DataTypeBase data_type) => throw new InvalitContextException(nameof(Parse));
 
         /// <summary>
         /// PARSE function.
@@ -48,7 +48,7 @@ namespace LambdicSql.SqlServer
         /// <param name="culture">Optional string that identifies the culture in which string_value is formatted.</param>
         /// <returns>Converted data.</returns>
         [MethodFormatConverter(Format = "PARSE([0] AS [1] USING [2])")]
-        public static TDst Parse<TDst>(object string_value, DataTypeElement data_type, string culture) => throw new InvalitContextException(nameof(Parse));
+        public static TDst Parse<TDst>(object string_value, DataTypeBase data_type, string culture) => throw new InvalitContextException(nameof(Parse));
 
         /// <summary>
         /// TRY_CAST function.
@@ -59,7 +59,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data_type">The data type into which to cast expression.</param>
         /// <returns>Converted data.</returns>
         [MethodFormatConverter(Format = "TRY_CAST([0] AS [1])")]
-        public static TDst Try_Cast<TDst>(object expression, DataTypeElement data_type) => throw new InvalitContextException(nameof(Try_Cast));
+        public static TDst Try_Cast<TDst>(object expression, DataTypeBase data_type) => throw new InvalitContextException(nameof(Try_Cast));
 
         /// <summary>
         /// TRY_CONVERT function.
@@ -70,7 +70,7 @@ namespace LambdicSql.SqlServer
         /// <param name="expression">Is any valid expression.</param>
         /// <returns>Converted data.</returns>
         [FuncStyleConverter]
-        public static TDst Try_Convert<TDst>(DataTypeElement type, object expression) => throw new InvalitContextException(nameof(Try_Convert));
+        public static TDst Try_Convert<TDst>(DataTypeBase type, object expression) => throw new InvalitContextException(nameof(Try_Convert));
 
         /// <summary>
         /// TRY_PARSE function.
@@ -81,7 +81,7 @@ namespace LambdicSql.SqlServer
         /// <param name="data_type">Literal representing the data type requested for the result.</param>
         /// <returns>Converted data.</returns>
         [MethodFormatConverter(Format = "TRY_PARSE([0] AS [1])")]
-        public static TDst Try_Parse<TDst>(object string_value, DataTypeElement data_type) => throw new InvalitContextException(nameof(Try_Parse));
+        public static TDst Try_Parse<TDst>(object string_value, DataTypeBase data_type) => throw new InvalitContextException(nameof(Try_Parse));
 
         /// <summary>
         /// TRY_PARSE function.
@@ -93,6 +93,6 @@ namespace LambdicSql.SqlServer
         /// <param name="culture">Optional string that identifies the culture in which string_value is formatted.</param>
         /// <returns>Converted data.</returns>
         [MethodFormatConverter(Format = "TRY_PARSE([0] AS [1] USING [2])")]
-        public static TDst Try_Parse<TDst>(object string_value, DataTypeElement data_type, string culture) => throw new InvalitContextException(nameof(Try_Parse));
+        public static TDst Try_Parse<TDst>(object string_value, DataTypeBase data_type, string culture) => throw new InvalitContextException(nameof(Try_Parse));
     }
 }
