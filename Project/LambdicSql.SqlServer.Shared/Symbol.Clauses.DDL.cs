@@ -266,7 +266,7 @@ namespace LambdicSql.SqlServer
         /// <param name="aggregateArguments"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "CREATE AGGREGATE [!1]([<, >2])")]
-        public static Clause<Non> CreateAggregate<T>(this Clause<T> before, string name, params AggregateArgument[] aggregateArguments) => throw new InvalitContextException(nameof(CreateAggregate));
+        public static Clause<T> CreateAggregate<T>(this Clause<T> before, string name, params AggregateArgument[] aggregateArguments) => throw new InvalitContextException(nameof(CreateAggregate));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-aggregate-transact-sql
@@ -284,7 +284,7 @@ namespace LambdicSql.SqlServer
         /// <param name="type"></param>
         /// <returns></returns>
         [ClauseStyleConverter]
-        public static Clause<Non> Returns<T>(this Clause<T> before, DataTypeBase type) => throw new InvalitContextException(nameof(Returns));
+        public static Clause<T> Returns<T>(this Clause<T> before, DataTypeBase type) => throw new InvalitContextException(nameof(Returns));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-aggregate-transact-sql
@@ -302,7 +302,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "EXTERNAL NAME ![1]")]
-        public static Clause<Non> ExternalName<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(ExternalName));
+        public static Clause<T> ExternalName<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(ExternalName));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-application-role-transact-sql
@@ -320,7 +320,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "CREATE APPLICATION ROLE ![1]")]
-        public static Clause<Non> CreateApplicationRole<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(CreateApplicationRole));
+        public static Clause<T> CreateApplicationRole<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(CreateApplicationRole));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-application-role-transact-sql
@@ -338,7 +338,7 @@ namespace LambdicSql.SqlServer
         /// <param name="elements"></param>
         /// <returns></returns>
         [ClauseStyleConverter]
-        public static Clause<Non> With<T>(this Clause<T> before, params CreateApplicationRoleBase[] elements) => throw new InvalitContextException(nameof(With));
+        public static Clause<T> With<T>(this Clause<T> before, params CreateApplicationRoleBase[] elements) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-application-role-transact-sql
@@ -372,7 +372,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "CREATE ASSEMBLY ![1]")]
-        public static Clause<Non> CreateAssembly<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(CreateAssembly));
+        public static Clause<T> CreateAssembly<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(CreateAssembly));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-assembly-transact-sql
@@ -390,7 +390,7 @@ namespace LambdicSql.SqlServer
         /// <param name="name"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "AUTHORIZATION ![1]")]
-        public static Clause<Non> Authorization<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(Authorization));
+        public static Clause<T> Authorization<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(Authorization));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-assembly-transact-sql
@@ -408,7 +408,7 @@ namespace LambdicSql.SqlServer
         /// <param name="from"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "FROM ![1]")]
-        public static Clause<Non> From<T>(this Clause<T> before, string from) => throw new InvalitContextException(nameof(From));
+        public static Clause<T> From<T>(this Clause<T> before, string from) => throw new InvalitContextException(nameof(From));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-assembly-transact-sql
@@ -426,7 +426,7 @@ namespace LambdicSql.SqlServer
         /// <param name="elements"></param>
         /// <returns></returns>
         [ClauseStyleConverter]
-        public static Clause<Non> With<T>(this Clause<T> before, params CreateAssemblyBase[] elements) => throw new InvalitContextException(nameof(With));
+        public static Clause<T> With<T>(this Clause<T> before, params CreateAssemblyBase[] elements) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-assembly-transact-sql
@@ -452,7 +452,7 @@ namespace LambdicSql.SqlServer
         /// <param name="ssym_Key_Name"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "CREATE ASYMMETRIC KEY [!1]")]
-        public static Clause<Non> CreateAsymmetricKey<T>(this Clause<T> before, string ssym_Key_Name) => throw new InvalitContextException(nameof(CreateAsymmetricKey));
+        public static Clause<T> CreateAsymmetricKey<T>(this Clause<T> before, string ssym_Key_Name) => throw new InvalitContextException(nameof(CreateAsymmetricKey));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
@@ -470,7 +470,7 @@ namespace LambdicSql.SqlServer
         /// <param name="database_principal_name"></param>
         /// <returns></returns>
         [MethodFormatConverter(Format = "AUTHORIZATION [!1]")]
-        public static Clause<Non> Authoriazation<T>(this Clause<T> before, string database_principal_name) => throw new InvalitContextException(nameof(Authoriazation));
+        public static Clause<T> Authoriazation<T>(this Clause<T> before, string database_principal_name) => throw new InvalitContextException(nameof(Authoriazation));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
@@ -488,7 +488,7 @@ namespace LambdicSql.SqlServer
         /// <param name="element"></param>
         /// <returns></returns>
         [ClauseStyleConverter]
-        public static Clause<Non> From<T>(this Clause<T> before, AsymKeySourceBase element) => throw new InvalitContextException(nameof(From));
+        public static Clause<T> From<T>(this Clause<T> before, AsymKeySourceBase element) => throw new InvalitContextException(nameof(From));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
@@ -506,7 +506,7 @@ namespace LambdicSql.SqlServer
         /// <param name="element"></param>
         /// <returns></returns>
         [ClauseStyleConverter]
-        public static Clause<Non> With<T>(this Clause<T> before, KeyOptionBase element) => throw new InvalitContextException(nameof(With));
+        public static Clause<T> With<T>(this Clause<T> before, KeyOptionBase element) => throw new InvalitContextException(nameof(With));
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-asymmetric-key-transact-sql
@@ -564,81 +564,331 @@ namespace LambdicSql.SqlServer
         [ClauseStyleConverter(Name = "CREATION_DISPOSITION = ")]
         public static KeyOptionBase Creation_Disposition_Assign(CreationDispositionElement element) => throw new InvalitContextException(nameof(Creation_Disposition_Assign));
 
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="group_name"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "CREATE AVAILABILITY GROUP [!0]")]
+        public static Clause<Non> CreateAvailabilityGroup(string group_name) => throw new InvalitContextException(nameof(CreateAvailabilityGroup));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="group_name"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "CREATE AVAILABILITY GROUP [!1]")]
+        public static Clause<T> CreateAvailabilityGroup<T>(Clause<T> before, string group_name) => throw new InvalitContextException(nameof(CreateAvailabilityGroup));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="with_option_spec"></param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static Clause<Non> With(params WithOptionSpecBase[] with_option_spec) => throw new InvalitContextException(nameof(With));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="with_option_spec"></param>
+        /// <returns></returns>
+        [FuncStyleConverter]
+        public static Clause<T> With<T>(Clause<T> before, params WithOptionSpecBase[] with_option_spec) => throw new InvalitContextException(nameof(With));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="database_name"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "FOR [!<, >0]")]
+        public static Clause<Non> For(params string[] database_name) => throw new InvalitContextException(nameof(For));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="database_name"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "FOR [!<, >1]")]
+        public static Clause<T> For<T>(Clause<T> before, params string[] database_name) => throw new InvalitContextException(nameof(For));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "AUTOMATED_BACKUP_PREFERENCE =")]
+        public static WithOptionSpecBase Automated_Backup_Preference_Assign(AutomatedBackupPreferenceElement element) => throw new InvalitContextException(nameof(Automated_Backup_Preference_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "AFAILURE_CONDITION_LEVEL = [$0]")]
+        public static WithOptionSpecBase Afailure_Condition_Level_Assign(int element) => throw new InvalitContextException(nameof(Afailure_Condition_Level_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "HEALTH_CHECK_TIMEOUT = [$0]")]
+        public static WithOptionSpecBase Health_Check_Timeout_Assign(int element) => throw new InvalitContextException(nameof(Health_Check_Timeout_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="onOff"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "DB_FAILOVER =")]
+        public static WithOptionSpecBase Db_FailOver_Assign(OnOff onOff) => throw new InvalitContextException(nameof(Db_FailOver_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "DTC_SUPPORT =")]
+        public static WithOptionSpecBase Dtc_Support_Assign(DtcSupportElement element) => throw new InvalitContextException(nameof(Dtc_Support_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter]
+        public static WithOptionSpecBase Basic() => throw new InvalitContextException(nameof(Basic));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter]
+        public static WithOptionSpecBase Distributed() => throw new InvalitContextException(nameof(Basic));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "REQUIRED_SYNCHRONIZED_SECONDARIES_TO_COMMIT = [$0]")]
+        public static WithOptionSpecBase Required_Synchronized_Secondaries_To_Commit(int value) => throw new InvalitContextException(nameof(Required_Synchronized_Secondaries_To_Commit));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "CLUSTER_TYPE =")]
+        public static WithOptionSpecBase Cluster_Type(DtcSupportElement element) => throw new InvalitContextException(nameof(Cluster_Type));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="add_replica_spec"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "REPLICA ON")]
+        public static Clause<Non> ReplicaOn(params AddReplicaSpecBase[] add_replica_spec) => throw new InvalitContextException(nameof(ReplicaOn));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="add_replica_spec"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "REPLICA ON")]
+        public static Clause<T> ReplicaOn<T>(Clause<T> before, params AddReplicaSpecBase[] add_replica_spec) => throw new InvalitContextException(nameof(ReplicaOn));
+        
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="add_availability_group_spec"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "AVAILABILITY GROUP ON")]
+        public static Clause<Non> AvailabilityGroupOn(params AddAvailabilityGroupSpecBase[] add_availability_group_spec) => throw new InvalitContextException(nameof(AvailabilityGroupOn));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="add_availability_group_spec"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "AVAILABILITY GROUP ON")]
+        public static Clause<T> AvailabilityGroupOn<T>(Clause<T> before, params AddAvailabilityGroupSpecBase[] add_availability_group_spec) => throw new InvalitContextException(nameof(AvailabilityGroupOn));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="dns_name"></param>
+        /// <param name="add_availability_group_spec"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "LISTENER [$0] ([1])")]
+        public static Clause<Non> Listener(string dns_name, ListenerOptionBase add_availability_group_spec) => throw new InvalitContextException(nameof(Listener));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="before"></param>
+        /// <param name="dns_name"></param>
+        /// <param name="add_availability_group_spec"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "LISTENER [$1] ([2])")]
+        public static Clause<T> Listener<T>(Clause<T> before, string dns_name, ListenerOptionBase add_availability_group_spec) => throw new InvalitContextException(nameof(Listener));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="server_instance"></param>
+        /// <param name="add_replica_option"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "[$0] WITH(|[<, >1])", FormatDirection = FormatDirection.Vertical)]
+        public static AddReplicaSpecBase With(string server_instance, params AddReplicaOptionBase[] add_replica_option) => throw new InvalitContextException(nameof(With));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "ENDPOINT_URL = [$0]")]
+        public static AddReplicaOptionBase EndPoint_Url_Assign(string url) => throw new InvalitContextException(nameof(EndPoint_Url_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "AVAILABILITY_MODE = ")]
+        public static AddReplicaOptionBase Availability_Mode_Assign(AvailabilityModeElement element) => throw new InvalitContextException(nameof(Availability_Mode_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "FAILOVER_MODE = ")]
+        public static AddReplicaOptionBase Failover_Mode_Assign(OperationMode element) => throw new InvalitContextException(nameof(Failover_Mode_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "SEEDING_MODE = ")]
+        public static AddReplicaOptionBase Seding_Mode_Assign(OperationMode element) => throw new InvalitContextException(nameof(Seding_Mode_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "BACKUP_PRIORITY = [$0]")]
+        public static AddReplicaOptionBase Backup_Priority_Assign(int n) => throw new InvalitContextException(nameof(Backup_Priority_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="roles"></param>
+        /// <returns></returns>
+        [FuncStyleConverter(Name = "SECONDARY_ROLE")]
+        public static AddReplicaOptionBase Secondary_Role(params RoleBase[] roles) => throw new InvalitContextException(nameof(Secondary_Role));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "ALLOW_CONNECTIONS = ")]
+        public static RoleBase Allow_Connections_Assign(AllowConnectionsElement element) => throw new InvalitContextException(nameof(Allow_Connections_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "READ_ONLY_ROUTING_URL = $[0]")]
+        public static RoleBase Read_Only_Routing_Url_Assign(string url) => throw new InvalitContextException(nameof(Read_Only_Routing_Url_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "SESSION_TIMEOUT = $[0]")]
+        public static RoleBase Session_Timeout_Assign(int time) => throw new InvalitContextException(nameof(Session_Timeout_Assign));
+
+        /// <summary>
+        /// /https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="roles"></param>
+        /// <returns></returns>
+        [FuncStyleConverter(Name = "PRIMARY_ROLE")]
+        public static AddReplicaOptionBase Primary_Role(params RoleBase[] roles) => throw new InvalitContextException(nameof(Primary_Role));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "LISTENER_URL = $[0]")]
+        public static AddReplicaOptionBase Listener_Url_Assign(string url) => throw new InvalitContextException(nameof(Listener_Url_Assign));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <returns></returns>
+        [ClauseStyleConverter(Name = "WITH DHCP")]
+        public static ListenerOptionBase WithDhcp() => throw new InvalitContextException(nameof(WithDhcp));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="network_subnet_option"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITH DHCP ON([$0])")]
+        public static ListenerOptionBase WithDhcpOn(string network_subnet_option) => throw new InvalitContextException(nameof(WithDhcpOn));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="ips"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITH IP(([$<),( >0]))")]
+        public static ListenerOptionBase WithIp(params string[] ips) => throw new InvalitContextException(nameof(WithIp));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="port"></param>
+        /// <param name="ips"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITH IP(([$<),( >1]), PORT = [$0])")]
+        public static ListenerOptionBase WithIp(int port, params string[] ips) => throw new InvalitContextException(nameof(WithIp));
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+        /// </summary>
+        /// <param name="ip_address_option"></param>
+        /// <param name="port"></param>
+        /// <param name="ips"></param>
+        /// <returns></returns>
+        [MethodFormatConverter(Format = "WITH IP(([$0])([$<),( >2]), PORT = [$1])")]
+        public static ListenerOptionBase WithIp(string ip_address_option, string port, params string[] ips) => throw new InvalitContextException(nameof(WithIp));
 
 
 
 
 
 
-        //???
-        //https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
-        /*
-        CREATE AVAILABILITY GROUP
-        WITH
-            <with_option_spec>::=   
-                AUTOMATED_BACKUP_PREFERENCE = { PRIMARY | SECONDARY_ONLY| SECONDARY | NONE }  
-              | FAILURE_CONDITION_LEVEL  = { 1 | 2 | 3 | 4 | 5 }   
-              | HEALTH_CHECK_TIMEOUT = milliseconds  
-              | DB_FAILOVER  = { ON | OFF }   
-              | DTC_SUPPORT  = { PER_DB | NONE }  
-              | BASIC  
-              | DISTRIBUTED
-              | REQUIRED_SYNCHRONOUS_SECONDARIES_TO_COMMIT = { integer }
-              | CLUSTER_TYPE = { WSFC | EXTERNAL | NONE } 
-        FOR  [ DATABASE database_name [ ,...n ] ]  
-            →ForDataBase
-        REPLICA ON
-        WITH → 複数個
-        <add_replica_spec>::=  
-              <server_instance>  
-                (  
-                   ENDPOINT_URL = 'TCP://system-address:port',  
-                   AVAILABILITY_MODE = { SYNCHRONOUS_COMMIT | ASYNCHRONOUS_COMMIT },  
-                   FAILOVER_MODE = { AUTOMATIC | MANUAL }  
-                   [ , <add_replica_option> [ ,...n ] ]  
-                )   
-
-              <add_replica_option>::=  
-                   SEEDING_MODE = { AUTOMATIC | MANUAL }  
-                 | BACKUP_PRIORITY = n  
-                 | SECONDARY_ROLE ( {   
-                        [ ALLOW_CONNECTIONS = { NO | READ_ONLY | ALL } ]   
-                    [,] [ READ_ONLY_ROUTING_URL = 'TCP://system-address:port' ]  
-                 } )  
-                 | PRIMARY_ROLE ( {   
-                        [ ALLOW_CONNECTIONS = { READ_WRITE | ALL } ]   
-                    [,] [ READ_ONLY_ROUTING_LIST = { ( ‘<server_instance>’ [ ,...n ] ) | NONE } ]  
-                 } )  
-                 | SESSION_TIMEOUT = integer  
-                 
-        AVAILABILITY GROUP ON WITH
-            <add_availability_group_spec>::=  
-                 <ag_name>  
-                    (  
-                       LISTENER_URL = 'TCP://system-address:port',  
-                       AVAILABILITY_MODE = { SYNCHRONOUS_COMMIT | ASYNCHRONOUS_COMMIT },  
-                       FAILOVER_MODE = MANUAL,  
-                       SEEDING_MODE = { AUTOMATIC | MANUAL }  
-                    )  
-        ADD LISTENER‘dns_name’ ( <listener_option> )
-
-
-            <listener_option> ::=  
-               {  
-                  WITH DHCP [ ON ( <network_subnet_option> ) ]  
-                | WITH IP ( { ( <ip_address_option> ) } [ , ...n ] ) [ , PORT = listener_port ]  
-               }  
-
-              <network_subnet_option> ::=  
-                 ‘four_part_ipv4_address’, ‘four_part_ipv4_mask’    
-
-              <ip_address_option> ::=  
-                 {   
-                    ‘four_part_ipv4_address’, ‘four_part_ipv4_mask’  
-                  | ‘ipv6_address’  
-                 }  
-
-             */
+        //
 
         //https://docs.microsoft.com/en-us/sql/t-sql/statements/create-broker-priority-transact-sql
         /*

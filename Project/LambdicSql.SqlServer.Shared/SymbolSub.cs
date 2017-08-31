@@ -437,4 +437,168 @@ namespace LambdicSql.SqlServer
         Create_New,
         Open_Existing
     }
+
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    public abstract class WithOptionSpecBase { }
+
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum AutomatedBackupPreferenceElement
+    {
+        /// <summary>
+        /// PRIMARY 
+        /// </summary>
+        Primary,
+
+        /// <summary>
+        /// SECONDARY_ONLY
+        /// </summary>
+        Secondary_Only,
+
+        /// <summary>
+        /// SECONDARY 
+        /// </summary>
+        Secondary,
+
+        /// <summary>
+        /// NONE 
+        /// </summary>
+        None
+    }
+
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum OnOff
+    {
+        /// <summary>
+        /// ON
+        /// </summary>
+        On,
+
+        /// <summary>
+        /// OFF
+        /// </summary>
+        Off
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum DtcSupportElement
+    {
+        /// <summary>
+        /// PER_DB 
+        /// </summary>
+        Per_DB,
+
+        /// <summary>
+        /// NONE 
+        /// </summary>
+        None,
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum ClusterTypeElement
+    {
+        /// <summary>
+        /// WSFC 
+        /// </summary>
+        Wsfc,
+
+        /// <summary>
+        /// EXTERNAL 
+        /// </summary>
+        External,
+
+        /// <summary>
+        /// NONE 
+        /// </summary>
+        None,
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    public abstract class AddReplicaOptionBase { }
+
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    public abstract class AddReplicaSpecBase { }
+
+    /// <summary>
+    /// add_availability_group_spec
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    public abstract class AddAvailabilityGroupSpecBase
+    {
+        /// <summary>
+        /// cast from AddReplicaSpecBase at implicit.
+        /// </summary>
+        /// <param name="src"></param>
+        public static implicit operator AddAvailabilityGroupSpecBase(AddReplicaSpecBase src) => throw new InvalitContextException("operator AddAvailabilityGroupSpecBase");
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    public abstract class ListenerOptionBase { }
+
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum AvailabilityModeElement
+    {
+        /// <summary>
+        /// SYNCHRONOUS_COMMIT 
+        /// </summary>
+        Synchronous_Commit,
+
+        /// <summary>
+        /// ASYNCHRONOUS_COMMIT
+        /// </summary>
+        Asynchronous_Commit
+    }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum OperationMode
+    {
+        Automatic,
+        Manual,
+    }
+    
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    public abstract class RoleBase { }
+
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
+    /// </summary>
+    [EnumToStringConverter]
+    public enum AllowConnectionsElement
+    {
+        Non,
+        Read_Only,
+        All
+    }
 }
