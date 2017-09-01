@@ -42,7 +42,7 @@ namespace Test
 SET
 	val1 = @p_0,
 	val2 = @p_1
-WHERE (tbl_data.id) = (@p_2)",
+WHERE tbl_data.id = @p_2",
 100, "200", 1);
         }
 
@@ -63,7 +63,7 @@ WHERE (tbl_data.id) = (@p_2)",
 SET
 	val1 = @p_0,
 	val2 = @p_1
-WHERE (tbl_data.id) = (@p_2)",
+WHERE tbl_data.id = @p_2",
 100, "200", 1);
         }
 
@@ -80,7 +80,7 @@ WHERE (tbl_data.id) = (@p_2)",
             AssertEx.AreEqual(sql, _connection,
 @"DELETE
 FROM tbl_data
-WHERE (tbl_data.id) = (@p_0)",
+WHERE tbl_data.id = @p_0",
 3);
         }
 
@@ -214,7 +214,7 @@ FROM tbl_data");
             AssertEx.AreEqual(sql, _connection,
 @"INSERT INTO tbl_data
 SELECT
-	(tbl_data.id) + (@p_0) AS id,
+	tbl_data.id + @p_0 AS id,
 	tbl_data.val1 AS val1,
 	tbl_data.val2 AS val2
 FROM tbl_data", 10);

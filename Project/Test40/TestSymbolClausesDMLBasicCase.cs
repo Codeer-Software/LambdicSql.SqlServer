@@ -47,9 +47,9 @@ namespace Test
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
 	CASE
-		WHEN (tbl_staff.id) = (@p_0)
+		WHEN tbl_staff.id = @p_0
 		THEN @p_1
-		WHEN (tbl_staff.id) = (@p_2)
+		WHEN tbl_staff.id = @p_2
 		THEN @p_3
 		ELSE @p_4
 	END AS Type
@@ -105,9 +105,9 @@ FROM tbl_staff",
             AssertEx.AreEqual(sql, _connection,
  @"SELECT
 	CASE
-		WHEN (tbl_staff.id) = (@p_0)
+		WHEN tbl_staff.id = @p_0
 		THEN @p_1
-		WHEN (tbl_staff.id) = (@p_2)
+		WHEN tbl_staff.id = @p_2
 		THEN @p_3
 	END AS Type
 FROM tbl_staff",
@@ -165,9 +165,9 @@ FROM tbl_staff",
             AssertEx.AreEqual(sql, _connection,
 @"SELECT
 	CASE
-		WHEN (tbl_staff.id) = (@p_0)
+		WHEN tbl_staff.id = @p_0
 		THEN @p_1
-		WHEN (tbl_staff.id) = (@p_2)
+		WHEN tbl_staff.id = @p_2
 		THEN @p_3
 		ELSE @p_4
 	END AS Type

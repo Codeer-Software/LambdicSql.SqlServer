@@ -43,7 +43,7 @@ namespace Test
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (COLUMNS_UPDATED()) IS NULL");
+WHERE COLUMNS_UPDATED() IS NULL");
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ WHERE (COLUMNS_UPDATED()) IS NULL");
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (EVENTDATA()) IS NULL");
+WHERE EVENTDATA() IS NULL");
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ WHERE (EVENTDATA()) IS NULL");
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (TRIGGER_NESTLEVEL()) = (@p_0)", 0);
+WHERE TRIGGER_NESTLEVEL() = @p_0", 0);
         }
 
         [TestMethod]

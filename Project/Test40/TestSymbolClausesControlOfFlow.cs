@@ -56,7 +56,7 @@ namespace Test
 
             var datas = _connection.Query(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
- @"IF (OBJECT_ID(@p_0)) IS NOT NULL
+ @"IF OBJECT_ID(@p_0) IS NOT NULL
 SELECT
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
@@ -90,7 +90,7 @@ FROM tbl_staff", "tbl_remuneration");
 
             var datas = _connection.Query(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
- @"IF (OBJECT_ID(@p_0)) IS NOT NULL
+ @"IF OBJECT_ID(@p_0) IS NOT NULL
 SELECT
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
@@ -132,11 +132,11 @@ END");
             _connection.Query(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
 @"WHILE
-	((SELECT
+	(SELECT
 		AVG(tbl_remuneration.money)
-	FROM tbl_remuneration))
+	FROM tbl_remuneration)
 	 <
-	(@p_0)
+	@p_0
 BEGIN
 SELECT *
 FROM tbl_remuneration
@@ -158,11 +158,11 @@ END", (double)2000);
             _connection.Query(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
 @"WHILE
-	((SELECT
+	(SELECT
 		AVG(tbl_remuneration.money)
-	FROM tbl_remuneration))
+	FROM tbl_remuneration)
 	 <
-	(@p_0)
+	@p_0
 BEGIN
 SELECT *
 FROM tbl_remuneration
@@ -184,11 +184,11 @@ END", (double)2000);
             _connection.Query<object>(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
 @"WHILE
-	((SELECT
+	(SELECT
 		AVG(tbl_remuneration.money)
-	FROM tbl_remuneration))
+	FROM tbl_remuneration)
 	 <
-	(@p_0)
+	@p_0
 BEGIN
 BREAK
 ;
@@ -214,11 +214,11 @@ END", (double)2000);
             _connection.Query<object>(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
 @"WHILE
-	((SELECT
+	(SELECT
 		AVG(tbl_remuneration.money)
-	FROM tbl_remuneration))
+	FROM tbl_remuneration)
 	 <
-	(@p_0)
+	@p_0
 BEGIN
 BREAK
 ;

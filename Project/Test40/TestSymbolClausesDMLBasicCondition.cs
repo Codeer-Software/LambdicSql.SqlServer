@@ -155,8 +155,8 @@ WHERE
 		(SELECT
 			tbl_remuneration.staff_id
 		FROM tbl_remuneration
-			JOIN tbl_staff ON (tbl_staff.id) = (tbl_staff.id)
-		WHERE (@p_0) < (tbl_remuneration.money)))",
+			JOIN tbl_staff ON tbl_staff.id = tbl_staff.id
+		WHERE @p_0 < tbl_remuneration.money))",
 (decimal)1000);
         }
 
@@ -192,8 +192,8 @@ WHERE
 		(SELECT
 			tbl_remuneration.staff_id AS id
 		FROM tbl_remuneration
-			JOIN tbl_staff ON (tbl_staff.id) = (tbl_staff.id)
-		WHERE (@p_0) < (tbl_remuneration.money))",
+			JOIN tbl_staff ON tbl_staff.id = tbl_staff.id
+		WHERE @p_0 < tbl_remuneration.money)",
 (decimal)1000);
         }
 
@@ -227,8 +227,8 @@ WHERE
 		(SELECT
 			tbl_remuneration.staff_id AS id
 		FROM tbl_remuneration
-			JOIN tbl_staff ON (tbl_staff.id) = (tbl_staff.id)
-		WHERE (@p_0) < (tbl_remuneration.money))",
+			JOIN tbl_staff ON tbl_staff.id = tbl_staff.id
+		WHERE @p_0 < tbl_remuneration.money)",
 (decimal)1000);
         }
 
@@ -250,7 +250,7 @@ WHERE
  @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE NOT (tbl_staff.name IS NULL)");
+WHERE NOT tbl_staff.name IS NULL");
         }
 
         [TestMethod]
@@ -271,7 +271,7 @@ WHERE NOT (tbl_staff.name IS NULL)");
  @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE NOT ((tbl_staff.name) IS NULL)");
+WHERE NOT tbl_staff.name IS NULL");
         }
 
         [TestMethod]
@@ -293,7 +293,7 @@ WHERE NOT ((tbl_staff.name) IS NULL)");
  @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE NOT ((@val) IS NULL)", new Params() { { "@val", ""} });
+WHERE NOT @val IS NULL", new Params() { { "@val", ""} });
         }
 
         [TestMethod]
@@ -335,7 +335,7 @@ WHERE tbl_staff.name IS NOT NULL");
  @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE (tbl_staff.name) IS NOT NULL");
+WHERE tbl_staff.name IS NOT NULL");
         }
 
         [TestMethod]
@@ -357,7 +357,7 @@ WHERE (tbl_staff.name) IS NOT NULL");
  @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE (@val) IS NOT NULL", new Params() { { "@val", "" } });
+WHERE @val IS NOT NULL", new Params() { { "@val", "" } });
         }
 
         [TestMethod]
@@ -378,7 +378,7 @@ WHERE (@val) IS NOT NULL", new Params() { { "@val", "" } });
 	tbl_staff.id AS Id
 FROM tbl_staff
 WHERE
-	(tbl_staff.id)
+	tbl_staff.id
 	 <
 	ALL(
 		(SELECT
@@ -408,7 +408,7 @@ WHERE
 	tbl_staff.id AS Id
 FROM tbl_staff
 WHERE
-	(tbl_staff.id)
+	tbl_staff.id
 	 <
 	ALL(
 		(SELECT

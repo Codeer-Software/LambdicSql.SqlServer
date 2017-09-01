@@ -56,7 +56,7 @@ namespace Test
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (ISJSON(tbl_staff.name)) = (@p_0)", 0);
+WHERE ISJSON(tbl_staff.name) = @p_0", 0);
         }
 
         [TestMethod]

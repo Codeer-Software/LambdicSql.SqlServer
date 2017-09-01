@@ -62,9 +62,9 @@ namespace Test
 			@p_0
 		UNION ALL
 		SELECT
-			(rec.val) + (@p_1)
+			rec.val + @p_1
 		FROM rec
-		WHERE ((rec.val) + (@p_2)) <= (@p_3))
+		WHERE rec.val + @p_2 <= @p_3)
 SELECT
 	rec.val
 FROM rec", 1, 1, 1, 5);

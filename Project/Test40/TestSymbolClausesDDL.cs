@@ -63,7 +63,7 @@ namespace Test
 @"CREATE TABLE table1(
 	id INT,
 	CONSTRAINT xxx
-		CHECK((id) < (100)))");
+		CHECK(id < 100))");
         }
 
         [TestMethod]
@@ -136,7 +136,7 @@ namespace Test
             _connection.Execute(sql);
             AssertEx.AreEqual(sql, _connection,
 @"CREATE TABLE table1(
-	id INT CHECK((id) < (100)))");
+	id INT CHECK(id < 100))");
         }
 
         [TestMethod]
@@ -155,7 +155,7 @@ namespace Test
             AssertEx.AreEqual(sql, _connection,
 @"CREATE TABLE table1(
 	id INT,
-	CHECK((id) < (100)))");
+	CHECK(id < 100))");
         }
 
         [TestMethod]
@@ -175,7 +175,7 @@ namespace Test
 @"CREATE TABLE table1(
 	id INT,
 	CONSTRAINT xxx
-		CHECK((id) < (100)))");
+		CHECK(id < 100))");
         }
 
         [TestMethod]

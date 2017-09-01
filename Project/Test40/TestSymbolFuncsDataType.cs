@@ -43,7 +43,7 @@ namespace Test
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (DATALENGTH(tbl_staff.name)) > (@p_0)", (long)0);
+WHERE DATALENGTH(tbl_staff.name) > @p_0", (long)0);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ WHERE (DATALENGTH(tbl_staff.name)) > (@p_0)", (long)0);
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (IDENT_CURRENT('db.tbl_staff')) IS NULL");
+WHERE IDENT_CURRENT('db.tbl_staff') IS NULL");
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@ WHERE (IDENT_CURRENT('db.tbl_staff')) IS NULL");
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (IDENT_INCR('db.tbl_staff')) IS NULL");
+WHERE IDENT_INCR('db.tbl_staff') IS NULL");
         }
 
         [TestMethod]
@@ -105,7 +105,7 @@ WHERE (IDENT_INCR('db.tbl_staff')) IS NULL");
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (IDENT_SEED('db.tbl_staff')) IS NULL");
+WHERE IDENT_SEED('db.tbl_staff') IS NULL");
         }
 
         //TODO:Identity, Select @local_valiable Only when it is valid, can not write
@@ -133,7 +133,7 @@ WHERE (IDENT_SEED('db.tbl_staff')) IS NULL");
 @"SELECT
 	tbl_staff.id AS id
 FROM tbl_staff
-WHERE (SQL_VARIANT_PROPERTY(tbl_staff.id, 'MaxLength')) > (@p_0)", 0);
+WHERE SQL_VARIANT_PROPERTY(tbl_staff.id, 'MaxLength') > @p_0", 0);
         }
 
     }
