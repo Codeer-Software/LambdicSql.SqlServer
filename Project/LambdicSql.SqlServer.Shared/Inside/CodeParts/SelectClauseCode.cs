@@ -3,7 +3,7 @@ using LambdicSql.BuilderServices.CodeParts;
 
 namespace LambdicSql.SqlServer.Inside.CodeParts
 {
-    class SelectClauseCode : ISelectQueryCode
+    class SelectClauseCode : ITopQueryCode
     {
         public ICode Core { get; }
 
@@ -25,7 +25,7 @@ namespace LambdicSql.SqlServer.Inside.CodeParts
             return new SelectClauseCode(Core.Accept(customizer));
         }
 
-        public ISelectQueryCode Create(ICode core)
+        public ITopQueryCode Create(ICode core)
             => new SelectQueryCode(core);
     }
 }

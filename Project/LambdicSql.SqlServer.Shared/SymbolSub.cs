@@ -380,7 +380,12 @@ namespace LambdicSql.SqlServer
     /// </summary>
     public class AggregateArgument
     {
-        [NewFormatConverter(Format = "![0] [1]")]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="variable"></param>
+        /// <param name="type"></param>
+        [NewFormatConverter(Format = "[!0] [1]")]
         public AggregateArgument(string variable, DataTypeBase type) => throw new InvalitContextException(nameof(AggregateArgument));
     }
 
@@ -400,8 +405,19 @@ namespace LambdicSql.SqlServer
     [EnumToStringConverter]
     public enum PermissionSetElement
     {
+        /// <summary>
+        /// 
+        /// </summary>
         Safe,
+
+        /// <summary>
+        /// 
+        /// </summary>
         External_Access,
+
+        /// <summary>
+        /// 
+        /// </summary>
         Unsafe
     }
 
@@ -421,10 +437,29 @@ namespace LambdicSql.SqlServer
     [EnumToStringConverter]
     public enum AlgorithmElement
     {
+        /// <summary>
+        /// 
+        /// </summary>
         RSA_4096,
+
+        /// <summary>
+        /// 
+        /// </summary>
         RSA_3072,
+
+        /// <summary>
+        /// 
+        /// </summary>
         RSA_2048,
+
+        /// <summary>
+        /// 
+        /// </summary>
         RSA_1024,
+
+        /// <summary>
+        /// 
+        /// </summary>
         RSA_512
     }
 
@@ -434,7 +469,14 @@ namespace LambdicSql.SqlServer
     [EnumToStringConverter]
     public enum CreationDispositionElement
     {
+        /// <summary>
+        /// 
+        /// </summary>
         Create_New,
+
+        /// <summary>
+        /// 
+        /// </summary>
         Open_Existing
     }
 
@@ -582,7 +624,14 @@ namespace LambdicSql.SqlServer
     [EnumToStringConverter]
     public enum OperationMode
     {
+        /// <summary>
+        /// 
+        /// </summary>
         Automatic,
+
+        /// <summary>
+        /// 
+        /// </summary>
         Manual,
     }
     
@@ -597,8 +646,19 @@ namespace LambdicSql.SqlServer
     [EnumToStringConverter]
     public enum AllowConnectionsElement
     {
+        /// <summary>
+        /// 
+        /// </summary>
         Non,
+
+        /// <summary>
+        /// 
+        /// </summary>
         Read_Only,
+
+        /// <summary>
+        /// 
+        /// </summary>
         All
     }
 }

@@ -221,6 +221,7 @@ namespace LambdicSql.SqlServer
         /// IDENTITY
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
         /// <param name="seed">Seed.</param>
         /// <param name="increment">Increment.</param>
         /// <returns>Clause.</returns>
@@ -240,6 +241,7 @@ namespace LambdicSql.SqlServer
         /// INDEX
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
+        /// <param name="before">It is the previous clause.</param>
         /// <param name="name">Index name.</param>
         /// <param name="column">Column.</param>
         /// <returns>Clause.</returns>
@@ -885,7 +887,7 @@ namespace LambdicSql.SqlServer
 
 
 
-
+       
 
 
         //
