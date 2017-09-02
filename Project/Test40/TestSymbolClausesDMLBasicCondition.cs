@@ -415,5 +415,33 @@ WHERE
 			tbl_staff.id
 		FROM tbl_staff))");
         }
+
+        [TestMethod]
+        [Priority(1)]
+        public void TestAll_3()
+        {
+            var all = Db<DB>.Sql(db => All(Select(db.tbl_staff.id)));
+            var sql = Db<DB>.Sql(db => all.DisableBrankets() < 3);
+            AssertEx.AreEqual(sql, _connection,
+@"ALL(
+	(SELECT
+		tbl_staff.id))
+ <
+@p_0", 3);
+        }
+
+        [TestMethod]
+        [Priority(1)]
+        public void TestAll_4()
+        {
+            var all = (Sql)Db<DB>.Sql(db => All(Select(db.tbl_staff.id)));
+            var sql = Db<DB>.Sql(db => (int)all.DisableBrankets() < 3);
+            AssertEx.AreEqual(sql, _connection,
+    @"ALL(
+	(SELECT
+		tbl_staff.id))
+ <
+@p_0", 3);
+        }
     }
 }

@@ -369,5 +369,22 @@ namespace LambdicSql.SqlServer
         /// <returns>Not null expression.</returns>
         [FuncStyleConverter]
         public static T NULLIF<T>(Sql<T> expression1, object expression2) => throw new InvalitContextException(nameof(NULLIF));
+
+        /// <summary>
+        /// Do not put parentheses.
+        /// </summary>
+        /// <typeparam name="T">The type represented by sql.</typeparam>
+        /// <param name="sql">sql.</param>
+        /// <returns>The type represented by sql.</returns>
+        [MethodFormatConverter(Format = "[0]")]
+        public static T DisableBrankets<T>(this Sql<T> sql) { throw new InvalitContextException(nameof(DisableBrankets)); }
+
+        /// <summary>
+        /// Do not put parentheses
+        /// </summary>
+        /// <param name="sql">sql.</param>
+        /// <returns>object.</returns>
+        [MethodFormatConverter(Format = "[0]")]
+        public static object DisableBrankets(this Sql sql) { throw new InvalitContextException(nameof(DisableBrankets)); }
     }
 }

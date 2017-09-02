@@ -9,7 +9,6 @@
     <Import_RootNamespace>LambdicSql.SqlServer</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\AllConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\ConditionClauseConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\FromConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\JoinConverterAttribute.cs" />
@@ -25,7 +24,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)DateAddElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DateNameElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DboSymbol.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Inside\CodeParts\AllDisableBinaryExpressionBracketsCode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Inside\CodeParts\SelectClauseCode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Inside\CodeParts\SelectQueryCode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Inside\CodeParts\SubQueryAndNameCode.cs" />

@@ -919,7 +919,7 @@ namespace LambdicSql.SqlServer
         /// <typeparam name="T">Retunn type.</typeparam>
         /// <param name="sub">Sub query.</param>
         /// <returns>Sub query's selected value.</returns>
-        [AllConverter]
+        [FuncStyleConverter]
         public static T All<T>(Clause<T> sub) { throw new InvalitContextException(nameof(All)); }
 
         /// <summary>
@@ -928,7 +928,7 @@ namespace LambdicSql.SqlServer
         /// <typeparam name="T">Retunn type.</typeparam>
         /// <param name="sub">Sub query.</param>
         /// <returns>Sub query's selected value.</returns>
-        [AllConverter]
+        [FuncStyleConverter]
         public static T All<T>(Sql<T> sub) { throw new InvalitContextException(nameof(All)); }
 
         /// <summary>
