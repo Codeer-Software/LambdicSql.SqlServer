@@ -150,10 +150,10 @@ namespace LambdicSql.SqlServer
         /// DELAYED_DURABILITY
         /// https://docs.microsoft.com/en-us/sql/t-sql/language-elements/commit-transaction-transact-sql
         /// </summary>
-        /// <param name="isOn"></param>
+        /// <param name="onOff">ON/OFF.</param>
         /// <returns>IDelayedDurability.</returns>
-        [OnOffClause(Name = "DELAYED_DURABILITY =")]
-        public static DelayedDurabilityBase Delayed_Durability_Assign(bool isOn) => throw new InvalitContextException(nameof(Delayed_Durability_Assign));
+        [ClauseStyleConverter(Name = "DELAYED_DURABILITY =")]
+        public static DelayedDurabilityBase Delayed_Durability_Assign(OnOff onOff) => throw new InvalitContextException(nameof(Delayed_Durability_Assign));
 
         /// <summary>
         /// WITH.

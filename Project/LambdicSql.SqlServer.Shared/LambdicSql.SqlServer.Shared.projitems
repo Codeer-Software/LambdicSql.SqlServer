@@ -9,7 +9,6 @@
     <Import_RootNamespace>LambdicSql.SqlServer</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\ConditionClauseConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\FromConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\JoinConverterAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\MergeConverterAttribute.cs" />
@@ -31,7 +30,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Inside\PartsUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managed_BackupSymbols .cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MsdbSymbol.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ConverterAttributes\OnOffClauseAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.ServiceBrokerStatements.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.BackupRestore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Symbol.Clauses.ControlOfFlow.cs" />

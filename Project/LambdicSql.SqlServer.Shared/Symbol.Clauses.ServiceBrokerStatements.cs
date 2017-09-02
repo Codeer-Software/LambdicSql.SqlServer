@@ -169,10 +169,10 @@ namespace LambdicSql.SqlServer
         /// ENCRYPTION = 
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/begin-dialog-conversation-transact-sql
         /// </summary>
-        /// <param name="isOn">ON/OFF.</param>
+        /// <param name="onOff">ON/OFF.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "Encryption =")]
-        public static Clause<Non> Encryption_Assign(bool isOn) => throw new InvalitContextException(nameof(Encryption_Assign));
+        [ClauseStyleConverter(Name = "Encryption =")]
+        public static Clause<Non> Encryption_Assign(OnOff onOff) => throw new InvalitContextException(nameof(Encryption_Assign));
 
         /// <summary>
         /// ENCRYPTION = 
@@ -180,9 +180,9 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">The type represented by before clause.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">ON/OFF.</param>
-        [OnOffClause(Name = "Encryption =")]
-        public static Clause<T> Encryption_Assign<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Encryption_Assign));
+        /// <param name="onOff">ON/OFF.</param>
+        [ClauseStyleConverter(Name = "Encryption =")]
+        public static Clause<T> Encryption_Assign<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Encryption_Assign));
 
         /// <summary>
         /// RELATED_CONVERSATION = 

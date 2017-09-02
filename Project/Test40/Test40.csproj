@@ -39,8 +39,8 @@
       <HintPath>..\packages\Dapper.1.50.2\lib\net40\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LambdicSql.NetFramework.3.5, Version=0.58.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.58.0\lib\net35\LambdicSql.NetFramework.3.5.dll</HintPath>
+    <Reference Include="LambdicSql.NetFramework.3.5, Version=0.59.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.59.0\lib\net35\LambdicSql.NetFramework.3.5.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

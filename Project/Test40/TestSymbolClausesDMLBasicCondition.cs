@@ -150,7 +150,7 @@ WHERE tbl_staff.id IN(@p_0, @p_1)",
  @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE
+WHERE 
 	tbl_staff.id IN(
 		(SELECT
 			tbl_remuneration.staff_id
@@ -187,7 +187,7 @@ WHERE
 @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE
+WHERE 
 	EXISTS
 		(SELECT
 			tbl_remuneration.staff_id AS id
@@ -222,7 +222,7 @@ WHERE
 @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE
+WHERE 
 	EXISTS
 		(SELECT
 			tbl_remuneration.staff_id AS id
@@ -377,7 +377,7 @@ WHERE @val IS NOT NULL", new Params() { { "@val", "" } });
 @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE
+WHERE 
 	tbl_staff.id
 	 <
 	ALL(
@@ -407,7 +407,7 @@ WHERE
 @"SELECT
 	tbl_staff.id AS Id
 FROM tbl_staff
-WHERE
+WHERE 
 	tbl_staff.id
 	 <
 	ALL(

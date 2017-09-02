@@ -480,7 +480,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="condition">It is a conditional expression of WHERE.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "WHERE")]
+        [MethodFormatConverter(Format = "WHERE [0]", VanishIfEmptyParams = true)]
         public static Clause<Non> Where(bool condition) { throw new InvalitContextException(nameof(Where)); }
 
         /// <summary>
@@ -490,7 +490,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="condition">It is a conditional expression of WHERE.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "WHERE")]
+        [MethodFormatConverter(Format = "WHERE [1]", VanishIfEmptyParams = true)]
         public static Clause<T> Where<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(Where)); }
 
         /// <summary>
@@ -570,7 +570,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="condition">It is a conditional expression of HAVING.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "HAVING")]
+        [MethodFormatConverter(Format = "HAVING [0]", VanishIfEmptyParams = true)]
         public static Clause<Non> Having(bool condition) { throw new InvalitContextException(nameof(Having)); }
 
         /// <summary>
@@ -580,7 +580,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="condition">It is a conditional expression of HAVING.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "HAVING")]
+        [MethodFormatConverter(Format = "HAVING [1]", VanishIfEmptyParams = true)]
         public static Clause<T> Having<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(Having)); }
 
         /// <summary>
@@ -1863,7 +1863,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="condition">condition.</param>
         /// <returns>Clause</returns>
-        [ConditionClauseConverter(IsFuncType = true)]
+        [MethodFormatConverter(Format = "ON(|[0])", VanishIfEmptyParams = true)]
         public static Clause<Non> On(bool condition) => throw new InvalitContextException(nameof(On));
 
         /// <summary>
@@ -1874,7 +1874,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="condition">condition.</param>
         /// <returns>Clause</returns>
-        [ConditionClauseConverter(IsFuncType = true)]
+        [MethodFormatConverter(Format = "ON(|[1])", VanishIfEmptyParams = true)]
         public static Clause<T> On<T>(this Clause<T> before, bool condition) => throw new InvalitContextException(nameof(On));
 
         /// <summary>
@@ -1901,7 +1901,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="condition">condition.</param>
         /// <returns>Clause</returns>
-        [ConditionClauseConverter(Name = "WHEN MATCHED AND")]
+        [MethodFormatConverter(Format = "WHEN MATCHED AND| [0]", VanishIfEmptyParams = true)]
         public static Clause<Non> WhenMatchedAnd(bool condition) => throw new InvalitContextException(nameof(WhenMatchedAnd));
 
         /// <summary>
@@ -1912,7 +1912,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="condition">condition.</param>
         /// <returns>Clause</returns>
-        [ConditionClauseConverter(Name = "WHEN MATCHED AND")]
+        [MethodFormatConverter(Format = "WHEN MATCHED AND| [1]", VanishIfEmptyParams = true)]
         public static Clause<T> WhenMatchedAnd<T>(this Clause<T> before, bool condition) => throw new InvalitContextException(nameof(WhenMatchedAnd));
 
         /// <summary>
@@ -1939,7 +1939,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="condition">condition.</param>
         /// <returns>Clause</returns>
-        [ConditionClauseConverter(Name = "WHEN MATCHED BY SOURCE AND")]
+        [MethodFormatConverter(Format = "WHEN MATCHED BY SOURCE AND| [0]", VanishIfEmptyParams = true)]
         public static Clause<Non> WhenMatchedBySourceAnd(bool condition) => throw new InvalitContextException(nameof(WhenMatchedBySourceAnd));
 
         /// <summary>
@@ -1950,7 +1950,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before">It is the previous clause.</param>
         /// <param name="condition">condition.</param>
         /// <returns>Clause</returns>
-        [ConditionClauseConverter(Name = "WHEN MATCHED BY SOURCE AND")]
+        [MethodFormatConverter(Format = "WHEN MATCHED BY SOURCE AND| [1]", VanishIfEmptyParams = true)]
         public static Clause<T> WhenMatchedBySourceAnd<T>(this Clause<T> before, bool condition) => throw new InvalitContextException(nameof(WhenMatchedBySourceAnd));
 
         /// <summary>

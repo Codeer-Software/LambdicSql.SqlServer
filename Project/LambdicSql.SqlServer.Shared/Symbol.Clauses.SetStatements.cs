@@ -11,10 +11,10 @@ namespace LambdicSql.SqlServer
         /// SET ANSI_DEFAULTS.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_DEFAULTS")]
-        public static Clause<Non> Set_Ansi_Defaults(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Defaults));
+        [ClauseStyleConverter(Name = "SET ANSI_DEFAULTS")]
+        public static Clause<Non> Set_Ansi_Defaults(OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Defaults));
 
         /// <summary>
         /// SET ANSI_DEFAULTS.
@@ -22,19 +22,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_DEFAULTS")]
-        public static Clause<T> Set_Ansi_Defaults<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Defaults));
+        [ClauseStyleConverter(Name = "SET ANSI_DEFAULTS")]
+        public static Clause<T> Set_Ansi_Defaults<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Defaults));
 
         /// <summary>
         /// SET ANSI_NULL_DFLT_OFF.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-off-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_NULL_DFLT_OFF")]
-        public static Clause<Non> Set_Ansi_Null_Dflt_Off(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_Off));
+        [ClauseStyleConverter(Name = "SET ANSI_NULL_DFLT_OFF")]
+        public static Clause<Non> Set_Ansi_Null_Dflt_Off(OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_Off));
 
         /// <summary>
         /// SET ANSI_NULL_DFLT_OFF.
@@ -42,19 +42,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_NULL_DFLT_OFF")]
-        public static Clause<T> Set_Ansi_Null_Dflt_Off<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_Off));
+        [ClauseStyleConverter(Name = "SET ANSI_NULL_DFLT_OFF")]
+        public static Clause<T> Set_Ansi_Null_Dflt_Off<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_Off));
 
         /// <summary>
         /// SET ANSI_NULL_DFLT_ON.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-on-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_NULL_DFLT_ON")]
-        public static Clause<Non> Set_Ansi_Null_Dflt_On(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_On));
+        [ClauseStyleConverter(Name = "SET ANSI_NULL_DFLT_ON")]
+        public static Clause<Non> Set_Ansi_Null_Dflt_On(OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_On));
 
         /// <summary>
         /// SET ANSI_NULL_DFLT_ON.
@@ -62,19 +62,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_NULL_DFLT_ON")]
-        public static Clause<T> Set_Ansi_Null_Dflt_On<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_On));
+        [ClauseStyleConverter(Name = "SET ANSI_NULL_DFLT_ON")]
+        public static Clause<T> Set_Ansi_Null_Dflt_On<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Null_Dflt_On));
 
         /// <summary>
         /// SET ANSI_NULLS.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-nulls-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_NULLS")]
-        public static Clause<Non> Set_Ansi_Nulls(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Nulls));
+        [ClauseStyleConverter(Name = "SET ANSI_NULLS")]
+        public static Clause<Non> Set_Ansi_Nulls(OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Nulls));
 
         /// <summary>
         /// SET ANSI_NULLS.
@@ -82,19 +82,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_NULLS")]
-        public static Clause<T> Set_Ansi_Nulls<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Nulls));
+        [ClauseStyleConverter(Name = "SET ANSI_NULLS")]
+        public static Clause<T> Set_Ansi_Nulls<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Nulls));
 
         /// <summary>
         /// SET ANSI_PADDING.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-padding-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_PADDING")]
-        public static Clause<Non> Set_Ansi_Padding(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Padding));
+        [ClauseStyleConverter(Name = "SET ANSI_PADDING")]
+        public static Clause<Non> Set_Ansi_Padding(OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Padding));
 
         /// <summary>
         /// SET ANSI_PADDING.
@@ -102,19 +102,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_PADDING")]
-        public static Clause<T> Set_Ansi_Padding<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Padding));
+        [ClauseStyleConverter(Name = "SET ANSI_PADDING")]
+        public static Clause<T> Set_Ansi_Padding<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Padding));
 
         /// <summary>
         /// SET ANSI_WARNINGS.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-warnings-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_WARNINGS")]
-        public static Clause<Non> Set_Ansi_Warnings(bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Warnings));
+        [ClauseStyleConverter(Name = "SET ANSI_WARNINGS")]
+        public static Clause<Non> Set_Ansi_Warnings(OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Warnings));
 
         /// <summary>
         /// SET ANSI_WARNINGS.
@@ -122,19 +122,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ANSI_WARNINGS")]
-        public static Clause<T> Set_Ansi_Warnings<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Ansi_Warnings));
+        [ClauseStyleConverter(Name = "SET ANSI_WARNINGS")]
+        public static Clause<T> Set_Ansi_Warnings<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Ansi_Warnings));
 
         /// <summary>
         /// SET ARITHABORT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ARITHABORT")]
-        public static Clause<Non> Set_ArithAbort(bool isOn) => throw new InvalitContextException(nameof(Set_ArithAbort));
+        [ClauseStyleConverter(Name = "SET ARITHABORT")]
+        public static Clause<Non> Set_ArithAbort(OnOff onOff) => throw new InvalitContextException(nameof(Set_ArithAbort));
 
         /// <summary>
         /// SET ARITHABORT.
@@ -142,19 +142,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ARITHABORT")]
-        public static Clause<T> Set_ArithAbort<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ArithAbort));
+        [ClauseStyleConverter(Name = "SET ARITHABORT")]
+        public static Clause<T> Set_ArithAbort<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_ArithAbort));
 
         /// <summary>
         /// SET ARITHIGNORE.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-arithignore-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ARITHIGNORE")]
-        public static Clause<Non> Set_ArithIgnore(bool isOn) => throw new InvalitContextException(nameof(Set_ArithIgnore));
+        [ClauseStyleConverter(Name = "SET ARITHIGNORE")]
+        public static Clause<Non> Set_ArithIgnore(OnOff onOff) => throw new InvalitContextException(nameof(Set_ArithIgnore));
 
         /// <summary>.
         /// SET ARITHIGNORE
@@ -162,19 +162,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET ARITHIGNORE")]
-        public static Clause<T> Set_ArithIgnore<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ArithIgnore));
+        [ClauseStyleConverter(Name = "SET ARITHIGNORE")]
+        public static Clause<T> Set_ArithIgnore<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_ArithIgnore));
 
         /// <summary>
         /// SET CONCAT_NULL_YIELDS_NULL.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-concat-null-yields-null-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET CONCAT_NULL_YIELDS_NULL")]
-        public static Clause<Non> Set_Concat_Null_Yields_Null(bool isOn) => throw new InvalitContextException(nameof(Set_Concat_Null_Yields_Null));
+        [ClauseStyleConverter(Name = "SET CONCAT_NULL_YIELDS_NULL")]
+        public static Clause<Non> Set_Concat_Null_Yields_Null(OnOff onOff) => throw new InvalitContextException(nameof(Set_Concat_Null_Yields_Null));
 
         /// <summary>
         /// SET CONCAT_NULL_YIELDS_NULL.
@@ -182,10 +182,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET CONCAT_NULL_YIELDS_NULL")]
-        public static Clause<T> Set_Concat_Null_Yields_Null<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Concat_Null_Yields_Null));
+        [ClauseStyleConverter(Name = "SET CONCAT_NULL_YIELDS_NULL")]
+        public static Clause<T> Set_Concat_Null_Yields_Null<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Concat_Null_Yields_Null));
 
         /// <summary>
         /// SET CONTEXT_INFO.
@@ -211,10 +211,10 @@ namespace LambdicSql.SqlServer
         /// SET CURSOR_CLOSE_ON_COMMIT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-cursor-close-on-commit-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
-        public static Clause<Non> Set_Cursor_Close_On_Commit(bool isOn) => throw new InvalitContextException(nameof(Set_Cursor_Close_On_Commit));
+        [ClauseStyleConverter(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
+        public static Clause<Non> Set_Cursor_Close_On_Commit(OnOff onOff) => throw new InvalitContextException(nameof(Set_Cursor_Close_On_Commit));
 
         /// <summary>
         /// SET CURSOR_CLOSE_ON_COMMIT.
@@ -222,10 +222,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
-        public static Clause<T> Set_Cursor_Close_On_Commit<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Cursor_Close_On_Commit));
+        [ClauseStyleConverter(Name = "SET CURSOR_CLOSE_ON_COMMIT")]
+        public static Clause<T> Set_Cursor_Close_On_Commit<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Cursor_Close_On_Commit));
 
         /// <summary>
         /// SET DATEFIRST.
@@ -329,10 +329,10 @@ namespace LambdicSql.SqlServer
         /// SET FMTONLY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-fmtonly-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET FMTONLY")]
-        public static Clause<Non> Set_Fmtonly(bool isOn) => throw new InvalitContextException(nameof(Set_Fmtonly));
+        [ClauseStyleConverter(Name = "SET FMTONLY")]
+        public static Clause<Non> Set_Fmtonly(OnOff onOff) => throw new InvalitContextException(nameof(Set_Fmtonly));
 
         /// <summary>
         /// SET FMTONLY.
@@ -340,19 +340,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET FMTONLY")]
-        public static Clause<T> Set_Fmtonly<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Fmtonly));
+        [ClauseStyleConverter(Name = "SET FMTONLY")]
+        public static Clause<T> Set_Fmtonly<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Fmtonly));
 
         /// <summary>
         /// SET FORCEPLAN.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-forceplan-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET FORCEPLAN")]
-        public static Clause<Non> Set_ForcePlan(bool isOn) => throw new InvalitContextException(nameof(Set_ForcePlan));
+        [ClauseStyleConverter(Name = "SET FORCEPLAN")]
+        public static Clause<Non> Set_ForcePlan(OnOff onOff) => throw new InvalitContextException(nameof(Set_ForcePlan));
 
         /// <summary>
         /// SET FORCEPLAN.
@@ -360,10 +360,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET FORCEPLAN")]
-        public static Clause<T> Set_ForcePlan<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ForcePlan));
+        [ClauseStyleConverter(Name = "SET FORCEPLAN")]
+        public static Clause<T> Set_ForcePlan<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_ForcePlan));
 
         /// <summary>
         /// SET IDENTITY_INSERT.
@@ -389,10 +389,10 @@ namespace LambdicSql.SqlServer
         /// SET IMPLICIT_TRANSACTIONS.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET IMPLICIT_TRANSACTIONS")]
-        public static Clause<Non> Set_Implicit_Transactions(bool isOn) => throw new InvalitContextException(nameof(Set_Implicit_Transactions));
+        [ClauseStyleConverter(Name = "SET IMPLICIT_TRANSACTIONS")]
+        public static Clause<Non> Set_Implicit_Transactions(OnOff onOff) => throw new InvalitContextException(nameof(Set_Implicit_Transactions));
 
         /// <summary>
         /// SET IMPLICIT_TRANSACTIONS.
@@ -400,10 +400,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET IMPLICIT_TRANSACTIONS")]
-        public static Clause<T> Set_Implicit_Transactions<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Implicit_Transactions));
+        [ClauseStyleConverter(Name = "SET IMPLICIT_TRANSACTIONS")]
+        public static Clause<T> Set_Implicit_Transactions<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Implicit_Transactions));
 
         /// <summary>
         /// SET LANGUAGE.
@@ -449,10 +449,10 @@ namespace LambdicSql.SqlServer
         /// SET NOCOUNT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-nocount-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET NOCOUNT")]
-        public static Clause<Non> Set_NoCount(bool isOn) => throw new InvalitContextException(nameof(Set_NoCount));
+        [ClauseStyleConverter(Name = "SET NOCOUNT")]
+        public static Clause<Non> Set_NoCount(OnOff onOff) => throw new InvalitContextException(nameof(Set_NoCount));
 
         /// <summary>
         /// SET NOCOUNT.
@@ -460,19 +460,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET NOCOUNT")]
-        public static Clause<T> Set_NoCount<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_NoCount));
+        [ClauseStyleConverter(Name = "SET NOCOUNT")]
+        public static Clause<T> Set_NoCount<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_NoCount));
 
         /// <summary>
         /// SET NOEXEC.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-noexec-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET NOEXEC")]
-        public static Clause<Non> SetNoExec(bool isOn) => throw new InvalitContextException(nameof(SetNoExec));
+        [ClauseStyleConverter(Name = "SET NOEXEC")]
+        public static Clause<Non> SetNoExec(OnOff onOff) => throw new InvalitContextException(nameof(SetNoExec));
 
         /// <summary>
         /// SET NOEXEC.
@@ -480,19 +480,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET NOEXEC")]
-        public static Clause<T> SetNoExec<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(SetNoExec));
+        [ClauseStyleConverter(Name = "SET NOEXEC")]
+        public static Clause<T> SetNoExec<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(SetNoExec));
 
         /// <summary>
         /// SET NUMERIC_ROUNDABORT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-numeric-roundabort-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET NUMERIC_ROUNDABORT")]
-        public static Clause<Non> Set_Numeric_RoundAbort(bool isOn) => throw new InvalitContextException(nameof(Set_Numeric_RoundAbort));
+        [ClauseStyleConverter(Name = "SET NUMERIC_ROUNDABORT")]
+        public static Clause<Non> Set_Numeric_RoundAbort(OnOff onOff) => throw new InvalitContextException(nameof(Set_Numeric_RoundAbort));
 
         /// <summary>
         /// SET NUMERIC_ROUNDABORT.
@@ -500,10 +500,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET NUMERIC_ROUNDABORT")]
-        public static Clause<T> Set_Numeric_RoundAbort<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Numeric_RoundAbort));
+        [ClauseStyleConverter(Name = "SET NUMERIC_ROUNDABORT")]
+        public static Clause<T> Set_Numeric_RoundAbort<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Numeric_RoundAbort));
 
         /// <summary>
         /// SET OFFSETS keyword_list ON.
@@ -549,10 +549,10 @@ namespace LambdicSql.SqlServer
         /// SET PARSEONLY.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-parseonly-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET PARSEONLY")]
-        public static Clause<Non> SetParseOnly(bool isOn) => throw new InvalitContextException(nameof(SetParseOnly));
+        [ClauseStyleConverter(Name = "SET PARSEONLY")]
+        public static Clause<Non> SetParseOnly(OnOff onOff) => throw new InvalitContextException(nameof(SetParseOnly));
 
         /// <summary>
         /// SET PARSEONLY.
@@ -560,10 +560,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET PARSEONLY")]
-        public static Clause<T> SetParseOnly<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(SetParseOnly));
+        [ClauseStyleConverter(Name = "SET PARSEONLY")]
+        public static Clause<T> SetParseOnly<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(SetParseOnly));
 
         /// <summary>
         /// SET QUERY_GOVERNOR_COST_LIMIT.
@@ -589,10 +589,10 @@ namespace LambdicSql.SqlServer
         /// SET QUOTED_IDENTIFIER.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-quoted-identifier-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET QUOTED_IDENTIFIER")]
-        public static Clause<Non> Set_Quoted_Identifier(bool isOn) => throw new InvalitContextException(nameof(Set_Quoted_Identifier));
+        [ClauseStyleConverter(Name = "SET QUOTED_IDENTIFIER")]
+        public static Clause<Non> Set_Quoted_Identifier(OnOff onOff) => throw new InvalitContextException(nameof(Set_Quoted_Identifier));
 
         /// <summary>
         /// SET QUOTED_IDENTIFIER.
@@ -600,19 +600,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET QUOTED_IDENTIFIER")]
-        public static Clause<T> Set_Quoted_Identifier<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Quoted_Identifier));
+        [ClauseStyleConverter(Name = "SET QUOTED_IDENTIFIER")]
+        public static Clause<T> Set_Quoted_Identifier<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Quoted_Identifier));
 
         /// <summary>
         /// SET REMOTE_PROC_TRANSACTIONS.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-remote-proc-transactions-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET REMOTE_PROC_TRANSACTIONS")]
-        public static Clause<Non> Set_Remote_Proc_Transactions(bool isOn) => throw new InvalitContextException(nameof(Set_Remote_Proc_Transactions));
+        [ClauseStyleConverter(Name = "SET REMOTE_PROC_TRANSACTIONS")]
+        public static Clause<Non> Set_Remote_Proc_Transactions(OnOff onOff) => throw new InvalitContextException(nameof(Set_Remote_Proc_Transactions));
 
         /// <summary>
         /// SET REMOTE_PROC_TRANSACTIONS.
@@ -620,10 +620,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET REMOTE_PROC_TRANSACTIONS")]
-        public static Clause<T> Set_Remote_Proc_Transactions<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Remote_Proc_Transactions));
+        [ClauseStyleConverter(Name = "SET REMOTE_PROC_TRANSACTIONS")]
+        public static Clause<T> Set_Remote_Proc_Transactions<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Remote_Proc_Transactions));
 
         /// <summary>
         /// SET ROWCOUNT.
@@ -649,10 +649,10 @@ namespace LambdicSql.SqlServer
         /// SET SHOWPLAN_ALL.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-showplan-all-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET SHOWPLAN_ALL")]
-        public static Clause<Non> Set_ShowPlan_All(bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_All));
+        [ClauseStyleConverter(Name = "SET SHOWPLAN_ALL")]
+        public static Clause<Non> Set_ShowPlan_All(OnOff onOff) => throw new InvalitContextException(nameof(Set_ShowPlan_All));
 
         /// <summary>
         /// SET SHOWPLAN_ALL.
@@ -660,19 +660,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET SHOWPLAN_ALL")]
-        public static Clause<T> Set_ShowPlan_All<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_All));
+        [ClauseStyleConverter(Name = "SET SHOWPLAN_ALL")]
+        public static Clause<T> Set_ShowPlan_All<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_ShowPlan_All));
 
         /// <summary>
         /// SET SHOWPLAN_TEXT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-showplan-text-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET SHOWPLAN_TEXT")]
-        public static Clause<Non> Set_ShowPlan_Text(bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Text));
+        [ClauseStyleConverter(Name = "SET SHOWPLAN_TEXT")]
+        public static Clause<Non> Set_ShowPlan_Text(OnOff onOff) => throw new InvalitContextException(nameof(Set_ShowPlan_Text));
 
         /// <summary>
         /// SET SHOWPLAN_TEXT.
@@ -680,19 +680,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET SHOWPLAN_TEXT")]
-        public static Clause<T> Set_ShowPlan_Text<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Text));
+        [ClauseStyleConverter(Name = "SET SHOWPLAN_TEXT")]
+        public static Clause<T> Set_ShowPlan_Text<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_ShowPlan_Text));
 
         /// <summary>
         /// SET SHOWPLAN_XML.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-showplan-xml-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET SHOWPLAN_XML")]
-        public static Clause<Non> Set_ShowPlan_Xml(bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Xml));
+        [ClauseStyleConverter(Name = "SET SHOWPLAN_XML")]
+        public static Clause<Non> Set_ShowPlan_Xml(OnOff onOff) => throw new InvalitContextException(nameof(Set_ShowPlan_Xml));
 
         /// <summary>
         /// SET SHOWPLAN_XML.
@@ -700,19 +700,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET SHOWPLAN_XML")]
-        public static Clause<T> Set_ShowPlan_Xml<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_ShowPlan_Xml));
+        [ClauseStyleConverter(Name = "SET SHOWPLAN_XML")]
+        public static Clause<T> Set_ShowPlan_Xml<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_ShowPlan_Xml));
 
         /// <summary>
         /// SET STATISTICS IO.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statistics-io-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS IO")]
-        public static Clause<Non> Set_Statistics_IO(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_IO));
+        [ClauseStyleConverter(Name = "SET STATISTICS IO")]
+        public static Clause<Non> Set_Statistics_IO(OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_IO));
 
         /// <summary>
         /// SET STATISTICS IO.
@@ -720,19 +720,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS IO")]
-        public static Clause<T> Set_Statistics_IO<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_IO));
+        [ClauseStyleConverter(Name = "SET STATISTICS IO")]
+        public static Clause<T> Set_Statistics_IO<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_IO));
 
         /// <summary>
         /// SET STATISTICS PROFILE.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statistics-profile-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS PROFILE")]
-        public static Clause<Non> Set_Statistics_Profile(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Profile));
+        [ClauseStyleConverter(Name = "SET STATISTICS PROFILE")]
+        public static Clause<Non> Set_Statistics_Profile(OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_Profile));
 
         /// <summary>
         /// SET STATISTICS PROFILE.
@@ -740,19 +740,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS PROFILE")]
-        public static Clause<T> Set_Statistics_Profile<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Profile));
+        [ClauseStyleConverter(Name = "SET STATISTICS PROFILE")]
+        public static Clause<T> Set_Statistics_Profile<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_Profile));
 
         /// <summary>
         /// SET STATISTICS TIME.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statistics-time-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS TIME")]
-        public static Clause<Non> Set_Statistics_Time(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Time));
+        [ClauseStyleConverter(Name = "SET STATISTICS TIME")]
+        public static Clause<Non> Set_Statistics_Time(OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_Time));
 
         /// <summary>
         /// SET STATISTICS TIME.
@@ -760,19 +760,19 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS TIME")]
-        public static Clause<T> Set_Statistics_Time<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Time));
+        [ClauseStyleConverter(Name = "SET STATISTICS TIME")]
+        public static Clause<T> Set_Statistics_Time<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_Time));
 
         /// <summary>
         /// SET STATISTICS XML.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statistics-xml-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS XML")]
-        public static Clause<Non> Set_Statistics_Xml(bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Xml));
+        [ClauseStyleConverter(Name = "SET STATISTICS XML")]
+        public static Clause<Non> Set_Statistics_Xml(OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_Xml));
 
         /// <summary>
         /// SET STATISTICS XML.
@@ -780,10 +780,10 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET STATISTICS XML")]
-        public static Clause<T> Set_Statistics_Xml<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Statistics_Xml));
+        [ClauseStyleConverter(Name = "SET STATISTICS XML")]
+        public static Clause<T> Set_Statistics_Xml<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Statistics_Xml));
 
         /// <summary>
         /// SET TEXTSIZE.
@@ -829,10 +829,10 @@ namespace LambdicSql.SqlServer
         /// SET XACT_ABORT.
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/set-xact-abort-transact-sql
         /// </summary>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET XACT_ABORT")]
-        public static Clause<Non> Set_Xact_Abort(bool isOn) => throw new InvalitContextException(nameof(Set_Xact_Abort));
+        [ClauseStyleConverter(Name = "SET XACT_ABORT")]
+        public static Clause<Non> Set_Xact_Abort(OnOff onOff) => throw new InvalitContextException(nameof(Set_Xact_Abort));
 
         /// <summary>
         /// SET XACT_ABORT.
@@ -840,9 +840,9 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="before">It is the previous clause.</param>
-        /// <param name="isOn">is on.</param>
+        /// <param name="onOff">on or off.</param>
         /// <returns>Clause.</returns>
-        [OnOffClause(Name = "SET XACT_ABORT")]
-        public static Clause<T> Set_Xact_Abort<T>(this Clause<T> before, bool isOn) => throw new InvalitContextException(nameof(Set_Xact_Abort));
+        [ClauseStyleConverter(Name = "SET XACT_ABORT")]
+        public static Clause<T> Set_Xact_Abort<T>(this Clause<T> before, OnOff onOff) => throw new InvalitContextException(nameof(Set_Xact_Abort));
     }
 }
