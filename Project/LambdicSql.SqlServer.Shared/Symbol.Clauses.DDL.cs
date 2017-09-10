@@ -293,7 +293,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "EXTERNAL NAME ![0]")]
+        [MethodFormatConverter(Format = "EXTERNAL NAME [!0]")]
         public static Clause<Non> ExternalName(string name) => throw new InvalitContextException(nameof(ExternalName));
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "EXTERNAL NAME ![1]")]
+        [MethodFormatConverter(Format = "EXTERNAL NAME [!1]")]
         public static Clause<T> ExternalName<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(ExternalName));
 
         /// <summary>
@@ -311,7 +311,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "CREATE APPLICATION ROLE ![0]")]
+        [MethodFormatConverter(Format = "CREATE APPLICATION ROLE [!0]")]
         public static Clause<Non> CreateApplicationRole(string name) => throw new InvalitContextException(nameof(CreateApplicationRole));
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "CREATE APPLICATION ROLE ![1]")]
+        [MethodFormatConverter(Format = "CREATE APPLICATION ROLE [!1]")]
         public static Clause<T> CreateApplicationRole<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(CreateApplicationRole));
 
         /// <summary>
@@ -347,7 +347,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="password"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "PASSWORD $[0]")]
+        [MethodFormatConverter(Format = "PASSWORD [$0]")]
         public static CreateApplicationRoleBase Password_Assign(string password) => throw new InvalitContextException(nameof(Password_Assign));
 
         /// <summary>
@@ -355,7 +355,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="schema_name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "DEFAULT_SCHEMA $[0]")]
+        [MethodFormatConverter(Format = "DEFAULT_SCHEMA [$0]")]
         public static CreateApplicationRoleBase Default_Schema_Assign(string schema_name) => throw new InvalitContextException(nameof(Default_Schema_Assign));
 
         /// <summary>
@@ -363,7 +363,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "CREATE ASSEMBLY ![0]")]
+        [MethodFormatConverter(Format = "CREATE ASSEMBLY [!0]")]
         public static Clause<Non> CreateAssembly(string name) => throw new InvalitContextException(nameof(CreateAssembly));
 
         /// <summary>
@@ -373,7 +373,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "CREATE ASSEMBLY ![1]")]
+        [MethodFormatConverter(Format = "CREATE ASSEMBLY [!1]")]
         public static Clause<T> CreateAssembly<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(CreateAssembly));
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "AUTHORIZATION ![0]")]
+        [MethodFormatConverter(Format = "AUTHORIZATION [!0]")]
         public static Clause<Non> Authorization(string name) => throw new InvalitContextException(nameof(Authorization));
 
         /// <summary>
@@ -391,7 +391,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "AUTHORIZATION ![1]")]
+        [MethodFormatConverter(Format = "AUTHORIZATION [!1]")]
         public static Clause<T> Authorization<T>(this Clause<T> before, string name) => throw new InvalitContextException(nameof(Authorization));
 
         /// <summary>
@@ -399,7 +399,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="from"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "FROM ![0]")]
+        [MethodFormatConverter(Format = "FROM [!0]")]
         public static Clause<Non> From(string from) => throw new InvalitContextException(nameof(From));
 
         /// <summary>
@@ -409,7 +409,7 @@ namespace LambdicSql.SqlServer
         /// <param name="before"></param>
         /// <param name="from"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "FROM ![1]")]
+        [MethodFormatConverter(Format = "FROM [!1]")]
         public static Clause<T> From<T>(this Clause<T> before, string from) => throw new InvalitContextException(nameof(From));
 
         /// <summary>
@@ -816,7 +816,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "READ_ONLY_ROUTING_URL = $[0]")]
+        [MethodFormatConverter(Format = "READ_ONLY_ROUTING_URL = [$0]")]
         public static RoleBase Read_Only_Routing_Url_Assign(string url) => throw new InvalitContextException(nameof(Read_Only_Routing_Url_Assign));
 
         /// <summary>
@@ -824,7 +824,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="time"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "SESSION_TIMEOUT = $[0]")]
+        [MethodFormatConverter(Format = "SESSION_TIMEOUT = [$0]")]
         public static RoleBase Session_Timeout_Assign(int time) => throw new InvalitContextException(nameof(Session_Timeout_Assign));
 
         /// <summary>
@@ -840,7 +840,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        [MethodFormatConverter(Format = "LISTENER_URL = $[0]")]
+        [MethodFormatConverter(Format = "LISTENER_URL = [$0]")]
         public static AddReplicaOptionBase Listener_Url_Assign(string url) => throw new InvalitContextException(nameof(Listener_Url_Assign));
 
         /// <summary>

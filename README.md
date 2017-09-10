@@ -405,7 +405,7 @@ public void TestFormatText()
         {
             name = db.tbl_staff.name,
             payment_date = db.tbl_remuneration.payment_date,
-            money = (decimal)"{0} + 1000".ToSql(db.tbl_remuneration.money),
+            money = (decimal)"{0} + 1000".ToSqlObject(db.tbl_remuneration.money),
         }).
         From(db.tbl_remuneration).
             Join(db.tbl_staff, db.tbl_remuneration.staff_id == db.tbl_staff.id).
