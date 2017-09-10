@@ -34,10 +34,6 @@ DapperAdapter.Assembly = typeof(Dapper.SqlMapper).Assembly;
 //.net standard
 DapperAdapter.Assembly = typeof(Dapper.SqlMapper).GetTypeInfo().Assembly;
 ```
-## Featuring sqlite-net-pcl
-For PCL, recommend sqlite-net-pcl.
-
-    PM> Install-Package sqlite-net-pcl
 
 ## Quick Start.
 Standard code.
