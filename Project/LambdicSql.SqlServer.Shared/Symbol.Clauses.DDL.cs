@@ -573,7 +573,7 @@ namespace LambdicSql.SqlServer
         /// <returns></returns>
         [MethodFormatConverter(Format = "CREATE AVAILABILITY GROUP [!0]")]
         public static Clause<Non> CreateAvailabilityGroup(string group_name) => throw new InvalitContextException(nameof(CreateAvailabilityGroup));
-
+        
         /// <summary>
         /// https://docs.microsoft.com/en-us/sql/t-sql/statements/create-availability-group-transact-sql
         /// </summary>
