@@ -50,8 +50,6 @@ using static LambdicSql.SqlServer.Symbol;
 using System.Data.SqlClient;
 using LambdicSql.feat.Dapper;
 using System.Data;
-//or for sqlite-net-pcl
-//using LambdicSql.feat.SQLiteNetPcl
 
 namespace Sample
 {
@@ -154,7 +152,7 @@ namespace Sample
 <img src="https://github.com/Codeer-Software/LambdicSql/blob/master/SummaryCode.png"><br>
 ## Samples
 Look for how to use from the tests.<br>
-https://github.com/Codeer-Software/LambdicSql.SqlServer/tree/master/Project/Test45<br>
+https://github.com/Codeer-Software/LambdicSql.SqlServer/tree/master/Project/Test40<br>
 
 ## Sub query.
 ```csharp
