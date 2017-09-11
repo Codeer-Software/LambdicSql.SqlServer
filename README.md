@@ -34,7 +34,10 @@ DapperAdapter.Assembly = typeof(Dapper.SqlMapper).Assembly;
 //.net standard
 DapperAdapter.Assembly = typeof(Dapper.SqlMapper).GetTypeInfo().Assembly;
 ```
-
+## Support tool.
+It is a Visual Stuido Extension.
+You can execute the code written in LambdicSql and get the result.
+https://marketplace.visualstudio.com/items?itemName=ishikawa-tatsuya.LambdicSqlAssistant
 ## Quick Start.
 Standard code.
 ```csharp
