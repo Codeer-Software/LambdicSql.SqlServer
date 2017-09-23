@@ -1,4 +1,4 @@
-﻿LambdicSql for SqlServer_β 0.20.0
+﻿LambdicSql for SqlServer_β 0.22.0
 ======================
 
 ![master build status](https://clueup.visualstudio.com/_apis/public/build/definitions/d5ee4abe-e932-4239-a0a1-d304dbdb41fa/103/badge)
