@@ -46,7 +46,7 @@ namespace LambdicSql.SqlServer.ConverterAttributes
             //*
             if (typeof(AsteriskBase).IsAssignableFromEx(selectTargets.Type))
             {
-                select.Add("*".ToCode());
+                select.Add(converter.ConvertToCode(selectTargets));
                 return new SelectClauseCode(select);
             }
 

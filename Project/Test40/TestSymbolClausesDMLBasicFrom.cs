@@ -408,7 +408,7 @@ FROM tbl_remuneration
 	sub.payment_date AS PaymentDate,
 	sub.money AS Money
 FROM
-	(SELECT *
+	(SELECT tbl_remuneration.*
 	FROM tbl_remuneration) sub");
         }
 
@@ -491,7 +491,7 @@ FROM tbl_remuneration
 	sub.money AS Money
 FROM tbl_staff
 	JOIN
-		(SELECT *
+		(SELECT tbl_remuneration.*
 		FROM tbl_remuneration) sub
 		ON
 		sub.staff_id = tbl_staff.id");

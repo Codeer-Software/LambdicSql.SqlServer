@@ -61,7 +61,7 @@ namespace LambdicSql.SqlServer
         /// <typeparam name="TSelected">Type of selected.</typeparam>
         /// <param name="selected">The type you want to obtain with the SELECT clause. Usually you specify a table element.</param>
         /// <returns>*</returns>
-        [ClauseStyleConverter(Name = "*")]
+        [MethodFormatConverter(Format = "[0].*")]
         public static AsteriskBase<TSelected> Asterisk<TSelected>(TSelected selected) { throw new InvalitContextException(nameof(Asterisk)); }
 
         /// <summary>

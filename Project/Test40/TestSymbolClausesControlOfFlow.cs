@@ -113,7 +113,7 @@ FROM tbl_staff", "tbl_remuneration");
             var datas = _connection.Query(sql).ToList();
             AssertEx.AreEqual(sql, _connection,
 @"BEGIN
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff
 END");
         }
@@ -138,7 +138,7 @@ END");
 	 <
 	@p_0
 BEGIN
-SELECT *
+SELECT tbl_remuneration.*
 FROM tbl_remuneration
 END", (double)2000);
         }
@@ -164,7 +164,7 @@ END", (double)2000);
 	 <
 	@p_0
 BEGIN
-SELECT *
+SELECT tbl_remuneration.*
 FROM tbl_remuneration
 END", (double)2000);
         }

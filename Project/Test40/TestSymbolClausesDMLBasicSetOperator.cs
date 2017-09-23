@@ -37,10 +37,10 @@ namespace Test
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 UNION
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff");
         }
 
@@ -56,10 +56,10 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 UNION
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff");
         }
 
@@ -75,10 +75,10 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 UNION ALL
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff");
         }
 
@@ -94,10 +94,10 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 UNION ALL
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff");
         }
 
@@ -113,10 +113,10 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 INTERSECT
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff");
         }
 
@@ -132,10 +132,10 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 INTERSECT
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff");
         }
 
@@ -151,10 +151,10 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 EXCEPT
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff
 WHERE tbl_staff.id = @p_0",
 1);
@@ -172,10 +172,10 @@ WHERE tbl_staff.id = @p_0",
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 EXCEPT
-SELECT *
+SELECT tbl_staff.*
 FROM tbl_staff
 WHERE tbl_staff.id = @p_0",
 1);
@@ -186,11 +186,11 @@ WHERE tbl_staff.id = @p_0",
         public void Test_Minus()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(Asterisk(db.tbl_staff)).From(db.tbl_staff).
+                Select(Asterisk()).From(db.tbl_staff).
                 Minus().
-                Select(Asterisk(db.tbl_staff)).From(db.tbl_staff).Where(db.tbl_staff.id == 1));
+                Select(Asterisk()).From(db.tbl_staff).Where(db.tbl_staff.id == 1));
 
-            var datas = _connection.Query(sql).ToList();
+            var datas = _connection.Query<Staff>(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT *
@@ -207,11 +207,11 @@ WHERE tbl_staff.id = @p_0",
         public void Test_Minus_Start()
         {
             var sql = Db<DB>.Sql(db =>
-                Select(Asterisk(db.tbl_staff)).From(db.tbl_staff)
+                Select(Asterisk()).From(db.tbl_staff)
                 + Minus() +
-                Select(Asterisk(db.tbl_staff)).From(db.tbl_staff).Where(db.tbl_staff.id == 1));
+                Select(Asterisk()).From(db.tbl_staff).Where(db.tbl_staff.id == 1));
 
-            var datas = _connection.Query(sql).ToList();
+            var datas = _connection.Query<Staff>(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT *

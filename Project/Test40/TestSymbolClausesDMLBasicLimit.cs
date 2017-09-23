@@ -40,7 +40,7 @@ namespace Test
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration
 ORDER BY
 	tbl_remuneration.id ASC
@@ -64,7 +64,7 @@ FETCH NEXT @p_1 ROWS ONLY",
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration
 ORDER BY
 	tbl_remuneration.id ASC

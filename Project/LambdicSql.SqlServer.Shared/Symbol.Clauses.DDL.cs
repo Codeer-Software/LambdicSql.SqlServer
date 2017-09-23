@@ -110,11 +110,18 @@ namespace LambdicSql.SqlServer
         /// <summary>
         /// FOREIGN KEY clause.
         /// </summary>
+        /// <returns>Clause.</returns>
+        [ClauseStyleConverter(Name = "FOREIGN KEY")]
+        public static Clause<ConstraintBase> ForeignKey() { throw new InvalitContextException(nameof(ForeignKey)); }
+
+        /// <summary>
+        /// FOREIGN KEY clause.
+        /// </summary>
         /// <param name="columns">Columns.</param>
         /// <returns>Clause.</returns>
         [FuncStyleConverter(Name = "FOREIGN KEY")]
         public static Clause<ConstraintBase> ForeignKey(params object[] columns) { throw new InvalitContextException(nameof(ForeignKey)); }
-
+        
         /// <summary>
         /// FOREIGN KEY clause.
         /// </summary>

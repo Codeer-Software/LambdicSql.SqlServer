@@ -161,7 +161,7 @@ FROM tbl_remuneration");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration");
         }
 
@@ -177,7 +177,7 @@ FROM tbl_remuneration");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration");
         }
 

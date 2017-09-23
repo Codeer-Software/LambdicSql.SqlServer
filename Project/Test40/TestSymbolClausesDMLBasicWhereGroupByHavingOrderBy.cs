@@ -39,7 +39,7 @@ namespace Test
 
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration
 WHERE tbl_remuneration.id = @p_0",
 1);
@@ -58,7 +58,7 @@ WHERE tbl_remuneration.id = @p_0",
 
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration
 WHERE tbl_remuneration.id = @p_0",
 1);
@@ -79,7 +79,7 @@ WHERE tbl_remuneration.id = @p_0",
 
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration
 WHERE tbl_remuneration.id = @p_0",
 1);
@@ -550,7 +550,7 @@ FROM tbl_remuneration");
 
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_remuneration.*
 FROM tbl_remuneration");
         }
 

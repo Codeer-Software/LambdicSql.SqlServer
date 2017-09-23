@@ -52,7 +52,7 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff");
         }
 
@@ -83,7 +83,7 @@ FROM tbl_staff");
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT *
+@"SELECT tbl_staff.*
 FROM tbl_staff
 ORDER BY
 	tbl_staff.id ASC,
@@ -101,7 +101,7 @@ ORDER BY
             var datas = _connection.Query(sql).ToList();
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
-@"SELECT TOP 1 *
+@"SELECT TOP 1 tbl_staff.*
 FROM tbl_staff");
         }
 
