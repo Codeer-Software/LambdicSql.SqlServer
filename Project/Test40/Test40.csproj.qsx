@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Qsx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CommonInitializeCode />
+  <DefaultValuesCode>public System.Data.SqlClient.SqlConnection Con =&gt; new System.Data.SqlClient.SqlConnection(@"Data Source=DESKTOP-I7CAVT9;Initial Catalog=LambdicSqlTest;User ID=sa;Password=codeer;");</DefaultValuesCode>
+</Qsx>

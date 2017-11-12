@@ -6,6 +6,7 @@ using LambdicSql.feat.Dapper;
 using static LambdicSql.SqlServer.Symbol;
 using Test.Helper;
 using LambdicSql.SqlServer;
+using LambdicSql.ConverterServices.SymbolConverters;
 
 namespace Test
 {
@@ -48,5 +49,12 @@ namespace Test
 
             var datas = _connection.Query(sql).ToList();
         }
+
+
+        [MethodFormatConverter("([0].データ所持_組織Id = [1] or exists (select * from 閲覧許可組織 where 閲覧許可組織.組織Id = [0].データ所持_組織Id and 閲覧許可組織.許可済組織Id = [1])")]
+        static bool y(object table, long id) => false;
+
+        static int 組織Id = 100;
+        static Sql x  => Db<DB>.Sql(db => y(db.tbl_staff, 組織Id));
     }
 }
