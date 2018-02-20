@@ -34,14 +34,6 @@ namespace LambdicSql.SqlServer
         public static DataTypeBase Bit() { throw new InvalitContextException(nameof(Bit)); }
 
         /// <summary>
-        /// BIT
-        /// </summary>
-        /// <param name="n">n</param>
-        /// <returns>BIT</returns>
-        [FuncStyleConverter]
-        public static DataTypeBase Bit(int n) { throw new InvalitContextException(nameof(Bit)); }
-
-        /// <summary>
         /// CHAR
         /// </summary>
         /// <returns>CHAR</returns>
@@ -112,7 +104,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="precision">precision</param>
         /// <returns>DECIMAL</returns>
-        [ClauseStyleConverter]
+        [FuncStyleConverter]
         public static DataTypeBase Decimal(int precision) { throw new InvalitContextException(nameof(Decimal)); }
 
 
@@ -122,7 +114,7 @@ namespace LambdicSql.SqlServer
         /// <param name="precision">precision</param>
         /// <param name="scale">scale</param>
         /// <returns>DECIMAL</returns>
-        [ClauseStyleConverter]
+        [FuncStyleConverter]
         public static DataTypeBase Decimal(int precision, int scale) { throw new InvalitContextException(nameof(Decimal)); }
 
         /// <summary>
