@@ -17,15 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0E03C2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.NetFramework.3.5", "LambdicSql.SqlServer.NetFramework.3.5\LambdicSql.SqlServer.NetFramework.3.5.csproj", "{335592C4-241D-4E16-94E0-B1A23FC279B9}"
 	ProjectSection(ProjectDependencies) = postProject
-		{314076CB-DAFB-46F4-876D-B8D0B5C0217C} = {314076CB-DAFB-46F4-876D-B8D0B5C0217C}
+		{77EF028A-D7AF-45C8-90D6-19492EDC0CFB} = {77EF028A-D7AF-45C8-90D6-19492EDC0CFB}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.SqlServer.NetFramework.4.6", "LambdicSql.SqlServer.NetFramework.4.6\LambdicSql.SqlServer.NetFramework.4.6.csproj", "{314076CB-DAFB-46F4-876D-B8D0B5C0217C}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{028fe542-3c97-45fb-88a6-8eed82af2d68}*SharedItemsImports = 13
-		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{314076cb-dafb-46f4-876d-b8d0b5c0217c}*SharedItemsImports = 4
 		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{335592c4-241d-4e16-94e0-b1a23fc279b9}*SharedItemsImports = 4
 		LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems*{77ef028a-d7af-45c8-90d6-19492edc0cfb}*SharedItemsImports = 4
 	EndGlobalSection
@@ -46,13 +43,12 @@ Global
 		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335592C4-241D-4E16-94E0-B1A23FC279B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{314076CB-DAFB-46F4-876D-B8D0B5C0217C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B53F53B-13D2-4577-B082-B21CFF5D1125}
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = 5d9fa53b-6315-4479-abc2-32d0f27c1947

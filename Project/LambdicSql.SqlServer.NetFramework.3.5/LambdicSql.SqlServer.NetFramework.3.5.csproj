@@ -31,8 +31,8 @@
     <DocumentationFile>bin\Release\LambdicSql.SqlServer.NetFramework.3.5.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LambdicSql.NetFramework.3.5, Version=0.61.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.61.0\lib\net35\LambdicSql.NetFramework.3.5.dll</HintPath>
+    <Reference Include="LambdicSql.NetFramework.3.5, Version=0.62.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.62.0\lib\net35\LambdicSql.NetFramework.3.5.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,8 +48,7 @@
   <Import Project="..\LambdicSql.SqlServer.Shared\LambdicSql.SqlServer.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release "../../../.nuget/nuget" pack "../../../.nuget/LambdicSql.SqlServer.nuspec"
-</PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release "../../../.nuget/nuget" pack "../../../.nuget/LambdicSql.SqlServer.nuspec"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
