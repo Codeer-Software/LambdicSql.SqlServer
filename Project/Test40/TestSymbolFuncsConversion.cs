@@ -177,5 +177,24 @@ FROM tbl_remuneration");
 	TRY_PARSE(tbl_remuneration.payment_date AS DATETIME2 USING @p_0) AS id
 FROM tbl_remuneration", "en-US");
         }
+
+        [TestMethod]
+        [Priority(1)]
+        public void Test_CastWithParmeter()
+        {
+            var sql = Db<DB>.Sql(db =>
+                Select(new
+                {
+                    name = Cast<string>(db.tbl_staff.name, DataType.NVarChar(20))
+                }).
+                From(db.tbl_staff));
+
+            var datas = _connection.Query(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT
+	CAST(tbl_staff.name AS NVARCHAR(20)) AS name
+FROM tbl_staff");
+        }
     }
 }

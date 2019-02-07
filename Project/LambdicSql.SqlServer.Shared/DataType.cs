@@ -23,7 +23,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>BINARY</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("BINARY([$0])")]
         public static DataTypeBase Binary(int n) { throw new InvalitContextException(nameof(Binary)); }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>CHAR</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("CHAR([$0])")]
         public static DataTypeBase Char(int n) { throw new InvalitContextException(nameof(Char)); }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>DATETIME2</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("DATETIME2([$0])")]
         public static DataTypeBase DateTime2(int n) { throw new InvalitContextException(nameof(DateTime2)); }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>DATETIMEOFFSET</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("DATETIMEOFFSET([$0])")]
         public static DataTypeBase DateTimeOffset(int n) { throw new InvalitContextException(nameof(DateTimeOffset)); }
 
         /// <summary>
@@ -104,9 +104,8 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="precision">precision</param>
         /// <returns>DECIMAL</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("DECIMAL([$0])")]
         public static DataTypeBase Decimal(int precision) { throw new InvalitContextException(nameof(Decimal)); }
-
 
         /// <summary>
         /// DECIMAL
@@ -114,7 +113,7 @@ namespace LambdicSql.SqlServer
         /// <param name="precision">precision</param>
         /// <param name="scale">scale</param>
         /// <returns>DECIMAL</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("DECIMAL([$0], [$1])")]
         public static DataTypeBase Decimal(int precision, int scale) { throw new InvalitContextException(nameof(Decimal)); }
 
         /// <summary>
@@ -129,7 +128,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>FLOAT</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("FLOAT([$0])")]
         public static DataTypeBase Float(int n) { throw new InvalitContextException(nameof(Float)); }
 
         /// <summary>
@@ -165,7 +164,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>NCHAR</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("NCHAR([$0])")]
         public static DataTypeBase NChar(int n) { throw new InvalitContextException(nameof(NChar)); }
 
         /// <summary>
@@ -187,7 +186,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="precision">precision</param>
         /// <returns>NUMERIC</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("NUMERIC([$0])")]
         public static DataTypeBase Numeric(int precision) { throw new InvalitContextException(nameof(Numeric)); }
 
         /// <summary>
@@ -196,7 +195,7 @@ namespace LambdicSql.SqlServer
         /// <param name="precision">precision</param>
         /// <param name="scale">scale</param>
         /// <returns>NUMERIC</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("NUMERIC([$0], [$1])")]
         public static DataTypeBase Numeric(int precision, int scale) { throw new InvalitContextException(nameof(Numeric)); }
 
         /// <summary>
@@ -211,7 +210,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>NVARCHAR</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("NVARCHAR([$0])")]
         public static DataTypeBase NVarChar(int n) { throw new InvalitContextException(nameof(NVarChar)); }
 
         /// <summary>
@@ -261,7 +260,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>TIME</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("TIME([$0])")]
         public static DataTypeBase Time(int n) { throw new InvalitContextException(nameof(Time)); }
 
         /// <summary>
@@ -283,7 +282,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>VARBINARY</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("VARBINARY([$0])")]
         public static DataTypeBase VarBinary(int n) { throw new InvalitContextException(nameof(VarBinary)); }
 
         /// <summary>
@@ -298,7 +297,7 @@ namespace LambdicSql.SqlServer
         /// </summary>
         /// <param name="n">n</param>
         /// <returns>VARCHAR</returns>
-        [FuncStyleConverter]
+        [MethodFormatConverter("VARCHAR([$0])")]
         public static DataTypeBase VarChar(int n) { throw new InvalitContextException(nameof(VarChar)); }
 
         /// <summary>

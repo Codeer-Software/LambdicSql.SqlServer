@@ -134,5 +134,24 @@ FROM tbl_remuneration");
 @"SELECT DISTINCT *
 FROM tbl_remuneration");
         }
+
+        [TestMethod]
+        [Priority(1)]
+        public void Test_N()
+        {
+            var sql = Db<DB>.Sql(db =>
+                Select(Asterisk()).
+                From(db.tbl_staff).
+                Where(db.tbl_staff.name == N("Emma") || db.tbl_staff.name == (string)(object)N('c')));
+
+            System.Diagnostics.Debug.WriteLine(sql.Build(_connection.GetType()).Text);
+
+            var datas = _connection.Query<Remuneration>(sql).ToList();
+            Assert.IsTrue(0 < datas.Count);
+            AssertEx.AreEqual(sql, _connection,
+@"SELECT *
+FROM tbl_staff
+WHERE tbl_staff.name = N'Emma' OR tbl_staff.name = N'c'");
+        }
     }
 }

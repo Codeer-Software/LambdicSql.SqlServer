@@ -386,5 +386,21 @@ namespace LambdicSql.SqlServer
         /// <returns>object.</returns>
         [MethodFormatConverter(Format = "[0]")]
         public static object DisableBrankets(this Sql sql) { throw new InvalitContextException(nameof(DisableBrankets)); }
+
+        /// <summary>
+        /// N'value'
+        /// </summary>
+        /// <param name="value">value.</param>
+        /// <returns>text</returns>
+        [MethodFormatConverter("N[$0]")]
+        public static string N(string value) => throw new InvalitContextException(nameof(N));
+
+        /// <summary>
+        /// N'value'
+        /// </summary>
+        /// <param name="value">value.</param>
+        /// <returns>text</returns>
+        [MethodFormatConverter("N'[$0]'")]
+        public static char N(char value) => throw new InvalitContextException(nameof(N));
     }
 }
