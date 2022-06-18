@@ -15,14 +15,14 @@ LambdicSql from NuGet
 
 https://www.nuget.org/packages/LambdicSql.SqlServer/<br>
 
-Supported pratforms are
+Supported platforms are
 - .NETFramework 3.5~
 - PCL
 - .NETStandard 1.2~
 
 ## Featuring Dapper
 Generate sql text and parameters by LambdicSql.<br>
-And execut and map to object, recommend using dapper.
+And execute and map to object, recommend using dapper.
 
     PM> Install-Package Dapper
 
@@ -35,7 +35,7 @@ DapperAdapter.Assembly = typeof(Dapper.SqlMapper).Assembly;
 DapperAdapter.Assembly = typeof(Dapper.SqlMapper).GetTypeInfo().Assembly;
 ```
 ## Support tool.
-It is a Visual Stuido Extension.
+It is a Visual Studio Extension.
 You can execute the code written in LambdicSql and get the result.
 https://marketplace.visualstudio.com/items?itemName=ishikawa-tatsuya.LambdicSqlAssistant
 ## Quick Start.
@@ -561,3 +561,4 @@ public void TestQuery()
     var datas = new ModelLambdicSqlTestDB().Query(sql).ToList();
 }
 ```
+
